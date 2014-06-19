@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content=""/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2014-06-19T18:15+0200"/>
+<meta name="author" content="Onur Derin"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" type="text/css" href="./css/stylesheet.css" /> <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid Sans" /> <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+<table style="border: 1; padding:0;">
+    <tr style="border: 0"> 
+        <td style="border: 0; vertical-align: top; min-width:320px;">
+            <h1 style="font-size:400%"><a href="http://ssgpp.wordpress.com/" rel="home" style="text-decoration:none; color:black;">$ ssg++ ▮</a></h1>
+            <span style="font-size:120%"><span style="text-decoration:underline">s</span>ozluk <span style="text-decoration:underline">sh</span>ell: ekşi sözlük komut satırı arayüzü</span>
+            <!--img src="http://apps.sourceforge.net/trac/ssgpp/raw-attachment/wiki/WikiStart/ssgpp-logo.png" /-->
+        </td>
+        <td style="border: 0; text-align:right; vertical-align: top;">
+            <!--span id="ssgsozlukshell" style="font-size:200%">ssg++ (<span class="underline">s</span>ozluk <span class="underline">sh</span>ell)</span-->
+
+            <p style="font-size:80%">
+               "sosyal medya analistinin başucu programı." --henüz söylenmedi <br /> 
+               "reserved" --@2 <br />
+               "yaşasın bağzı proğramlar!" --anonim <br />
+               "olmasaydın, olmazdım." --<a href="http://ssgpp.wordpress.com" target="_blank">ssg++ blog</a><br />
+               "bilginin harman yeri" --<a href="https://twitter.com/sozlukshell" target="_blank">@sozlukshell</a><br />
+"abi seviyorsanız gidin </p><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="ZRHG23R9UNHLL">
+<input type="image" src="https://www.paypalobjects.com/tr_TR/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - Online ödeme yapmanın daha güvenli ve kolay yolu!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form> <p style="font-size:80%">bence." --geliştiricisi
+            </p>
+
+
+
+        </td>
+    </tr>
+</table>
+
+</div>
+
+<div id="content">
+<h1 class="title"></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">ssg++ nedir?</a></li>
+<li><a href="#sec-2">ssg++ ile yapabileceklerinize örnekler</a></li>
+<li><a href="#sec-3">Kurulum ve kullanım</a>
+<ul>
+<li><a href="#sec-3-1">Yapılandırma</a></li>
+<li><a href="#sec-3-2">ssg++ komutları</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">Geliştiriciler için</a></li>
+<li><a href="#sec-5">Değişim günlüğü</a></li>
+<li><a href="#sec-6">İletişim</a></li>
+<li><a href="#sec-7">Lisans</a>
+<ul>
+<li><a href="#sec-7-1">Yasal Uyarı</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">ssg++ nedir?</h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+ssg++ <a href="http://antik.eksisozluk.com">ekşi sözlük</a> için bir komut satırı arayüzüdür. 
+Her ne kadar ekşi sözlük'ü kendi arayüzüyle, hatta <a href="http://antik.eksisozluk.com/show.asp?t=eksi++">eksi++</a> gibi eklentilerle, seve seve kullanıyor olsak da bu arayüz her ihtiyaca cevap veremiyor.
+ssg++ basit arayüzüyle pek çok zor işi tek satırlık bir komut çalıştırmak kadar kolay hale getiriyor.
+Bunun yanında esnek yapısı sayesinde istediğiniz işi yapmanızı sağlayan yeni komutlar ve bileşenler tanımlamanızı sağlıyor.
+ssg++ <i>bileşen tabanlı tasarım</i> prensipleri üzerine kuruludur. Veri işlemeye dönük uygulamalar için bileşen tanımlayı ve kendisiyle gelen dille bileşen dizilimleri yaratmayı sağlayan <i>sacre</i> adındaki bileşen tabanlı çerçeve kullanılarak oluşturulmuştur. Esas olarak ssg++ ekşi sözlük'e özel tanımlanmış bileşenlere ve <i>iş hattı</i> dediğimiz bileşen dizilimlerine dayanır.
+Daha fazla bilgi için 
+(bkz: <a href="SsgppComps.html">ssg++ bileşenleri</a>)
+(bkz: <a href="Sacre.html">iş hattı oluşturma</a>)
+</p>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">ssg++ ile yapabileceklerinize örnekler</h2>
+<div class="outline-text-2" id="text-2">
+
+
+<p>
+ssg++ komutları iş hattı kısayolu şeklinde tanımlanarak genişletilebilir. 
+Mevcut tanımlı iş hattı kısayolları: 
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left"><a href="IsHattiKisayollari.html">ajanda</a></td><td class="left"><a href="IsHattiKisayollari.html">ajanda3</a></td><td class="left"><a href="IsHattiKisayollari.html">anket</a></td><td class="left"><a href="IsHattiKisayollari.html">ara</a></td></tr>
+<tr><td class="left"><a href="IsHattiKisayollari.html">badi</a></td><td class="left"><a href="IsHattiKisayollari.html">başlıkindir</a></td><td class="left"><a href="IsHattiKisayollari.html">başlıkresimleri</a></td><td class="left"><a href="IsHattiKisayollari.html">bugün</a></td></tr>
+<tr><td class="left"><a href="IsHattiKisayollari.html">debe</a></td><td class="left"><a href="IsHattiKisayollari.html">dosyadananket</a></td><td class="left"><a href="IsHattiKisayollari.html">dosyadanlafebeleri</a></td><td class="left"><a href="IsHattiKisayollari.html">dosyadanzamansaleğilim</a></td></tr>
+<tr><td class="left"><a href="IsHattiKisayollari.html">dün</a></td><td class="left"><a href="IsHattiKisayollari.html">farkbadi</a></td><td class="left"><a href="IsHattiKisayollari.html">getir</a></td><td class="left"><a href="IsHattiKisayollari.html">ghebe</a></td></tr>
+<tr><td class="left"><a href="IsHattiKisayollari.html">ghebçe</a></td><td class="left"><a href="IsHattiKisayollari.html">gündem</a></td><td class="left"><a href="IsHattiKisayollari.html">lafebeleri</a></td><td class="left"><a href="IsHattiKisayollari.html">manşet</a></td></tr>
+<tr><td class="left"><a href="IsHattiKisayollari.html">maçskoru</a></td><td class="left"><a href="IsHattiKisayollari.html">ortakbaşlıkları</a></td><td class="left"><a href="IsHattiKisayollari.html">takip</a></td><td class="left"><a href="IsHattiKisayollari.html">tsllbn</a></td></tr>
+<tr><td class="left"><a href="IsHattiKisayollari.html">yedekle</a></td><td class="left"><a href="IsHattiKisayollari.html">zamansaleğilim</a></td><td class="left"></td><td class="left"></td></tr>
+</tbody>
+</table>
+
+
+<p>
+Örnek olarak, <i>lafebeleri</i> komutunun iş hattı şöyle:
+</p>
+
+
+<pre class="example">başlıkknk [başlık=%s] ! başlıkgirdileri ! histogram [eksen=kategori, kategori=yazar] ! grafikbtk 
+</pre>
+
+<p>
+<i>lafebeleri</i> komutu argüman olarak verilen başlığa yazmış yazarları girdi sayılarına göre grafik olarak gösterir. 
+</p>
+<p>
+Komut örneği:
+</p>
+
+
+<pre class="example">$ ssg++ lafebeleri borussia dortmund
+</pre>
+
+
+<p>
+Çıktısı:
+</p>
+<p>
+<img src="imgs/lafebeleri_borussia_dortmund.png"  alt="imgs/lafebeleri_borussia_dortmund.png" />
+</p>
+<p>
+Demek ki Lewandowski'nin Bayern Münih'e gidip gitmeyeceğini spacetimereality'ye sormak gerekiyormuş.
+</p>
+<p>
+Tüm tanımlı iş hatlarının detayları ve örnek kullanımları için (bkz: <a href="IsHattiKisayollari.html">iş hattı kısayolları</a>)
+</p>
+<p>
+ssg++ kullanılarak yapılmış çalışmaları içeren <a href="http://ssgpp.wordpress.com">ssg++ blogu</a>na da muhakkak bir gözatın.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Kurulum ve kullanım</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>  <a href="#sec-7">Lisans</a> metnini okuyup kabul ettikten sonra ssg++ programını indirmek ve ücretsiz bir lisans edinmek için ad ve soyadınızla birlikte oderin at users.sourceforge.net adresine "ssg++ kullanıcı lisansi isteği" konulu bir e-mail göndermeniz yeterli. 
+</p>
+<p>
+ssg++'nın çalıştırılabilmesi için sisteminizde <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JRE 6</a> veya daha üst bir sürümü kurulu olmalıdır. Bir komut uçbiriminde <code>java -version</code> komutunu çalıştırarak bunu kontrol edebilirsiniz.
+</p>
+<p>
+Edindiğiniz sıkıştırılmış dosyayı istediğiniz bir klasöre (<code>SSG++_DIR</code>) açın. Komut uçbiriminde <code>cd SSG++_DIR</code> komutuyla <code>ssgpp.jar</code> dosyasını içeren klasöre girin. İstenilen bir komutu çalıştırmak için şunu girin:
+</p>
+
+
+<pre class="example">java -jar ssgpp.jar komut
+</pre>
+
+
+<p>
+Linux altında bash kullanıcıları <code>~/.bashrc</code> dosyalarında alias ile kısayol tanımlayabilir: 
+</p>
+
+
+<pre class="example">alias ssg++='cd SSG++_DIR; java -jar ssgpp.jar' 
+</pre>
+
+
+<p>
+Komuttan önce <code>-l</code> argümanı verilirse komut ekşi sözlük'e giriş yapıldıktan sonra çalıştırılır. 
+</p>
+<p>
+ssg++'yı web arayüzü ile kullanmak için:
+</p>
+
+
+<pre class="example">java -cp ssgpp.jar ssgpp.webui.WebServer 
+</pre>
+
+<p>
+komutunu kullanarak ssg++ web sunucusunu çalıştırıp tarayıcınızda <a href="http://localhost:8081/index.html">http://localhost:8081/index.html</a> adresini açın.
+</p>
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">Yapılandırma</h3>
+<div class="outline-text-3" id="text-3-1">
+
+<p>Programın çalışmasıyla ilgili bazı ayarlar kullanıcının ev dizinindeki <code>.ssgpp</code> klasöründe (örn. Linux altında <code>~/.ssgpp/conf/</code>) tutulur. Burdaki <code>app.properties</code> dosyası şöyle bir şablona sahiptir.
+Önemli not: Şifreniz şifrelenmemiş olarak tutulur.
+</p>
+
+
+<pre class="example"># java -cp ssgpp.jar ssgpp.gui.MainGUI komutuyla görsel arayüzü açıp Düzenle &gt; Seçenekler &gt; ekşi sözlük menü yolunu takibederek kullanıcı adı, şifresi ve zaman dilimini girebilirsiniz.
+EksiSozluk-KullaniciAdi=...
+EksiSozluk-Sifresi=...
+ZamanDilimi=Europe/Istanbul
+# Ekşi Sözlük hesabınızda belirlediğiniz ayarlar &gt; tercihler &gt; gösterim &gt; sayfa başı entry sayısı
+SayfaBasiGirdiSayisi=100
+# Antik arayüzünde sol frame'de görülen başlık sayısı.
+SayfaBasiBaslikSayisi=50
+# Bir uyarı mesajı argümanı ile çalıştıralabilen bir komut satırı programı. Linux Gnome için notify-send kullanılabilir.
+UyarmaProgrami=notify-send
+# Web arayüzü bağlantıları verilen resimleri gömülü olarak göstersin mi? evet:1, hayır:0
+ResimleriGoster=1
+# Eklenti bileşenlerin konumu
+EklentiDizini=./
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">ssg++ komutları</h3>
+<div class="outline-text-3" id="text-3-2">
+
+
+<ul>
+<li><code>yardım</code>: komutların kullanımıyla ilgili yardım sağlar.
+
+</li>
+<li><code>yürüt</code> <i>iş hattı</i>: verilen <i>işhattı</i> çalıştırılır.
+
+</li>
+<li><i>iş hattı kısayolu</i>: girilen iş hattı kısayolunu çalıştırır. (bkz: <a href="IsHattiKisayollari.html">iş hattı kısayolları</a>) (bkz: <a href="YeniIsHattıKısayoluTanimlama.html">yeni iş hattı kısayolu tanımlama</a>)
+
+</li>
+<li><code>mesaj</code>: giriş yapmış kullanıcının mesajı olup olmadığını kontrol eder.
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Geliştiriciler için</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>Yapmak istediğiniz şey için iş hattı tanımlamak yeterli gelmedi ise iş hatlarında kullanmak üzere <a href="Sacre.html#ssgiçineklentibileşentanımlamak">kendi bileşenlerinizi eklenti olarak tanımlayabilirsiniz</a>.
+</p>
+<p>
+Bu da yeterli değilse kendi uygulamanız için ssg++ iş hatlarının yapabildiği her şeye bir API ile ulaşmanız mümkün. İş hattının batak elemanını apisink olarak değiştirip <code>List&lt;Token&gt;</code> dönen 
+</p>
+
+
+<pre class="example">SozlukApi.runPipeline("... ! apisink") 
+</pre>
+
+<p>
+metodunu çağırmanız yeterli.
+</p>
+<p>
+Geliştirici olarak kullanmak için geliştirici lisansı edinmeniz gerekiyor.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Değişim günlüğü</h2>
+<div class="outline-text-2" id="text-5">
+
+<p>Sürümlere ait özellikler ve değişimler için (bkz: <a href="roadmap.html">değişim günlüğü</a>)
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6">İletişim</h2>
+<div class="outline-text-2" id="text-6">
+
+<p>oderin at users.sourceforge.net adresine yazarak
+</p><ul>
+<li>fikir, görüş ve önerilerinizi,
+</li>
+<li>hata bildirimlerinizi, 
+</li>
+<li>kendi yazdığınız eklentileri,
+</li>
+<li>kendi oluşturduğunuz iş hatlarını,
+</li>
+<li>kod düzeltmelerinizi 
+</li>
+</ul>
+
+<p>gönderebilirsiniz.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7">Lisans</h2>
+<div class="outline-text-2" id="text-7">
+
+<p>ssg++ ticari olmayan kişisel kullanım için ücretsiz bir uygulamadır ve kullanımı şu <a href="http://www.binpress.com/license/view/l/f069102d24b7a1d5e3aeb0bf23a621a5">lisans</a>a tabidir. Özetle,
+</p><ul>
+<li>Sadece lisansta adı geçen kişi tarafından aynı anda tek bir bilgisayara kurularak kullanılabilir.
+</li>
+<li>Programın kaynak kodu ya da çalıştırılabilir dosyaları satılamaz ya da dağıtılamaz.
+</li>
+<li>Sadece ticari olmayan kişisel amaçlar için kullanılabilir. Şirket ya da organizasyon içinde kullanılması için ayrı tipte bir lisans gerekir. Bunun için oderin at users.sourceforge.net adresine "ssg++ ticari lisans isteği" konulu bir e-posta gönderebilirsiniz.
+</li>
+<li>Kaynak kodu değiştirilemez ve program başka bir program ile bağlantılı olarak kullanılamaz. Bunun için ayrı bir lisans gerekir. oderin at users.sourceforge.net adresine "ssg++ gelistirici lisansi isteği" konulu bir e-posta gönderebilirsiniz.
+</li>
+<li>Program kullanılarak elde edilen her türlü çıktı, herhangi bir yerde kullanılıyorsa, program adına (ssg++) ve programın internet adresine (<a href="http://ssgpp.sourceforge.net">http://ssgpp.sourceforge.net</a>) uygun şekilde atıfta bulunulmalıdır.
+</li>
+<li>Programın bazı parçaları başka bir takım lisanslara tabidir: commons, xalan-j and jcommander için Apache License Version 2.0, jfreechart için GNU LGPL v2.1, sacre için BSD lisansı.
+</li>
+</ul>
+
+
+<p>
+Programın geliştirilmesine katkı sağlamak için <i>paypal</i> ya da <i>bitcoin</i> ile kolayca bağışta bulunabilirsiniz.
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="VNUPTKSMUZYZG">
+<input type="image" src="https://www.paypalobjects.com/tr_TR/TR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - Online ödeme yapmanın daha güvenli ve kolay yolu!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+<br />
+
+Bitcoin bağış adresi: 1D1PX1w317pmib5TwoP7K2chiE1r7CrXyq
+</p>
+
+</div>
+
+<div id="outline-container-7-1" class="outline-3">
+<h3 id="sec-7-1">Yasal Uyarı</h3>
+<div class="outline-text-3" id="text-7-1">
+
+<p>ssg++'nın Ekşi Teknoloji ve Bilişim Ltd. Şti. ile bir bağlantısı yoktur. ekşi sözlük, Ekşi Teknoloji ve Bilişim Ltd. Şti.’nin tescilli bir markasıdır. Uygulama üzerinden erişilebilen ekşi sözlük içeriği, ve bu içeriğe dair tüm haklar Ekşi Teknoloji ve Bilişim Ltd. Şti.’ne aittir.
+</p>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+
+</div>
+</body>
+</html>
