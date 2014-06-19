@@ -1,0 +1,261 @@
+#+TITLE: 
+# C-c C-e X ssgpp
+# #+STYLE: <link rel="stylesheet" type="text/css" href="./css/stylesheet.css" /> <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid Sans" /> 
+
+# <div id="page" class="hfeed site">
+	
+# 	<header id="masthead" class="site-header" role="banner">
+# 		<div class="header-main">
+# 			<h1 class="site-title"><a href="http://ssgpp.wordpress.com/" rel="home">$ ssg++ ▮</a></h1>
+
+# 			<div class="search-toggle">
+# 				<a href="#search-container" class="screen-reader-text">Ara</a>
+# 			</div>
+
+# 			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+# 				<button class="menu-toggle">Birincil menü</button>
+# 				<a class="screen-reader-text skip-link" href="#content">İçeriğe geç</a>
+# 				<div class="menu-menu-1-container"><ul id="menu-menu-1" class="nav-menu"><li id="menu-item-97" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-97"><a href="http://ssgpp.wordpress.com/">ana sayfa</a></li>
+# <li id="menu-item-98" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-98"><a href="http://ssgpp.wordpress.com/hakkinda/">hakkında</a></li>
+# <li id="menu-item-141" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-141"><a title="ssg++@twitter" href="https://twitter.com/sozlukshell">ssg++@twitter</a></li>
+# <li id="menu-item-99" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-99"><a title="ssg++@sourceforge" href="http://ssgpp.sourceforge.net">ssg++@sourceforge</a></li>
+# <li id="menu-item-137" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-137"><a href="http://ssgpp.wordpress.com/category/siyaset/">#siyaset</a></li>
+# <li id="menu-item-136" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-136"><a href="http://ssgpp.wordpress.com/category/anket-2/">#anket</a></li>
+# </ul></div>			</nav>
+# 		</div>
+
+# 		<!--div id="search-container" class="search-box-wrapper hide">
+# 			<div class="search-box">
+# 				<form role="search" method="get" class="search-form" action="http://ssgpp.wordpress.com/">
+# 				<label>
+# 					<span class="screen-reader-text">Arama:</span>
+# 					<input type="search" class="search-field" placeholder="Ara &hellip;" value="" name="s" title="Arama:" />
+# 				</label>
+# 				<input type="submit" class="search-submit" value="Ara" />
+# 			</form>			</div>
+# 		</div-->
+# 	</header><!-- #masthead -->
+
+
+
+
+# 	<div id="main" class="site-main">
+
+# <div id="main-content" class="main-content">
+
+
+# 	<div id="primary" class="content-area">
+# 		<div id="content" class="site-content" role="main">
+
+
+
+# #+BEGIN_HTML
+# <table style="border: 1; padding:0;">
+#     <tr style="border: 0"> 
+#         <td style="border: 0; vertical-align: top; min-width:320px;">
+#             <h1 style="font-size:400%"><a href="http://ssgpp.wordpress.com/" rel="home">$ ssg++ ▮</a></h1>
+#             <span style="font-size:120%"><span style="text-decoration:underline">s</span>ozluk <span style="text-decoration:underline">sh</span>ell: ekşi sözlük komut satırı arayüzü</span>
+#             <!--img src="http://apps.sourceforge.net/trac/ssgpp/raw-attachment/wiki/WikiStart/ssgpp-logo.png" /-->
+#         </td>
+#         <td style="border: 0; text-align:right; vertical-align: top;">
+#             <!--span id="ssgsozlukshell" style="font-size:200%">ssg++ (<span class="underline">s</span>ozluk <span class="underline">sh</span>ell)</span-->
+
+#             <p style="font-size:80%">
+#                "sosyal medya analistinin başucu programı." --henüz söylenmedi <br /> 
+#                "reserved" --@2 <br />
+#                "yaşasın bağzı proğramlar!" --anonim <br />
+#                "olmasaydın, olmazdım." --<a href="http://ssgpp.wordpress.com" target="_blank">ssg++ blog</a><br />
+#                "bilginin harman yeri" --<a href="https://twitter.com/sozlukshell" target="_blank">@sozlukshell</a><br />
+# "abi seviyorsanız gidin </p><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="margin-top:-1.41em;">
+# <input type="hidden" name="cmd" value="_s-xclick">
+# <input type="hidden" name="hosted_button_id" value="ZRHG23R9UNHLL">
+# <input type="image" src="https://www.paypalobjects.com/tr_TR/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - Online ödeme yapmanın daha güvenli ve kolay yolu!">
+# <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+# </form> <p style="font-size:80%">bence." --geliştiricisi
+#             </p>
+
+
+
+#         </td>
+#     </tr>
+# </table>
+
+
+# #+END_HTML
+
+* ssg++ nedir?
+
+ssg++ [[http://antik.eksisozluk.com][ekşi sözlük]] için bir komut satırı arayüzüdür. 
+Her ne kadar ekşi sözlük'ü kendi arayüzüyle, hatta [[http://antik.eksisozluk.com/show.asp?t=eksi%2B%2B][eksi++]] gibi eklentilerle, seve seve kullanıyor olsak da bu arayüz her ihtiyaca cevap veremiyor.
+ssg++ basit arayüzüyle pek çok zor işi tek satırlık bir komut çalıştırmak kadar kolay hale getiriyor.
+Bunun yanında esnek yapısı sayesinde istediğiniz işi yapmanızı sağlayan yeni komutlar ve bileşenler tanımlamanızı sağlıyor.
+ssg++ /bileşen tabanlı tasarım/ prensipleri üzerine kuruludur. Veri işlemeye dönük uygulamalar için bileşen tanımlayı ve kendisiyle gelen dille bileşen dizilimleri yaratmayı sağlayan /sacre/ adındaki bileşen tabanlı çerçeve kullanılarak oluşturulmuştur. Esas olarak ssg++ ekşi sözlük'e özel tanımlanmış bileşenlere ve /iş hattı/ dediğimiz bileşen dizilimlerine dayanır.
+Daha fazla bilgi için 
+(bkz: [[file:SsgppComps.org][ssg++ bileşenleri]])
+(bkz: [[file:Sacre.org][iş hattı oluşturma]])
+
+
+
+* ssg++ ile yapabileceklerinize örnekler
+
+ssg++ komutları iş hattı kısayolu şeklinde tanımlanarak genişletilebilir. 
+Mevcut tanımlı iş hattı kısayolları: 
+
+| [[file:IsHattiKisayollari.org::*ajanda][ajanda]]   | [[file:IsHattiKisayollari.org::*ajanda3][ajanda3]]         | [[file:IsHattiKisayollari.org::*anket][anket]]              | [[file:IsHattiKisayollari.org::*ara][ara]]                    |
+| [[file:IsHattiKisayollari.org::*badi][badi]]     | [[file:IsHattiKisayollari.org::*başlıkindir][başlıkindir]]     | [[file:IsHattiKisayollari.org::*başlıkresimleri][başlıkresimleri]]    | [[file:IsHattiKisayollari.org::*bugün][bugün]]                  |
+| [[file:IsHattiKisayollari.org::*debe][debe]]     | [[file:IsHattiKisayollari.org::*dosyadananket][dosyadananket]]   | [[file:IsHattiKisayollari.org::*dosyadanlafebeleri][dosyadanlafebeleri]] | [[file:IsHattiKisayollari.org::*dosyadanzamansaleğilim][dosyadanzamansaleğilim]] |
+| [[file:IsHattiKisayollari.org::*dün][dün]]      | [[file:IsHattiKisayollari.org::*farkbadi][farkbadi]]        | [[file:IsHattiKisayollari.org::*getir][getir]]              | [[file:IsHattiKisayollari.org::*ghebe][ghebe]]                  |
+| [[file:IsHattiKisayollari.org::*ghebçe][ghebçe]]   | [[file:IsHattiKisayollari.org::*gündem][gündem]]          | [[file:IsHattiKisayollari.org::*lafebeleri][lafebeleri]]         | [[file:IsHattiKisayollari.org::*manşet][manşet]]                 |
+| [[file:IsHattiKisayollari.org::*maçskoru][maçskoru]] | [[file:IsHattiKisayollari.org::*ortakbaşlıkları][ortakbaşlıkları]] | [[file:IsHattiKisayollari.org::*takip][takip]]              | [[file:IsHattiKisayollari.org::*tsllbn][tsllbn]]                 |
+| [[file:IsHattiKisayollari.org::*yedekle][yedekle]]  | [[file:IsHattiKisayollari.org::*zamansaleğilim][zamansaleğilim]]  |                    |                        |
+
+Örnek olarak, /lafebeleri/ komutunun iş hattı şöyle:
+#+BEGIN_EXAMPLE
+başlıkknk [başlık=%s] ! başlıkgirdileri ! histogram [eksen=kategori, kategori=yazar] ! grafikbtk 
+#+END_EXAMPLE
+/lafebeleri/ komutu argüman olarak verilen başlığa yazmış yazarları girdi sayılarına göre grafik olarak gösterir. 
+
+Komut örneği:
+#+BEGIN_EXAMPLE
+$ ssg++ lafebeleri borussia dortmund
+#+END_EXAMPLE
+
+Çıktısı:
+
+[[file:imgs/lafebeleri_borussia_dortmund.png]]
+
+Demek ki Lewandowski'nin Bayern Münih'e gidip gitmeyeceğini spacetimereality'ye sormak gerekiyormuş.
+
+Tüm tanımlı iş hatlarının detayları ve örnek kullanımları için (bkz: [[file:IsHattiKisayollari.org][iş hattı kısayolları]])
+
+ssg++ kullanılarak yapılmış çalışmaları içeren [[http://ssgpp.wordpress.com][ssg++ blogu]]na da muhakkak bir gözatın.
+
+* Kurulum ve kullanım
+  [[*Lisans][Lisans]] metnini okuyup kabul ettikten sonra ssg++ programını indirmek ve ücretsiz bir lisans edinmek için ad ve soyadınızla birlikte oderin at users.sourceforge.net adresine "ssg++ kullanıcı lisansi isteği" konulu bir e-mail göndermeniz yeterli. 
+
+ssg++'nın çalıştırılabilmesi için sisteminizde [[http://www.oracle.com/technetwork/java/javase/downloads/index.html][JRE 6]] veya daha üst bir sürümü kurulu olmalıdır. Bir komut uçbiriminde ~java -version~ komutunu çalıştırarak bunu kontrol edebilirsiniz.
+
+Edindiğiniz sıkıştırılmış dosyayı istediğiniz bir klasöre (~SSG++_DIR~) açın. Komut uçbiriminde ~cd SSG++_DIR~ komutuyla ~ssgpp.jar~ dosyasını içeren klasöre girin. İstenilen bir komutu çalıştırmak için şunu girin:
+#+BEGIN_EXAMPLE
+java -jar ssgpp.jar komut
+#+END_EXAMPLE
+
+Linux altında bash kullanıcıları =~/.bashrc= dosyalarında alias ile kısayol tanımlayabilir: 
+#+BEGIN_EXAMPLE 
+alias ssg++='cd SSG++_DIR; java -jar ssgpp.jar' 
+#+END_EXAMPLE
+
+Komuttan önce =-l= argümanı verilirse komut ekşi sözlük'e giriş yapıldıktan sonra çalıştırılır. 
+
+ssg++'yı web arayüzü ile kullanmak için:
+#+BEGIN_EXAMPLE 
+java -cp ssgpp.jar ssgpp.webui.WebServer 
+#+END_EXAMPLE
+komutunu kullanarak ssg++ web sunucusunu çalıştırıp tarayıcınızda [[http://localhost:8081/index.html]] adresini açın.
+
+** Yapılandırma
+Programın çalışmasıyla ilgili bazı ayarlar kullanıcının ev dizinindeki =.ssgpp= klasöründe (örn. Linux altında =~/.ssgpp/conf/=) tutulur. Burdaki =app.properties= dosyası şöyle bir şablona sahiptir.
+Önemli not: Şifreniz şifrelenmemiş olarak tutulur.
+#+BEGIN_EXAMPLE
+# java -cp ssgpp.jar ssgpp.gui.MainGUI komutuyla görsel arayüzü açıp Düzenle > Seçenekler > ekşi sözlük menü yolunu takibederek kullanıcı adı, şifresi ve zaman dilimini girebilirsiniz.
+EksiSozluk-KullaniciAdi=...
+EksiSozluk-Sifresi=...
+ZamanDilimi=Europe/Istanbul
+# Ekşi Sözlük hesabınızda belirlediğiniz ayarlar > tercihler > gösterim > sayfa başı entry sayısı
+SayfaBasiGirdiSayisi=100
+# Antik arayüzünde sol frame'de görülen başlık sayısı.
+SayfaBasiBaslikSayisi=50
+# Bir uyarı mesajı argümanı ile çalıştıralabilen bir komut satırı programı. Linux Gnome için notify-send kullanılabilir.
+UyarmaProgrami=notify-send
+# Web arayüzü bağlantıları verilen resimleri gömülü olarak göstersin mi? evet:1, hayır:0
+ResimleriGoster=1
+# Eklenti bileşenlerin konumu
+EklentiDizini=./
+#+END_EXAMPLE
+
+** ssg++ komutları
+
++ ~yardım~: komutların kullanımıyla ilgili yardım sağlar.
+
++ ~yürüt~ /iş hattı/: verilen /iş hattı/ çalıştırılır.
+
++ /iş hattı kısayolu/: girilen iş hattı kısayolunu çalıştırır. (bkz: [[file:IsHattiKisayollari.org][iş hattı kısayolları]]) (bkz: [[file:YeniIsHattıKısayoluTanimlama.org][yeni iş hattı kısayolu tanımlama]])
+
++ ~mesaj~: giriş yapmış kullanıcının mesajı olup olmadığını kontrol eder.
+
+* Geliştiriciler için
+Yapmak istediğiniz şey için iş hattı tanımlamak yeterli gelmedi ise iş hatlarında kullanmak üzere [[file:Sacre.html#ssgi%C3%A7ineklentibile%C5%9Fentan%C4%B1mlamak][kendi bileşenlerinizi eklenti olarak tanımlayabilirsiniz]].
+
+Bu da yeterli değilse kendi uygulamanız için ssg++ iş hatlarının yapabildiği her şeye bir API ile ulaşmanız mümkün. İş hattının batak elemanını apisink olarak değiştirip ~List<Token>~ dönen 
+#+BEGIN_EXAMPLE 
+SozlukApi.runPipeline("... ! apisink") 
+#+END_EXAMPLE 
+metodunu çağırmanız yeterli.
+
+Geliştirici olarak kullanmak için geliştirici lisansı edinmeniz gerekiyor.
+
+* Değişim günlüğü
+Sürümlere ait özellikler ve değişimler için (bkz: [[file:roadmap.org][değişim günlüğü]])
+
+* İletişim
+oderin at users.sourceforge.net adresine yazarak
+ * fikir, görüş ve önerilerinizi,
+ * hata bildirimlerinizi, 
+ * kendi yazdığınız eklentileri,
+ * kendi oluşturduğunuz iş hatlarını,
+ * kod düzeltmelerinizi 
+gönderebilirsiniz.
+
+* Lisans
+ssg++ ticari olmayan kişisel kullanım için ücretsiz bir uygulamadır ve kullanımı şu [[http://www.binpress.com/license/view/l/f069102d24b7a1d5e3aeb0bf23a621a5][lisans]]a tabidir. Özetle,
+ * Sadece lisansta adı geçen kişi tarafından aynı anda tek bir bilgisayara kurularak kullanılabilir.
+ * Programın kaynak kodu ya da çalıştırılabilir dosyaları satılamaz ya da dağıtılamaz.
+ * Sadece ticari olmayan kişisel amaçlar için kullanılabilir. Şirket ya da organizasyon içinde kullanılması için ayrı tipte bir lisans gerekir. Bunun için oderin at users.sourceforge.net adresine "ssg++ ticari lisans isteği" konulu bir e-posta gönderebilirsiniz.
+ * Kaynak kodu değiştirilemez ve program başka bir program ile bağlantılı olarak kullanılamaz. Bunun için ayrı bir lisans gerekir. oderin at users.sourceforge.net adresine "ssg++ gelistirici lisansi isteği" konulu bir e-posta gönderebilirsiniz.
+ * Program kullanılarak elde edilen her türlü çıktı, herhangi bir yerde kullanılıyorsa, program adına (ssg++) ve programın internet adresine (http://ssgpp.sourceforge.net) uygun şekilde atıfta bulunulmalıdır.
+ * Programın bazı parçaları başka bir takım lisanslara tabidir: commons, xalan-j and jcommander için Apache License Version 2.0, jfreechart için GNU LGPL v2.1, sacre için BSD lisansı.
+
+Programın geliştirilmesine katkı sağlamak için /paypal/ ya da /bitcoin/ ile kolayca bağışta bulunabilirsiniz.
+#+BEGIN_HTML
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="VNUPTKSMUZYZG">
+<input type="image" src="https://www.paypalobjects.com/tr_TR/TR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - Online ödeme yapmanın daha güvenli ve kolay yolu!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+<br />
+#+END_HTML
+
+Bitcoin bağış adresi: 1D1PX1w317pmib5TwoP7K2chiE1r7CrXyq
+
+** Yasal Uyarı
+ssg++'nın Ekşi Teknoloji ve Bilişim Ltd. Şti. ile bir bağlantısı yoktur. ekşi sözlük, Ekşi Teknoloji ve Bilişim Ltd. Şti.’nin tescilli bir markasıdır. Uygulama üzerinden erişilebilen ekşi sözlük içeriği, ve bu içeriğe dair tüm haklar Ekşi Teknoloji ve Bilişim Ltd. Şti.’ne aittir.
+
+# #+BEGIN_HTML
+
+# 		</div><!-- #content2 -->
+# 	</div><!-- #primary -->
+
+# </div><!-- #main-content -->
+
+# <div id="secondary">
+# 			<h2 class="site-description">ekşi sözlük komut satırı arayüzü ile sosyal medya çözümlemeleri</h2>
+	
+# 		<nav role="navigation" class="navigation site-navigation secondary-navigation">
+# 		<div class="menu-postlarmenu-container"><ul id="menu-postlarmenu" class="menu"><li id="menu-item-280" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-280"><a href="http://ssgpp.wordpress.com/2014/03/26/sumeyyenin-trollleri-ve-eksi-sozluk/">Sümeyye&#8217;nin trollleri ve Ekşi Sözlük</a></li>
+# <li id="menu-item-281" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-281"><a href="http://ssgpp.wordpress.com/2014/03/15/berkin/">Berkin</a></li>
+# <li id="menu-item-282" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-282"><a href="http://ssgpp.wordpress.com/2014/03/05/ses-kayitlarinin-eksi-sozlukteki-yankilari/">ses kayıtlarının ekşi sözlük&#8217;teki yankıları</a></li>
+# <li id="menu-item-283" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-283"><a href="http://ssgpp.wordpress.com/2013/07/29/gezi-eylemlerine-nasil-gelindi/">gezi eylemlerine nasıl gelindi?</a></li>
+# <li id="menu-item-284" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-284"><a href="http://ssgpp.wordpress.com/2013/07/27/en-iyi-10-film-anketi/">en iyi 10 film anketi</a></li>
+# <li id="menu-item-285" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-285"><a href="http://ssgpp.wordpress.com/2013/07/23/gezi-direnisinin-eksi-sozlukteki-yansimalari/">gezi direnişinin ekşi sözlük&#8217;teki yansımaları</a></li>
+# </ul></div>	</nav>
+	
+# 	</div><!-- #secondary -->
+
+# 		</div><!-- #main -->
+
+# </div><!-- #page -->
+
+
+# #+END_HTML

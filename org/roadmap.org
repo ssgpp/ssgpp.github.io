@@ -1,0 +1,77 @@
+#+TITLE: Değişim günlüğü
+* Milestone: 0.5
+
+  Completed 5 years ago (05/13/09)
+
+  100%
+
+  Closed tickets:
+  6 
+  Active tickets:
+  0 
+  / Total tickets:
+  6
+
+  + projenin ilk sunumu
+  + proje yönetiminin oluşturulması
+  + haberleşme listesinin açılışı 
+
+    kaynak kodu
+
+    [kaynak kodu]
+
+* Milestone: 0.5.1
+
+  Completed 5 years ago (06/15/09)
+  
+  100%
+  
+  Closed tickets:
+  2 
+  Active tickets:
+  0 
+  / Total tickets:
+  2
+
+  + Görsel kullanıcı arayüzünün ilk eklenişi, hata giderimleri ve ufak iyileştirmeler.
+
+    kaynak kodu
+    
+    [kaynak kodu]
+    
+* Milestone: 0.9
+
+  Completed 11 months ago (07/09/13)
+  
+  100%
+  
+  Closed tickets:
+  11 
+  Active tickets:
+  0 
+  / Total tickets:
+  11
+  
+  Ana değişiklikler:
+  +      Komut satırı odaklı yenilikler
+  +      Yeni bileşenlerin eklenmesi
+  +      Değişmiş sözlük sayfa yapısından dolayı ortaya çıkan sorunların giderilmesi 
+
+  kaynak kodu
+  
+* Milestone: 0.9.1
+
+  11 months late (07/14/13)
+  
+  100%
+  
+  Closed tickets:
+  8 
+  Active tickets:
+  0 
+  / Total tickets:
+  8
+
+  + Yeni bileşenler
+  + Küçük iyileştirmeler
+
