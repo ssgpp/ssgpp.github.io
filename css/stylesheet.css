@@ -1070,13 +1070,13 @@ div#postamble2
 } /* END OF @media all */
 
 
-/*
+
 @media screen
 {
   #table-of-contents {
-    float: left;
+    float: right;
     border: 1px solid #CCC;
     max-width: 50%;
-    overflow: auto;
+    /*overflow: auto;*/
   }
-}*/ /* END OF @media screen */
+} /* END OF @media screen */
