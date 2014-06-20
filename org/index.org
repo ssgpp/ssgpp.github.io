@@ -1,91 +1,14 @@
-#+TITLE: 
+#+TITLE: ssg++ ana sayfa
 # C-c C-e X ssgpp
 # #+STYLE: <link rel="stylesheet" type="text/css" href="./css/stylesheet.css" /> <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid Sans" /> 
 
-# <div id="page" class="hfeed site">
-	
-# 	<header id="masthead" class="site-header" role="banner">
-# 		<div class="header-main">
-# 			<h1 class="site-title"><a href="http://ssgpp.wordpress.com/" rel="home">$ ssg++ ▮</a></h1>
-
-# 			<div class="search-toggle">
-# 				<a href="#search-container" class="screen-reader-text">Ara</a>
-# 			</div>
-
-# 			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
-# 				<button class="menu-toggle">Birincil menü</button>
-# 				<a class="screen-reader-text skip-link" href="#content">İçeriğe geç</a>
-# 				<div class="menu-menu-1-container"><ul id="menu-menu-1" class="nav-menu"><li id="menu-item-97" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-97"><a href="http://ssgpp.wordpress.com/">ana sayfa</a></li>
-# <li id="menu-item-98" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-98"><a href="http://ssgpp.wordpress.com/hakkinda/">hakkında</a></li>
-# <li id="menu-item-141" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-141"><a title="ssg++@twitter" href="https://twitter.com/sozlukshell">ssg++@twitter</a></li>
-# <li id="menu-item-99" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-99"><a title="ssg++@sourceforge" href="http://ssgpp.sourceforge.net">ssg++@sourceforge</a></li>
-# <li id="menu-item-137" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-137"><a href="http://ssgpp.wordpress.com/category/siyaset/">#siyaset</a></li>
-# <li id="menu-item-136" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-136"><a href="http://ssgpp.wordpress.com/category/anket-2/">#anket</a></li>
-# </ul></div>			</nav>
-# 		</div>
-
-# 		<!--div id="search-container" class="search-box-wrapper hide">
-# 			<div class="search-box">
-# 				<form role="search" method="get" class="search-form" action="http://ssgpp.wordpress.com/">
-# 				<label>
-# 					<span class="screen-reader-text">Arama:</span>
-# 					<input type="search" class="search-field" placeholder="Ara &hellip;" value="" name="s" title="Arama:" />
-# 				</label>
-# 				<input type="submit" class="search-submit" value="Ara" />
-# 			</form>			</div>
-# 		</div-->
-# 	</header><!-- #masthead -->
-
-
-
-
-# 	<div id="main" class="site-main">
-
-# <div id="main-content" class="main-content">
-
-
-# 	<div id="primary" class="content-area">
-# 		<div id="content" class="site-content" role="main">
-
-
-
-# #+BEGIN_HTML
-# <table style="border: 1; padding:0;">
-#     <tr style="border: 0"> 
-#         <td style="border: 0; vertical-align: top; min-width:320px;">
-#             <h1 style="font-size:400%"><a href="http://ssgpp.wordpress.com/" rel="home">$ ssg++ ▮</a></h1>
-#             <span style="font-size:120%"><span style="text-decoration:underline">s</span>ozluk <span style="text-decoration:underline">sh</span>ell: ekşi sözlük komut satırı arayüzü</span>
-#             <!--img src="http://apps.sourceforge.net/trac/ssgpp/raw-attachment/wiki/WikiStart/ssgpp-logo.png" /-->
-#         </td>
-#         <td style="border: 0; text-align:right; vertical-align: top;">
-#             <!--span id="ssgsozlukshell" style="font-size:200%">ssg++ (<span class="underline">s</span>ozluk <span class="underline">sh</span>ell)</span-->
-
-#             <p style="font-size:80%">
-#                "sosyal medya analistinin başucu programı." --henüz söylenmedi <br /> 
-#                "reserved" --@2 <br />
-#                "yaşasın bağzı proğramlar!" --anonim <br />
-#                "olmasaydın, olmazdım." --<a href="http://ssgpp.wordpress.com" target="_blank">ssg++ blog</a><br />
-#                "bilginin harman yeri" --<a href="https://twitter.com/sozlukshell" target="_blank">@sozlukshell</a><br />
-# "abi seviyorsanız gidin </p><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="margin-top:-1.41em;">
-# <input type="hidden" name="cmd" value="_s-xclick">
-# <input type="hidden" name="hosted_button_id" value="ZRHG23R9UNHLL">
-# <input type="image" src="https://www.paypalobjects.com/tr_TR/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - Online ödeme yapmanın daha güvenli ve kolay yolu!">
-# <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-# </form> <p style="font-size:80%">bence." --geliştiricisi
-#             </p>
-
-
-
-#         </td>
-#     </tr>
-# </table>
-
-
-# #+END_HTML
-
 * ssg++ nedir?
 
-ssg++ [[http://antik.eksisozluk.com][ekşi sözlük]] için bir komut satırı arayüzüdür. 
+ssg++ (
+#+BEGIN_HTML
+<span style="font-size:100%"><span style="text-decoration:underline">s</span>ozluk <span style="text-decoration:underline">sh</span>ell</span>
+#+END_HTML
+), [[http://antik.eksisozluk.com][ekşi sözlük]] için bir komut satırı arayüzüdür. 
 Her ne kadar ekşi sözlük'ü kendi arayüzüyle, hatta [[http://antik.eksisozluk.com/show.asp?t=eksi%2B%2B][eksi++]] gibi eklentilerle, seve seve kullanıyor olsak da bu arayüz her ihtiyaca cevap veremiyor.
 ssg++ basit arayüzüyle pek çok zor işi tek satırlık bir komut çalıştırmak kadar kolay hale getiriyor.
 Bunun yanında esnek yapısı sayesinde istediğiniz işi yapmanızı sağlayan yeni komutlar ve bileşenler tanımlamanızı sağlıyor.
