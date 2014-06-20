@@ -24,14 +24,13 @@ Daha fazla bilgi için
 ssg++ komutları iş hattı kısayolu şeklinde tanımlanarak genişletilebilir. 
 Mevcut tanımlı iş hattı kısayolları: 
 
-| [[file:IsHattiKisayollari.org::*ajanda][ajanda]]   | [[file:IsHattiKisayollari.org::*ajanda3][ajanda3]]         | [[file:IsHattiKisayollari.org::*anket][anket]]              | [[file:IsHattiKisayollari.org::*ara][ara]]                    |
-| [[file:IsHattiKisayollari.org::*badi][badi]]     | [[file:IsHattiKisayollari.org::*başlıkindir][başlıkindir]]     | [[file:IsHattiKisayollari.org::*başlıkresimleri][başlıkresimleri]]    | [[file:IsHattiKisayollari.org::*bugün][bugün]]                  |
-| [[file:IsHattiKisayollari.org::*debe][debe]]     | [[file:IsHattiKisayollari.org::*dosyadananket][dosyadananket]]   | [[file:IsHattiKisayollari.org::*dosyadanlafebeleri][dosyadanlafebeleri]] | [[file:IsHattiKisayollari.org::*dosyadanzamansaleğilim][dosyadanzamansaleğilim]] |
-| [[file:IsHattiKisayollari.org::*dün][dün]]      | [[file:IsHattiKisayollari.org::*farkbadi][farkbadi]]        | [[file:IsHattiKisayollari.org::*getir][getir]]              | [[file:IsHattiKisayollari.org::*ghebe][ghebe]]                  |
-| [[file:IsHattiKisayollari.org::*ghebçe][ghebçe]]   | [[file:IsHattiKisayollari.org::*gündem][gündem]]          | [[file:IsHattiKisayollari.org::*lafebeleri][lafebeleri]]         | [[file:IsHattiKisayollari.org::*manşet][manşet]]                 |
-| [[file:IsHattiKisayollari.org::*maçskoru][maçskoru]] | [[file:IsHattiKisayollari.org::*ortakbaşlıkları][ortakbaşlıkları]] | [[file:IsHattiKisayollari.org::*takip][takip]]              | [[file:IsHattiKisayollari.org::*tsllbn][tsllbn]]                 |
-| [[file:IsHattiKisayollari.org::*yedekle][yedekle]]  | [[file:IsHattiKisayollari.org::*zamansaleğilim][zamansaleğilim]]  |                    |                        |
-
+| [[file:IsHattiKisayollari.org::*ajanda-1][ajanda-1]]               | [[file:IsHattiKisayollari.org::*ajanda][ajanda]]   | [[file:IsHattiKisayollari.org::*ajanda3][ajanda3]]         | [[file:IsHattiKisayollari.org::*anket][anket]]              |
+| [[file:IsHattiKisayollari.org::*ara][ara]]                    | [[file:IsHattiKisayollari.org::*badi][badi]]     | [[file:IsHattiKisayollari.org::*başlıkindir][başlıkindir]]     | [[file:IsHattiKisayollari.org::*başlıkresimleri][başlıkresimleri]]    |
+| [[file:IsHattiKisayollari.org::*bugün][bugün]]                  | [[file:IsHattiKisayollari.org::*debe][debe]]     | [[file:IsHattiKisayollari.org::*dosyadananket][dosyadananket]]   | [[file:IsHattiKisayollari.org::*dosyadanlafebeleri][dosyadanlafebeleri]] |
+| [[file:IsHattiKisayollari.org::*dosyadanzamansaleğilim][dosyadanzamansaleğilim]] | [[file:IsHattiKisayollari.org::*dün][dün]]      | [[file:IsHattiKisayollari.org::*farkbadi][farkbadi]]        | [[file:IsHattiKisayollari.org::*getir][getir]]              |
+| [[file:IsHattiKisayollari.org::*ghebe][ghebe]]                  | [[file:IsHattiKisayollari.org::*ghebçe][ghebçe]]   | [[file:IsHattiKisayollari.org::*gündem][gündem]]          | [[file:IsHattiKisayollari.org::*lafebeleri][lafebeleri]]         |
+| [[file:IsHattiKisayollari.org::*manşet][manşet]]                 | [[file:IsHattiKisayollari.org::*maçskoru][maçskoru]] | [[file:IsHattiKisayollari.org::*ortakbaşlıkları][ortakbaşlıkları]] | [[file:IsHattiKisayollari.org::*takip][takip]]              |
+| [[file:IsHattiKisayollari.org::*tsllbn][tsllbn]]                 | [[file:IsHattiKisayollari.org::*yedekle][yedekle]]  | [[file:IsHattiKisayollari.org::*zamansaleğilim][zamansaleğilim]]  |                    |
 Örnek olarak, /lafebeleri/ komutunun iş hattı şöyle:
 #+BEGIN_EXAMPLE
 başlıkknk [başlık=%s] ! başlıkgirdileri ! histogram [eksen=kategori, kategori=yazar] ! grafikbtk 

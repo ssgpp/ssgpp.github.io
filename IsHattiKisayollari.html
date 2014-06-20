@@ -1,0 +1,1179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr" xml:lang="tr">
+<head>
+<title>İş hattı kısayolları</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="İş hattı kısayolları"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2014-06-20T16:59+0200"/>
+<meta name="author" content="Onur Derin"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" type="text/css" href="./css/stylesheet.css" /> <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid Sans" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+<table style="border: 1; padding:0; width: 100%">
+    <tr style="border: 1;"> 
+        <td style="border: 1; vertical-align: top; min-width:320px;">
+            <h1 style="font-size:400%"><a href="http://ssgpp.github.io/" rel="home" style="text-decoration:none; color:black;">$ ssg++ ▮</a></h1>
+            <!--span style="font-size:120%"><span style="text-decoration:underline">s</span>ozluk <span style="text-decoration:underline">sh</span>ell: ekşi sözlük komut satırı arayüzü</span-->
+            <!--img src="http://apps.sourceforge.net/trac/ssgpp/raw-attachment/wiki/WikiStart/ssgpp-logo.png" /-->
+        </td>
+        <td style="border: 1; text-align:right; vertical-align: top;">
+            <!--span id="ssgsozlukshell" style="font-size:200%">ssg++ (<span class="underline">s</span>ozluk <span class="underline">sh</span>ell)</span-->
+
+            <p style="font-size:80%">
+               "sosyal medya analistinin başucu programı." --henüz söylenmedi <br /> 
+               "reserved" --@2 <br />
+               "yaşasın bağzı proğramlar!" --anonim <br />
+               <!--"olmasaydın, olmazdım." --<a href="http://ssgpp.wordpress.com" target="_blank">ssg++ blog</a><br /-->
+               <!--"bilginin harman yeri" --<a href="https://twitter.com/sozlukshell" target="_blank">@sozlukshell</a><br /-->
+"abi seviyorsanız gidin belli edin bence." --geliştiricisi 
+<p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="ZRHG23R9UNHLL">
+<input type="image" src="https://www.paypalobjects.com/tr_TR/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - Online ödeme yapmanın daha güvenli ve kolay yolu!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+<a href="https://twitter.com/sozlukshell" class="twitter-follow-button" data-show-count="false" data-lang="tr" data-show-screen-name="false" data-dnt="true">takip edin</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</p>
+	    <a href="index.html" style="text-decoration:none; font-size:120%;">ana sayfa ▮ </a>
+	    <a href="http://ssgpp.wordpress.com" style="text-decoration:none; font-size:120%;" target="_blank">blog ▮ </a>
+	    <a href="sitemap.html" style="text-decoration:none; font-size:120%;">site haritası ▮ </a>
+        </td>
+    </tr>
+</table>
+
+</div>
+
+<div id="content">
+<h1 class="title">İş hattı kısayolları</h1>
+
+
+
+<div id="table-of-contents">
+<h2>İçindekiler</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">İş hattı kısayolları</a>
+<ul>
+<li><a href="#sec-1-1">ajanda</a></li>
+<li><a href="#sec-1-2">ajanda-1</a></li>
+<li><a href="#sec-1-3">ajanda3</a></li>
+<li><a href="#sec-1-4">anket</a></li>
+<li><a href="#sec-1-5">ara</a></li>
+<li><a href="#sec-1-6">badi</a></li>
+<li><a href="#sec-1-7">başlıkindir</a></li>
+<li><a href="#sec-1-8">başlıkresimleri</a></li>
+<li><a href="#sec-1-9">bugün</a></li>
+<li><a href="#sec-1-10">debe</a></li>
+<li><a href="#sec-1-11">dosyadananket</a></li>
+<li><a href="#sec-1-12">dosyadanlafebeleri</a></li>
+<li><a href="#sec-1-13">dosyadanzamansaleğilim</a></li>
+<li><a href="#sec-1-14">dün</a></li>
+<li><a href="#sec-1-15">farkbadi</a></li>
+<li><a href="#sec-1-16">fark</a></li>
+<li><a href="#sec-1-17">frak</a></li>
+<li><a href="#sec-1-18">fokur</a></li>
+<li><a href="#sec-1-19">getir</a></li>
+<li><a href="#sec-1-20">ghebe</a></li>
+<li><a href="#sec-1-21"><del>ghebçe</del></a></li>
+<li><a href="#sec-1-22">gündem</a></li>
+<li><a href="#sec-1-23">lafebeleri</a></li>
+<li><a href="#sec-1-24">maçskoru</a></li>
+<li><a href="#sec-1-25">manşet</a></li>
+<li><a href="#sec-1-26">ortakbaşlıkları</a></li>
+<li><a href="#sec-1-27">şaibeli</a></li>
+<li><a href="#sec-1-28">şükela</a></li>
+<li><a href="#sec-1-29">takip</a></li>
+<li><a href="#sec-1-30">tsllbn</a></li>
+<li><a href="#sec-1-31">yedekle</a></li>
+<li><a href="#sec-1-32">zamansaleğilim</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">İş hattı kısayolları</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">ajanda</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">ajanda</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Bugün tarihli olayların başlıklarını yazar.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">hayvanknk [şey=%%BUGÜN%%] ! metinbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Örnek:
+</p>
+<p>
+<code>$ ssg++ -l ajanda</code>
+</p>
+<p>
+Çıktısı:
+</p>
+
+
+
+<pre class="example">+ 6-7 temmuz 2013 küresel onur yürüyüşü
++ 6 temmuz 2013 ajda pekkan konseri
++ 6 temmuz 2013 arctic monkeys istanbul konseri
++ 6 temmuz 2013 başörtü ve inanç özgürlüğü yürüyüşü
++ 6 temmuz 2013 başörtülü yürüyüşü
++ 6 temmuz 2013 başörtüsü yürüyüşü
++ 6 temmuz 2013 doğu türkistan'a destek eylemi
++ 6 temmuz 2013 fransa özbekistan u20 maçı
++ 6 temmuz 2013 gezi parkı buluşması
++ 6 temmuz 2013 gezi parki bulusmasi
++ 6 temmuz 2013 grup yorum konseri
++ 6 temmuz 2013 ispanya uruguay u20 maçı
++ 6 temmuz 2013 polis tacizine karşı yürüyüş
++ 6 temmuz 2013 sabine lisicki marion bartoli maçı
++ 6 temmuz 2013 taksim buluşması
++ 6 temmuz 2013 tekyumruk geziparki yürüyüşü
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">ajanda-1</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">ajanda-1</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Dün tarihli olayların başlıklarını yazar. Dünün ajandası.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">hayvanknk [şey=%%DÜN%%] ! metinbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3">ajanda3</h3>
+<div class="outline-text-3" id="text-1-3">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">ajanda3</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Yarın, yarından sonra ve üç gün sonra tarihli olayların başlıklarını yazar. 3 günün ajandası.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">hayvanknk [şey=%%YARIN%%] &amp; hayvanknk [şey=%%YARINDANSONRA%%] &amp; hayvanknk [şey=%%BUGÜN<sub>ARTI</sub><sub>3</sub>%%] ! merge3x1 ! metinbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4">anket</h3>
+<div class="outline-text-3" id="text-1-4">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">anket</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Argüman olarak verilen başlıktaki bkz veya görünmez bkz verilmiş başlıkları atıf sayılarına göre grafik olarak gösterir.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">başlıkknk [başlık=%s] ! başlıkgirdileri ! girdibkzları ! histogram ! grafikbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">1</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Örnek:
+</p>
+<p>
+Hangi filmi izlesem?
+</p>
+<p>
+<code>$ ssg++ anket sözlükçülerin en iyi 10 film listesi</code>
+</p>
+<p>
+Çıktısı:
+</p>
+<p>
+<img src="imgs/anket_sözlükçülerin_en_iyi_10_film_listesi.png"  alt="imgs/anket_sözlükçülerin_en_iyi_10_film_listesi.png" />
+</p>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-5" class="outline-3">
+<h3 id="sec-1-5">ara</h3>
+<div class="outline-text-3" id="text-1-5">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">ara</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Argüman olarak verilen şekildeki başlıkları arar. Asteriks işareti (\*) ile aramalar yapılabilir.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">hayvanknk [şey=%s] ! metinbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">1</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Örnek:
+</p>
+<p>
+<code>$ ssg++ -l ara saraband\*</code>
+</p>
+<p>
+Çıktısı:
+</p>
+
+
+
+<pre class="example">+ bach si minör keman sonatı sarabande
++ dead lovers' sarabande face one
++ dead lovers' sarabande face two
++ dead lovers sarabande
++ dead lovers sarabande face one
++ dead lovers sarabande face two
++ handel's sarabande
++ saraband
++ sarabande
++ sarabande from violin sonata in b minor
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-6" class="outline-3">
+<h3 id="sec-1-6">badi</h3>
+<div class="outline-text-3" id="text-1-6">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">badi</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Badilere ait son girdileri yazar.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">badiknk ! başlıkgirdileri ! metinbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-7" class="outline-3">
+<h3 id="sec-1-7">başlıkindir</h3>
+<div class="outline-text-3" id="text-1-7">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">başlıkindir</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">İlk argüman olarak verilen başlığın girdilerini ikinci argüman olarak verilen dosya ismi ve biçimiyle yazar. Geçerli uzantılar: xml, html ya da txt.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">başlıkknk [başlık=%s] ! başlıkgirdileri ! dosyabtk [dosya=%s]</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">2</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Örnek:
+</p>
+<p>
+<code>$ ssg++ başlıkindir sarabande, sarabande.txt</code>
+</p>
+<p>
+<code>$ ssg++ başlıkindir sarabande, sarabande.xml</code>
+</p>
+<p>
+Bağlantı verilmiş resimlerin, twitter durum bildirimlerinin, bkz verilmiş girdilerin dahil edilmesi gibi gelişmiş özelliklerin olduğu bir e-kitap okuyucusu dökümanı için
+</p>
+
+
+<pre class="example">$ ssg++ başlıkindir sarabande, sarabande.html
+$ ebook-convert sarabande.html sarabande.mobi    # calibre ile gelen bir program
+$ send-to-kindle sarabande.mobi                  # kindle adresine dosya gönderen bir betik
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-8" class="outline-3">
+<h3 id="sec-1-8">başlıkresimleri</h3>
+<div class="outline-text-3" id="text-1-8">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">başlıkresimleri</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Argüman olarak verilen başlıktaki bkz verilmiş tüm resimleri indirir.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">başlıkknk [başlık=%s] ! başlıkgirdileri ! girdiresimlerigzc ! gnd</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">1</td></tr>
+</tbody>
+</table>
+
+
+
+<p>
+Örnek:
+</p>
+<p>
+<a href="http://antik.eksisozluk.com/show.asp?t=charlize theron'un ne kadar güzel bir kadın olması">charlize theron'un ne kadar güzel bir kadın olması</a>?
+</p>
+
+
+
+<pre class="example">$ ssg++ başlıkresimleri charlize theron
+$ ls
+charlize theron-18659736-charlize-theron-102809-3.jpg
+charlize theron-20123185-997DVA_Charlize_Theron_029.jpg
+charlize theron-20123185-Charlize%20Theron.jpg
+...
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-9" class="outline-3">
+<h3 id="sec-1-9">bugün</h3>
+<div class="outline-text-3" id="text-1-9">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">bugün</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Bugüne ait son 50 başlığı yazar.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">hayvanknk [tarih=bugün, limit=50, sıralama=yeni-eski] ! metinbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-10" class="outline-3">
+<h3 id="sec-1-10">debe</h3>
+<div class="outline-text-3" id="text-1-10">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">debe</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Dünün en beğenilen girdilerini yazar.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">istatistikknk [tip=debe] ! başlıkgirdileri ! metinbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Örnek:
+</p>
+<p>
+Dünün en beğenilenlerini kindle'dan şundan bundan okumak:
+</p>
+<p>
+<code>$ ssg++ debe &gt; debe-20130706.txt</code>
+</p>
+<p>
+ya da bağlantı verilmiş resimlerin, twitter durum bildirimlerinin, bkz verilmiş girdilerin ve güncel başlıklar için başlığın ilk girdisinin de eklenmesi gibi gelişmiş özelliklerin olduğu bir döküman için
+</p>
+
+
+<pre class="example">$ ssg++ yürüt istatistikknk [tip=debe] ! başlıkgirdileri ! dosyabtk [dosya=debe-20130706.html]
+$ ebook-convert debe-20130706.html debe-20130706.mobi   # calibre ile gelen bir program
+$ send-to-kindle debe-20130706.mobi                     # kindle adresine dosya gönderen bir betik
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-11" class="outline-3">
+<h3 id="sec-1-11">dosyadananket</h3>
+<div class="outline-text-3" id="text-1-11">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">dosyadananket</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Argüman olarak verilen dosyadaki girdiler için bkz veya görünmez bkz verilmiş başlıkları atıf sayılarına göre grafik olarak gösterir.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">dosyaknk [dosya=%s] ! girdibkzları ! histogram ! grafikbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">1</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Örnek:
+</p>
+<p>
+Sözlükçüler denize kim düşse denizi kurtarır (03.08.2013 itibariyle)?
+</p>
+
+
+<pre class="example">$ ssg++ başlıkindir sözlükçülerin en antipatik 10 türk listesi, sözlükçülerin_en_antipatik_10_türk_listesi.xml
+$ ssg++ dosyadananket sözlükçülerin_en_antipatik_10_türk_listesi.xml
+</pre>
+
+
+<p>
+Çıktısı:
+</p>
+<p>
+<img src="imgs/anket_sözlükçülerin_en_antipatik_10_türk_listesi.png"  alt="imgs/anket_sözlükçülerin_en_antipatik_10_türk_listesi.png" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-12" class="outline-3">
+<h3 id="sec-1-12">dosyadanlafebeleri</h3>
+<div class="outline-text-3" id="text-1-12">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">dosyadanlafebeleri</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Argüman olarak verilen dosyadaki bir başlığın girdileri için o başlığa yazmış yazarları girdi sayılarına göre grafik olarak gösterir.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">dosyaknk [dosya=%s] ! histogram [eksen=kategori, kategori=yazar] ! grafikbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">1</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Örnek:
+</p>
+<p>
+İtfaiye ile ilgili bir konuda kime danışmalı? Sözlükteki itfaiyeci kim? (İtfaiye kelimesinin geçtiği başlıklara en çok sayıda girdiyi kim yazmış?)
+</p>
+<p>
+<code>$ ssg++ -l yürüt hayvanknk [şey=itfaiye] ! başlıkgirdileri ! dosyabtk [dosya=itfaiye.xml]</code>
+</p>
+<p>
+<code>$ ssg++ dosyadanlafebeleri itfaiye.xml</code>
+</p>
+<p>
+Çıktısı:
+</p>
+<p>
+<img src="imgs/dosyadanlafebeleri_itfaiye.png"  alt="imgs/dosyadanlafebeleri_itfaiye.png" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-13" class="outline-3">
+<h3 id="sec-1-13">dosyadanzamansaleğilim</h3>
+<div class="outline-text-3" id="text-1-13">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">dosyadanzamansaleğilim</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Argüman olarak verilen dosyabtk ile oluşturulmuş XML dosyasındaki girdilerin sayılarını giriş zamanlarına göre argüman olarak verilen zaman çözünürlüğüyle (yıl, ay, hafta, gün, saat) grafik olarak gösterir.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">dosyaknk [dosya=%s] ! histogram [eksen=zaman, çözünürlük=%s] ! grafikbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">2</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Örnek:
+</p>
+<p>
+Hangi Lost bölümleri daha çok konuşulmuş? Lost'un popüleritesi nasıl değişmiş? Sezon finalleri ses getirmiş mi?
+</p>
+
+
+
+<pre class="example">$ ssg++ -l başlıkindir lost, lost.xml
+$ ssg++ dosyadanzamansaleğilim lost.xml, hafta
+</pre>
+
+
+<p>
+Çıktısı:
+</p>
+<p>
+<img src="imgs/dosyadanzamansalegilim_lost_hafta.png"  alt="imgs/dosyadanzamansalegilim_lost_hafta.png" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-14" class="outline-3">
+<h3 id="sec-1-14">dün</h3>
+<div class="outline-text-3" id="text-1-14">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">dün</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Düne ait son 50 başlığı yazar.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">hayvanknk [tarih=dün, limit=100, sıralama=yeni-eski] ! metinbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-15" class="outline-3">
+<h3 id="sec-1-15">farkbadi</h3>
+<div class="outline-text-3" id="text-1-15">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">farkbadi</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Bu komutun bir önceki çalıştırılmasından itibaren badiler tarafından yazılmış girdileri ekrana yazar.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">başlıkfarkknk [tip=badi, dosya=cache/checkpoint-badi.xml] ! başlıkgirdileri ! metinbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-16" class="outline-3">
+<h3 id="sec-1-16">fark</h3>
+<div class="outline-text-3" id="text-1-16">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">fark</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">fark veya frak komutunun aynı gün içindeki bir önceki çalıştırılmasından itibaren girdi yazılmış başlıkları yeniden eskiye yeni girdi sayıları ile birlikte ekrana yazar.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">başlıkfarkknk [tip=bugün, limit=250] ! metinbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-17" class="outline-3">
+<h3 id="sec-1-17">frak</h3>
+<div class="outline-text-3" id="text-1-17">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">frak</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">fark veya frak komutunun aynı gün içindeki bir önceki çalıştırılmasından itibaren girdi yazılmış başlıkları yeni girdi sayılarına göre sıralayarak ekrana yazar.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">başlıkfarkknk [tip=bugün, limit=250] ! genelsıralayıcı ! metinbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-18" class="outline-3">
+<h3 id="sec-1-18">fokur</h3>
+<div class="outline-text-3" id="text-1-18">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">fokur</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Fokurdayan başlıkları ekrana yazar.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">indeksknk [tip=fokur, limit=50, sayfa=1] ! metinbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-19" class="outline-3">
+<h3 id="sec-1-19">getir</h3>
+<div class="outline-text-3" id="text-1-19">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">getir</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Argüman olarak verilen başlık girdilerini getirir. başlık, başlık/@yazar, \#girdinumarası, başlık/\#girdinumarası biçimleri argüman olarak verilebilir.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">başlıkknk [başlık=%s] ! başlıkgirdileri ! metinbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">1</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Örnek:
+</p>
+<p>
+<code>$ ssg++ getir hesap işletim ücretini geri almak</code>
+</p>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-20" class="outline-3">
+<h3 id="sec-1-20">ghebe</h3>
+<div class="outline-text-3" id="text-1-20">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">ghebe</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Geçen haftanın en beğenilen girdilerini yazar.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">istatistikknk [tip=ghebe] ! başlıkgirdileri ! metinbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-21" class="outline-3">
+<h3 id="sec-1-21"><del>ghebçe</del></h3>
+<div class="outline-text-3" id="text-1-21">
+
+<p><i>Kullanımdan kalktı.</i>
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">ghebçe</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Geçen haftanın en beğenilen çaylak girdilerini yazar.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">istatistikknk [tip=ghebçe] ! başlıkgirdileri ! metinbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-22" class="outline-3">
+<h3 id="sec-1-22">gündem</h3>
+<div class="outline-text-3" id="text-1-22">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">gündem</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Bugüne ait en çok girdi yazılmış 50 başlığı yazar.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">hayvanknk [tarih=bugün, limit=50, sıralama=gudik] ! metinbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-23" class="outline-3">
+<h3 id="sec-1-23">lafebeleri</h3>
+<div class="outline-text-3" id="text-1-23">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">lafebeleri</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Argüman olarak verilen başlığa yazmış yazarları girdi sayılarına göre grafik olarak gösterir.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">başlıkknk [başlık=%s] ! başlıkgirdileri ! histogram [eksen=kategori, kategori=yazar] ! grafikbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">1</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Örnek:
+</p>
+<p>
+Lewandowski Bayern Münih'e gidecek mi? Bunu kim bilir?
+</p>
+<p>
+<code>$ ssg++ lafebeleri borussia dortmund</code>
+</p>
+<p>
+Çıktısı:
+</p>
+<p>
+<img src="imgs/lafebeleri_borussia_dortmund.png"  alt="imgs/lafebeleri_borussia_dortmund.png" />
+</p>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-24" class="outline-3">
+<h3 id="sec-1-24">maçskoru</h3>
+<div class="outline-text-3" id="text-1-24">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">maçskoru</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Argüman olarak verilen maç başlığındaki skor içeren cümleleri ekrana yazar.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">başlıkknk [başlık=%s] ! başlıkgirdileri ! maçsonucu ! metinbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">1</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Örnek:
+</p>
+<p>
+<code>$ ssg++ maçskoru 24 temmuz 2013 bayern münih barcelona maçı</code>
+</p>
+<p>
+Çıktısı:
+</p>
+
+
+
+<pre class="example">&gt;&gt; (...) ilk yarısı 1-0 bayern üstünlüğüyle biten maç. (...)
+
+&gt;&gt; (...) maç 1-1 biterse şaşırmam. (...)
+
+&gt;&gt; (...) `mario mandzukic` attı, 2-0 oldu. (...)
+</pre>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-25" class="outline-3">
+<h3 id="sec-1-25">manşet</h3>
+<div class="outline-text-3" id="text-1-25">
+
+
+<p>
+(bkz: <a href="#sec-1-22">gündem</a>)
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-26" class="outline-3">
+<h3 id="sec-1-26">ortakbaşlıkları</h3>
+<div class="outline-text-3" id="text-1-26">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">ortakbaşlıkları</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Argüman olarak verilen iki yazarın ortak başlıklarını yeniden eskiye bulup yazar.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">hayvanknk [yazar=%s, sıralama=yeni-eski] &amp; hayvanknk [yazar=%s, sıralama=yeni-eski] ! intersection ! metinbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">2</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Örnek:
+</p>
+<p>
+`sözlükteki evli çiftler` düğünlerinde "beraber yazdık biz bu başlıklarda" şarkısını çaldırmışlar mı? 
+Ya da sözlükte mesaj yoluyla `selam güzel bayan` demeden önce seviyeli bir kafa denkliği testi yapmaya ne dersin?
+</p>
+<p>
+<code>$ ssg++ -l ortakbaşlıkları suser1, suser2</code>
+</p>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-27" class="outline-3">
+<h3 id="sec-1-27">şaibeli</h3>
+<div class="outline-text-3" id="text-1-27">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">şaibeli</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">şaibeli bir girdiyi ekrana yazar.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">cımbızknk [tip=şaibeli, adet=1] ! metinbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-28" class="outline-3">
+<h3 id="sec-1-28">şükela</h3>
+<div class="outline-text-3" id="text-1-28">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">şükela</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">şükela bir girdiyi ekrana yazar.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">cımbızknk [tip=şükela, adet=1] ! metinbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-29" class="outline-3">
+<h3 id="sec-1-29">takip</h3>
+<div class="outline-text-3" id="text-1-29">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">takip</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">takip.txt dosyasında belirtilen başlıklardan komutun son çalıştırıldığı zamandan beri yeni girdileri olanları yeni girdi sayıları ile birlikte yazar.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">takipknk ! metinbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+<p>
+<code>takip.txt</code> dosyası ssg++ kullanıcı klasöründe (örn. Linux için: <code>~/.ssgpp/conf/</code>) bulunur. Takip edilmek istenen başlıklar satır satır yazılmalıdır.
+</p>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-30" class="outline-3">
+<h3 id="sec-1-30">tsllbn</h3>
+<div class="outline-text-3" id="text-1-30">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">tsllbn</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Geçen haftanın tsllbn'nin formülü ile en beğenilen girdilerini yazar.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">istatistikknk [tip=tsllbn] ! başlıkgirdileri ! metinbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-31" class="outline-3">
+<h3 id="sec-1-31">yedekle</h3>
+<div class="outline-text-3" id="text-1-31">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">yedekle</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">İlk argümanda verilen yazarın girdilerini ikinci argümanda verilen dosyaya yazar.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">hayvanknk [yazar=%s] ! başlıkgirdileri ! dosyabtk [dosya=%s]</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">2</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Örnek:
+</p>
+<p>
+<code>$ ssg++ -l yedekle suser1 suser1.txt</code>
+</p>
+<p>
+<code>$ ssg++ -l yedekle suser2 suser2.xml</code>
+</p>
+<p>
+ya da resimleri vs. de dahil etmek için
+</p>
+<p>
+<code>$ ssg++ -l yedekle suser2 suser2.html</code>
+</p>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-32" class="outline-3">
+<h3 id="sec-1-32">zamansaleğilim</h3>
+<div class="outline-text-3" id="text-1-32">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Komut</td><td class="left">zamansaleğilim</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Argüman olarak verilen başlığa yazılan girdi sayılarını argüman olarak verilen zaman çözünürlüğüne (yıl, ay, hafta, gün, saat) göre grafik olarak gösterir.</td></tr>
+<tr><td class="left">İşhattı kısayolu</td><td class="left">başlıkknk [başlık=%s] ! başlıkgirdileri ! histogram [eksen=zaman, çözünürlük=%s] ! grafikbtk</td></tr>
+<tr><td class="left">Argümanları</td><td class="left">2</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Örnek:
+</p>
+<p>
+Geleneksel Mısır devrimleri kaç senede bir yapılır?
+</p>
+<p>
+<code>$ ssg++ zamansaleğilim mısır, ay</code>
+</p>
+<p>
+Çıktısı:
+</p>
+<p>
+<img src="imgs/zamansaleğilim_mısır_ay.png"  alt="imgs/zamansaleğilim_mısır_ay.png" />
+</p></div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-52121802-1', 'ssgpp.github.io');
+  ga('send', 'pageview');
+
+</script>
+
+</div>
+</body>
+</html>
