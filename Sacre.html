@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr" xml:lang="tr">
+<head>
+<title>sacre bileşen çerçevesi</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="sacre bileşen çerçevesi"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2014-06-22T23:33+0200"/>
+<meta name="author" content="Onur Derin"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" type="text/css" href="./css/stylesheet.css" /> <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid Sans" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+<table style="border: 1; padding:0; width: 100%">
+    <tr style="border: 1;"> 
+        <td style="border: 1; vertical-align: top; min-width:320px;">
+            <h1 style="font-size:400%"><a href="http://ssgpp.github.io/" rel="home" style="text-decoration:none; color:black;">$ ssg++ ▮</a></h1>
+            <!--span style="font-size:120%"><span style="text-decoration:underline">s</span>ozluk <span style="text-decoration:underline">sh</span>ell: ekşi sözlük komut satırı arayüzü</span-->
+            <!--img src="http://apps.sourceforge.net/trac/ssgpp/raw-attachment/wiki/WikiStart/ssgpp-logo.png" /-->
+        </td>
+        <td style="border: 1; text-align:right; vertical-align: top;">
+            <!--span id="ssgsozlukshell" style="font-size:200%">ssg++ (<span class="underline">s</span>ozluk <span class="underline">sh</span>ell)</span-->
+
+            <p style="font-size:80%">
+               "sosyal medya analistinin başucu programı." --henüz söylenmedi <br /> 
+               "reserved" --@2 <br />
+               "yaşasın bağzı proğramlar!" --anonim <br />
+               <!--"olmasaydın, olmazdım." --<a href="http://ssgpp.wordpress.com" target="_blank">ssg++ blog</a><br /-->
+               <!--"bilginin harman yeri" --<a href="https://twitter.com/sozlukshell" target="_blank">@sozlukshell</a><br /-->
+"abi seviyorsanız gidin belli edin bence." --geliştiricisi 
+<p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="ZRHG23R9UNHLL">
+<input type="image" src="https://www.paypalobjects.com/tr_TR/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - Online ödeme yapmanın daha güvenli ve kolay yolu!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+<a href="https://twitter.com/sozlukshell" class="twitter-follow-button" data-show-count="false" data-lang="tr" data-show-screen-name="false" data-dnt="true">takip edin</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</p>
+	    <a href="index.html" style="text-decoration:none; font-size:120%;">ana sayfa ▮ </a>
+	    <a href="http://ssgpp.wordpress.com" style="text-decoration:none; font-size:120%;" target="_blank">blog ▮ </a>
+	    <a href="sitemap.html" style="text-decoration:none; font-size:120%;">site haritası ▮ </a>
+        </td>
+    </tr>
+</table>
+
+</div>
+
+<div id="content">
+<h1 class="title">sacre bileşen çerçevesi</h1>
+
+<p>sacre bileşen çerçevesi ile uygulama geliştirmek iki adımdan oluşuyor.
+</p>
+<ul>
+<li>iş hattı oluşturmak
+
+<p>
+ İş hattı oluşturmak bileşenleri dizerek uygulama oluşturmak isteyen kullanıcıların nasıl yapıldığını bilmesi gereken bir faaliyet.
+</p>
+</li>
+<li>bileşen tanımlamak
+
+<p>
+ Yeni bileşen yaratmak belirli bir uygulama alanı için uygulama geliştirilebilmesini sağlamak için yapılır. Geliştiricilere yönelik bir faaliyettir. ssg++'da tanımlanmış bileşenleri görmek için (bkz: <a href="SsgppComps.html">ssg++ bileşenleri</a>).
+</p></li>
+</ul>
+
+
+
+
+<div id="table-of-contents">
+<h2>İçindekiler</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">İş hattı oluşturmak</a></li>
+<li><a href="#sec-2">Öz sacre bileşenleri</a>
+<ul>
+<li><a href="#sec-2-1">apisink</a></li>
+<li><a href="#sec-2-2">fork</a></li>
+<li><a href="#sec-2-3">merge</a></li>
+<li><a href="#sec-2-4">intersection</a></li>
+<li><a href="#sec-2-5">GND (ground)</a></li>
+<li><a href="#sec-2-6">limitflt</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">Bileşen tanımlamak</a>
+<ul>
+<li><a href="#sec-3-1">ssg++ için eklenti bileşen tanımlamak</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">İş hattı oluşturmak</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>sacre'de bileşenler iş parçacığı olarak çalışırlar ve kapılarına bağlı diğer bileşenlerle belirli tipteki verileri alıp vererek iletişirler. Hangi bileşenlerin birbiriyle hangi kapıları üzerinden bağlı olduğunu tanımlayan dizilime <i>iş hattı</i> denir. sacre'de iş hattı oluşturmak için basit bir dil var. En basit haliyle bileşenler birbirlerine <code>!</code> işlemiyle seri, <code>&amp;</code> işlemiyle paralel bağlanıyor. <code>&amp;</code> işleminin <code>!</code> işlemine göre önceliği var. Dikkat edilmesi gereken nokta birbirine bağlanan kapıların aynı veri tipini geçiriyor olmalarıdır.
+</p>
+
+
+<p>
+<img src="imgs/ornek-is-hatti.png"  alt="imgs/ornek-is-hatti.png" />
+</p>
+
+<p>
+Üstteki resimde görülen örnek iş hattını tanımlamak için <code>A &amp; B ! C ! D ! E &amp; F</code> ifadesi yeterli.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Öz sacre bileşenleri</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Uygulamaya özgü tanımlanmış bileşenlerin dışında sacre'nin kendiliğinden gelen bazı bileşenleri de var.
+</p>
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">apisink</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Adı</td><td class="left">apisink</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Geliştiricilerin işhattı sonuçlarını fonksiyon sonucu olarak almasını sağlar. Tip parametresi senkron olarak verildiğinde döndürülen sonuç apisink bileşenine giren tüm tokenlerin bir listesidir. Asenkron olarak verildiğinde öncesinde dinleyici olarak eklenmiş nesneler her yeni token geldiğinde ve iş hattı tamamlandığında haberdar edilir.</td></tr>
+<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <i>Token</i>.</td></tr>
+<tr><td class="left">Çıktı kapısı</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Parametreleri
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">parametre</th><th scope="col" class="left">alabildiği değerler</th><th scope="col" class="left">açıklama</th><th scope="col" class="left">varsayılan değeri</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">tip</td><td class="left">senkron ya da asenkron</td><td class="left">sonuçların alınma şeklini belirler.</td><td class="left"><i>senkron</i></td></tr>
+</tbody>
+</table>
+
+
+<p>
+Görsel gösterimi
+</p>
+
+<p>
+<img src="imgs/dit-apisink.png"  alt="imgs/dit-apisink.png" />
+</p>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2">fork</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Adı</td><td class="left">fork</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Girdi kapısındaki veriyi ikileyerek iki çıktı kapısına birden gönderir.</td></tr>
+<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <i>Token</i>.</td></tr>
+<tr><td class="left">Çıktı kapısı</td><td class="left">2 tane. Kapıdan geçen veri tipi <i>Token</i>.</td></tr>
+<tr><td class="left">Parametreleri</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Görsel gösterimi
+</p>
+
+<p>
+<img src="imgs/dit-fork.png"  alt="imgs/dit-fork.png" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3">merge</h3>
+<div class="outline-text-3" id="text-2-3">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Adı</td><td class="left">merge</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">İki girdi kapısındaki verileri çıktı kapısına gönderir.</td></tr>
+<tr><td class="left">Girdi kapısı</td><td class="left">2 tane. Kapıdan geçen veri tipi <i>Token</i>.</td></tr>
+<tr><td class="left">Çıktı kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <i>Token</i>.</td></tr>
+<tr><td class="left">Parametreleri</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Görsel gösterimi
+</p>
+
+<p>
+<img src="imgs/dit-merge.png"  alt="imgs/dit-merge.png" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-4" class="outline-3">
+<h3 id="sec-2-4">intersection</h3>
+<div class="outline-text-3" id="text-2-4">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Adı</td><td class="left">intersection</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">İki girdi kapısındaki verilerin kesişim kümesini çıktı kapısına gönderir.</td></tr>
+<tr><td class="left">Girdi kapısı</td><td class="left">2 tane. Kapıdan geçen veri tipi <i>Token</i>.</td></tr>
+<tr><td class="left">Çıktı kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <i>Token</i>.</td></tr>
+<tr><td class="left">Parametreleri</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Görsel gösterimi
+</p>
+
+<p>
+<img src="imgs/dit-intersection.png"  alt="imgs/dit-intersection.png" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-5" class="outline-3">
+<h3 id="sec-2-5">GND (ground)</h3>
+<div class="outline-text-3" id="text-2-5">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Adı</td><td class="left">gnd</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">Girdi kapısındaki verileri alır ve onlarla hiçbir şey yapmaz.</td></tr>
+<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <i>Token</i>.</td></tr>
+<tr><td class="left">Çıktı kapısı</td><td class="left">-</td></tr>
+<tr><td class="left">Parametreleri</td><td class="left">-</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Görsel gösterimi
+</p>
+
+<p>
+<img src="imgs/dit-gnd.png"  alt="imgs/dit-gnd.png" />
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-6" class="outline-3">
+<h3 id="sec-2-6">limitflt</h3>
+<div class="outline-text-3" id="text-2-6">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Adı</td><td class="left">limitflt</td></tr>
+<tr><td class="left">İşlevi</td><td class="left">yalnızca limit parametresi ile verilen sayıdaki tokeni girdi kapısından çıktı kapısına geçirir.</td></tr>
+<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <i>Token</i>.</td></tr>
+<tr><td class="left">Çıktı kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <i>Token</i>.</td></tr>
+</tbody>
+</table>
+
+
+<p>
+Parametreleri
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">parametre</th><th scope="col" class="left">alabildiği değerler</th><th scope="col" class="left">açıklama</th><th scope="col" class="left">varsayılan değeri</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">limit</td><td class="left">herhangi bir pozitif sayı</td><td class="left">geçirilecek en fazla token sayısını belirler.</td><td class="left"><i>1</i></td></tr>
+</tbody>
+</table>
+
+
+
+<p>
+Görsel gösterimi
+</p>
+
+<p>
+<img src="imgs/dit-limitflt.png"  alt="imgs/dit-limitflt.png" />
+</p>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Bileşen tanımlamak</h2>
+<div class="outline-text-2" id="text-3">
+
+
+<p>
+sacre'de bileşen tanımlamak için <code>ch.alari.sacre.Component</code> sınıfından yeni bir bileşen sınıfı türetmek yeterli. sacre'nin mevcut bileşenlerinin kodlarını inceleyerek nasıl yapıldığını daha iyi görebilirsiniz.
+</p>
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">ssg++ için eklenti bileşen tanımlamak</h3>
+<div class="outline-text-3" id="text-3-1">
+
+
+<p>
+ssg++'nın işlevselliğini kendi bileşenlerinizi kodlayarak da artırabilirsiniz. 
+</p>
+<p>
+Örnek olarak <a href="https://github.com/ssgpp/eklentiler">https://github.com/ssgpp/eklentiler</a> adresinde yer alan ssg++ bileşen havuzundaki kodlara bakabilirsiniz. 
+</p>
+<p>
+<code>$ git checkout https://github.com/ssgpp/eklentiler.git</code> ile <code>~/eklentiler</code> dizinine kodları aldığınızı varsayalım (~ işareti ev dizinini temsil ediyor. Linux altında örn. <code>/home/user</code>). <code>~/.ssgpp/conf/app.properties</code> dosyasındaki <code>EklentiDizini</code> parametresini buna göre düzenleyin.
+</p>
+<p>
+<code>EklentiDizini=~/eklentiler/</code>
+</p>
+<p>
+Eklentiler klasörünün içinde derlenmiş eklenti bileşenlerinin bulunduğu <code>jars</code> klasörü, eklentilerin kaynak kodlarını içeren <code>src</code> klasörü ve eklentiler hakkında tanımlama bilgilerini içeren <code>plugins.info</code> dosyası bulunur. <code>plugins.info</code> dosyası satır satır eklentileri tanımlar. İki nokta üst üste karakteriyle ayrılan iki alanın ilkinde bileşenin iş hatlarında hangi adla kullanılacağını belirlenir. İkinci alan ise Eklenti sınıfının paketler içindeki tam adıdır. Örn.
+</p>
+<p>
+<code>ÖrnekEklentiBileşen: sacre.plugins.comps.OrnekEklentiBilesen</code>
+</p>
+<p>
+<code>src</code> klasörü altında her bir eklenti bileşenin kaynak kodlarını içeren kendi klasörü bulunur. <code>src/ornekeklentibilesen</code> klasörüne örnek bileşen kodunun derlenmesi ve jar dosyasının oluşturulmasını sağlayan <code>Makefile</code> dosyası da dahil edilmiştir.
+</p>
+<p>
+<code>OrnekEklentiBilesen</code> sınıfı şu şekilde tanımlanmıştır.
+</p>
+
+
+
+<pre class="example">package sacre.plugins.comps;
+
+import ch.alari.sacre.Component;
+import ch.alari.sacre.Port;
+import ch.alari.sacre.Token;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.Map;
+
+// Bütün ssg++ bileşenleri Component sınıfından türetilir.
+public class OrnekEklentiBilesen extends Component 
+{
+    // iş hattındaki parametrelerin doğruluğunu belirtir.
+    protected boolean initSuccess;
+
+    // Tüm Component'ler için constructor imzası bu şekildedir.
+    public OrnekEklentiBilesen(String name, Map&lt;String, String&gt; parameters)
+    {
+        super(name);
+        // Bileşenin iş hatlarında kullanılan adı.
+        setType("ÖrnekEklentiBileşen");
+        // Bileşenin giriş ve çıkış kapıları tipleri, adları ve adetleriyle belirlenmelidir.
+        addPort(new Port&lt;Token&gt;(Token.class, "in", Port.DIR_TYPE_IN));
+        addPort(new Port&lt;Token&gt;(Token.class, "out", Port.DIR_TYPE_OUT));
+
+        initSuccess = true;
+    }
+
+    // Thread olarak çalıştırılan bileşenlerin yaptıkları işleri bu metod belirler.
+    public void task() throws InterruptedException
+    {
+        // Bileşin sonlanması için çıkış kapılarına özel STOP token gönderilmeli, durumu STOPPED'a atanmalı ve InterruptedException atılmalıdır.
+        if(!initSuccess)
+        {
+            port("out").put(new Token(Token.STOP));
+            state = State.STOPPED;
+            throw new InterruptedException();
+        }
+
+        // Giriş kapısından bir token okunması
+        Token currToken = (Token)port("in").take();
+
+        // Okunan token STOP tokeni ise bileşenin çalışması durdurulur.
+        if(currToken.isStop())
+        {            
+            port("out").put(new Token(Token.STOP));
+            state = State.STOPPED;
+            return;
+        }
+
+        // Gelen token ile birşeyler yapıp çıktıya yazılır.
+        // ...
+
+        // Bu örnekte okunan token üstünde hiçbir işlem yapmadan olduğu gibi çıkış kapısına gönderiyoruz.
+        port("out").put(currToken);
+    }
+}
+</pre>
+
+
+<p>
+<code>ornekeklentibilesen.jar</code> dosyası <code>jars</code> klasörü altında oluşturulduktan sonra <code>örnekeklentibileşen</code> ssg++ komut satırında bir iş hattı içerisinde kullanılabilir hale gelmiş olur. örn.: <code>badiknk ! örnekeklentibileşen ! metinbtk</code> 
+</p></div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-52121802-1', 'ssgpp.github.io');
+  ga('send', 'pageview');
+
+</script>
+
+</div>
+</body>
+</html>

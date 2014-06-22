@@ -97,13 +97,21 @@ EklentiDizini=./
 
 ** ssg++ komutları
 
-+ ~yardım~: komutların kullanımıyla ilgili yardım sağlar.
++ ~yardım~
 
-+ ~yürüt~ /iş hattı/: verilen /iş hattı/ çalıştırılır.
+  komutların kullanımıyla ilgili yardım sağlar.
 
-+ /iş hattı kısayolu/: girilen iş hattı kısayolunu çalıştırır. (bkz: [[file:IsHattiKisayollari.org][iş hattı kısayolları]]) (bkz: [[file:YeniIsHattıKısayoluTanimlama.org][yeni iş hattı kısayolu tanımlama]])
++ ~yürüt~ /iş hattı/
 
-+ ~mesaj~: giriş yapmış kullanıcının mesajı olup olmadığını kontrol eder.
+  verilen /iş hattı/ çalıştırılır.
+
++ /iş hattı kısayolu/ 
+
+  girilen iş hattı kısayolunu çalıştırır. (bkz: [[file:IsHattiKisayollari.org][iş hattı kısayolları]]) (bkz: [[file:YeniIsHattıKısayoluTanimlama.org][yeni iş hattı kısayolu tanımlama]])
+
++ ~mesaj~ 
+
+  giriş yapmış kullanıcının mesajı olup olmadığını kontrol eder.
 
 * Geliştiriciler için
 Yapmak istediğiniz şey için iş hattı tanımlamak yeterli gelmedi ise iş hatlarında kullanmak üzere [[file:Sacre.html#ssgi%C3%A7ineklentibile%C5%9Fentan%C4%B1mlamak][kendi bileşenlerinizi eklenti olarak tanımlayabilirsiniz]].
@@ -120,13 +128,12 @@ Geliştirici olarak kullanmak için geliştirici lisansı edinmeniz gerekiyor.
 Sürümlere ait özellikler ve değişimler için (bkz: [[file:roadmap.org][değişim günlüğü]])
 
 * İletişim
-oderin at users.sourceforge.net adresine yazarak
+Onur Derin <oderin at users.sourceforge.net> adresine yazarak
  * fikir, görüş ve önerilerinizi,
  * hata bildirimlerinizi, 
  * kendi yazdığınız eklentileri,
  * kendi oluşturduğunuz iş hatlarını,
- * kod düzeltmelerinizi 
-gönderebilirsiniz.
+ * kod düzeltmelerinizi gönderebilirsiniz.
 
 * Lisans
 ssg++ ticari olmayan kişisel kullanım için ücretsiz bir uygulamadır ve kullanımı şu [[http://www.binpress.com/license/view/l/f069102d24b7a1d5e3aeb0bf23a621a5][lisans]]a tabidir. Özetle,
