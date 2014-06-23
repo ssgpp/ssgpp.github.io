@@ -1,3 +1,7 @@
+#+TITLE: ssg++ bileşenleri
+
+* ssg++ bileşenleri
+
 Aşağıda ssg++ için tanımlanmış, iş hattı oluştururken kullanabileceğiniz bileşenleri bulabilirsiniz.
 
 * Kaynaklar (knk)
