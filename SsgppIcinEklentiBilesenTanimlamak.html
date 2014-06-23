@@ -3,11 +3,11 @@
                "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="tr" xml:lang="tr">
 <head>
-<title>Sitemap</title>
+<title>ssg++ için eklenti bileşen tanımlamak</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="title" content="Sitemap"/>
+<meta name="title" content="ssg++ için eklenti bileşen tanımlamak"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-06-23T17:49+0200"/>
+<meta name="generated" content="2014-06-23T11:24+0200"/>
 <meta name="author" content="Onur Derin"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -148,25 +148,106 @@ for the JavaScript code in this tag.
 </div>
 
 <div id="content">
-<h1 class="title">Sitemap</h1>
+<h1 class="title">ssg++ için eklenti bileşen tanımlamak</h1>
 
-<ul>
-<li>[[file:SsgppComps.org][]]
-</li>
-<li><a href="roadmap.html">Değişim günlüğü</a>
-</li>
-<li><a href="YeniIsHattiKisayoluTanimlama.html">Yeni iş hattı kısayolu tanımlama</a>
-</li>
-<li><a href="Sacre.html">sacre bileşen çerçevesi</a>
-</li>
-<li><a href="index.html">ssg++ ana sayfa</a>
-</li>
-<li><a href="SsgppIcinEklentiBilesenTanimlamak.html">ssg++ için eklenti bileşen tanımlamak</a>
-</li>
-<li><a href="IsHattiKisayollari.html">İş hattı kısayolları</a>
-</li>
-</ul>
 
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">ssg++ için eklenti bileşen tanımlamak</h2>
+<div class="outline-text-2" id="text-1">
+
+
+<p>
+ssg++'nın işlevselliğini kendi bileşenlerinizi kodlayarak da artırabilirsiniz. 
+</p>
+<p>
+Örnek olarak <a href="https://github.com/ssgpp/eklentiler">https://github.com/ssgpp/eklentiler</a> adresinde yer alan ssg++ bileşen havuzundaki kodlara bakabilirsiniz. 
+</p>
+<p>
+<code>$ git checkout https://github.com/ssgpp/eklentiler.git</code> ile <code>~/eklentiler</code> dizinine kodları aldığınızı varsayalım (~ işareti ev dizinini temsil ediyor. Linux altında örn. <code>/home/user</code>). <code>~/.ssgpp/conf/app.properties</code> dosyasındaki <code>EklentiDizini</code> parametresini buna göre düzenleyin.
+</p>
+<p>
+<code>EklentiDizini=~/eklentiler/</code>
+</p>
+<p>
+Eklentiler klasörünün içinde derlenmiş eklenti bileşenlerinin bulunduğu <code>jars</code> klasörü, eklentilerin kaynak kodlarını içeren <code>src</code> klasörü ve eklentiler hakkında tanımlama bilgilerini içeren <code>plugins.info</code> dosyası bulunur. <code>plugins.info</code> dosyası satır satır eklentileri tanımlar. İki nokta üst üste karakteriyle ayrılan iki alanın ilkinde bileşenin iş hatlarında hangi adla kullanılacağını belirlenir. İkinci alan ise Eklenti sınıfının paketler içindeki tam adıdır. Örn.
+</p>
+<p>
+<code>ÖrnekEklentiBileşen: sacre.plugins.comps.OrnekEklentiBilesen</code>
+</p>
+<p>
+<code>src</code> klasörü altında her bir eklenti bileşenin kaynak kodlarını içeren kendi klasörü bulunur. <code>src/ornekeklentibilesen</code> klasörüne örnek bileşen kodunun derlenmesi ve jar dosyasının oluşturulmasını sağlayan <code>Makefile</code> dosyası da dahil edilmiştir.
+</p>
+<p>
+<code>OrnekEklentiBilesen</code> sınıfı şu şekilde tanımlanmıştır.
+</p>
+
+
+
+<pre class="example">package sacre.plugins.comps;
+
+import ch.alari.sacre.Component;
+import ch.alari.sacre.Port;
+import ch.alari.sacre.Token;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.Map;
+
+// Bütün ssg++ bileşenleri Component sınıfından türetilir.
+public class OrnekEklentiBilesen extends Component 
+{
+    // iş hattındaki parametrelerin doğruluğunu belirtir.
+    protected boolean initSuccess;
+
+    // Tüm Component'ler için constructor imzası bu şekildedir.
+    public OrnekEklentiBilesen(String name, Map&lt;String, String&gt; parameters)
+    {
+        super(name);
+        // Bileşenin iş hatlarında kullanılan adı.
+        setType("ÖrnekEklentiBileşen");
+        // Bileşenin giriş ve çıkış kapıları tipleri, adları ve adetleriyle belirlenmelidir.
+        addPort(new Port&lt;Token&gt;(Token.class, "in", Port.DIR_TYPE_IN));
+        addPort(new Port&lt;Token&gt;(Token.class, "out", Port.DIR_TYPE_OUT));
+
+        initSuccess = true;
+    }
+
+    // Thread olarak çalıştırılan bileşenlerin yaptıkları işleri bu metod belirler.
+    public void task() throws InterruptedException
+    {
+        // Bileşin sonlanması için çıkış kapılarına özel STOP token gönderilmeli, durumu STOPPED'a atanmalı ve InterruptedException atılmalıdır.
+        if(!initSuccess)
+        {
+            port("out").put(new Token(Token.STOP));
+            state = State.STOPPED;
+            throw new InterruptedException();
+        }
+
+        // Giriş kapısından bir token okunması
+        Token currToken = (Token)port("in").take();
+
+        // Okunan token STOP tokeni ise bileşenin çalışması durdurulur.
+        if(currToken.isStop())
+        {            
+            port("out").put(new Token(Token.STOP));
+            state = State.STOPPED;
+            return;
+        }
+
+        // Gelen token ile birşeyler yapıp çıktıya yazılır.
+        // ...
+
+        // Bu örnekte okunan token üstünde hiçbir işlem yapmadan olduğu gibi çıkış kapısına gönderiyoruz.
+        port("out").put(currToken);
+    }
+}
+</pre>
+
+
+<p>
+<code>make</code> kullanılarak <code>ornekeklentibilesen.jar</code> dosyası <code>jars</code> klasörü altında oluşturulduktan sonra <code>örnekeklentibileşen</code> ssg++ komut satırında bir iş hattı içerisinde kullanılabilir hale gelmiş olur. 
+örn.: <code>badiknk ! örnekeklentibileşen ! metinbtk</code> 
+</p></div>
+</div>
 </div>
 
 <div id="postamble">

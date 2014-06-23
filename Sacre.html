@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="sacre bileşen çerçevesi"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-06-22T23:33+0200"/>
+<meta name="generated" content="2014-06-23T11:23+0200"/>
 <meta name="author" content="Onur Derin"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -150,52 +150,60 @@ for the JavaScript code in this tag.
 <div id="content">
 <h1 class="title">sacre bileşen çerçevesi</h1>
 
-<p>sacre bileşen çerçevesi ile uygulama geliştirmek iki adımdan oluşuyor.
-</p>
-<ul>
-<li>iş hattı oluşturmak
-
-<p>
- İş hattı oluşturmak bileşenleri dizerek uygulama oluşturmak isteyen kullanıcıların nasıl yapıldığını bilmesi gereken bir faaliyet.
-</p>
-</li>
-<li>bileşen tanımlamak
-
-<p>
- Yeni bileşen yaratmak belirli bir uygulama alanı için uygulama geliştirilebilmesini sağlamak için yapılır. Geliştiricilere yönelik bir faaliyettir. ssg++'da tanımlanmış bileşenleri görmek için (bkz: <a href="SsgppComps.html">ssg++ bileşenleri</a>).
-</p></li>
-</ul>
-
-
-
 
 <div id="table-of-contents">
 <h2>İçindekiler</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">İş hattı oluşturmak</a></li>
-<li><a href="#sec-2">Öz sacre bileşenleri</a>
+<li><a href="#sec-1">sacre bileşen çerçevesi</a></li>
+<li><a href="#sec-2">İş hattı oluşturmak</a></li>
+<li><a href="#sec-3">Öz sacre bileşenleri</a>
 <ul>
-<li><a href="#sec-2-1">apisink</a></li>
-<li><a href="#sec-2-2">fork</a></li>
-<li><a href="#sec-2-3">merge</a></li>
-<li><a href="#sec-2-4">intersection</a></li>
-<li><a href="#sec-2-5">GND (ground)</a></li>
-<li><a href="#sec-2-6">limitflt</a></li>
+<li><a href="#sec-3-1">apisink</a></li>
+<li><a href="#sec-3-2">fork</a></li>
+<li><a href="#sec-3-3">merge</a></li>
+<li><a href="#sec-3-4">intersection</a></li>
+<li><a href="#sec-3-5">GND (ground)</a></li>
+<li><a href="#sec-3-6">limitflt</a></li>
 </ul>
 </li>
-<li><a href="#sec-3">Bileşen tanımlamak</a>
-<ul>
-<li><a href="#sec-3-1">ssg++ için eklenti bileşen tanımlamak</a></li>
-</ul>
-</li>
+<li><a href="#sec-4">Bileşen tanımlamak</a></li>
 </ul>
 </div>
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">İş hattı oluşturmak</h2>
+<h2 id="sec-1">sacre bileşen çerçevesi</h2>
 <div class="outline-text-2" id="text-1">
+
+
+<p>
+sacre (<a href="https://github.com/derino/sacre">https://github.com/derino/sacre</a>), bileşen tabanlı bir duraksız veri işleme çerçevesidir. Açık kaynaklı bir yazılımdır. 
+sacre bileşen çerçevesi ile uygulama geliştirmek iki adımdan oluşuyor.
+</p>
+<ul>
+<li>iş hattı oluşturmak
+
+<p>
+ İş hattı oluşturmak bileşenleri dizerek uygulama oluşturmak isteyen kullanıcıların nasıl yapıldığını bilmesi gereken bir faaliyettir.
+</p>
+</li>
+<li>bileşen tanımlamak
+
+<p>
+ Yeni bileşen yaratmak belirli bir uygulama alanı için uygulama geliştirilebilmesini sağlamak için yapılır. Geliştiricilere yönelik bir faaliyettir. 
+</p></li>
+</ul>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">İş hattı oluşturmak</h2>
+<div class="outline-text-2" id="text-2">
 
 <p>sacre'de bileşenler iş parçacığı olarak çalışırlar ve kapılarına bağlı diğer bileşenlerle belirli tipteki verileri alıp vererek iletişirler. Hangi bileşenlerin birbiriyle hangi kapıları üzerinden bağlı olduğunu tanımlayan dizilime <i>iş hattı</i> denir. sacre'de iş hattı oluşturmak için basit bir dil var. En basit haliyle bileşenler birbirlerine <code>!</code> işlemiyle seri, <code>&amp;</code> işlemiyle paralel bağlanıyor. <code>&amp;</code> işleminin <code>!</code> işlemine göre önceliği var. Dikkat edilmesi gereken nokta birbirine bağlanan kapıların aynı veri tipini geçiriyor olmalarıdır.
 </p>
@@ -212,18 +220,18 @@ for the JavaScript code in this tag.
 
 </div>
 
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">Öz sacre bileşenleri</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Öz sacre bileşenleri</h2>
+<div class="outline-text-2" id="text-3">
 
 <p>Uygulamaya özgü tanımlanmış bileşenlerin dışında sacre'nin kendiliğinden gelen bazı bileşenleri de var.
 </p>
 
 </div>
 
-<div id="outline-container-2-1" class="outline-3">
-<h3 id="sec-2-1">apisink</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">apisink</h3>
+<div class="outline-text-3" id="text-3-1">
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <colgroup><col class="left" /><col class="left" />
@@ -263,9 +271,9 @@ Görsel gösterimi
 
 </div>
 
-<div id="outline-container-2-2" class="outline-3">
-<h3 id="sec-2-2">fork</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">fork</h3>
+<div class="outline-text-3" id="text-3-2">
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <colgroup><col class="left" /><col class="left" />
@@ -291,9 +299,9 @@ Görsel gösterimi
 
 </div>
 
-<div id="outline-container-2-3" class="outline-3">
-<h3 id="sec-2-3">merge</h3>
-<div class="outline-text-3" id="text-2-3">
+<div id="outline-container-3-3" class="outline-3">
+<h3 id="sec-3-3">merge</h3>
+<div class="outline-text-3" id="text-3-3">
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <colgroup><col class="left" /><col class="left" />
@@ -319,9 +327,9 @@ Görsel gösterimi
 
 </div>
 
-<div id="outline-container-2-4" class="outline-3">
-<h3 id="sec-2-4">intersection</h3>
-<div class="outline-text-3" id="text-2-4">
+<div id="outline-container-3-4" class="outline-3">
+<h3 id="sec-3-4">intersection</h3>
+<div class="outline-text-3" id="text-3-4">
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <colgroup><col class="left" /><col class="left" />
@@ -347,9 +355,9 @@ Görsel gösterimi
 
 </div>
 
-<div id="outline-container-2-5" class="outline-3">
-<h3 id="sec-2-5">GND (ground)</h3>
-<div class="outline-text-3" id="text-2-5">
+<div id="outline-container-3-5" class="outline-3">
+<h3 id="sec-3-5">GND (ground)</h3>
+<div class="outline-text-3" id="text-3-5">
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <colgroup><col class="left" /><col class="left" />
@@ -375,9 +383,9 @@ Görsel gösterimi
 
 </div>
 
-<div id="outline-container-2-6" class="outline-3">
-<h3 id="sec-2-6">limitflt</h3>
-<div class="outline-text-3" id="text-2-6">
+<div id="outline-container-3-6" class="outline-3">
+<h3 id="sec-3-6">limitflt</h3>
+<div class="outline-text-3" id="text-3-6">
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <colgroup><col class="left" /><col class="left" />
@@ -419,113 +427,17 @@ Görsel gösterimi
 
 </div>
 
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3">Bileşen tanımlamak</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Bileşen tanımlamak</h2>
+<div class="outline-text-2" id="text-4">
 
 
 <p>
-sacre'de bileşen tanımlamak için <code>ch.alari.sacre.Component</code> sınıfından yeni bir bileşen sınıfı türetmek yeterli. sacre'nin mevcut bileşenlerinin kodlarını inceleyerek nasıl yapıldığını daha iyi görebilirsiniz.
-</p>
-
-</div>
-
-<div id="outline-container-3-1" class="outline-3">
-<h3 id="sec-3-1">ssg++ için eklenti bileşen tanımlamak</h3>
-<div class="outline-text-3" id="text-3-1">
-
-
-<p>
-ssg++'nın işlevselliğini kendi bileşenlerinizi kodlayarak da artırabilirsiniz. 
-</p>
-<p>
-Örnek olarak <a href="https://github.com/ssgpp/eklentiler">https://github.com/ssgpp/eklentiler</a> adresinde yer alan ssg++ bileşen havuzundaki kodlara bakabilirsiniz. 
-</p>
-<p>
-<code>$ git checkout https://github.com/ssgpp/eklentiler.git</code> ile <code>~/eklentiler</code> dizinine kodları aldığınızı varsayalım (~ işareti ev dizinini temsil ediyor. Linux altında örn. <code>/home/user</code>). <code>~/.ssgpp/conf/app.properties</code> dosyasındaki <code>EklentiDizini</code> parametresini buna göre düzenleyin.
-</p>
-<p>
-<code>EklentiDizini=~/eklentiler/</code>
-</p>
-<p>
-Eklentiler klasörünün içinde derlenmiş eklenti bileşenlerinin bulunduğu <code>jars</code> klasörü, eklentilerin kaynak kodlarını içeren <code>src</code> klasörü ve eklentiler hakkında tanımlama bilgilerini içeren <code>plugins.info</code> dosyası bulunur. <code>plugins.info</code> dosyası satır satır eklentileri tanımlar. İki nokta üst üste karakteriyle ayrılan iki alanın ilkinde bileşenin iş hatlarında hangi adla kullanılacağını belirlenir. İkinci alan ise Eklenti sınıfının paketler içindeki tam adıdır. Örn.
-</p>
-<p>
-<code>ÖrnekEklentiBileşen: sacre.plugins.comps.OrnekEklentiBilesen</code>
-</p>
-<p>
-<code>src</code> klasörü altında her bir eklenti bileşenin kaynak kodlarını içeren kendi klasörü bulunur. <code>src/ornekeklentibilesen</code> klasörüne örnek bileşen kodunun derlenmesi ve jar dosyasının oluşturulmasını sağlayan <code>Makefile</code> dosyası da dahil edilmiştir.
-</p>
-<p>
-<code>OrnekEklentiBilesen</code> sınıfı şu şekilde tanımlanmıştır.
-</p>
-
-
-
-<pre class="example">package sacre.plugins.comps;
-
-import ch.alari.sacre.Component;
-import ch.alari.sacre.Port;
-import ch.alari.sacre.Token;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.Map;
-
-// Bütün ssg++ bileşenleri Component sınıfından türetilir.
-public class OrnekEklentiBilesen extends Component 
-{
-    // iş hattındaki parametrelerin doğruluğunu belirtir.
-    protected boolean initSuccess;
-
-    // Tüm Component'ler için constructor imzası bu şekildedir.
-    public OrnekEklentiBilesen(String name, Map&lt;String, String&gt; parameters)
-    {
-        super(name);
-        // Bileşenin iş hatlarında kullanılan adı.
-        setType("ÖrnekEklentiBileşen");
-        // Bileşenin giriş ve çıkış kapıları tipleri, adları ve adetleriyle belirlenmelidir.
-        addPort(new Port&lt;Token&gt;(Token.class, "in", Port.DIR_TYPE_IN));
-        addPort(new Port&lt;Token&gt;(Token.class, "out", Port.DIR_TYPE_OUT));
-
-        initSuccess = true;
-    }
-
-    // Thread olarak çalıştırılan bileşenlerin yaptıkları işleri bu metod belirler.
-    public void task() throws InterruptedException
-    {
-        // Bileşin sonlanması için çıkış kapılarına özel STOP token gönderilmeli, durumu STOPPED'a atanmalı ve InterruptedException atılmalıdır.
-        if(!initSuccess)
-        {
-            port("out").put(new Token(Token.STOP));
-            state = State.STOPPED;
-            throw new InterruptedException();
-        }
-
-        // Giriş kapısından bir token okunması
-        Token currToken = (Token)port("in").take();
-
-        // Okunan token STOP tokeni ise bileşenin çalışması durdurulur.
-        if(currToken.isStop())
-        {            
-            port("out").put(new Token(Token.STOP));
-            state = State.STOPPED;
-            return;
-        }
-
-        // Gelen token ile birşeyler yapıp çıktıya yazılır.
-        // ...
-
-        // Bu örnekte okunan token üstünde hiçbir işlem yapmadan olduğu gibi çıkış kapısına gönderiyoruz.
-        port("out").put(currToken);
-    }
-}
-</pre>
-
-
-<p>
-<code>ornekeklentibilesen.jar</code> dosyası <code>jars</code> klasörü altında oluşturulduktan sonra <code>örnekeklentibileşen</code> ssg++ komut satırında bir iş hattı içerisinde kullanılabilir hale gelmiş olur. örn.: <code>badiknk ! örnekeklentibileşen ! metinbtk</code> 
+sacre için yeni bileşenler tanımlamak için <code>ch.alari.sacre.Component</code> sınıfından yeni bir bileşen sınıfı türetmek yeterlidir. 
+sacre açık kaynaklı bir proje olduğu için halihazırda tanımlanmış sacre bileşenlerinin kodlarını inceleyerek nasıl yapıldığını daha iyi görebilirsiniz.
+ssg++ için bileşenler çalışma zamanında yüklenecek şekilde eklenti olarak tanımlanabilir (bkz: <a href="SsgppIcinEklentiBilesenTanimlamak.html">ssg++ için eklenti bileşen tanımlamak</a>). 
+ssg++'da tanımlanmış bileşenleri görmek için (bkz: <a href="SsgppComps.html">ssg++ bileşenleri</a>).
 </p></div>
-</div>
 </div>
 </div>
 

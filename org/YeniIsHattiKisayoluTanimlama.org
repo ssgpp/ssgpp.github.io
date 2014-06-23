@@ -1,0 +1,22 @@
+#+TITLE: Yeni iş hattı kısayolu tanımlama
+#+OPTIONS: toc:nil
+
+* Yeni iş hattı kısayolu tanımlama
+
+ssg++'da sıkça kullandığınız iş hatlarını daha kolay kullanabilmek için iş hattı kısayolları tanımlayabilirsiniz. Tüm iş hattı kısayolları kullanıcının ev dizinin altındaki ~.ssgpp/conf/ishatlari/~ klasöründe tutulur (örn. Linux altında ~/.ssgpp/conf/ishatlari/~). Bu klasör program ilk kez çalıştırıldığında yaratılır. Henüz yapmadıysanız, ~yardım~ komutunu çalıştırarak bunu sağlayabilirsiniz. Tanımlı gelen her bir iş hattı kısayolu için metin tabanlı bir dosya vardır. İş hattı kısayolu, adını dosya adından alır. Bu dosyanın ilk satırında komutun iş hattı, kalanındaysa ~yardım~ /iş hattı kısayolu/ komutu çağrıldığında gösterilen açıklama metni vardır. 
+
+Örnek olarak ~ortakbaşlıkları~ dosyası şöyledir:
+#+BEGIN_EXAMPLE
+hayvanknk [yazar=%s, sıralama=yeni-eski] & hayvanknk [yazar=%s, sıralama=yeni-eski] ! intersection ! metinbtk
+İşlevi: Argüman olarak verilen iki yazarın ortak başlıklarını yeniden eskiye bulup yazar.
+#+END_EXAMPLE
+
+İş hattı kısayolu olarak tanımlanan komutlar argüman alabilirler. Argümanlar virgül (,) ile ayrılarak verilir. Argümanlar sırasıyla ~%s~ ile belirtilen yerlere geçirilir.
+
+~$ ssg++ -l ortakbaşlıkları suser1 suser2~
+
+komutu
+
+~$ ssg++ -l yürüt hayvanknk [yazar=suser1, sıralama=yeni-eski] & hayvanknk [yazar=suser2, sıralama=yeni-eski] ! intersection ! metinbtk~
+
+komutuna karşılık gelir.

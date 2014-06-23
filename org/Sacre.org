@@ -1,15 +1,18 @@
 #+TITLE: sacre bileşen çerçevesi
 
+* sacre bileşen çerçevesi
+
+sacre ([[https://github.com/derino/sacre]]), bileşen tabanlı bir duraksız veri işleme çerçevesidir. Açık kaynaklı bir yazılımdır. 
 sacre bileşen çerçevesi ile uygulama geliştirmek iki adımdan oluşuyor.
 
 + iş hattı oluşturmak
 
- İş hattı oluşturmak bileşenleri dizerek uygulama oluşturmak isteyen kullanıcıların nasıl yapıldığını bilmesi gereken bir faaliyet.
+ İş hattı oluşturmak bileşenleri dizerek uygulama oluşturmak isteyen kullanıcıların nasıl yapıldığını bilmesi gereken bir faaliyettir.
 
 + bileşen tanımlamak
 
- Yeni bileşen yaratmak belirli bir uygulama alanı için uygulama geliştirilebilmesini sağlamak için yapılır. Geliştiricilere yönelik bir faaliyettir. ssg++'da tanımlanmış bileşenleri görmek için (bkz: [[file:SsgppComps.org][ssg++ bileşenleri]]).
-
+ Yeni bileşen yaratmak belirli bir uygulama alanı için uygulama geliştirilebilmesini sağlamak için yapılır. Geliştiricilere yönelik bir faaliyettir. 
+ 
 
 * İş hattı oluşturmak
 sacre'de bileşenler iş parçacığı olarak çalışırlar ve kapılarına bağlı diğer bileşenlerle belirli tipteki verileri alıp vererek iletişirler. Hangi bileşenlerin birbiriyle hangi kapıları üzerinden bağlı olduğunu tanımlayan dizilime /iş hattı/ denir. sacre'de iş hattı oluşturmak için basit bir dil var. En basit haliyle bileşenler birbirlerine ~!~ işlemiyle seri, ~&~ işlemiyle paralel bağlanıyor. ~&~ işleminin ~!~ işlemine göre önceliği var. Dikkat edilmesi gereken nokta birbirine bağlanan kapıların aynı veri tipini geçiriyor olmalarıdır.
@@ -157,84 +160,7 @@ Görsel gösterimi
 
 * Bileşen tanımlamak
 
-sacre'de bileşen tanımlamak için ~ch.alari.sacre.Component~ sınıfından yeni bir bileşen sınıfı türetmek yeterli. sacre'nin mevcut bileşenlerinin kodlarını inceleyerek nasıl yapıldığını daha iyi görebilirsiniz.
-
-** ssg++ için eklenti bileşen tanımlamak
-
-ssg++'nın işlevselliğini kendi bileşenlerinizi kodlayarak da artırabilirsiniz. 
-
-Örnek olarak [[https://github.com/ssgpp/eklentiler]] adresinde yer alan ssg++ bileşen havuzundaki kodlara bakabilirsiniz. 
-
-~$ git checkout https://github.com/ssgpp/eklentiler.git~ ile =~/eklentiler= dizinine kodları aldığınızı varsayalım (~ işareti ev dizinini temsil ediyor. Linux altında örn. ~/home/user~). =~/.ssgpp/conf/app.properties= dosyasındaki ~EklentiDizini~ parametresini buna göre düzenleyin.
-
-~EklentiDizini=~/eklentiler/~
-
-Eklentiler klasörünün içinde derlenmiş eklenti bileşenlerinin bulunduğu ~jars~ klasörü, eklentilerin kaynak kodlarını içeren ~src~ klasörü ve eklentiler hakkında tanımlama bilgilerini içeren ~plugins.info~ dosyası bulunur. ~plugins.info~ dosyası satır satır eklentileri tanımlar. İki nokta üst üste karakteriyle ayrılan iki alanın ilkinde bileşenin iş hatlarında hangi adla kullanılacağını belirlenir. İkinci alan ise Eklenti sınıfının paketler içindeki tam adıdır. Örn.
-
-~ÖrnekEklentiBileşen: sacre.plugins.comps.OrnekEklentiBilesen~
-
-~src~ klasörü altında her bir eklenti bileşenin kaynak kodlarını içeren kendi klasörü bulunur. ~src/ornekeklentibilesen~ klasörüne örnek bileşen kodunun derlenmesi ve jar dosyasının oluşturulmasını sağlayan ~Makefile~ dosyası da dahil edilmiştir.
-
-~OrnekEklentiBilesen~ sınıfı şu şekilde tanımlanmıştır.
-
-#+BEGIN_SRC java
-package sacre.plugins.comps;
-
-import ch.alari.sacre.Component;
-import ch.alari.sacre.Port;
-import ch.alari.sacre.Token;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.Map;
-
-// Bütün ssg++ bileşenleri Component sınıfından türetilir.
-public class OrnekEklentiBilesen extends Component 
-{
-    // iş hattındaki parametrelerin doğruluğunu belirtir.
-    protected boolean initSuccess;
-    
-    // Tüm Component'ler için constructor imzası bu şekildedir.
-    public OrnekEklentiBilesen(String name, Map<String, String> parameters)
-    {
-        super(name);
-        // Bileşenin iş hatlarında kullanılan adı.
-        setType("ÖrnekEklentiBileşen");
-        // Bileşenin giriş ve çıkış kapıları tipleri, adları ve adetleriyle belirlenmelidir.
-        addPort(new Port<Token>(Token.class, "in", Port.DIR_TYPE_IN));
-        addPort(new Port<Token>(Token.class, "out", Port.DIR_TYPE_OUT));
-        
-        initSuccess = true;
-    }
-    
-    // Thread olarak çalıştırılan bileşenlerin yaptıkları işleri bu metod belirler.
-    public void task() throws InterruptedException
-    {
-        // Bileşin sonlanması için çıkış kapılarına özel STOP token gönderilmeli, durumu STOPPED'a atanmalı ve InterruptedException atılmalıdır.
-        if(!initSuccess)
-        {
-            port("out").put(new Token(Token.STOP));
-            state = State.STOPPED;
-            throw new InterruptedException();
-        }
-        
-        // Giriş kapısından bir token okunması
-        Token currToken = (Token)port("in").take();
-        
-	// Okunan token STOP tokeni ise bileşenin çalışması durdurulur.
-        if(currToken.isStop())
-        {            
-            port("out").put(new Token(Token.STOP));
-            state = State.STOPPED;
-            return;
-        }
-
-	// Gelen token ile birşeyler yapıp çıktıya yazılır.
-        // ...
- 
-        // Bu örnekte okunan token üstünde hiçbir işlem yapmadan olduğu gibi çıkış kapısına gönderiyoruz.
-	port("out").put(currToken);
-    }
-}
-#+END_SRC
-
-~ornekeklentibilesen.jar~ dosyası ~jars~ klasörü altında oluşturulduktan sonra ~örnekeklentibileşen~ ssg++ komut satırında bir iş hattı içerisinde kullanılabilir hale gelmiş olur. örn.: ~badiknk ! örnekeklentibileşen ! metinbtk~ 
+sacre için yeni bileşenler tanımlamak için ~ch.alari.sacre.Component~ sınıfından yeni bir bileşen sınıfı türetmek yeterlidir. 
+sacre açık kaynaklı bir proje olduğu için halihazırda tanımlanmış sacre bileşenlerinin kodlarını inceleyerek nasıl yapıldığını daha iyi görebilirsiniz.
+ssg++ için bileşenler çalışma zamanında yüklenecek şekilde eklenti olarak tanımlanabilir (bkz: [[file:SsgppIcinEklentiBilesenTanimlamak.org][ssg++ için eklenti bileşen tanımlamak]]). 
+ssg++'da tanımlanmış bileşenleri görmek için (bkz: [[file:SsgppComps.org][ssg++ bileşenleri]]).

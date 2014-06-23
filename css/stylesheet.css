@@ -39,6 +39,10 @@ body {
 	line-height:1.411764705882353em;*/
 }
 
+th.left {
+  text-align:left;
+}
+
 #preamble {
     /*float: none;*/
 	text-align: justify;

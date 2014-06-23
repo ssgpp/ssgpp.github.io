@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="ssg++ ana sayfa"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-06-22T08:32+0200"/>
+<meta name="generated" content="2014-06-23T14:51+0200"/>
 <meta name="author" content="Onur Derin"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -155,7 +155,11 @@ for the JavaScript code in this tag.
 <h2>İçindekiler</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">ssg++ nedir?</a></li>
+<li><a href="#sec-1">ssg++ nedir?</a>
+<ul>
+<li><a href="#sec-1-1">Ekran çıktıları</a></li>
+</ul>
+</li>
 <li><a href="#sec-2">ssg++ ile yapabileceklerinize örnekler</a></li>
 <li><a href="#sec-3">Kurulum ve kullanım</a>
 <ul>
@@ -163,7 +167,12 @@ for the JavaScript code in this tag.
 <li><a href="#sec-3-2">ssg++ komutları</a></li>
 </ul>
 </li>
-<li><a href="#sec-4">Geliştiriciler için</a></li>
+<li><a href="#sec-4">Geliştiriciler için</a>
+<ul>
+<li><a href="#sec-4-1">Eklenti tanımlamak</a></li>
+<li><a href="#sec-4-2">ssg++ API</a></li>
+</ul>
+</li>
 <li><a href="#sec-5">Değişim günlüğü</a></li>
 <li><a href="#sec-6">İletişim</a></li>
 <li><a href="#sec-7">Lisans</a>
@@ -192,8 +201,51 @@ Daha fazla bilgi için
 (bkz: <a href="SsgppComps.html">ssg++ bileşenleri</a>)
 (bkz: <a href="Sacre.html">iş hattı oluşturma</a>)
 </p>
+<p>
+Çözümlemeler yapmaya daha uygun olan bir komut satırı arayüzünün yanında ssg++'nın işlevselliğinin internet tarayıcısı ortamında kullanılmasını sağlayan bir de web arayüzü vardır.
+</p>
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Ekran çıktıları</h3>
+<div class="outline-text-3" id="text-1-1">
 
 
+<table style="text-align: center;">
+  <tr>
+    <td>
+      <p>gündem</p>
+      <a href="imgs/ekran-ciktisi-ks-gundem.png"><img src="imgs/ekran-ciktisi-ks-gundem.png" width="400"></a>
+    </td>
+    <td>
+      <p>nabız</p>
+      <a href="imgs/ekran-ciktisi-web-nabiz.png"><img src="imgs/ekran-ciktisi-web-nabiz.png" width="400"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>şükela</p>
+      <a href="imgs/ekran-ciktisi-ks-sukela.png"><img src="imgs/ekran-ciktisi-ks-sukela.png" width="400"></a>
+    </td>
+    <td>
+      <p>dünün en beğenilenleri</p>
+      <a href="imgs/ekran-ciktisi-web-debe-bugun.png"><img src="imgs/ekran-ciktisi-web-debe-bugun.png" width="400"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>maç skoru</p>
+      <a href="imgs/ekran-ciktisi-ks-sukela.png"><img src="imgs/ekran-ciktisi-ks-macskoru.png" width="400"></a>
+    </td>
+    <td>
+      <p>bkz'ları (anket) ve ajanda</p>
+      <a href="imgs/ekran-ciktisi-web-debe-bugun.png"><img src="imgs/ekran-ciktisi-web-bkzlari-ajanda.png" width="400"></a>
+    </td>
+  </tr>
+</table>
+
+</div>
 </div>
 
 </div>
@@ -250,10 +302,13 @@ Komut örneği:
 Demek ki Lewandowski'nin Bayern Münih'e gidip gitmeyeceğini spacetimereality'ye sormak gerekiyormuş.
 </p>
 <p>
-Tüm tanımlı iş hatlarının detayları ve örnek kullanımları için (bkz: <a href="IsHattiKisayollari.html">iş hattı kısayolları</a>)
+Tüm tanımlı iş hatlarının detayları ve örnek kullanımları için (bkz: <a href="IsHattiKisayollari.html">iş hattı kısayolları</a>).
 </p>
 <p>
-ssg++ kullanılarak yapılmış çalışmaları içeren <a href="http://ssgpp.wordpress.com">ssg++ blogu</a>na da muhakkak bir gözatın.
+Kendi iş hattı kısayollarınızı tanımlamak için (bkz: <a href="YeniIsHattiKisayoluTanimlama.html">yeni iş hattı kısayolu tanımlama</a>).
+</p>
+<p>
+ssg++ kullanılarak yapılmış daha geniş kapsamlı çalışmalar için (bkz: <a href="http://ssgpp.wordpress.com">ssg++ blogu</a>).
 </p>
 </div>
 
@@ -269,7 +324,7 @@ ssg++ kullanılarak yapılmış çalışmaları içeren <a href="http://ssgpp.wo
 ssg++'nın çalıştırılabilmesi için sisteminizde <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JRE 6</a> veya daha üst bir sürümü kurulu olmalıdır. Bir komut uçbiriminde <code>java -version</code> komutunu çalıştırarak bunu kontrol edebilirsiniz.
 </p>
 <p>
-Edindiğiniz sıkıştırılmış dosyayı istediğiniz bir klasöre (<code>SSG++_DIR</code>) açın. Komut uçbiriminde <code>cd SSG++_DIR</code> komutuyla <code>ssgpp.jar</code> dosyasını içeren klasöre girin. İstenilen bir komutu çalıştırmak için şunu girin:
+Edindiğiniz sıkıştırılmış dosyayı istediğiniz bir klasöre (<code>SSG++_DIR</code>) açın. Komut uçbiriminde <code>cd SSG++_DIR</code> komutuyla <code>ssgpp.jar</code> dosyasını içeren klasöre girin. İstenilen bir <a href="#sec-3-2">komut</a>u çalıştırmak için şunu girin:
 </p>
 
 
@@ -348,19 +403,19 @@ EklentiDizini=./
 <li><code>yürüt</code> <i>iş hattı</i>
 
 <p>
-  verilen <i>iş hattı</i> çalıştırılır.
+  verilen <i>iş hattı</i> çalıştırılır. (bkz: <a href="SsgppComps.html">ssg++ bileşenleri</a>) (bkz: <a href="Sacre.html">iş hattı oluşturma</a>)
 </p>
 </li>
 <li><i>iş hattı kısayolu</i> 
 
 <p>
-  girilen iş hattı kısayolunu çalıştırır. (bkz: <a href="IsHattiKisayollari.html">iş hattı kısayolları</a>) (bkz: <a href="YeniIsHattıKısayoluTanimlama.html">yeni iş hattı kısayolu tanımlama</a>)
+  girilen iş hattı kısayolu çalıştırılır. (bkz: <a href="IsHattiKisayollari.html">iş hattı kısayolları</a>) (bkz: <a href="YeniIsHattiKisayoluTanimlama.html">yeni iş hattı kısayolu tanımlama</a>)
 </p>
 </li>
 <li><code>mesaj</code> 
 
 <p>
-  giriş yapmış kullanıcının mesajı olup olmadığını kontrol eder.
+  giriş yapmış kullanıcının mesajı olup olmadığı kontrol edilir.
 </p></li>
 </ul>
 
@@ -374,22 +429,38 @@ EklentiDizini=./
 <h2 id="sec-4">Geliştiriciler için</h2>
 <div class="outline-text-2" id="text-4">
 
-<p>Yapmak istediğiniz şey için iş hattı tanımlamak yeterli gelmedi ise iş hatlarında kullanmak üzere <a href="Sacre.html#ssgiçineklentibileşentanımlamak">kendi bileşenlerinizi eklenti olarak tanımlayabilirsiniz</a>.
+
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1">Eklenti tanımlamak</h3>
+<div class="outline-text-3" id="text-4-1">
+
+<p>Yapmak istediğiniz şey için iş hattı tanımlamak yeterli gelmedi ise iş hatlarında kullanmak üzere kendi bileşenlerinizi eklenti olarak tanımlayabilirsiniz (bkz: <a href="SsgppIcinEklentiBilesenTanimlamak.html">ssg++ için eklenti bileşen tanımlamak</a>).
 </p>
-<p>
-Bu da yeterli değilse kendi uygulamanız için ssg++ iş hatlarının yapabildiği her şeye bir API ile ulaşmanız mümkün. İş hattının batak elemanını apisink olarak değiştirip <code>List&lt;Token&gt;</code> dönen 
+</div>
+
+</div>
+
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2">ssg++ API</h3>
+<div class="outline-text-3" id="text-4-2">
+
+<p>ssg++ iş hatlarının yapabildiği her şeye kendi uygulamanızda kullanmak için bir API ile ulaşmanız mümkün. 
+İş hattının batak elemanını apisink olarak değiştirip <code>List&lt;Token&gt; SozlukApi.runPipeline(String ishatti)</code> metodunu çağırmanız yeterli.
+Örnek olarak badi başlıklarını yazdırmak için kullanılacak <code>badiknk ! metinbtk</code> iş hattında <code>metinbtk</code> bileşeni yerine <code>apisink</code> kullanarak başlıkları içinde <code>Baslik</code> nesneleri olan bir listeye alabiliriz.
 </p>
 
 
-<pre class="example">SozlukApi.runPipeline("... ! apisink") 
+<pre class="example">List&lt;Token&gt; badilerden = SozlukApi.runPipeline("badiknk ! apisink");
 </pre>
 
-<p>
-metodunu çağırmanız yeterli.
-</p>
+
 <p>
 Geliştirici olarak kullanmak için geliştirici lisansı edinmeniz gerekiyor.
 </p>
+</div>
 </div>
 
 </div>

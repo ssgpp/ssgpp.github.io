@@ -17,7 +17,45 @@ Daha fazla bilgi için
 (bkz: [[file:SsgppComps.org][ssg++ bileşenleri]])
 (bkz: [[file:Sacre.org][iş hattı oluşturma]])
 
+Çözümlemeler yapmaya daha uygun olan bir komut satırı arayüzünün yanında ssg++'nın işlevselliğinin internet tarayıcısı ortamında kullanılmasını sağlayan bir de web arayüzü vardır.
 
+** Ekran çıktıları
+# #+CAPTION: This is a table with lines around and between cells
+# #+ATTR_HTML: :width 500px
+#+BEGIN_HTML
+<table style="text-align: center;">
+  <tr>
+    <td>
+      <p>gündem</p>
+      <a href="imgs/ekran-ciktisi-ks-gundem.png"><img src="imgs/ekran-ciktisi-ks-gundem.png" width="400"></a>
+    </td>
+    <td>
+      <p>nabız</p>
+      <a href="imgs/ekran-ciktisi-web-nabiz.png"><img src="imgs/ekran-ciktisi-web-nabiz.png" width="400"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>şükela</p>
+      <a href="imgs/ekran-ciktisi-ks-sukela.png"><img src="imgs/ekran-ciktisi-ks-sukela.png" width="400"></a>
+    </td>
+    <td>
+      <p>dünün en beğenilenleri</p>
+      <a href="imgs/ekran-ciktisi-web-debe-bugun.png"><img src="imgs/ekran-ciktisi-web-debe-bugun.png" width="400"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>maç skoru</p>
+      <a href="imgs/ekran-ciktisi-ks-sukela.png"><img src="imgs/ekran-ciktisi-ks-macskoru.png" width="400"></a>
+    </td>
+    <td>
+      <p>bkz'ları (anket) ve ajanda</p>
+      <a href="imgs/ekran-ciktisi-web-debe-bugun.png"><img src="imgs/ekran-ciktisi-web-bkzlari-ajanda.png" width="400"></a>
+    </td>
+  </tr>
+</table>
+#+END_HTML
 
 * ssg++ ile yapabileceklerinize örnekler
 
@@ -48,16 +86,18 @@ $ ssg++ lafebeleri borussia dortmund
 
 Demek ki Lewandowski'nin Bayern Münih'e gidip gitmeyeceğini spacetimereality'ye sormak gerekiyormuş.
 
-Tüm tanımlı iş hatlarının detayları ve örnek kullanımları için (bkz: [[file:IsHattiKisayollari.org][iş hattı kısayolları]])
+Tüm tanımlı iş hatlarının detayları ve örnek kullanımları için (bkz: [[file:IsHattiKisayollari.org][iş hattı kısayolları]]).
 
-ssg++ kullanılarak yapılmış çalışmaları içeren [[http://ssgpp.wordpress.com][ssg++ blogu]]na da muhakkak bir gözatın.
+Kendi iş hattı kısayollarınızı tanımlamak için (bkz: [[file:YeniIsHattiKisayoluTanimlama.org][yeni iş hattı kısayolu tanımlama]]).
+
+ssg++ kullanılarak yapılmış daha geniş kapsamlı çalışmalar için (bkz: [[http://ssgpp.wordpress.com][ssg++ blogu]]).
 
 * Kurulum ve kullanım
   [[*Lisans][Lisans]] metnini okuyup kabul ettikten sonra ssg++ programını indirmek ve ücretsiz bir lisans edinmek için ad ve soyadınızla birlikte oderin at users.sourceforge.net adresine "ssg++ kullanıcı lisansi isteği" konulu bir e-mail göndermeniz yeterli. 
 
 ssg++'nın çalıştırılabilmesi için sisteminizde [[http://www.oracle.com/technetwork/java/javase/downloads/index.html][JRE 6]] veya daha üst bir sürümü kurulu olmalıdır. Bir komut uçbiriminde ~java -version~ komutunu çalıştırarak bunu kontrol edebilirsiniz.
 
-Edindiğiniz sıkıştırılmış dosyayı istediğiniz bir klasöre (~SSG++_DIR~) açın. Komut uçbiriminde ~cd SSG++_DIR~ komutuyla ~ssgpp.jar~ dosyasını içeren klasöre girin. İstenilen bir komutu çalıştırmak için şunu girin:
+Edindiğiniz sıkıştırılmış dosyayı istediğiniz bir klasöre (~SSG++_DIR~) açın. Komut uçbiriminde ~cd SSG++_DIR~ komutuyla ~ssgpp.jar~ dosyasını içeren klasöre girin. İstenilen bir [[ssg++ komutları][komut]]u çalıştırmak için şunu girin:
 #+BEGIN_EXAMPLE
 java -jar ssgpp.jar komut
 #+END_EXAMPLE
@@ -103,24 +143,28 @@ EklentiDizini=./
 
 + ~yürüt~ /iş hattı/
 
-  verilen /iş hattı/ çalıştırılır.
+  verilen /iş hattı/ çalıştırılır. (bkz: [[file:SsgppComps.org][ssg++ bileşenleri]]) (bkz: [[file:Sacre.org][iş hattı oluşturma]])
 
 + /iş hattı kısayolu/ 
 
-  girilen iş hattı kısayolunu çalıştırır. (bkz: [[file:IsHattiKisayollari.org][iş hattı kısayolları]]) (bkz: [[file:YeniIsHattıKısayoluTanimlama.org][yeni iş hattı kısayolu tanımlama]])
+  girilen iş hattı kısayolu çalıştırılır. (bkz: [[file:IsHattiKisayollari.org][iş hattı kısayolları]]) (bkz: [[file:YeniIsHattiKisayoluTanimlama.org][yeni iş hattı kısayolu tanımlama]])
 
 + ~mesaj~ 
 
-  giriş yapmış kullanıcının mesajı olup olmadığını kontrol eder.
+  giriş yapmış kullanıcının mesajı olup olmadığı kontrol edilir.
 
 * Geliştiriciler için
-Yapmak istediğiniz şey için iş hattı tanımlamak yeterli gelmedi ise iş hatlarında kullanmak üzere [[file:Sacre.html#ssgi%C3%A7ineklentibile%C5%9Fentan%C4%B1mlamak][kendi bileşenlerinizi eklenti olarak tanımlayabilirsiniz]].
 
-Bu da yeterli değilse kendi uygulamanız için ssg++ iş hatlarının yapabildiği her şeye bir API ile ulaşmanız mümkün. İş hattının batak elemanını apisink olarak değiştirip ~List<Token>~ dönen 
+** Eklenti tanımlamak
+Yapmak istediğiniz şey için iş hattı tanımlamak yeterli gelmedi ise iş hatlarında kullanmak üzere kendi bileşenlerinizi eklenti olarak tanımlayabilirsiniz (bkz: [[file:SsgppIcinEklentiBilesenTanimlamak.org][ssg++ için eklenti bileşen tanımlamak]]).
+
+** ssg++ API
+ssg++ iş hatlarının yapabildiği her şeye kendi uygulamanızda kullanmak için bir API ile ulaşmanız mümkün. 
+İş hattının batak elemanını apisink olarak değiştirip ~List<Token> SozlukApi.runPipeline(String ishatti)~ metodunu çağırmanız yeterli.
+Örnek olarak badi başlıklarını yazdırmak için kullanılacak ~badiknk ! metinbtk~ iş hattında ~metinbtk~ bileşeni yerine ~apisink~ kullanarak başlıkları içinde ~Baslik~ nesneleri olan bir listeye alabiliriz.
 #+BEGIN_EXAMPLE 
-SozlukApi.runPipeline("... ! apisink") 
+List<Token> badilerden = SozlukApi.runPipeline("badiknk ! apisink");
 #+END_EXAMPLE 
-metodunu çağırmanız yeterli.
 
 Geliştirici olarak kullanmak için geliştirici lisansı edinmeniz gerekiyor.
 
