@@ -47,11 +47,11 @@ Daha fazla bilgi için
   <tr>
     <td>
       <p>maç skoru</p>
-      <a href="imgs/ekran-ciktisi-ks-sukela.png"><img src="imgs/ekran-ciktisi-ks-macskoru.png" width="400"></a>
+      <a href="imgs/ekran-ciktisi-ks-macskoru.png"><img src="imgs/ekran-ciktisi-ks-macskoru.png" width="400"></a>
     </td>
     <td>
       <p>bkz'ları (anket) ve ajanda</p>
-      <a href="imgs/ekran-ciktisi-web-debe-bugun.png"><img src="imgs/ekran-ciktisi-web-bkzlari-ajanda.png" width="400"></a>
+      <a href="imgs/ekran-ciktisi-web-bkzlari-ajanda.png"><img src="imgs/ekran-ciktisi-web-bkzlari-ajanda.png" width="400"></a>
     </td>
   </tr>
 </table>
