@@ -1,0 +1,30 @@
+#+TITLE: E-okuyucular için güncel sözlük içeriği edinme
+#+OPTIONS: toc:nil
+
+* Kindle için dünün en beğenilen entry'leri (DEBE)
+
+#+BEGIN_HTML
+<div style="float: left; display: block; margin: 5px;">
+<img src="imgs/debe-cover.png" />
+</div>
+#+END_HTML
+
+Dünün en beğenilen entry'lerini birleştirilmiş olarak tek bir mobi dosyası şeklinde her gün kindle'ınıza almak için:
+
+1) oderin at users.sourceforge.net adresine e-posta göndererek @free.kindle.com ya da @kindle.com'lu e-mail adresinizi ve dünün en beğenilen entry'lerini almak istediğinizi bildirin.
+2) size gönderilecek e-posta adresini kindle'ınıza dosya göndermeye izinli e-posta adresleri listesine ekleyin. Bunu yapmak için amazon hesabınıza girdikten sonra =your account > manage your kindle > personal document settings > approved personal document e-mail list > add a new approved e-mail address= yolunu takip edin.
+
+Bir kindle cihazına sahip olmadan bilgisayarınıza ya da akıllı telefonunuza kindle uygulamasını yükleyerek de bu hizmetten faydalanabilirsiniz.
+
+** Hizmet koşulları
+
+- gönderim listesinden çıkmak için amazon hesabınıza eklediğiniz e-posta adresini silmeniz ve oderin at users.sourceforge.net adresine e-posta göndererek bildirmeniz yeterli,
+- bu hizmetin kapsamı dışında cihazınıza dosya gönderilmez,
+- hizmetin sürekliliği ve düzenliliği konusunda herhangi bir garanti verilmez.
+
+** MOBI biçimli DEBE arşivi
+
+   17 temmuz 2013'ten itibaren gün gün mobi biçiminde derlenen dünün en beğenilen entry'leri dosyalarına şu adresten ulaşabilirsiniz:
+
+    https://drive.google.com/?tab=mo&authuser=0#folders/0BwFEb0DXFz0IWmZBSkVLZDRiSGc
+

@@ -3,11 +3,11 @@
                "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="tr" xml:lang="tr">
 <head>
-<title>Yeni iş hattı kısayolu tanımlama</title>
+<title>E-okuyucular için güncel içerik edinme</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="title" content="Yeni iş hattı kısayolu tanımlama"/>
+<meta name="title" content="E-okuyucular için güncel içerik edinme"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-06-27T00:45+0200"/>
+<meta name="generated" content="2014-06-27T01:33+0200"/>
 <meta name="author" content="Onur Derin"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -149,42 +149,69 @@ for the JavaScript code in this tag.
 </div>
 
 <div id="content">
-<h1 class="title">Yeni iş hattı kısayolu tanımlama</h1>
+<h1 class="title">E-okuyucular için güncel içerik edinme</h1>
 
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Yeni iş hattı kısayolu tanımlama</h2>
+<h2 id="sec-1">Kindle için dünün en beğenilen entry'leri (DEBE)</h2>
 <div class="outline-text-2" id="text-1">
 
 
-<p>
-ssg++'da sıkça kullandığınız iş hatlarını daha kolay kullanabilmek için iş hattı kısayolları tanımlayabilirsiniz. Tüm iş hattı kısayolları kullanıcının ev dizinin altındaki <code>.ssgpp/conf/ishatlari/</code> klasöründe tutulur (örn. Linux altında <code>/.ssgpp/conf/ishatlari/</code>). Bu klasör program ilk kez çalıştırıldığında yaratılır. Henüz yapmadıysanız, <code>yardım</code> komutunu çalıştırarak bunu sağlayabilirsiniz. Tanımlı gelen her bir iş hattı kısayolu için metin tabanlı bir dosya vardır. İş hattı kısayolu, adını dosya adından alır. Bu dosyanın ilk satırında komutun iş hattı, kalanındaysa <code>yardım</code> <i>iş hattı kısayolu</i> komutu çağrıldığında gösterilen açıklama metni vardır. 
-</p>
-<p>
-Örnek olarak <code>ortakbaşlıkları</code> dosyası şöyledir:
-</p>
 
 
-<pre class="example">hayvanknk [yazar=%s, sıralama=yeni-eski] &amp; hayvanknk [yazar=%s, sıralama=yeni-eski] ! intersection ! metinbtk
-İşlevi: Argüman olarak verilen iki yazarın ortak başlıklarını yeniden eskiye bulup yazar.
-</pre>
+<div style="float: left; display: block; margin: 5px;">
+<img src="imgs/debe-cover.png" />
+</div>
+
+<p>
+Dünün en beğenilen entry'lerini birleştirilmiş olarak tek bir mobi dosyası şeklinde her gün kindle'ınıza almak için:
+</p>
+<ol>
+<li>oderin at users.sourceforge.net adresine e-posta göndererek @free.kindle.com ya da @kindle.com'lu e-mail adresinizi ve dünün en beğenilen entry'lerini almak istediğinizi bildirin.
+</li>
+<li>size gönderilecek e-posta adresini kindle'ınıza dosya göndermeye izinli e-posta adresleri listesine ekleyin. Bunu yapmak için amazon hesabınıza girdikten sonra <code>your account &gt; manage your kindle &gt; personal document settings &gt; approved personal document e-mail list &gt; add a new approved e-mail address</code> yolunu takip edin.
+</li>
+</ol>
 
 
 <p>
-İş hattı kısayolu olarak tanımlanan komutlar argüman alabilirler. Argümanlar virgül (,) ile ayrılarak verilir. Argümanlar sırasıyla <code>%s</code> ile belirtilen yerlere geçirilir.
+Bir kindle cihazına sahip olmadan bilgisayarınıza ya da akıllı telefonunuza kindle uygulamasını yükleyerek de bu hizmetten faydalanabilirsiniz.
+</p>
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Hizmet koşulları</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+<ul>
+<li>gönderim listesinden çıkmak için amazon hesabınıza eklediğiniz e-posta adresini silmeniz ve oderin at users.sourceforge.net adresine e-posta göndererek bildirmeniz yeterli,
+</li>
+<li>bu hizmetin kapsamı dışında cihazınıza dosya gönderilmez,
+</li>
+<li>hizmetin sürekliliği ve düzenliliği konusunda herhangi bir garanti verilmez.
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">MOBI biçimli DEBE arşivi</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+<p>
+   17 temmuz 2013'ten itibaren gün gün mobi biçiminde derlenen dünün en beğenilen entry'leri dosyalarına şu adresten ulaşabilirsiniz:
 </p>
 <p>
-<code>$ ssg++ -l ortakbaşlıkları suser1 suser2</code>
+    <a href="https://drive.google.com/?tab=mo&amp;authuser=0#folders/0BwFEb0DXFz0IWmZBSkVLZDRiSGc">https://drive.google.com/?tab=mo&amp;authuser=0#folders/0BwFEb0DXFz0IWmZBSkVLZDRiSGc</a>
 </p>
-<p>
-komutu
-</p>
-<p>
-<code>$ ssg++ -l yürüt hayvanknk [yazar=suser1, sıralama=yeni-eski] &amp; hayvanknk [yazar=suser2, sıralama=yeni-eski] ! intersection ! metinbtk</code>
-</p>
-<p>
-komutuna karşılık gelir.
-</p></div>
+</div>
+</div>
 </div>
 </div>
 
