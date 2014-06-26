@@ -1,4 +1,5 @@
 ssgpp.github.io
 ===============
 
-ssg++ proje tanıtım ve belgeleme sayfası
+ssg++ proje tanıtımı ve belgeleme sayfası: http://ssgpp.github.io
+
