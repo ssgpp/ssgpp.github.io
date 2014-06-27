@@ -3,7 +3,9 @@
 
 * İş hattı kısayolları
 ** ajanda
-
+    :PROPERTIES:
+      :CUSTOM_ID: ajanda
+    :END:
 | Komut | ajanda |
 | İşlevi | Bugün tarihli olayların başlıklarını yazar. |
 | İşhattı kısayolu | hayvanknk [şey=%%BUGÜN%%] ! metinbtk |
@@ -37,7 +39,9 @@
 
 
 ** ajanda-1
-
+    :PROPERTIES:
+      :CUSTOM_ID: ajanda-1
+    :END:
 | Komut            | ajanda-1                                                  |
 | İşlevi           | Dün tarihli olayların başlıklarını yazar. Dünün ajandası. |
 | İşhattı kısayolu | hayvanknk [şey=%%DÜN%%] ! metinbtk                        |
@@ -46,14 +50,19 @@
 
 
 ** ajanda3
-
+    :PROPERTIES:
+      :CUSTOM_ID: ajanda3
+    :END:
 | Komut            | ajanda3                                                                                                                |
 | İşlevi           | Yarın, yarından sonra ve üç gün sonra tarihli olayların başlıklarını yazar. 3 günün ajandası.                          |
 | İşhattı kısayolu | hayvanknk [şey=%%YARIN%%] & hayvanknk [şey=%%YARINDANSONRA%%] & hayvanknk [şey=%%BUGÜN_ARTI_3%%] ! merge3x1 ! metinbtk |
 | Argümanları      | -                                                                                                                      |
 
-** anket
 
+** anket
+    :PROPERTIES:
+      :CUSTOM_ID: anket
+    :END:
 | Komut            | anket                                                                                                                    |
 | İşlevi           | Argüman olarak verilen başlıktaki bkz veya görünmez bkz verilmiş başlıkları atıf sayılarına göre grafik olarak gösterir. |
 | İşhattı kısayolu | başlıkknk [başlık=%s] ! başlıkgirdileri ! girdibkzları ! histogram ! grafikbtk                                           |
@@ -71,7 +80,9 @@ Hangi filmi izlesem?
 
 
 ** ara
-
+    :PROPERTIES:
+      :CUSTOM_ID: ara
+    :END:
 | Komut            | ara                                                                                               |
 | İşlevi           | Argüman olarak verilen şekildeki başlıkları arar. Asteriks işareti (\*) ile aramalar yapılabilir. |
 | İşhattı kısayolu | hayvanknk [şey=%s] ! metinbtk                                                                     |
@@ -97,7 +108,9 @@ Hangi filmi izlesem?
 #+END_EXAMPLE
 
 ** badi
-
+    :PROPERTIES:
+      :CUSTOM_ID: badi
+    :END:
 | Komut            | badi                                 |
 | İşlevi           | Badilere ait son girdileri yazar.    |
 | İşhattı kısayolu | badiknk ! başlıkgirdileri ! metinbtk |
@@ -105,7 +118,9 @@ Hangi filmi izlesem?
 
 
 ** başlıkindir
-
+    :PROPERTIES:
+      :CUSTOM_ID: baslikindir
+    :END:
 | Komut            | başlıkindir                                                                                                                                          |
 | İşlevi           | İlk argüman olarak verilen başlığın girdilerini ikinci argüman olarak verilen dosya ismi ve biçimiyle yazar. Geçerli uzantılar: xml, html ya da txt. |
 | İşhattı kısayolu | başlıkknk [başlık=%s] ! başlıkgirdileri ! dosyabtk [dosya=%s]                                                                                        |
@@ -125,7 +140,9 @@ $ send-to-kindle sarabande.mobi                  # kindle adresine dosya gönder
 #+END_EXAMPLE
 
 ** başlıkresimleri
-
+    :PROPERTIES:
+      :CUSTOM_ID: baslikresimleri
+    :END:
 | Komut            | başlıkresimleri                                                       |
 | İşlevi           | Argüman olarak verilen başlıktaki bkz verilmiş tüm resimleri indirir. |
 | İşhattı kısayolu | başlıkknk [başlık=%s] ! başlıkgirdileri ! girdiresimlerigzc ! gnd     |
@@ -146,14 +163,18 @@ charlize theron-20123185-Charlize%20Theron.jpg
 #+END_EXAMPLE
 
 ** bugün
-
+    :PROPERTIES:
+      :CUSTOM_ID: bugun
+    :END:
 | Komut            | bugün                                                            |
 | İşlevi           | Bugüne ait son 50 başlığı yazar.                                 |
 | İşhattı kısayolu | hayvanknk [tarih=bugün, limit=50, sıralama=yeni-eski] ! metinbtk |
 | Argümanları      | -                                                                |
 
 ** debe
-
+    :PROPERTIES:
+      :CUSTOM_ID: debe
+    :END:
 | Komut            | debe                                                  |
 | İşlevi           | Dünün en beğenilen girdilerini yazar.                 |
 | İşhattı kısayolu | istatistikknk [tip=debe] ! başlıkgirdileri ! metinbtk |
@@ -173,7 +194,9 @@ $ send-to-kindle debe-20130706.mobi                     # kindle adresine dosya 
 #+END_EXAMPLE
 
 ** dosyadananket
-
+    :PROPERTIES:
+      :CUSTOM_ID: dosyadananket
+    :END:
 | Komut            | dosyadananket                                                                                                                         |
 | İşlevi           | Argüman olarak verilen dosyadaki girdiler için bkz veya görünmez bkz verilmiş başlıkları atıf sayılarına göre grafik olarak gösterir. |
 | İşhattı kısayolu | dosyaknk [dosya=%s] ! girdibkzları ! histogram ! grafikbtk                                                                            |
@@ -192,7 +215,9 @@ $ ssg++ dosyadananket sözlükçülerin_en_antipatik_10_türk_listesi.xml
 [[file:imgs/anket_sözlükçülerin_en_antipatik_10_türk_listesi.png]]
 
 ** dosyadanlafebeleri
-
+    :PROPERTIES:
+      :CUSTOM_ID: dosyadanlafebeleri
+    :END:
 | Komut            | dosyadanlafebeleri                                                                                                                    |
 | İşlevi           | Argüman olarak verilen dosyadaki bir başlığın girdileri için o başlığa yazmış yazarları girdi sayılarına göre grafik olarak gösterir. |
 | İşhattı kısayolu | dosyaknk [dosya=%s] ! histogram [eksen=kategori, kategori=yazar] ! grafikbtk                                                          |
@@ -211,7 +236,9 @@ $ ssg++ dosyadananket sözlükçülerin_en_antipatik_10_türk_listesi.xml
 [[file:imgs/dosyadanlafebeleri_itfaiye.png]]
 
 ** dosyadanzamansaleğilim
-
+    :PROPERTIES:
+      :CUSTOM_ID: dosyadanzamansalegilim
+    :END:
 | Komut            | dosyadanzamansaleğilim                                                                                                                                                                                         |
 | İşlevi           | Argüman olarak verilen dosyabtk ile oluşturulmuş XML dosyasındaki girdilerin sayılarını giriş zamanlarına göre argüman olarak verilen zaman çözünürlüğüyle (yıl, ay, hafta, gün, saat) grafik olarak gösterir. |
 | İşhattı kısayolu | dosyaknk [dosya=%s] ! histogram [eksen=zaman, çözünürlük=%s] ! grafikbtk                                                                                                                                       |
@@ -231,7 +258,9 @@ $ ssg++ dosyadanzamansaleğilim lost.xml, hafta
 [[file:imgs/dosyadanzamansalegilim_lost_hafta.png]]
 
 ** dün
-
+    :PROPERTIES:
+      :CUSTOM_ID: dun
+    :END:
 | Komut            | dün                                                             |
 | İşlevi           | Düne ait son 50 başlığı yazar.                                  |
 | İşhattı kısayolu | hayvanknk [tarih=dün, limit=100, sıralama=yeni-eski] ! metinbtk |
@@ -239,7 +268,9 @@ $ ssg++ dosyadanzamansaleğilim lost.xml, hafta
 
 
 ** farkbadi
-
+    :PROPERTIES:
+      :CUSTOM_ID: farkbadi
+    :END:
 | Komut            | farkbadi                                                                                              |
 | İşlevi           | Bu komutun bir önceki çalıştırılmasından itibaren badiler tarafından yazılmış girdileri ekrana yazar. |
 | İşhattı kısayolu | başlıkfarkknk [tip=badi, dosya=cache/checkpoint-badi.xml] ! başlıkgirdileri ! metinbtk                |
@@ -247,7 +278,9 @@ $ ssg++ dosyadanzamansaleğilim lost.xml, hafta
 
 
 ** fark
-
+    :PROPERTIES:
+      :CUSTOM_ID: fark
+    :END:
 | Komut            | fark                                                                                                                                                                      |
 | İşlevi           | fark veya frak komutunun aynı gün içindeki bir önceki çalıştırılmasından itibaren girdi yazılmış başlıkları yeniden eskiye yeni girdi sayıları ile birlikte ekrana yazar. |
 | İşhattı kısayolu | başlıkfarkknk [tip=bugün, limit=250] ! metinbtk                                                                                                                           |
@@ -256,7 +289,9 @@ $ ssg++ dosyadanzamansaleğilim lost.xml, hafta
 
 
 ** frak
-
+    :PROPERTIES:
+      :CUSTOM_ID: frak
+    :END:
 | Komut            | frak                                                                                                                                                             |
 | İşlevi           | fark veya frak komutunun aynı gün içindeki bir önceki çalıştırılmasından itibaren girdi yazılmış başlıkları yeni girdi sayılarına göre sıralayarak ekrana yazar. |
 | İşhattı kısayolu | başlıkfarkknk [tip=bugün, limit=250] ! genelsıralayıcı ! metinbtk                                                                                                |
@@ -265,7 +300,9 @@ $ ssg++ dosyadanzamansaleğilim lost.xml, hafta
 
 
 ** fokur
-
+    :PROPERTIES:
+      :CUSTOM_ID: fokur
+    :END:
 | Komut            | fokur                                               |
 | İşlevi           | Fokurdayan başlıkları ekrana yazar.                 |
 | İşhattı kısayolu | indeksknk [tip=fokur, limit=50, sayfa=1] ! metinbtk |
@@ -274,7 +311,9 @@ $ ssg++ dosyadanzamansaleğilim lost.xml, hafta
 
 
 ** getir
-
+    :PROPERTIES:
+      :CUSTOM_ID: getir
+    :END:
 | Komut            | getir                                                                                                                                                   |
 | İşlevi           | Argüman olarak verilen başlık girdilerini getirir. başlık, başlık/@yazar, \#girdinumarası, başlık/\#girdinumarası biçimleri argüman olarak verilebilir. |
 | İşhattı kısayolu | başlıkknk [başlık=%s] ! başlıkgirdileri ! metinbtk                                                                                                      |
@@ -286,13 +325,18 @@ $ ssg++ dosyadanzamansaleğilim lost.xml, hafta
 
 
 ** ghebe
-
+    :PROPERTIES:
+      :CUSTOM_ID: ghebe
+    :END:
 | Komut            | ghebe                                                  |
 | İşlevi           | Geçen haftanın en beğenilen girdilerini yazar.         |
 | İşhattı kısayolu | istatistikknk [tip=ghebe] ! başlıkgirdileri ! metinbtk |
 | Argümanları      | -                                                      |
 
 ** +ghebçe+
+    :PROPERTIES:
+      :CUSTOM_ID: ghebce
+    :END:
 /Kullanımdan kalktı./
 
 | Komut            | ghebçe                                                  |
@@ -301,14 +345,18 @@ $ ssg++ dosyadanzamansaleğilim lost.xml, hafta
 | Argümanları      | -                                                       |
 
 ** gündem
-
+    :PROPERTIES:
+      :CUSTOM_ID: gundem
+    :END:
 | Komut            | gündem                                                       |
 | İşlevi           | Bugüne ait en çok girdi yazılmış 50 başlığı yazar.           |
 | İşhattı kısayolu | hayvanknk [tarih=bugün, limit=50, sıralama=gudik] ! metinbtk |
 | Argümanları      | -                                                            |
 
 ** lafebeleri
-
+    :PROPERTIES:
+      :CUSTOM_ID: lafebeleri
+    :END:
 | Komut            | lafebeleri                                                                                       |
 | İşlevi           | Argüman olarak verilen başlığa yazmış yazarları girdi sayılarına göre grafik olarak gösterir.    |
 | İşhattı kısayolu | başlıkknk [başlık=%s] ! başlıkgirdileri ! histogram [eksen=kategori, kategori=yazar] ! grafikbtk |
@@ -327,7 +375,9 @@ Lewandowski Bayern Münih'e gidecek mi? Bunu kim bilir?
 
 
 ** maçskoru
-
+    :PROPERTIES:
+      :CUSTOM_ID: macskoru
+    :END:
 | Komut            | maçskoru                                                                    |
 | İşlevi           | Argüman olarak verilen maç başlığındaki skor içeren cümleleri ekrana yazar. |
 | İşhattı kısayolu | başlıkknk [başlık=%s] ! başlıkgirdileri ! maçsonucu ! metinbtk              |
@@ -349,11 +399,15 @@ Lewandowski Bayern Münih'e gidecek mi? Bunu kim bilir?
 
 
 ** manşet
-
+    :PROPERTIES:
+      :CUSTOM_ID: manset
+    :END:
 (bkz: [[*gündem][gündem]])
 
 ** ortakbaşlıkları
-
+    :PROPERTIES:
+      :CUSTOM_ID: ortakbasliklari
+    :END:
 | Komut            | ortakbaşlıkları                                                                                               |
 | İşlevi           | Argüman olarak verilen iki yazarın ortak başlıklarını yeniden eskiye bulup yazar.                             |
 | İşhattı kısayolu | hayvanknk [yazar=%s, sıralama=yeni-eski] & hayvanknk [yazar=%s, sıralama=yeni-eski] ! intersection ! metinbtk |
@@ -368,7 +422,9 @@ Ya da sözlükte mesaj yoluyla `selam güzel bayan` demeden önce seviyeli bir k
 
 
 ** şaibeli
-
+    :PROPERTIES:
+      :CUSTOM_ID: saibeli
+    :END:
 | Komut            | şaibeli                                    |
 | İşlevi           | şaibeli bir girdiyi ekrana yazar.          |
 | İşhattı kısayolu | cımbızknk [tip=şaibeli, adet=1] ! metinbtk |
@@ -376,7 +432,9 @@ Ya da sözlükte mesaj yoluyla `selam güzel bayan` demeden önce seviyeli bir k
 
 
 ** şükela
-
+    :PROPERTIES:
+      :CUSTOM_ID: sukela
+    :END:
 | Komut            | şükela                                    |
 | İşlevi           | şükela bir girdiyi ekrana yazar.          |
 | İşhattı kısayolu | cımbızknk [tip=şükela, adet=1] ! metinbtk |
@@ -385,7 +443,9 @@ Ya da sözlükte mesaj yoluyla `selam güzel bayan` demeden önce seviyeli bir k
 
 
 ** takip
-
+    :PROPERTIES:
+      :CUSTOM_ID: takip
+    :END:
 | Komut            | takip                                                                                                                                                 |
 | İşlevi           | takip.txt dosyasında belirtilen başlıklardan komutun son çalıştırıldığı zamandan beri yeni girdileri olanları yeni girdi sayıları ile birlikte yazar. |
 | İşhattı kısayolu | takipknk ! metinbtk                                                                                                                                   |
@@ -395,14 +455,18 @@ Ya da sözlükte mesaj yoluyla `selam güzel bayan` demeden önce seviyeli bir k
 
 
 ** tsllbn
-
+    :PROPERTIES:
+      :CUSTOM_ID: tsllbn
+    :END:
 | Komut            | tsllbn                                                                |
 | İşlevi           | Geçen haftanın tsllbn'nin formülü ile en beğenilen girdilerini yazar. |
 | İşhattı kısayolu | istatistikknk [tip=tsllbn] ! başlıkgirdileri ! metinbtk               |
 | Argümanları      | -                                                                     |
 
 ** yedekle
-
+    :PROPERTIES:
+      :CUSTOM_ID: yedekle
+    :END:
 | Komut            | yedekle                                                                           |
 | İşlevi           | İlk argümanda verilen yazarın girdilerini ikinci argümanda verilen dosyaya yazar. |
 | İşhattı kısayolu | hayvanknk [yazar=%s] ! başlıkgirdileri ! dosyabtk [dosya=%s]                      |
@@ -420,7 +484,9 @@ ya da resimleri vs. de dahil etmek için
 
 
 ** zamansaleğilim
-
+    :PROPERTIES:
+      :CUSTOM_ID: zamansalegilim
+    :END:
 | Komut            | zamansaleğilim                                                                                                                                              |
 | İşlevi           | Argüman olarak verilen başlığa yazılan girdi sayılarını argüman olarak verilen zaman çözünürlüğüne (yıl, ay, hafta, gün, saat) göre grafik olarak gösterir. |
 | İşhattı kısayolu | başlıkknk [başlık=%s] ! başlıkgirdileri ! histogram [eksen=zaman, çözünürlük=%s] ! grafikbtk                                                                |

@@ -260,13 +260,13 @@ Görsel gösterimi
 | Girdi kapısı   | 1 tane. Kapıdan geçen veri tipi ~Token~.                                                                                                      |
 | Çıktı kapısı   | 1 tane. Kapıdan geçen veri tipi değişkendir. Parametre olarak seçilen alan tipindedir. /Alan/.                                                |
 | Örnek kullanım | lost başlığına yazmış yazarlar:                                                                                                               |
-|                | ~yürüt başlıkknk [başlık=lost] ! başlıkgirdileri ! alanseçici [alan=yazar] ! metinbtk~                                                        |
+|                | ~yürüt başlıkknk [başlık=lost] ! başlıkgirdileri ! alanseçici [alan=yazar] ! kümeflt ! metinbtk~                                              |
 
 Parametreleri
-| parametre | alabildiği değerler                                                                                                                    | açıklama                                                          | varsayılan değeri |
-| <l>       | <l>                                                                                                                                    | <l>                                                               | <l>               |
-|-----------+----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+-------------------|
-| alan      | Girdi kapısındaki veri tipinin alanlarından biri. Örneğin, Girdi tipindeki veriler için alan şu değerleri alabilir: yazar ya da baslik | Girdi kapısındaki verilerin hangi alanının seçileceğini belirler. | yazar             |
+| parametre | alabildiği değerler                                                                                                                                | açıklama                                                          | varsayılan değeri |
+| <l>       | <l>                                                                                                                                                | <l>                                                               | <l>               |
+|-----------+----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+-------------------|
+| alan      | Girdi kapısındaki veri tipinin alanlarından biri. Örneğin, Girdi tipindeki veriler için alan şu değerleri alabilir: yazar, baslik, id, girdiSirasi | Girdi kapısındaki verilerin hangi alanının seçileceğini belirler. | yazar             |
 
 Görsel gösterimi
 #+BEGIN_SRC ditaa :file imgs/dit-alansecici.png :cmdline -r -s 0.8

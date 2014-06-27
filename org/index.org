@@ -23,7 +23,7 @@ Daha fazla bilgi için
 # #+CAPTION: This is a table with lines around and between cells
 # #+ATTR_HTML: :width 500px
 #+BEGIN_HTML
-<table style="text-align: center;">
+<table style="text-align: center;" cellpadding="10px">
   <tr>
     <td>
       <p>gündem</p>
@@ -62,13 +62,14 @@ Daha fazla bilgi için
 ssg++ komutları iş hattı kısayolu şeklinde tanımlanarak genişletilebilir. 
 Mevcut tanımlı iş hattı kısayolları: 
 
-| [[file:IsHattiKisayollari.org::*ajanda-1][ajanda-1]]               | [[file:IsHattiKisayollari.org::*ajanda][ajanda]]   | [[file:IsHattiKisayollari.org::*ajanda3][ajanda3]]         | [[file:IsHattiKisayollari.org::*anket][anket]]              |
-| [[file:IsHattiKisayollari.org::*ara][ara]]                    | [[file:IsHattiKisayollari.org::*badi][badi]]     | [[file:IsHattiKisayollari.org::*başlıkindir][başlıkindir]]     | [[file:IsHattiKisayollari.org::*başlıkresimleri][başlıkresimleri]]    |
-| [[file:IsHattiKisayollari.org::*bugün][bugün]]                  | [[file:IsHattiKisayollari.org::*debe][debe]]     | [[file:IsHattiKisayollari.org::*dosyadananket][dosyadananket]]   | [[file:IsHattiKisayollari.org::*dosyadanlafebeleri][dosyadanlafebeleri]] |
-| [[file:IsHattiKisayollari.org::*dosyadanzamansaleğilim][dosyadanzamansaleğilim]] | [[file:IsHattiKisayollari.org::*dün][dün]]      | [[file:IsHattiKisayollari.org::*farkbadi][farkbadi]]        | [[file:IsHattiKisayollari.org::*getir][getir]]              |
-| [[file:IsHattiKisayollari.org::*ghebe][ghebe]]                  | [[file:IsHattiKisayollari.org::*ghebçe][ghebçe]]   | [[file:IsHattiKisayollari.org::*gündem][gündem]]          | [[file:IsHattiKisayollari.org::*lafebeleri][lafebeleri]]         |
-| [[file:IsHattiKisayollari.org::*manşet][manşet]]                 | [[file:IsHattiKisayollari.org::*maçskoru][maçskoru]] | [[file:IsHattiKisayollari.org::*ortakbaşlıkları][ortakbaşlıkları]] | [[file:IsHattiKisayollari.org::*takip][takip]]              |
-| [[file:IsHattiKisayollari.org::*tsllbn][tsllbn]]                 | [[file:IsHattiKisayollari.org::*yedekle][yedekle]]  | [[file:IsHattiKisayollari.org::*zamansaleğilim][zamansaleğilim]]  |                    |
+#+ATTR_HTML: cellpadding="15"
+| [[file:IsHattiKisayollari.org::ajanda-1][ajanda-1]]               | [[file:IsHattiKisayollari.org::ajanda][ajanda]]   | [[file:IsHattiKisayollari.org::ajanda3][ajanda3]]         | [[file:IsHattiKisayollari.org::anket][anket]]              |
+| [[file:IsHattiKisayollari.org::ara][ara]]                    | [[file:IsHattiKisayollari.org::badi][badi]]     | [[file:IsHattiKisayollari.org::baslikindir][başlıkindir]]     | [[file:IsHattiKisayollari.org::baslikresimleri][başlıkresimleri]]    |
+| [[file:IsHattiKisayollari.org::bugun][bugün]]                  | [[file:IsHattiKisayollari.org::debe][debe]]     | [[file:IsHattiKisayollari.org::dosyadananket][dosyadananket]]   | [[file:IsHattiKisayollari.org::dosyadanlafebeleri][dosyadanlafebeleri]] |
+| [[file:IsHattiKisayollari.org::dosyadanzamansalegilim][dosyadanzamansaleğilim]]  | [[file:IsHattiKisayollari.org::dun][dün]]      | [[file:IsHattiKisayollari.org::farkbadi][farkbadi]]        | [[file:IsHattiKisayollari.org::getir][getir]]              |
+| [[file:IsHattiKisayollari.org::ghebe][ghebe]]                  | [[file:IsHattiKisayollari.org::ghebce][ghebçe]]   | [[file:IsHattiKisayollari.org::gundem][gündem]]          | [[file:IsHattiKisayollari.org::lafebeleri][lafebeleri]]         |
+| [[file:IsHattiKisayollari.org::macskoru][maçskoru]]                | [[file:IsHattiKisayollari.org::manset][manşet]]  | [[file:IsHattiKisayollari.org::ortakbasliklari][ortakbaşlıkları]]  | [[file:IsHattiKisayollari.org::takip][takip]]              |
+| [[file:IsHattiKisayollari.org::tsllbn][tsllbn]]                 | [[file:IsHattiKisayollari.org::yedekle][yedekle]]  | [[file:IsHattiKisayollari.org::zamansalegilim][zamansaleğilim]]  |                    |
 Örnek olarak, /lafebeleri/ komutunun iş hattı şöyle:
 #+BEGIN_EXAMPLE
 başlıkknk [başlık=%s] ! başlıkgirdileri ! histogram [eksen=kategori, kategori=yazar] ! grafikbtk 
@@ -161,12 +162,14 @@ Yapmak istediğiniz şey için iş hattı tanımlamak yeterli gelmedi ise iş ha
 ** ssg++ API
 ssg++ iş hatlarının yapabildiği her şeye kendi uygulamanızda kullanmak için bir API ile ulaşmanız mümkün. 
 İş hattının batak elemanını apisink olarak değiştirip ~List<Token> SozlukApi.runPipeline(String ishatti)~ metodunu çağırmanız yeterli.
-Örnek olarak badi başlıklarını yazdırmak için kullanılacak ~badiknk ! metinbtk~ iş hattında ~metinbtk~ bileşeni yerine ~apisink~ kullanarak başlıkları içinde ~Baslik~ nesneleri olan bir listeye alabiliriz.
+Örnek olarak badi başlıklarını yazdırmak için kullanılacak ~badiknk ! metinbtk~ iş hattında ~metinbtk~ bileşeni yerine ~apisink~ kullanarak başlıkları içinde ~Baslik~ nesneleri olan bir listeye alabiliriz:
 #+BEGIN_EXAMPLE 
 List<Token> badilerden = SozlukApi.runPipeline("badiknk ! apisink");
 #+END_EXAMPLE 
 
-Geliştirici olarak kullanmak için geliştirici lisansı edinmeniz gerekiyor.
+ssg++ API ile ilgili daha fazla ayrıntı için (bkz: [[file:ssgpp-api.org][ssg++ API kullanımı]])
+
+*ÖNEMLİ NOT*: Geliştirici olarak kullanmak için geliştirici lisansı edinmeniz gerekiyor.
 
 * Değişim günlüğü
 Sürümlere ait özellikler ve değişimler için (bkz: [[file:roadmap.org][değişim günlüğü]])
@@ -185,7 +188,7 @@ ssg++ ticari olmayan kişisel kullanım için ücretsiz bir uygulamadır ve kull
  * Programın kaynak kodu ya da çalıştırılabilir dosyaları satılamaz ya da dağıtılamaz.
  * Sadece ticari olmayan kişisel amaçlar için kullanılabilir. Şirket ya da organizasyon içinde kullanılması için ayrı tipte bir lisans gerekir. Bunun için oderin at users.sourceforge.net adresine "ssg++ ticari lisans isteği" konulu bir e-posta gönderebilirsiniz.
  * Kaynak kodu değiştirilemez ve program başka bir program ile bağlantılı olarak kullanılamaz. Bunun için ayrı bir lisans gerekir. oderin at users.sourceforge.net adresine "ssg++ gelistirici lisansi isteği" konulu bir e-posta gönderebilirsiniz.
- * Program kullanılarak elde edilen her türlü çıktı, herhangi bir yerde kullanılıyorsa, program adına (ssg++) ve programın internet adresine (http://ssgpp.sourceforge.net) uygun şekilde atıfta bulunulmalıdır.
+ * Program kullanılarak elde edilen her türlü çıktı, herhangi bir yerde kullanılıyorsa, program adına (ssg++) ve programın internet adresine (http://ssgpp.github.io) uygun şekilde atıfta bulunulmalıdır.
  * Programın bazı parçaları başka bir takım lisanslara tabidir: commons, xalan-j and jcommander için Apache License Version 2.0, jfreechart için GNU LGPL v2.1, sacre için BSD lisansı.
 
 Programın geliştirilmesine katkı sağlamak için /paypal/ ya da /bitcoin/ ile kolayca bağışta bulunabilirsiniz.
