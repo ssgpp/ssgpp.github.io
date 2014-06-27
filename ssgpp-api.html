@@ -3,11 +3,11 @@
                "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="tr" xml:lang="tr">
 <head>
-<title>ssg++ için eklenti bileşen tanımlamak</title>
+<title>ekşi sözlük için ssg++ API</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="title" content="ssg++ için eklenti bileşen tanımlamak"/>
+<meta name="title" content="ekşi sözlük için ssg++ API"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-06-27T17:23+0200"/>
+<meta name="generated" content="2014-06-27T17:03+0200"/>
 <meta name="author" content="Onur Derin"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -149,48 +149,53 @@ for the JavaScript code in this tag.
 </div>
 
 <div id="content">
-<h1 class="title">ssg++ için eklenti bileşen tanımlamak</h1>
+<h1 class="title">ekşi sözlük için ssg++ API</h1>
 
+
+<div id="table-of-contents">
+<h2>İçindekiler</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">ekşi sözlük için ssg++ API</a></li>
+<li><a href="#sec-2">Örnek kullanım</a></li>
+</ul>
+</div>
+</div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">ssg++ için eklenti bileşen tanımlamak</h2>
+<h2 id="sec-1">ekşi sözlük için ssg++ API</h2>
 <div class="outline-text-2" id="text-1">
 
-
-<p>
-ssg++'nın işlevselliğini kendi bileşenlerinizi kodlayarak da artırabilirsiniz. 
+<p>ssg++ iş hatlarının yapabildiği her şeye kendi uygulamanızda kullanmak için bir API ile ulaşmanız mümkün. 
+İş hattının batak elemanını apisink olarak değiştirip <code>List&lt;Token&gt; SozlukApi.runPipeline(String ishatti)</code> metodunu çağırmanız yeterli.
+Örnek olarak badi başlıklarını yazdırmak için kullanılacak <code>badiknk ! metinbtk</code> iş hattında <code>metinbtk</code> bileşeni yerine <code>apisink</code> kullanarak başlıkları içinde <code>Baslik</code> nesneleri olan bir listeye alabiliriz:
 </p>
-<p>
-Örnek olarak <a href="https://github.com/ssgpp/eklentiler">https://github.com/ssgpp/eklentiler</a> adresinde yer alan ssg++ bileşen havuzundaki kodlara bakabilirsiniz. 
-</p>
-<p>
-<code>$ git checkout https://github.com/ssgpp/eklentiler.git</code> ile <code>~/eklentiler</code> dizinine kodları aldığınızı varsayalım (~ işareti ev dizinini temsil ediyor. Linux altında örn. <code>/home/user</code>). <code>~/.ssgpp/conf/app.properties</code> dosyasındaki <code>EklentiDizini</code> parametresini buna göre düzenleyin.
-</p>
-<p>
-<code>EklentiDizini=~/eklentiler/</code>
-</p>
-<p>
-Eklentiler klasörünün içinde derlenmiş eklenti bileşenlerinin bulunduğu <code>jars</code> klasörü, eklentilerin kaynak kodlarını içeren <code>src</code> klasörü ve eklentiler hakkında tanımlama bilgilerini içeren <code>plugins.info</code> dosyası bulunur. <code>plugins.info</code> dosyası satır satır eklentileri tanımlar. İki nokta üst üste karakteriyle ayrılan iki alanın ilkinde bileşenin iş hatlarında hangi adla kullanılacağını belirlenir. İkinci alan ise Eklenti sınıfının paketler içindeki tam adıdır. Örn.
-</p>
-<p>
-<code>ÖrnekEklentiBileşen: sacre.plugins.comps.OrnekEklentiBilesen</code>
-</p>
-<p>
-<code>src</code> klasörü altında her bir eklenti bileşenin kaynak kodlarını içeren kendi klasörü bulunur. <code>src/ornekeklentibilesen</code> klasörüne örnek bileşen kodunun derlenmesi ve jar dosyasının oluşturulmasını sağlayan <code>Makefile</code> dosyası da dahil edilmiştir.
-</p>
-<p>
-<a href="https://github.com/ssgpp/eklentiler/raw/master/src/ornekeklentibilesen/Makefile">Makefile</a>
-<script src="http://gist-it.appspot.com/github/ssgpp/eklentiler/blob/master/src/ornekeklentibilesen/Makefile?footer=no"></script>
 
 
-<code>OrnekEklentiBilesen</code> sınıfı şu şekilde tanımlanmıştır.
+<pre class="example">List&lt;Token&gt; badilerden = SozlukApi.runPipeline("badiknk ! apisink");
+</pre>
+
+
+<p>
+<b>ÖNEMLİ NOT</b>: ssg++ API'yi kullanmak için geliştirici lisansı edinmeniz gerekiyor. 
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Örnek kullanım</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>İndirilen iki şükela girdiyi ekrana yazdıran bir kod örneğini aşağıda görebilirsiniz.
 </p>
 <p>
-<a href="https://github.com/ssgpp/eklentiler/raw/master/src/ornekeklentibilesen/sacre/plugins/comps/OrnekEklentiBilesen.java">OrnekEklentiBilesen.java</a>
-<script src="http://gist-it.appspot.com/github/ssgpp/eklentiler/blob/master/src/ornekeklentibilesen/sacre/plugins/comps/OrnekEklentiBilesen.java?footer=no"></script>
+<a href="https://raw.githubusercontent.com/ssgpp/ssgpp.github.io/master/ssgpp-api/Main.java">Main.java</a>
+<script src="http://gist-it.appspot.com/github/ssgpp/ssgpp.github.io/blob/master/ssgpp-api/Main.java?footer=no"></script>
 
-<code>make</code> kullanılarak <code>ornekeklentibilesen.jar</code> dosyası <code>jars</code> klasörü altında oluşturulduktan sonra <code>örnekeklentibileşen</code> ssg++ komut satırında bir iş hattı içerisinde kullanılabilir hale gelmiş olur. 
-örn.: <code>badiknk ! örnekeklentibileşen ! metinbtk</code> 
+<a href="https://raw.githubusercontent.com/ssgpp/ssgpp.github.io/master/ssgpp-api/Makefile">Makefile</a>
+<script src="http://gist-it.appspot.com/github/ssgpp/ssgpp.github.io/blob/master/ssgpp-api/Makefile?footer=no"></script>
+
 </p></div>
 </div>
 </div>

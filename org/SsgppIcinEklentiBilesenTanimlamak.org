@@ -17,67 +17,18 @@ Eklentiler klasörünün içinde derlenmiş eklenti bileşenlerinin bulunduğu ~
 
 ~src~ klasörü altında her bir eklenti bileşenin kaynak kodlarını içeren kendi klasörü bulunur. ~src/ornekeklentibilesen~ klasörüne örnek bileşen kodunun derlenmesi ve jar dosyasının oluşturulmasını sağlayan ~Makefile~ dosyası da dahil edilmiştir.
 
+[[https://github.com/ssgpp/eklentiler/raw/master/src/ornekeklentibilesen/Makefile][Makefile]]
+#+BEGIN_HTML
+<script src="http://gist-it.appspot.com/github/ssgpp/eklentiler/blob/master/src/ornekeklentibilesen/Makefile?footer=no"></script>
+#+END_HTML
+
+
 ~OrnekEklentiBilesen~ sınıfı şu şekilde tanımlanmıştır.
 
-#+BEGIN_SRC java
-package sacre.plugins.comps;
-
-import ch.alari.sacre.Component;
-import ch.alari.sacre.Port;
-import ch.alari.sacre.Token;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.Map;
-
-// Bütün ssg++ bileşenleri Component sınıfından türetilir.
-public class OrnekEklentiBilesen extends Component 
-{
-    // iş hattındaki parametrelerin doğruluğunu belirtir.
-    protected boolean initSuccess;
-    
-    // Tüm Component'ler için constructor imzası bu şekildedir.
-    public OrnekEklentiBilesen(String name, Map<String, String> parameters)
-    {
-        super(name);
-        // Bileşenin iş hatlarında kullanılan adı.
-        setType("ÖrnekEklentiBileşen");
-        // Bileşenin giriş ve çıkış kapıları tipleri, adları ve adetleriyle belirlenmelidir.
-        addPort(new Port<Token>(Token.class, "in", Port.DIR_TYPE_IN));
-        addPort(new Port<Token>(Token.class, "out", Port.DIR_TYPE_OUT));
-        
-        initSuccess = true;
-    }
-    
-    // Thread olarak çalıştırılan bileşenlerin yaptıkları işleri bu metod belirler.
-    public void task() throws InterruptedException
-    {
-        // Bileşin sonlanması için çıkış kapılarına özel STOP token gönderilmeli, durumu STOPPED'a atanmalı ve InterruptedException atılmalıdır.
-        if(!initSuccess)
-        {
-            port("out").put(new Token(Token.STOP));
-            state = State.STOPPED;
-            throw new InterruptedException();
-        }
-        
-        // Giriş kapısından bir token okunması
-        Token currToken = (Token)port("in").take();
-        
-	// Okunan token STOP tokeni ise bileşenin çalışması durdurulur.
-        if(currToken.isStop())
-        {            
-            port("out").put(new Token(Token.STOP));
-            state = State.STOPPED;
-            return;
-        }
-
-	// Gelen token ile birşeyler yapıp çıktıya yazılır.
-        // ...
- 
-        // Bu örnekte okunan token üstünde hiçbir işlem yapmadan olduğu gibi çıkış kapısına gönderiyoruz.
-	port("out").put(currToken);
-    }
-}
-#+END_SRC
+[[https://github.com/ssgpp/eklentiler/raw/master/src/ornekeklentibilesen/sacre/plugins/comps/OrnekEklentiBilesen.java][OrnekEklentiBilesen.java]]
+#+BEGIN_HTML
+<script src="http://gist-it.appspot.com/github/ssgpp/eklentiler/blob/master/src/ornekeklentibilesen/sacre/plugins/comps/OrnekEklentiBilesen.java?footer=no"></script>
+#+END_HTML
 
 ~make~ kullanılarak ~ornekeklentibilesen.jar~ dosyası ~jars~ klasörü altında oluşturulduktan sonra ~örnekeklentibileşen~ ssg++ komut satırında bir iş hattı içerisinde kullanılabilir hale gelmiş olur. 
 örn.: ~badiknk ! örnekeklentibileşen ! metinbtk~ 

@@ -1,0 +1,25 @@
+#+TITLE: ekşi sözlük için ssg++ API
+
+* ekşi sözlük için ssg++ API
+ssg++ iş hatlarının yapabildiği her şeye kendi uygulamanızda kullanmak için bir API ile ulaşmanız mümkün. 
+İş hattının batak elemanını apisink olarak değiştirip ~List<Token> SozlukApi.runPipeline(String ishatti)~ metodunu çağırmanız yeterli.
+Örnek olarak badi başlıklarını yazdırmak için kullanılacak ~badiknk ! metinbtk~ iş hattında ~metinbtk~ bileşeni yerine ~apisink~ kullanarak başlıkları içinde ~Baslik~ nesneleri olan bir listeye alabiliriz:
+#+BEGIN_EXAMPLE 
+List<Token> badilerden = SozlukApi.runPipeline("badiknk ! apisink");
+#+END_EXAMPLE 
+
+*ÖNEMLİ NOT*: ssg++ API'yi kullanmak için geliştirici lisansı edinmeniz gerekiyor. 
+
+* Örnek kullanım
+İndirilen iki şükela girdiyi ekrana yazdıran bir kod örneğini aşağıda görebilirsiniz.
+
+[[https://raw.githubusercontent.com/ssgpp/ssgpp.github.io/master/ssgpp-api/Main.java][Main.java]]
+#+BEGIN_HTML
+<script src="http://gist-it.appspot.com/github/ssgpp/ssgpp.github.io/blob/master/ssgpp-api/Main.java?footer=no"></script>
+#+END_HTML
+
+[[https://raw.githubusercontent.com/ssgpp/ssgpp.github.io/master/ssgpp-api/Makefile][Makefile]]
+#+BEGIN_HTML
+<script src="http://gist-it.appspot.com/github/ssgpp/ssgpp.github.io/blob/master/ssgpp-api/Makefile?footer=no"></script>
+#+END_HTML
+
