@@ -1,0 +1,3 @@
+#+TITLE: Sitemap
+
+Önemli: Şimdi amazon hesabınıza girip "your account > manage your kindle > personal document settings > approved personal document e-mail list > add a new approved e-mail address" yolunu takip ederek sethi.eksi@gmail.com adresini kindle adresinize doküman göndermeye izinli e-posta adresleri listesine eklemeniz gerekiyor.
