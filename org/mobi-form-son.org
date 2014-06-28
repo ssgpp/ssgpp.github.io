@@ -1,4 +1,5 @@
 #+TITLE: Sitemap
+#+OPTIONS: toc:nil
 
 * İyi okumalar!
 DEBE abonelik isteğiniz alındı. Aboneliğinizi sonlandırmak için aynı formu kullanabilirsiniz.
