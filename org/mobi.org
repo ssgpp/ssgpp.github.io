@@ -39,9 +39,38 @@
 
 #+END_HTML
 
+* Özellikler ve ekran çıktıları
++ doğrudan bağlantısı verilmiş resimlerin gömülmesi
++ bağlantısı verilmiş tivitlerin gömülmesi
++ güncel başlıklarda ilk girdinin eklenmesi
++ bakınız verilmiş girdilerin eklenmesi
+
+# #+ATTR_HTML: :width 500px
+#+BEGIN_HTML
+<table style="text-align: center;" cellpadding="10px; margin:auto; float:center;" border="1px">
+  <tr>
+    <td>
+      <a href="imgs/ekran-ciktisi-mobi-gomulu-resim.png"><img src="imgs/ekran-ciktisi-mobi-gomulu-resim.png" width="300" style="border-width: 1px;border-color:black;"></a>
+    </td>
+    <td>
+      <a href="imgs/ekran-ciktisi-mobi-gomulu-tivit.png"><img src="imgs/ekran-ciktisi-mobi-gomulu-tivit.png" width="300" style="border-width: 1px;border-color:black;"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="imgs/ekran-ciktisi-mobi-gomulu-basligin-ilk-girdisi.png"><img src="imgs/ekran-ciktisi-mobi-gomulu-basligin-ilk-girdisi.png" width="300" style="border-width: 1px;border-color:black;"></a>
+    </td>
+    <td>
+      <a href="imgs/ekran-ciktisi-mobi-gomulu-bakiniz-verilmis-girdiler.png"><img src="imgs/ekran-ciktisi-mobi-gomulu-bakiniz-verilmis-girdiler.png" width="300" style="border-width: 1px;border-color:black;"></a>
+    </td>
+  </tr>
+</table>
+#+END_HTML
+
 - Bir kindle cihazına sahip olmadan bilgisayarınıza ya da akıllı telefonunuza [[http://www.amazon.com/gp/feature.html/ref=sv_kstore_3?ie=UTF8&docId=1000493771][kindle uygulamasını yükle]]yerek de bu hizmetten faydalanabilirsiniz.
 - Bu hizmetin kapsamı dışında cihazınıza dosya gönderilmez.
 - Hizmetin sürekliliği ve düzenliliği konusunda herhangi bir garanti verilmez.
+- Bu hizmetin amacı gündeme ve hayata alternatif bakış sunan ekşi sözlük'ün kullanıcılarının beğenileriyle şekillenen DEBE girdilerinin okunabilirliğini artırmaktır.
 - 17 temmuz 2013'ten itibaren gün gün *mobi biçiminde derlenen DEBE arşivine* [[https://drive.google.com/?tab=mo&authuser=0#folders/0BwFEb0DXFz0IWmZBSkVLZDRiSGc][şurdan]] ulaşabilirsiniz.
 
 ** eski tanitim							   :noexport:

@@ -1,15 +1,17 @@
-#+TITLE: Sitemap
+#+TITLE: Site haritası
 
 + [[file:index.org][ssg++ ana sayfa]]
 + kullanıcılar için
    - [[file:Sacre.org][sacre bileşen çerçevesi]]
    - [[file:SsgppComps.org][ssg++ bileşenleri]]
-   - [[file:IsHattiKisayollari.org][İş hattı kısayolları]]
-   - [[file:YeniIsHattiKisayoluTanimlama.org][Yeni iş hattı kısayolu tanımlama]]
-   - [[file:roadmap.org][Değişim günlüğü]]
+   - [[file:IsHattiKisayollari.org][iş hattı kısayolları]]
+   - [[file:YeniIsHattiKisayoluTanimlama.org][yeni iş hattı kısayolu tanımlama]]
+   - [[file:roadmap.org][değişim günlüğü]]
 + geliştiriciler için
    - [[file:SsgppIcinEklentiBilesenTanimlamak.org][ssg++ için eklenti bileşen tanımlamak]]
    - [[file:ssgpp-api.org][ekşi sözlük için ssg++ API]]
 + ssg++ tabanlı hizmetler
-   + [[file:mobi.org][E-okuyucular için güncel sözlük içeriği edinme]]
-
+   - [[file:mobi.org][e-okuyucular için güncel sözlük içeriği edinme]]
++ ssg++ bağlantıları
+   - [[http://ssgpp.wordpress.com][ssg++ blog]] 
+   - [[http://twitter.com/sozlukshell][ssg++ twitter]]
