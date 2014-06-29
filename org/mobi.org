@@ -1,4 +1,4 @@
-#+TITLE: E-okuyucular için güncel sözlük içeriği edinme
+#+TITLE: e-okuyucular için güncel sözlük içeriği edinme
 #+OPTIONS: toc:nil
 
 * Kindle için dünün en beğenilen entry'leri (DEBE)
@@ -50,18 +50,18 @@
 <table style="text-align: center;" cellpadding="10px; margin:auto; float:center;" border="1px">
   <tr>
     <td>
-      <a href="imgs/ekran-ciktisi-mobi-gomulu-resim.png"><img src="imgs/ekran-ciktisi-mobi-gomulu-resim.png" width="300" style="border-width: 1px;border-color:black;"></a>
+      <a href="imgs/ekran-ciktisi-mobi-gomulu-resim.png"><img src="imgs/ekran-ciktisi-mobi-gomulu-resim.png" width="300"></a>
     </td>
     <td>
-      <a href="imgs/ekran-ciktisi-mobi-gomulu-tivit.png"><img src="imgs/ekran-ciktisi-mobi-gomulu-tivit.png" width="300" style="border-width: 1px;border-color:black;"></a>
+      <a href="imgs/ekran-ciktisi-mobi-gomulu-tivit.png"><img src="imgs/ekran-ciktisi-mobi-gomulu-tivit.png" width="300"></a>
     </td>
   </tr>
   <tr>
     <td>
-      <a href="imgs/ekran-ciktisi-mobi-gomulu-basligin-ilk-girdisi.png"><img src="imgs/ekran-ciktisi-mobi-gomulu-basligin-ilk-girdisi.png" width="300" style="border-width: 1px;border-color:black;"></a>
+      <a href="imgs/ekran-ciktisi-mobi-gomulu-basligin-ilk-girdisi.png"><img src="imgs/ekran-ciktisi-mobi-gomulu-basligin-ilk-girdisi.png" width="300"></a>
     </td>
     <td>
-      <a href="imgs/ekran-ciktisi-mobi-gomulu-bakiniz-verilmis-girdiler.png"><img src="imgs/ekran-ciktisi-mobi-gomulu-bakiniz-verilmis-girdiler.png" width="300" style="border-width: 1px;border-color:black;"></a>
+      <a href="imgs/ekran-ciktisi-mobi-gomulu-bakiniz-verilmis-girdiler.png"><img src="imgs/ekran-ciktisi-mobi-gomulu-bakiniz-verilmis-girdiler.png" width="300"></a>
     </td>
   </tr>
 </table>
