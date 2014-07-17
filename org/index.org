@@ -94,7 +94,7 @@ Kendi iş hattı kısayollarınızı tanımlamak için (bkz: [[file:YeniIsHattiK
 ssg++ kullanılarak yapılmış daha geniş kapsamlı çalışmalar için (bkz: [[http://ssgpp.wordpress.com][ssg++ blogu]]).
 
 * Kurulum ve kullanım
-  [[*Lisans][Lisans]] metnini okuyup kabul ettikten sonra ssg++ programını indirmek ve ücretsiz bir lisans edinmek için ad ve soyadınızla birlikte oderin at users.sourceforge.net adresine "ssg++ kullanıcı lisansi isteği" konulu bir e-mail göndermeniz yeterli. 
+  [[*Lisans][Lisans]] metnini okuyup kabul ettikten sonra ssg++ programını indirmek ve ücretsiz bir lisans edinmek için [[file:indir.org][lisans istek formu]]nu doldurmanız yeterli.
 
 ssg++'nın çalıştırılabilmesi için sisteminizde [[http://www.oracle.com/technetwork/java/javase/downloads/index.html][JRE 6]] veya daha üst bir sürümü kurulu olmalıdır. Bir komut uçbiriminde ~java -version~ komutunu çalıştırarak bunu kontrol edebilirsiniz.
 

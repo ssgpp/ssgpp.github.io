@@ -1,0 +1,7 @@
+#+TITLE: İstek formu son
+#+OPTIONS: toc:nil
+
+* Lisans isteğiniz alındı.
+En kısa zamanda e-posta adresinize ssg++'yı indirmeniz için bir bağlantı gönderilecek (birkaç gün de sürebilir).
+
+
