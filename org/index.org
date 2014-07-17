@@ -174,24 +174,14 @@ ssg++ API ile ilgili daha fazla ayrıntı için (bkz: [[file:ssgpp-api.org][ssg+
 * Değişim günlüğü
 Sürümlere ait özellikler ve değişimler için (bkz: [[file:roadmap.org][değişim günlüğü]])
 
-* İletişim
+* Destek olun
 Onur Derin <oderin at users.sourceforge.net> adresine yazarak
  * fikir, görüş ve önerilerinizi,
  * hata bildirimlerinizi, 
  * kendi yazdığınız eklentileri,
  * kendi oluşturduğunuz iş hatlarını,
  * kod düzeltmelerinizi gönderebilirsiniz.
-
-* Lisans
-ssg++ ticari olmayan kişisel kullanım için ücretsiz bir uygulamadır ve kullanımı şu [[http://www.binpress.com/license/view/l/f069102d24b7a1d5e3aeb0bf23a621a5][lisans]]a tabidir. Özetle,
- * Sadece lisansta adı geçen kişi tarafından aynı anda tek bir bilgisayara kurularak kullanılabilir.
- * Programın kaynak kodu ya da çalıştırılabilir dosyaları satılamaz ya da dağıtılamaz.
- * Sadece ticari olmayan kişisel amaçlar için kullanılabilir. Şirket ya da organizasyon içinde kullanılması için ayrı tipte bir lisans gerekir. Bunun için oderin at users.sourceforge.net adresine "ssg++ ticari lisans isteği" konulu bir e-posta gönderebilirsiniz.
- * Kaynak kodu değiştirilemez ve program başka bir program ile bağlantılı olarak kullanılamaz. Bunun için ayrı bir lisans gerekir. oderin at users.sourceforge.net adresine "ssg++ gelistirici lisansi isteği" konulu bir e-posta gönderebilirsiniz.
- * Program kullanılarak elde edilen her türlü çıktı, herhangi bir yerde kullanılıyorsa, program adına (ssg++) ve programın internet adresine (http://ssgpp.github.io) uygun şekilde atıfta bulunulmalıdır.
- * Programın bazı parçaları başka bir takım lisanslara tabidir: commons, xalan-j and jcommander için Apache License Version 2.0, jfreechart için GNU LGPL v2.1, sacre için BSD lisansı.
-
-Programın geliştirilmesine katkı sağlamak için /paypal/ ya da /bitcoin/ ile kolayca bağışta bulunabilirsiniz.
+ * Programın geliştirilmesine katkı sağlamak için /paypal/ ya da /bitcoin/ ile kolayca bağışta bulunabilirsiniz.
 #+BEGIN_HTML
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
@@ -204,6 +194,17 @@ Programın geliştirilmesine katkı sağlamak için /paypal/ ya da /bitcoin/ ile
 #+END_HTML
 
 Bitcoin bağış adresi: 1D1PX1w317pmib5TwoP7K2chiE1r7CrXyq
+
+
+
+* Lisans
+ssg++ ticari olmayan kişisel kullanım için ücretsiz bir uygulamadır ve kullanımı şu [[http://www.binpress.com/license/view/l/f069102d24b7a1d5e3aeb0bf23a621a5][lisans]]a tabidir. Özetle,
+ * Sadece lisansta adı geçen kişi tarafından aynı anda tek bir bilgisayara kurularak kullanılabilir.
+ * Programın kaynak kodu ya da çalıştırılabilir dosyaları satılamaz ya da dağıtılamaz.
+ * Sadece ticari olmayan kişisel amaçlar için kullanılabilir. Şirket ya da organizasyon içinde kullanılması için ayrı tipte bir lisans gerekir. Bunun için oderin at users.sourceforge.net adresine "ssg++ ticari lisans isteği" konulu bir e-posta gönderebilirsiniz.
+ * Kaynak kodu değiştirilemez ve program başka bir program ile bağlantılı olarak kullanılamaz. Bunun için ayrı bir lisans gerekir. oderin at users.sourceforge.net adresine "ssg++ gelistirici lisansi isteği" konulu bir e-posta gönderebilirsiniz.
+ * Program kullanılarak elde edilen her türlü çıktı, herhangi bir yerde kullanılıyorsa, program adına (ssg++) ve programın internet adresine (http://ssgpp.github.io) uygun şekilde atıfta bulunulmalıdır.
+ * Programın bazı parçaları başka bir takım lisanslara tabidir: commons, xalan-j and jcommander için Apache License Version 2.0, jfreechart için GNU LGPL v2.1, sacre için BSD lisansı.
 
 ** Yasal Uyarı
 ssg++'nın Ekşi Teknoloji ve Bilişim Ltd. Şti. ile bir bağlantısı yoktur. ekşi sözlük, Ekşi Teknoloji ve Bilişim Ltd. Şti.’nin tescilli bir markasıdır. Uygulama üzerinden erişilebilen ekşi sözlük içeriği, ve bu içeriğe dair tüm haklar Ekşi Teknoloji ve Bilişim Ltd. Şti.’ne aittir.
