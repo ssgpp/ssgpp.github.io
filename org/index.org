@@ -23,6 +23,8 @@ Daha fazla bilgi için
 # #+CAPTION: This is a table with lines around and between cells
 # #+ATTR_HTML: :width 500px
 #+BEGIN_HTML
+<iframe width="640" height="480" src="//www.youtube.com/embed/eQl2paFPH3c?rel=0" frameborder="0" allowfullscreen></iframe>
+
 <table style="text-align: center;" cellpadding="10px">
   <tr>
     <td>
@@ -126,7 +128,7 @@ EksiSozluk-Sifresi=...
 ZamanDilimi=Europe/Istanbul
 # Ekşi Sözlük hesabınızda belirlediğiniz ayarlar > tercihler > gösterim > sayfa başı entry sayısı
 SayfaBasiGirdiSayisi=100
-# Antik arayüzünde sol frame'de görülen başlık sayısı.
+# Ekşi Sözlük hesabınızda belirlediğiniz ayarlar > tercihler > gösterim > sayfa başı başlık sayısı
 SayfaBasiBaslikSayisi=50
 # Bir uyarı mesajı argümanı ile çalıştıralabilen bir komut satırı programı. Linux Gnome için notify-send kullanılabilir.
 UyarmaProgrami=notify-send
