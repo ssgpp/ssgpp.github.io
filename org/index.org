@@ -102,40 +102,43 @@ ssg++'nın çalıştırılabilmesi için sisteminizde [[http://www.oracle.com/te
 
 Edindiğiniz sıkıştırılmış dosyayı istediğiniz bir klasöre (~SSG++_DIR~) açın. Komut uçbiriminde ~cd SSG++_DIR~ komutuyla ~ssgpp.jar~ dosyasını içeren klasöre girin. İstenilen bir [[ssg++ komutları][komut]]u çalıştırmak için şunu girin:
 #+BEGIN_EXAMPLE
-java -jar ssgpp.jar komut
+java -cp ssgpp.jar ssgpp.console.Shell komut
 #+END_EXAMPLE
 
 Linux altında bash kullanıcıları =~/.bashrc= dosyalarında alias ile kısayol tanımlayabilir: 
 #+BEGIN_EXAMPLE 
-alias ssg++='cd SSG++_DIR; java -jar ssgpp.jar' 
+alias ssg++='cd SSG++_DIR; java -cp ssgpp.jar ssgpp.console.Shell' 
 #+END_EXAMPLE
 
 Komuttan önce =-l= argümanı verilirse komut ekşi sözlük'e giriş yapıldıktan sonra çalıştırılır. 
 
 ssg++'yı web arayüzü ile kullanmak için:
 #+BEGIN_EXAMPLE 
-java -cp ssgpp.jar ssgpp.webui.WebServer 
+java -jar ssgpp.jar
 #+END_EXAMPLE
 komutunu kullanarak ssg++ web sunucusunu çalıştırıp tarayıcınızda [[http://localhost:8081/index.html]] adresini açın.
 
 ** Yapılandırma
-Programın çalışmasıyla ilgili bazı ayarlar kullanıcının ev dizinindeki =.ssgpp= klasöründe (örn. Linux altında =~/.ssgpp/conf/=) tutulur. Burdaki =app.properties= dosyası şöyle bir şablona sahiptir.
-Önemli not: Şifreniz şifrelenmemiş olarak tutulur.
+Programın çalışmasıyla ilgili bazı ayarlar kullanıcının ev dizinindeki =.ssgpp= klasöründe (örn. Linux altında =~/.ssgpp/conf/=) tutulur. Burdaki =app.properties= dosyası program ilk kez çalıştırıldığında otomatik oluşturulur. 
+İsterseniz oluşturulmuş dosyayı düzenleyerek isterseniz aşağıdaki şablonu kullanarak kendi yapılandırma dosyanızı oluşturabilirsiniz. Aşağıdaki örnekte "#" ile başlayan satırlar açıklama (comment) satırlarıdır, dikkate alınmaz.
 #+BEGIN_EXAMPLE
-# java -cp ssgpp.jar ssgpp.gui.MainGUI komutuyla görsel arayüzü açıp Düzenle > Seçenekler > ekşi sözlük menü yolunu takibederek kullanıcı adı, şifresi ve zaman dilimini girebilirsiniz.
+# ekşi sözlük'e giriş yaparken kullandığınız e-mail adresi (eğer tanımladıysanız, kullanıcı adı)
 EksiSozluk-KullaniciAdi=...
+# Önemli not: Şifreniz şifrelenmemiş olarak tutulur.
 EksiSozluk-Sifresi=...
 ZamanDilimi=Europe/Istanbul
 # Ekşi Sözlük hesabınızda belirlediğiniz ayarlar > tercihler > gösterim > sayfa başı entry sayısı
-SayfaBasiGirdiSayisi=100
+SayfaBasiGirdiSayisi=10
 # Ekşi Sözlük hesabınızda belirlediğiniz ayarlar > tercihler > gösterim > sayfa başı başlık sayısı
 SayfaBasiBaslikSayisi=50
-# Bir uyarı mesajı argümanı ile çalıştıralabilen bir komut satırı programı. Linux Gnome için notify-send kullanılabilir.
-UyarmaProgrami=notify-send
+# Bir uyarı mesajı argümanı ile çalıştırılabilen bir komut satırı programı. 
+# Linux Gnome için notify-send kullanılabilir. 
+# Tek bir mesaj argumanı alarak çalışabilen bir program olmalı. (boş bırakabilirsiniz)
+UyarmaProgrami=
 # Web arayüzü bağlantıları verilen resimleri gömülü olarak göstersin mi? evet:1, hayır:0
 ResimleriGoster=1
-# Eklenti bileşenlerin konumu
-EklentiDizini=./
+# Eklenti bileşenlerin konumu (boş bırakabilirsiniz.)
+EklentiDizini=
 #+END_EXAMPLE
 
 ** ssg++ komutları

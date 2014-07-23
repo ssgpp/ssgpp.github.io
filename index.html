@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="ssg++ ana sayfa"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-07-22T23:45+0200"/>
+<meta name="generated" content="2014-07-23T19:26+0200"/>
 <meta name="author" content="Onur Derin"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -335,7 +335,7 @@ Edindiğiniz sıkıştırılmış dosyayı istediğiniz bir klasöre (<code>SSG+
 </p>
 
 
-<pre class="example">java -jar ssgpp.jar komut
+<pre class="example">java -cp ssgpp.jar ssgpp.console.Shell komut
 </pre>
 
 
@@ -344,7 +344,7 @@ Linux altında bash kullanıcıları <code>~/.bashrc</code> dosyalarında alias 
 </p>
 
 
-<pre class="example">alias ssg++='cd SSG++_DIR; java -jar ssgpp.jar' 
+<pre class="example">alias ssg++='cd SSG++_DIR; java -cp ssgpp.jar ssgpp.console.Shell' 
 </pre>
 
 
@@ -356,7 +356,7 @@ ssg++'yı web arayüzü ile kullanmak için:
 </p>
 
 
-<pre class="example">java -cp ssgpp.jar ssgpp.webui.WebServer 
+<pre class="example">java -jar ssgpp.jar
 </pre>
 
 <p>
@@ -369,25 +369,28 @@ komutunu kullanarak ssg++ web sunucusunu çalıştırıp tarayıcınızda <a hre
 <h3 id="sec-3-1">Yapılandırma</h3>
 <div class="outline-text-3" id="text-3-1">
 
-<p>Programın çalışmasıyla ilgili bazı ayarlar kullanıcının ev dizinindeki <code>.ssgpp</code> klasöründe (örn. Linux altında <code>~/.ssgpp/conf/</code>) tutulur. Burdaki <code>app.properties</code> dosyası şöyle bir şablona sahiptir.
-Önemli not: Şifreniz şifrelenmemiş olarak tutulur.
+<p>Programın çalışmasıyla ilgili bazı ayarlar kullanıcının ev dizinindeki <code>.ssgpp</code> klasöründe (örn. Linux altında <code>~/.ssgpp/conf/</code>) tutulur. Burdaki <code>app.properties</code> dosyası program ilk kez çalıştırıldığında otomatik oluşturulur. 
+İsterseniz oluşturulmuş dosyayı düzenleyerek isterseniz aşağıdaki şablonu kullanarak kendi yapılandırma dosyanızı oluşturabilirsiniz. Aşağıdaki örnekte "#" ile başlayan satırlar açıklama (comment) satırlarıdır, dikkate alınmaz.
 </p>
 
 
-<pre class="example"># java -cp ssgpp.jar ssgpp.gui.MainGUI komutuyla görsel arayüzü açıp Düzenle &gt; Seçenekler &gt; ekşi sözlük menü yolunu takibederek kullanıcı adı, şifresi ve zaman dilimini girebilirsiniz.
+<pre class="example"># ekşi sözlük'e giriş yaparken kullandığınız e-mail adresi (eğer tanımladıysanız, kullanıcı adı)
 EksiSozluk-KullaniciAdi=...
+# Önemli not: Şifreniz şifrelenmemiş olarak tutulur.
 EksiSozluk-Sifresi=...
 ZamanDilimi=Europe/Istanbul
 # Ekşi Sözlük hesabınızda belirlediğiniz ayarlar &gt; tercihler &gt; gösterim &gt; sayfa başı entry sayısı
-SayfaBasiGirdiSayisi=100
+SayfaBasiGirdiSayisi=10
 # Ekşi Sözlük hesabınızda belirlediğiniz ayarlar &gt; tercihler &gt; gösterim &gt; sayfa başı başlık sayısı
 SayfaBasiBaslikSayisi=50
-# Bir uyarı mesajı argümanı ile çalıştıralabilen bir komut satırı programı. Linux Gnome için notify-send kullanılabilir.
-UyarmaProgrami=notify-send
+# Bir uyarı mesajı argümanı ile çalıştırılabilen bir komut satırı programı. 
+# Linux Gnome için notify-send kullanılabilir. 
+# Tek bir mesaj argumanı alarak çalışabilen bir program olmalı. (boş bırakabilirsiniz)
+UyarmaProgrami=
 # Web arayüzü bağlantıları verilen resimleri gömülü olarak göstersin mi? evet:1, hayır:0
 ResimleriGoster=1
-# Eklenti bileşenlerin konumu
-EklentiDizini=./
+# Eklenti bileşenlerin konumu (boş bırakabilirsiniz.)
+EklentiDizini=
 </pre>
 
 
