@@ -65,13 +65,13 @@ ssg++ komutları iş hattı kısayolu şeklinde tanımlanarak genişletilebilir.
 Mevcut tanımlı iş hattı kısayolları: 
 
 #+ATTR_HTML: cellpadding="15"
-| [[file:IsHattiKisayollari.org::ajanda-1][ajanda-1]]               | [[file:IsHattiKisayollari.org::ajanda][ajanda]]   | [[file:IsHattiKisayollari.org::ajanda3][ajanda3]]         | [[file:IsHattiKisayollari.org::anket][anket]]              |
-| [[file:IsHattiKisayollari.org::ara][ara]]                    | [[file:IsHattiKisayollari.org::badi][badi]]     | [[file:IsHattiKisayollari.org::baslikindir][başlıkindir]]     | [[file:IsHattiKisayollari.org::baslikresimleri][başlıkresimleri]]    |
-| [[file:IsHattiKisayollari.org::bugun][bugün]]                  | [[file:IsHattiKisayollari.org::debe][debe]]     | [[file:IsHattiKisayollari.org::dosyadananket][dosyadananket]]   | [[file:IsHattiKisayollari.org::dosyadanlafebeleri][dosyadanlafebeleri]] |
-| [[file:IsHattiKisayollari.org::dosyadanzamansalegilim][dosyadanzamansaleğilim]]  | [[file:IsHattiKisayollari.org::dun][dün]]      | [[file:IsHattiKisayollari.org::farkbadi][farkbadi]]        | [[file:IsHattiKisayollari.org::getir][getir]]              |
-| [[file:IsHattiKisayollari.org::ghebe][ghebe]]                  | [[file:IsHattiKisayollari.org::ghebce][ghebçe]]   | [[file:IsHattiKisayollari.org::gundem][gündem]]          | [[file:IsHattiKisayollari.org::lafebeleri][lafebeleri]]         |
-| [[file:IsHattiKisayollari.org::macskoru][maçskoru]]                | [[file:IsHattiKisayollari.org::manset][manşet]]  | [[file:IsHattiKisayollari.org::ortakbasliklari][ortakbaşlıkları]]  | [[file:IsHattiKisayollari.org::takip][takip]]              |
-| [[file:IsHattiKisayollari.org::tsllbn][tsllbn]]                 | [[file:IsHattiKisayollari.org::yedekle][yedekle]]  | [[file:IsHattiKisayollari.org::zamansalegilim][zamansaleğilim]]  |                    |
+| [[file:IsHattiKisayollari.org::ajanda-1][ajanda-1]]               | [[file:IsHattiKisayollari.org::ajanda][ajanda]]  | [[file:IsHattiKisayollari.org::ajanda3][ajanda3]]         | [[file:IsHattiKisayollari.org::anket][anket]]              |
+| [[file:IsHattiKisayollari.org::ara][ara]]                    | [[file:IsHattiKisayollari.org::badi][badi]]    | [[file:IsHattiKisayollari.org::baslikindir][başlıkindir]]     | [[file:IsHattiKisayollari.org::baslikresimleri][başlıkresimleri]]    |
+| [[file:IsHattiKisayollari.org::bugun][bugün]]                  | [[file:IsHattiKisayollari.org::debe][debe]]    | [[file:IsHattiKisayollari.org::dosyadananket][dosyadananket]]   | [[file:IsHattiKisayollari.org::dosyadanlafebeleri][dosyadanlafebeleri]] |
+| [[file:IsHattiKisayollari.org::dosyadanzamansalegilim][dosyadanzamansaleğilim]] | [[file:IsHattiKisayollari.org::dun][dün]]     | [[file:IsHattiKisayollari.org::farkbadi][farkbadi]]        | [[file:IsHattiKisayollari.org::getir][getir]]              |
+| [[file:IsHattiKisayollari.org::ghebe][ghebe]]                  | [[file:IsHattiKisayollari.org::ghebce][ghebçe]]  | [[file:IsHattiKisayollari.org::gundem][gündem]]          | [[file:IsHattiKisayollari.org::lafebeleri][lafebeleri]]         |
+| [[file:IsHattiKisayollari.org::macskoru][maçskoru]]               | [[file:IsHattiKisayollari.org::manset][manşet]]  | [[file:IsHattiKisayollari.org::ortakbasliklari][ortakbaşlıkları]] | [[file:IsHattiKisayollari.org::takip][takip]]              |
+| [[file:IsHattiKisayollari.org::tsllbn][tsllbn]]                 | [[file:IsHattiKisayollari.org::yedekle][yedekle]] | [[file:IsHattiKisayollari.org::zamansalegilim][zamansaleğilim]]  |                    |
 Örnek olarak, /lafebeleri/ komutunun iş hattı şöyle:
 #+BEGIN_EXAMPLE
 başlıkknk [başlık=%s] ! başlıkgirdileri ! histogram [eksen=kategori, kategori=yazar] ! grafikbtk 
@@ -98,7 +98,7 @@ ssg++ kullanılarak yapılmış daha geniş kapsamlı çalışmalar için (bkz: 
 * Kurulum ve kullanım
   [[*Lisans][Lisans]] metnini okuyup kabul ettikten sonra ssg++ programını indirmek ve ücretsiz bir lisans edinmek için [[file:indir.org][lisans istek formu]]nu doldurmanız yeterli.
 
-ssg++'nın çalıştırılabilmesi için sisteminizde [[http://www.oracle.com/technetwork/java/javase/downloads/index.html][JRE 6]] veya daha üst bir sürümü kurulu olmalıdır. Bir komut uçbiriminde ~java -version~ komutunu çalıştırarak bunu kontrol edebilirsiniz.
+ssg++'nın çalıştırılabilmesi için sisteminizde [[http://www.oracle.com/technetwork/java/javase/downloads/index.html][JRE 7]] veya daha üst bir sürümü kurulu olmalıdır. Bir komut uçbiriminde ~java -version~ komutunu çalıştırarak bunu kontrol edebilirsiniz.
 
 Edindiğiniz sıkıştırılmış dosyayı istediğiniz bir klasöre (~SSG++_DIR~) açın. Komut uçbiriminde ~cd SSG++_DIR~ komutuyla ~ssgpp.jar~ dosyasını içeren klasöre girin. İstenilen bir [[ssg++ komutları][komut]]u çalıştırmak için şunu girin:
 #+BEGIN_EXAMPLE

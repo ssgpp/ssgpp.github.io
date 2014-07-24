@@ -1,26 +1,41 @@
 #+TITLE: Değişim günlüğü
-* DONE Milestone: 0.5
+#+OPTIONS: toc:nil
+
+* DONE Sürüm: 0.5
   - State "DONE"       from "TODO"           [2009-05-13]
 
 + [X] projenin ilk sunumu
 + [X] proje yönetiminin oluşturulması
 + [X] haberleşme listesinin açılışı 
 
-* DONE Milestone: 0.5.1
+* DONE Sürüm: 0.5.1
   - State "DONE"       from "TODO"       [2009-06-15]
 
 + [X] Görsel kullanıcı arayüzünün ilk eklenişi, hata giderimleri ve ufak iyileştirmeler.
     
-* DONE Milestone: 0.9
+* DONE Sürüm: 0.9
   - State "DONE"       from "TODO"       [2013-07-09]
 
   + [X]     Komut satırı odaklı yenilikler
   + [X]     Yeni bileşenlerin eklenmesi
   + [X]     Değişmiş sözlük sayfa yapısından dolayı ortaya çıkan sorunların giderilmesi 
   
-* DONE Milestone: 0.9.1
+* DONE Sürüm: 0.9.1
   - State "DONE"       from "TODO"       [2013-07-14]
 
 + [X] Yeni bileşenler
 + [X] Küçük iyileştirmeler
 
+* DONE Sürüm: 1.0
+  - State "DONE"       from "TODO"       [2014-03-07]
+
+  + [X] web arayüzünün eklenmesi
+
+* DONE Sürüm: 1.1 (kod adı: re-antik)
+  - State "DONE"       from "TODO"       [2014-07-23]
+
++ [X] antik'in kapanması sonrası etkilenen bileşenlerin beta'ya göre değiştirilmesi
+
+* Bilinen sorunlar/eksiklikler
+
++ [] girdi yazma, favorilere ekleme, ben sayfası, başlık takip etme, girdi oylama
