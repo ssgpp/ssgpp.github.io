@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="Değişim günlüğü"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-07-24T15:14+0200"/>
+<meta name="generated" content="2014-07-28T22:30+0200"/>
 <meta name="author" content="Onur Derin"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -156,6 +156,27 @@ for the JavaScript code in this tag.
 <h1 class="title">Değişim günlüğü</h1>
 
 
+<div id="table-of-contents">
+<h2>İçindekiler</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Sürüm: 0.5</a></li>
+<li><a href="#sec-2">Sürüm: 0.5.1</a></li>
+<li><a href="#sec-3">Sürüm: 0.9</a></li>
+<li><a href="#sec-4">Sürüm: 0.9.1</a></li>
+<li><a href="#sec-5">Sürüm: 1.0</a></li>
+<li><a href="#sec-6">Sürüm: 1.1 (kod adı: re-antik)</a></li>
+<li><a href="#v1.2">Sürüm 1.2 (kod adı: antik++)</a>
+<ul>
+<li><a href="#sec-7-1">Değişiklikler</a></li>
+<li><a href="#sec-7-2">Sürüm yükseltme notları</a></li>
+<li><a href="#sec-7-3">Bilinen sorunlar/eksiklikler</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
 <div id="outline-container-1" class="outline-2">
 <h2 id="sec-1"><span class="done DONE">DONE</span> Sürüm: 0.5</h2>
 <div class="outline-text-2" id="text-1">
@@ -268,16 +289,107 @@ for the JavaScript code in this tag.
 
 </div>
 
-<div id="outline-container-7" class="outline-2">
-<h2 id="sec-7">Bilinen sorunlar/eksiklikler</h2>
-<div class="outline-text-2" id="text-7">
-
+<div id="outline-container-v1.2" class="outline-2">
+<h2 id="v1.2"><a name="sec-7" id="sec-7"></a><span class="done DONE">DONE</span> Sürüm 1.2 (kod adı: antik++)</h2>
+<div class="outline-text-2" id="text-v1.2">
 
 <ul>
-<li>[] girdi yazma, favorilere ekleme, ben sayfası, başlık takip etme, girdi oylama
+<li>State "DONE"       from "" <span class="timestamp-wrapper"> <span class="timestamp">2014-07-28 Mon 22:23</span></span>
 </li>
 </ul>
 
+
+</div>
+
+<div id="outline-container-7-1" class="outline-3">
+<h3 id="sec-7-1">Değişiklikler</h3>
+<div class="outline-text-3" id="text-7-1">
+
+<p>ssg++ bileşenlerindeki yenilikler
+</p><ul>
+<li>indeksknk için yeni tip argumanı: badifavorileri
+</li>
+<li>badilistesiknk
+</li>
+<li>başlıkgirdileri bileşenine tip parametresi eklendi. şükela, badi, tarih, başlıktaara değerlerini alabiliyor. 
+</li>
+</ul>
+
+
+<p>
+web arayüzündeki yenilikler
+</p><ul>
+<li>keşfet düğmesi: her bir badinin favorilediği son 5 girdiyi solda listeliyor ('badi favorileri' ve 'fark badi favorileri' düğmeleri eklendi).
+</li>
+<li>oylama (oeehh(:O) düğmesi beta'da desteklenmediği için düğmeyi kaldırmak yerine düğmeye 'oyu geri al' işlevi verildi.)
+</li>
+<li>favorileme (oylama panelinde yıldız şeklinde bir düğme olarak eklendi. Tekrar basıldığında favorilerden çıkarıyor.)
+</li>
+<li>ben düğmesi (açılır menü şeklinde son girdileri, oylananları, en beğenilenleri, bu hafta dikkat çekenleri, favorileri, favorilenenleri gösteriyor.)
+</li>
+<li>biri düğmesi (başlık form alanına girilen yazar için ben düğmesine benzer bir işlev sunuyor.)
+</li>
+<li>başlık altındaki üç nokta menüsü
+<ul>
+<li>başlık takip et/etme
+</li>
+<li>şükela modu
+</li>
+<li>badilerden
+</li>
+<li>bağlantılar
+</li>
+<li>başlık içi arama
+</li>
+<li>bugün girilenler
+</li>
+</ul>
+
+</li>
+<li>antik görünümündeki gibi bir hayvan ara formu
+</li>
+</ul>
+
+
+<p>     
+küçük değişiklikler:
+</p><ul>
+<li>twitter'daki bir değişiklikten dolayı twitter resimlerinin gömülmesinde bazı değişiklikler
+</li>
+<li>gömülü resimlerin büyük olmaları durumunda ekrana sığmaması sorunu düzeltildi.
+</li>
+<li>takip'te yenilik olmayan başlıkların gri gösterilmesi
+</li>
+<li>akıllı bkz'ların yükseltilmiş olarak gösterilmesi
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-7-2" class="outline-3">
+<h3 id="sec-7-2">Sürüm yükseltme notları</h3>
+<div class="outline-text-3" id="text-7-2">
+
+<p>1.1 kullanıcıları için yapılandırma dosyalarında herhangi bir değişiklik gerekli değil. Program doğrudan yeni sürümün klasöründen çalıştırılabilir.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-7-3" class="outline-3">
+<h3 id="sec-7-3">Bilinen sorunlar/eksiklikler</h3>
+<div class="outline-text-3" id="text-7-3">
+
+
+<ul>
+<li><code>[&nbsp;]</code> girdi yazma
+</li>
+</ul>
+
+</div>
 </div>
 </div>
 </div>

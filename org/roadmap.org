@@ -1,5 +1,4 @@
 #+TITLE: Değişim günlüğü
-#+OPTIONS: toc:nil
 
 * DONE Sürüm: 0.5
   - State "DONE"       from "TODO"           [2009-05-13]
@@ -36,6 +35,41 @@
 
 + [X] antik'in kapanması sonrası etkilenen bileşenlerin beta'ya göre değiştirilmesi
 
-* Bilinen sorunlar/eksiklikler
+* DONE Sürüm 1.2 (kod adı: antik++)
+  - State "DONE"       from ""           [2014-07-28 Mon 22:23]
+    :PROPERTIES:
+      :CUSTOM_ID: v1.2
+    :END:
+** Değişiklikler
+ssg++ bileşenlerindeki yenilikler
+- indeksknk için yeni tip argumanı: badifavorileri
+- badilistesiknk
+- başlıkgirdileri bileşenine tip parametresi eklendi. şükela, badi, tarih, başlıktaara değerlerini alabiliyor. 
 
-+ [] girdi yazma, favorilere ekleme, ben sayfası, başlık takip etme, girdi oylama
+web arayüzündeki yenilikler
+- keşfet düğmesi: her bir badinin favorilediği son 5 girdiyi solda listeliyor ('badi favorileri' ve 'fark badi favorileri' düğmeleri eklendi).
+- oylama (oeehh(:O) düğmesi beta'da desteklenmediği için düğmeyi kaldırmak yerine düğmeye 'oyu geri al' işlevi verildi.)
+- favorileme (oylama panelinde yıldız şeklinde bir düğme olarak eklendi. Tekrar basıldığında favorilerden çıkarıyor.)
+- ben düğmesi (açılır menü şeklinde son girdileri, oylananları, en beğenilenleri, bu hafta dikkat çekenleri, favorileri, favorilenenleri gösteriyor.)
+- biri düğmesi (başlık form alanına girilen yazar için ben düğmesine benzer bir işlev sunuyor.)
+- başlık altındaki üç nokta menüsü
+  - başlık takip et/etme
+  - şükela modu
+  - badilerden
+  - bağlantılar
+  - başlık içi arama
+  - bugün girilenler
+- antik görünümündeki gibi bir hayvan ara formu
+     
+küçük değişiklikler:
+- twitter'daki bir değişiklikten dolayı twitter resimlerinin gömülmesinde bazı değişiklikler
+- gömülü resimlerin büyük olmaları durumunda ekrana sığmaması sorunu düzeltildi.
+- takip'te yenilik olmayan başlıkların gri gösterilmesi
+- akıllı bkz'ların yükseltilmiş olarak gösterilmesi
+
+** Sürüm yükseltme notları
+1.1 kullanıcıları için yapılandırma dosyalarında herhangi bir değişiklik gerekli değil. Program doğrudan yeni sürümün klasöründen çalıştırılabilir.
+
+** Bilinen sorunlar/eksiklikler
+
++ [ ] girdi yazma
