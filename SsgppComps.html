@@ -1,65 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="tr" xml:lang="tr">
 <head>
 <title>ssg++ bileşenleri</title>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="title" content="ssg++ bileşenleri"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-07-17T15:34+0200"/>
-<meta name="author" content="Onur Derin"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
+<!-- 2015-01-23 Fri 23:58 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Onur Derin" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
   .title  { text-align: center; }
-  .todo   { color: red; }
+  .todo   { font-family: monospace; color: red; }
   .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
   pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
   }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
     background: #ffffcc;
   }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
   textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
-</style><link rel="stylesheet" type="text/css" href="./css/stylesheet.css" /> <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid Sans" />
+</style>
+<link rel="stylesheet" type="text/css" href="./css/stylesheet.css" /> <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid Sans" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -106,57 +136,8 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
-<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js">
-/**
- *
- * @source: http://orgmode.org/mathjax/MathJax.js
- *
- * @licstart  The following is the entire license notice for the
- *  JavaScript code in http://orgmode.org/mathjax/MathJax.js.
- *
- * Copyright (C) 2012-2013  MathJax
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- * @licend  The above is the entire license notice
- * for the JavaScript code in http://orgmode.org/mathjax/MathJax.js.
- *
- */
-
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code below.
-
-Copyright (C) 2012-2013 Free Software Foundation, Inc.
-
-The JavaScript code below is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code below.
-*/
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript">
 <!--/*--><![CDATA[/*><!--*/
     MathJax.Hub.Config({
         // Only one of the two following lines, depending on user settings
@@ -199,8 +180,7 @@ for the JavaScript code below.
 </script>
 </head>
 <body>
-
-<div id="preamble">
+<div id="preamble" class="status">
 <table style="padding:0; width: 100%">
     <tr> 
         <td style="vertical-align: top; min-width:320px;">
@@ -239,15 +219,11 @@ for the JavaScript code below.
 	    <a href="sitemap.html" style="color:white;text-decoration:none; font-size:120%;">site haritası ▮ </a>&nbsp;&nbsp;&nbsp;
 </div>
 <br />
-
 </div>
-
 <div id="content">
 <h1 class="title">ssg++ bileşenleri</h1>
-
-
 <div id="table-of-contents">
-<h2>İçindekiler</h2>
+<h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#sec-1">ssg++ bileşenleri</a></li>
@@ -301,1012 +277,1938 @@ for the JavaScript code below.
 </div>
 </div>
 
-<div id="outline-container-1" class="outline-2">
+<div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1">ssg++ bileşenleri</h2>
 <div class="outline-text-2" id="text-1">
-
-
 <p>
 Aşağıda ssg++ için tanımlanmış, iş hattı oluştururken kullanabileceğiniz bileşenleri bulabilirsiniz.
 </p>
 </div>
-
 </div>
 
-<div id="outline-container-2" class="outline-2">
+<div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2">Kaynaklar (knk)</h2>
 <div class="outline-text-2" id="text-2">
-
-
 <p>
 Kaynaklar iş hatlarının başlarında bulunan bileşenlerdir. Değişik sorgularla veri çekip iş hattının geri kalanını beslerler.
 </p>
-
 </div>
 
-<div id="outline-container-2-1" class="outline-3">
+<div id="outline-container-sec-2-1" class="outline-3">
 <h3 id="sec-2-1">hayvanknk</h3>
 <div class="outline-text-3" id="text-2-1">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">hayvanknk</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">ekşi sözlük'teki <i>hayvan ara</i> formunun sağladığı şekilde arama yapılmasını sağlar.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">-</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Başlık</code>.</td></tr>
-<tr><td class="left">Örnek kullanım</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">hayvanknk</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">ekşi sözlük'teki <i>hayvan ara</i> formunun sağladığı şekilde arama yapılmasını sağlar.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">-</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Başlık</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Örnek kullanım</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Parametreleri
-</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">parametre</th><th scope="col" class="left">alabildiği değerler</th><th scope="col" class="left">açıklama</th><th scope="col" class="left">varsayılan değeri</th></tr>
+<tr>
+<th scope="col" class="left">parametre</th>
+<th scope="col" class="left">alabildiği değerler</th>
+<th scope="col" class="left">açıklama</th>
+<th scope="col" class="left">varsayılan değeri</th>
+</tr>
 </thead>
 <tbody>
-<tr><td class="left">şey</td><td class="left"><i>kısıtlama yok</i></td><td class="left">verilen kelimeleri içeren başlıkları arar. '*' kullanılabilir.</td><td class="left"><i>yok</i></td></tr>
-<tr><td class="left">yazar</td><td class="left"><i>kısıtlama yok</i></td><td class="left">verilen yazara ait başlıkları buldurur.</td><td class="left"><i>yok</i></td></tr>
-<tr><td class="left">tarih</td><td class="left">gg.aa.yyyy, aa.yyyy, yyyy, bugün, dün</td><td class="left">verilen tarihte girdileri başlıkları buldurur.</td><td class="left"><i>yok</i></td></tr>
-<tr><td class="left">sıralama</td><td class="left">yeni-eski, alfa-beta, gudik, rastgele</td><td class="left">giriş zamanına göre, alfabetik olarak, en çok girdi yapılan başlığa göre ya da rastgele sıralar.</td><td class="left">yeni-eski</td></tr>
-<tr><td class="left">limit</td><td class="left">50, 100, 150, 200, &hellip; 50n</td><td class="left">aranan başlık adetini kısıtlar. 50 ve katları olmalıdır.</td><td class="left">sonsuz</td></tr>
-<tr><td class="left">güzelinden</td><td class="left">evet, hayır</td><td class="left">güzel girdileri olan başlıkları buldurur.</td><td class="left">hayır</td></tr>
+<tr>
+<td class="left">şey</td>
+<td class="left"><i>kısıtlama yok</i></td>
+<td class="left">verilen kelimeleri içeren başlıkları arar. '*' kullanılabilir.</td>
+<td class="left"><i>yok</i></td>
+</tr>
+
+<tr>
+<td class="left">yazar</td>
+<td class="left"><i>kısıtlama yok</i></td>
+<td class="left">verilen yazara ait başlıkları buldurur.</td>
+<td class="left"><i>yok</i></td>
+</tr>
+
+<tr>
+<td class="left">tarih</td>
+<td class="left">gg.aa.yyyy, aa.yyyy, yyyy, bugün, dün</td>
+<td class="left">verilen tarihte girdileri başlıkları buldurur.</td>
+<td class="left"><i>yok</i></td>
+</tr>
+
+<tr>
+<td class="left">sıralama</td>
+<td class="left">yeni-eski, alfa-beta, gudik, rastgele</td>
+<td class="left">giriş zamanına göre, alfabetik olarak, en çok girdi yapılan başlığa göre ya da rastgele sıralar.</td>
+<td class="left">yeni-eski</td>
+</tr>
+
+<tr>
+<td class="left">limit</td>
+<td class="left">50, 100, 150, 200, &#x2026; 50n</td>
+<td class="left">aranan başlık adetini kısıtlar. 50 ve katları olmalıdır.</td>
+<td class="left">sonsuz</td>
+</tr>
+
+<tr>
+<td class="left">güzelinden</td>
+<td class="left">evet, hayır</td>
+<td class="left">güzel girdileri olan başlıkları buldurur.</td>
+<td class="left">hayır</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-hayvanknk.png"  alt="imgs/dit-hayvanknk.png" />
+<div class="figure">
+<p><img src="imgs/dit-hayvanknk.png" alt="dit-hayvanknk.png" />
 </p>
-
+</div>
+</div>
 </div>
 
-</div>
 
-<div id="outline-container-2-2" class="outline-3">
+<div id="outline-container-sec-2-2" class="outline-3">
 <h3 id="sec-2-2">badiknk</h3>
 <div class="outline-text-3" id="text-2-2">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">badiknk</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">ekşi sözlük'teki <i>badi</i> düğmesinin sağladığı şekilde son badi başlıklarının bulunmasını sağlar.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">-</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Başlık</code>.</td></tr>
-<tr><td class="left">Örnek kullanım</td><td class="left">-</td></tr>
-<tr><td class="left">Parametreleri</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">badiknk</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">ekşi sözlük'teki <i>badi</i> düğmesinin sağladığı şekilde son badi başlıklarının bulunmasını sağlar.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">-</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Başlık</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Örnek kullanım</td>
+<td class="left">-</td>
+</tr>
+
+<tr>
+<td class="left">Parametreleri</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-badiknk.png"  alt="imgs/dit-badiknk.png" />
+<div class="figure">
+<p><img src="imgs/dit-badiknk.png" alt="dit-badiknk.png" />
 </p>
 </div>
-
+</div>
 </div>
 
-<div id="outline-container-2-3" class="outline-3">
+<div id="outline-container-sec-2-3" class="outline-3">
 <h3 id="sec-2-3">başlıkknk</h3>
 <div class="outline-text-3" id="text-2-3">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">başlıkknk</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">verilen parametrelere göre Başlık tipinde bir veri oluşturur.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">-</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Başlık</code>.</td></tr>
-<tr><td class="left">Örnek kullanım</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">başlıkknk</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">verilen parametrelere göre Başlık tipinde bir veri oluşturur.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">-</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Başlık</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Örnek kullanım</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Parametreleri
-</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">parametre</th><th scope="col" class="left">alabildiği değerler</th><th scope="col" class="left">açıklama</th><th scope="col" class="left">varsayılan değeri</th></tr>
+<tr>
+<th scope="col" class="left">parametre</th>
+<th scope="col" class="left">alabildiği değerler</th>
+<th scope="col" class="left">açıklama</th>
+<th scope="col" class="left">varsayılan değeri</th>
+</tr>
 </thead>
 <tbody>
-<tr><td class="left">başlık</td><td class="left"><i>kısıtlama yok</i></td><td class="left">oluşturulmak istenen başlığın adı.</td><td class="left">ekşi sözlük</td></tr>
-<tr><td class="left">dosyadanbaşlık</td><td class="left"><i>kısıtlama yok</i></td><td class="left">bir temaya ait birden fazla başlığı çıktı kapısına yazmak için başlıkların listelendiği dosya adı.</td><td class="left">-</td></tr>
+<tr>
+<td class="left">başlık</td>
+<td class="left"><i>kısıtlama yok</i></td>
+<td class="left">oluşturulmak istenen başlığın adı.</td>
+<td class="left">ekşi sözlük</td>
+</tr>
+
+<tr>
+<td class="left">dosyadanbaşlık</td>
+<td class="left"><i>kısıtlama yok</i></td>
+<td class="left">bir temaya ait birden fazla başlığı çıktı kapısına yazmak için başlıkların listelendiği dosya adı.</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-baslikknk.png"  alt="imgs/dit-baslikknk.png" />
+<div class="figure">
+<p><img src="imgs/dit-baslikknk.png" alt="dit-baslikknk.png" />
 </p>
 </div>
-
+</div>
 </div>
 
-<div id="outline-container-2-4" class="outline-3">
+<div id="outline-container-sec-2-4" class="outline-3">
 <h3 id="sec-2-4">istatistikknk</h3>
 <div class="outline-text-3" id="text-2-4">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">istatistikknk</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">geçen haftanın girdilerinden istatistiklerde görünenleri listeler.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">-</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Başlık</code>.</td></tr>
-<tr><td class="left">Örnek kullanım</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">istatistikknk</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">geçen haftanın girdilerinden istatistiklerde görünenleri listeler.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">-</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Başlık</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Örnek kullanım</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 
 <p>
 Parametreleri
-</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">parametre</th><th scope="col" class="left">alabildiği değerler</th><th scope="col" class="left">açıklama</th><th scope="col" class="left">varsayılan değeri</th></tr>
+<tr>
+<th scope="col" class="left">parametre</th>
+<th scope="col" class="left">alabildiği değerler</th>
+<th scope="col" class="left">açıklama</th>
+<th scope="col" class="left">varsayılan değeri</th>
+</tr>
 </thead>
 <tbody>
-<tr><td class="left">tip</td><td class="left">debe, ghebe, ghedçe, gheke</td><td class="left">dünün en beğenilen, geçen haftanın en beğenilen, en dikkat çeken, en kötülenmiş girdileri</td><td class="left">ghebe</td></tr>
+<tr>
+<td class="left">tip</td>
+<td class="left">debe, ghebe, ghedçe, gheke</td>
+<td class="left">dünün en beğenilen, geçen haftanın en beğenilen, en dikkat çeken, en kötülenmiş girdileri</td>
+<td class="left">ghebe</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-istatistikknk.png"  alt="imgs/dit-istatistikknk.png" />
+<div class="figure">
+<p><img src="imgs/dit-istatistikknk.png" alt="dit-istatistikknk.png" />
 </p>
-
+</div>
+</div>
 </div>
 
-</div>
 
-<div id="outline-container-2-5" class="outline-3">
+<div id="outline-container-sec-2-5" class="outline-3">
 <h3 id="sec-2-5">indeksknk</h3>
 <div class="outline-text-3" id="text-2-5">
-
-<p><i>TODO: Dökümantasyon eklenecek.</i>
+<p>
+<i>TODO: Dökümantasyon eklenecek.</i>
 </p>
-
+</div>
 </div>
 
-</div>
 
-<div id="outline-container-2-6" class="outline-3">
+<div id="outline-container-sec-2-6" class="outline-3">
 <h3 id="sec-2-6">dosyaknk</h3>
 <div class="outline-text-3" id="text-2-6">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">dosyaknk</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">verilen dosyadaki girdileri çıkış kapısına yazar.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">-</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Girdi</code>.</td></tr>
-<tr><td class="left">Örnek kullanım</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">dosyaknk</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">verilen dosyadaki girdileri çıkış kapısına yazar.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">-</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Girdi</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Örnek kullanım</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Parametreleri
-</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">parametre</th><th scope="col" class="left">alabildiği değerler</th><th scope="col" class="left">açıklama</th><th scope="col" class="left">varsayılan değeri</th></tr>
+<tr>
+<th scope="col" class="left">parametre</th>
+<th scope="col" class="left">alabildiği değerler</th>
+<th scope="col" class="left">açıklama</th>
+<th scope="col" class="left">varsayılan değeri</th>
+</tr>
 </thead>
 <tbody>
-<tr><td class="left">dosya</td><td class="left">dosyabtk ile oluşturulmuş XML biçimli dosya adı (dosya yolu da mutlak ya da göreceli olarak verilebilir.)</td><td class="left">okunmak istenen dosyanın adı.</td><td class="left">dosyabtk.xml</td></tr>
+<tr>
+<td class="left">dosya</td>
+<td class="left">dosyabtk ile oluşturulmuş XML biçimli dosya adı (dosya yolu da mutlak ya da göreceli olarak verilebilir.)</td>
+<td class="left">okunmak istenen dosyanın adı.</td>
+<td class="left">dosyabtk.xml</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-dosyaknk.png"  alt="imgs/dit-dosyaknk.png" />
+<div class="figure">
+<p><img src="imgs/dit-dosyaknk.png" alt="dit-dosyaknk.png" />
 </p>
-
+</div>
+</div>
 </div>
 
-</div>
 
-<div id="outline-container-2-7" class="outline-3">
+<div id="outline-container-sec-2-7" class="outline-3">
 <h3 id="sec-2-7">başlıkfarkknk</h3>
 <div class="outline-text-3" id="text-2-7">
-
-<p><i>TODO: Dökümantasyon eklenecek.</i>
+<p>
+<i>TODO: Dökümantasyon eklenecek.</i>
 </p>
-
+</div>
 </div>
 
-</div>
 
-<div id="outline-container-2-8" class="outline-3">
+<div id="outline-container-sec-2-8" class="outline-3">
 <h3 id="sec-2-8">cımbızknk</h3>
 <div class="outline-text-3" id="text-2-8">
-
-<p><i>TODO: Dökümantasyon eklenecek.</i>
+<p>
+<i>TODO: Dökümantasyon eklenecek.</i>
 </p>
-
 </div>
 </div>
-
 </div>
 
-<div id="outline-container-3" class="outline-2">
+
+<div id="outline-container-sec-3" class="outline-2">
 <h2 id="sec-3">Dönüştürücüler</h2>
 <div class="outline-text-2" id="text-3">
-
-
 <p>
 Dönüştürücüler iş hatlarının ortalarında bulunan veri işleyip sonucu muhtemelen başka bir veri tipine sahip sonucu çıktı olarak üreten bileşenlerdir.
 </p>
-
 </div>
 
-<div id="outline-container-3-1" class="outline-3">
+<div id="outline-container-sec-3-1" class="outline-3">
 <h3 id="sec-3-1">başlıkgirdileri</h3>
 <div class="outline-text-3" id="text-3-1">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">başlıkgirdileri</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">girdi kapısındaki başlığa ait girdileri çıktısında oluşturur.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Başlık</code>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Girdi</code>.</td></tr>
-<tr><td class="left">Örnek kullanım</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">başlıkgirdileri</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">girdi kapısındaki başlığa ait girdileri çıktısında oluşturur.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Başlık</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Girdi</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Örnek kullanım</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Parametreleri
-</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">parametre</th><th scope="col" class="left">alabildiği değerler</th><th scope="col" class="left">açıklama</th><th scope="col" class="left">varsayılan değeri</th></tr>
+<tr>
+<th scope="col" class="left">parametre</th>
+<th scope="col" class="left">alabildiği değerler</th>
+<th scope="col" class="left">açıklama</th>
+<th scope="col" class="left">varsayılan değeri</th>
+</tr>
 </thead>
 <tbody>
-<tr><td class="left">limit</td><td class="left"><i>kısıtlama yok</i></td><td class="left">başlığa ait indirilecek girdi sayısı.</td><td class="left">tümü (limitsiz)</td></tr>
+<tr>
+<td class="left">limit</td>
+<td class="left"><i>kısıtlama yok</i></td>
+<td class="left">başlığa ait indirilecek girdi sayısı.</td>
+<td class="left">tümü (limitsiz)</td>
+</tr>
 </tbody>
 </table>
-
 
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-baslikgirdileri.png"  alt="imgs/dit-baslikgirdileri.png" />
+<div class="figure">
+<p><img src="imgs/dit-baslikgirdileri.png" alt="dit-baslikgirdileri.png" />
 </p>
-
-
+</div>
+</div>
 </div>
 
-</div>
 
-<div id="outline-container-3-2" class="outline-3">
+
+<div id="outline-container-sec-3-2" class="outline-3">
 <h3 id="sec-3-2">girdibkzları</h3>
 <div class="outline-text-3" id="text-3-2">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">girdibkzları</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">girdi kapısındaki girdinin bkz ve görünmez bkz verilmiş başlıklarını çıktı kapısına yazar.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Girdi</code>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Başlık</code>.</td></tr>
-<tr><td class="left">Örnek kullanım</td><td class="left">-</td></tr>
-<tr><td class="left">Parametreleri</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">girdibkzları</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">girdi kapısındaki girdinin bkz ve görünmez bkz verilmiş başlıklarını çıktı kapısına yazar.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Girdi</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Başlık</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Örnek kullanım</td>
+<td class="left">-</td>
+</tr>
+
+<tr>
+<td class="left">Parametreleri</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-girdibkzlari.png"  alt="imgs/dit-girdibkzlari.png" />
+<div class="figure">
+<p><img src="imgs/dit-girdibkzlari.png" alt="dit-girdibkzlari.png" />
 </p>
-
-
-
+</div>
+</div>
 </div>
 
-</div>
 
-<div id="outline-container-3-3" class="outline-3">
+
+
+<div id="outline-container-sec-3-3" class="outline-3">
 <h3 id="sec-3-3"><del>anketçi</del></h3>
 <div class="outline-text-3" id="text-3-3">
+<p>
+<i>Kullanımdan kalktı.</i> (bkz: <a href="#sec-3-2">girdibkzları</a>) (bkz: <a href="#sec-3-4">histogram</a>) <code>anketçi</code> \(\rightarrow\) <code>girdibkzları ! histogram</code>
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
-<p><i>Kullanımdan kalktı.</i> (bkz: <a href="#sec-3-2">girdibkzları</a>) (bkz: <a href="#sec-3-4">histogram</a>) <code>anketçi</code> \(\rightarrow\) <code>girdibkzları ! histogram</code>
-</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">anketçi</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">girdi kapısındaki girdilerde bkz veya görünmez bkz verilmiş başlıkları bkz verilme sayısına göre sıralayıp grafik verisi oluşturur.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Girdi</code>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Grafik Verisi</code>.</td></tr>
-<tr><td class="left">Örnek kullanım</td><td class="left"><code>yürüt başlıkknk [başlık=sözlükçülerin en iyi 10 dizi listesi] ! başlıkgirdileri ! anketçi ! grafikbtk</code></td></tr>
-<tr><td class="left">Parametreleri</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">anketçi</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">girdi kapısındaki girdilerde bkz veya görünmez bkz verilmiş başlıkları bkz verilme sayısına göre sıralayıp grafik verisi oluşturur.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Girdi</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Grafik Verisi</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Örnek kullanım</td>
+<td class="left"><code>yürüt başlıkknk [başlık=sözlükçülerin en iyi 10 dizi listesi] ! başlıkgirdileri ! anketçi ! grafikbtk</code></td>
+</tr>
+
+<tr>
+<td class="left">Parametreleri</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-anketci.png"  alt="imgs/dit-anketci.png" />
+<div class="figure">
+<p><img src="imgs/dit-anketci.png" alt="dit-anketci.png" />
 </p>
-
+</div>
+</div>
 </div>
 
-</div>
 
-<div id="outline-container-3-4" class="outline-3">
+<div id="outline-container-sec-3-4" class="outline-3">
 <h3 id="sec-3-4">histogram</h3>
 <div class="outline-text-3" id="text-3-4">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">histogram</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">kategori zaman olarak seçilmişse girdi kapısındaki girdilerin sayılarını parametre olarak verilen zaman çözünürlüğüne (yıl, ay, hafta, gün) göre grafik verisi haline getirir. kategori yazar/başlık olarak seçilmişse yazarına/başlığına göre girdileri sayarak grafik verisi oluşturur. Girdi kapısındaki veri tipi Başlık ise verilen parametreler dikkate alınmaz histogram başlık kategorisine göre çıkarılır.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Girdi</code> ya da <code>Başlık</code>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Grafik Verisi</code>.</td></tr>
-<tr><td class="left">Örnek kullanım</td><td class="left">bir başlığa en fazla sayıda girdi yazmış yazarlar:</td></tr>
-<tr><td class="left"></td><td class="left"><code>yürüt başlıkknk [başlık=minimal öykü denemeleri] ! başlıkgirdileri ! histogram [kategori=yazar] ! grafikbtk</code></td></tr>
-<tr><td class="left"></td><td class="left">bir başlığa zaman içinde girilmiş girdi sayıları:</td></tr>
-<tr><td class="left"></td><td class="left"><code>yürüt başlıkknk [başlık=behzat ç.] ! başlıkgirdileri ! histogram [kategori=zaman, çözünürlük=hafta] ! grafikbtk</code></td></tr>
-<tr><td class="left"></td><td class="left">suser1 kullanıcısı girdilerini en çok günün hangi saatlerinde girmiş:</td></tr>
-<tr><td class="left"></td><td class="left"><code>hayvanknk [yazar=suser1] ! başlıkgirdileri ! histogram [kategori=zaman, çözünürlük=saat] ! grafikbtk</code></td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">histogram</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">kategori zaman olarak seçilmişse girdi kapısındaki girdilerin sayılarını parametre olarak verilen zaman çözünürlüğüne (yıl, ay, hafta, gün) göre grafik verisi haline getirir. kategori yazar/başlık olarak seçilmişse yazarına/başlığına göre girdileri sayarak grafik verisi oluşturur. Girdi kapısındaki veri tipi Başlık ise verilen parametreler dikkate alınmaz histogram başlık kategorisine göre çıkarılır.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Girdi</code> ya da <code>Başlık</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Grafik Verisi</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Örnek kullanım</td>
+<td class="left">bir başlığa en fazla sayıda girdi yazmış yazarlar:</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left"><code>yürüt başlıkknk [başlık=minimal öykü denemeleri] ! başlıkgirdileri ! histogram [kategori=yazar] ! grafikbtk</code></td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">bir başlığa zaman içinde girilmiş girdi sayıları:</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left"><code>yürüt başlıkknk [başlık=behzat ç.] ! başlıkgirdileri ! histogram [kategori=zaman, çözünürlük=hafta] ! grafikbtk</code></td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">suser1 kullanıcısı girdilerini en çok günün hangi saatlerinde girmiş:</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left"><code>hayvanknk [yazar=suser1] ! başlıkgirdileri ! histogram [kategori=zaman, çözünürlük=saat] ! grafikbtk</code></td>
+</tr>
 </tbody>
 </table>
-
 
 
 <p>
 Parametreleri
-</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">parametre</th><th scope="col" class="left">alabildiği değerler</th><th scope="col" class="left">açıklama</th><th scope="col" class="left">varsayılan değeri</th></tr>
+<tr>
+<th scope="col" class="left">parametre</th>
+<th scope="col" class="left">alabildiği değerler</th>
+<th scope="col" class="left">açıklama</th>
+<th scope="col" class="left">varsayılan değeri</th>
+</tr>
 </thead>
 <tbody>
-<tr><td class="left">eksen</td><td class="left">kategori ya da zaman</td><td class="left">girdilerin gruplandırılacağı eksenin tipini belirler. kategori: bir başka parametre ile verilecek olan kategori tipine göre grafik verisi oluşturur. zaman: girdileri giriş zamanlarına göre grafik verisi oluşturur.</td><td class="left">kategori</td></tr>
-<tr><td class="left">kategori</td><td class="left">yazar ya da başlık</td><td class="left">yalnızca eksen olarak kategori seçilmişse kullanılabilir, kategori tipini belirler.  yazar: girdileri yazarlarına göre sayarak grafik verisi oluşturur. başlık: girdileri başlıklarına göre sayarak zaman bilgisi oluşturur.</td><td class="left">yazar</td></tr>
-<tr><td class="left">çözünürlük</td><td class="left">yıl, ay, hafta, gün ya da saat</td><td class="left">yalnızca eksen olarak zaman seçilmişse kullanılabilir. zamana bağlı veriyi seçilen çözünürlükte gruplayıp toplayarak grafik verisi oluşturur.</td><td class="left">ay</td></tr>
+<tr>
+<td class="left">eksen</td>
+<td class="left">kategori ya da zaman</td>
+<td class="left">girdilerin gruplandırılacağı eksenin tipini belirler. kategori: bir başka parametre ile verilecek olan kategori tipine göre grafik verisi oluşturur. zaman: girdileri giriş zamanlarına göre grafik verisi oluşturur.</td>
+<td class="left">kategori</td>
+</tr>
+
+<tr>
+<td class="left">kategori</td>
+<td class="left">yazar ya da başlık</td>
+<td class="left">yalnızca eksen olarak kategori seçilmişse kullanılabilir, kategori tipini belirler.  yazar: girdileri yazarlarına göre sayarak grafik verisi oluşturur. başlık: girdileri başlıklarına göre sayarak zaman bilgisi oluşturur.</td>
+<td class="left">yazar</td>
+</tr>
+
+<tr>
+<td class="left">çözünürlük</td>
+<td class="left">yıl, ay, hafta, gün ya da saat</td>
+<td class="left">yalnızca eksen olarak zaman seçilmişse kullanılabilir. zamana bağlı veriyi seçilen çözünürlükte gruplayıp toplayarak grafik verisi oluşturur.</td>
+<td class="left">ay</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-histogram.png"  alt="imgs/dit-histogram.png" />
+<div class="figure">
+<p><img src="imgs/dit-histogram.png" alt="dit-histogram.png" />
 </p>
-
+</div>
+</div>
 </div>
 
-</div>
 
-<div id="outline-container-3-5" class="outline-3">
+<div id="outline-container-sec-3-5" class="outline-3">
 <h3 id="sec-3-5">alanseçici</h3>
 <div class="outline-text-3" id="text-3-5">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">alanseçici</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">girdi kapısındaki tokenlerin parametre olarak verilen alanındaki değere sahip o alan tipinde yeni bir veri oluşturup çıktı kapısına gönderir.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Token</code>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi değişkendir. Parametre olarak seçilen alan tipindedir. <i>Alan</i>.</td></tr>
-<tr><td class="left">Örnek kullanım</td><td class="left">lost başlığına yazmış yazarlar:</td></tr>
-<tr><td class="left"></td><td class="left"><code>yürüt başlıkknk [başlık=lost] ! başlıkgirdileri ! alanseçici [alan=yazar] ! kümeflt ! metinbtk</code></td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">alanseçici</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">girdi kapısındaki tokenlerin parametre olarak verilen alanındaki değere sahip o alan tipinde yeni bir veri oluşturup çıktı kapısına gönderir.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Token</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi değişkendir. Parametre olarak seçilen alan tipindedir. <i>Alan</i>.</td>
+</tr>
+
+<tr>
+<td class="left">Örnek kullanım</td>
+<td class="left">lost başlığına yazmış yazarlar:</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left"><code>yürüt başlıkknk [başlık=lost] ! başlıkgirdileri ! alanseçici [alan=yazar] ! kümeflt ! metinbtk</code></td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">bir başlıktaki youtube bağlantıları:</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left"><code>ssg++ yürüt başlıkknk [başlık=insanı mutlu eden şarkılar] ! başlıkgirdileri ! alanseçici [alan=disariBaglantilar] ! genelflt [alan=text, değer=http://www.youtube.com, benzerlik=sonuekli] ! dosyabtk [dosya=basligin-youtube-linkleri.txt]</code></td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Parametreleri
-</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">parametre</th><th scope="col" class="left">alabildiği değerler</th><th scope="col" class="left">açıklama</th><th scope="col" class="left">varsayılan değeri</th></tr>
+<tr>
+<th scope="col" class="left">parametre</th>
+<th scope="col" class="left">alabildiği değerler</th>
+<th scope="col" class="left">açıklama</th>
+<th scope="col" class="left">varsayılan değeri</th>
+</tr>
 </thead>
 <tbody>
-<tr><td class="left">alan</td><td class="left">Girdi kapısındaki veri tipinin alanlarından biri. Örneğin, Girdi tipindeki veriler için alan şu değerleri alabilir: yazar, baslik, id, girdiSirasi</td><td class="left">Girdi kapısındaki verilerin hangi alanının seçileceğini belirler.</td><td class="left">yazar</td></tr>
+<tr>
+<td class="left">alan</td>
+<td class="left">Girdi kapısındaki veri tipinin alanlarından biri. Örneğin, Girdi tipindeki veriler için alan şu değerleri alabilir: yazar, baslik, id, girdiSirasi, bkzBasliklari, gorunmezBkzBasliklari, disBaglantilar</td>
+<td class="left">Girdi kapısındaki verilerin hangi alanının seçileceğini belirler.</td>
+<td class="left">yazar</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-alansecici.png"  alt="imgs/dit-alansecici.png" />
+<div class="figure">
+<p><img src="imgs/dit-alansecici.png" alt="dit-alansecici.png" />
 </p>
-
-
+</div>
+</div>
 </div>
 
-</div>
 
-<div id="outline-container-3-6" class="outline-3">
+
+<div id="outline-container-sec-3-6" class="outline-3">
 <h3 id="sec-3-6">maçsonucu</h3>
 <div class="outline-text-3" id="text-3-6">
-
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">maçsonucu</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">girdi kapısındaki girdinin içinde skor geçen cümleleri çıktı kapısına yazar. aralarında tire olan üçe kadar hanesi olan iki sayıyı skor olarak algılanır.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Girdi</code>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Metin</code>.</td></tr>
-<tr><td class="left">Örnek kullanım</td><td class="left"><code>yürüt başlıkknk [başlık=11 haziran 2008 isviçre türkiye maçı] ! başlıkgirdileri ! maçsonucu ! metinbtk</code></td></tr>
-<tr><td class="left">Parametreleri</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">maçsonucu</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">girdi kapısındaki girdinin içinde skor geçen cümleleri çıktı kapısına yazar. aralarında tire olan üçe kadar hanesi olan iki sayıyı skor olarak algılanır.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Girdi</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Metin</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Örnek kullanım</td>
+<td class="left"><code>yürüt başlıkknk [başlık=11 haziran 2008 isviçre türkiye maçı] ! başlıkgirdileri ! maçsonucu ! metinbtk</code></td>
+</tr>
+
+<tr>
+<td class="left">Parametreleri</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-macsonucu.png"  alt="imgs/dit-macsonucu.png" />
+<div class="figure">
+<p><img src="imgs/dit-macsonucu.png" alt="dit-macsonucu.png" />
 </p>
-
-
-
-
-
+</div>
+</div>
 </div>
 </div>
 
-</div>
 
-<div id="outline-container-4" class="outline-2">
+
+
+
+
+<div id="outline-container-sec-4" class="outline-2">
 <h2 id="sec-4">Filtreler (flt)</h2>
 <div class="outline-text-2" id="text-4">
-
-
 <p>
 Filtreler iş hatlarının ortalarında bulunan ve aynı tip girdi ve çıktı kapılarına sahip bileşenlerdir. İstenen özellikteki tokenleri geçirip geri kalanlarını yutarlar.
 </p>
-
 </div>
 
-<div id="outline-container-4-1" class="outline-3">
+<div id="outline-container-sec-4-1" class="outline-3">
 <h3 id="sec-4-1">genelflt</h3>
 <div class="outline-text-3" id="text-4-1">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">genelflt</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">girdi kapısındaki tokenin <code>alan</code> parametresi ile verilen alanındaki değer, <code>değer</code> parametresi ile verilen değerle eşleşiyorsa çıktı kapısına geçirir, değilse yutar. eşleşme olan tokenlere eşleşmeyi sağlayan değer etiket olarak eklenir.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Token</code>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Token</code>.</td></tr>
-<tr><td class="left">Örnek kullanım</td><td class="left">lost başlığına 2011'de girilmiş girdiler:</td></tr>
-<tr><td class="left"></td><td class="left"><code>yürüt hayvanknk [şey=lost, tarih=2011] ! genelflt [alan=baslik, değer=lost] ! başlıkgirdileri ! dosyabtk [dosya=lost2011.xml]</code></td></tr>
-<tr><td class="left"></td><td class="left">barcelona'nın evinde oynadığı el classico maçları:</td></tr>
-<tr><td class="left"></td><td class="left"><code>yürüt hayvanknk [şey=barcelona real madrid maçı] ! genelflt [alan=baslik, değer=*barcelona*real madrid*] ! metinbtk</code></td></tr>
-<tr><td class="left"></td><td class="left">dün yazılan girdilerden içinde barack obama geçenler:</td></tr>
-<tr><td class="left"></td><td class="left"><code>yürüt hayvanknk [tarih=dün] ! başlıkgirdileri ! genelflt [alan=girdi, değer=*barack obama*] ! metinbtk</code></td></tr>
-<tr><td class="left"></td><td class="left">dünün en beğenilen entry'lerindeki suser1 yazarının girdileri:</td></tr>
-<tr><td class="left"></td><td class="left"><code>yürüt istatistikknk [tip=debe] ! başlıkgirdileri ! genelflt [alan=yazar, değer=suser1] ! metinbtk</code></td></tr>
-<tr><td class="left"></td><td class="left">suser'in muhtemelen tuttuğu takım</td></tr>
-<tr><td class="left"></td><td class="left"><code>yürüt hayvanknk [yazar=suser] ! başlıkgirdileri ! genelflt [alan=baslik+girdi, dosyadandeğer=turkiye_futbol_takimlari.tema] ! histogram [kategori=etiket] ! grafikbtk</code></td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">genelflt</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">girdi kapısındaki tokenin <code>alan</code> parametresi ile verilen alanındaki değer, <code>değer</code> parametresi ile verilen değerle eşleşiyorsa çıktı kapısına geçirir, değilse yutar. eşleşme olan tokenlere eşleşmeyi sağlayan değer etiket olarak eklenir.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Token</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Token</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Örnek kullanım</td>
+<td class="left">lost başlığına 2011'de girilmiş girdiler:</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left"><code>yürüt hayvanknk [şey=lost, tarih=2011] ! genelflt [alan=baslik, değer=lost] ! başlıkgirdileri ! dosyabtk [dosya=lost2011.xml]</code></td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">barcelona'nın evinde oynadığı el classico maçları:</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left"><code>yürüt hayvanknk [şey=barcelona real madrid maçı] ! genelflt [alan=baslik, değer=*barcelona*real madrid*] ! metinbtk</code></td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">dün yazılan girdilerden içinde barack obama geçenler:</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left"><code>yürüt hayvanknk [tarih=dün] ! başlıkgirdileri ! genelflt [alan=girdi, değer=*barack obama*] ! metinbtk</code></td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">dünün en beğenilen entry'lerindeki suser1 yazarının girdileri:</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left"><code>yürüt istatistikknk [tip=debe] ! başlıkgirdileri ! genelflt [alan=yazar, değer=suser1] ! metinbtk</code></td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">suser'in muhtemelen tuttuğu takım</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left"><code>yürüt hayvanknk [yazar=suser] ! başlıkgirdileri ! genelflt [alan=baslik+girdi, dosyadandeğer=turkiye_futbol_takimlari.tema] ! histogram [kategori=etiket] ! grafikbtk</code></td>
+</tr>
 </tbody>
 </table>
-
 
 
 <p>
 Parametreleri
-</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">parametre</th><th scope="col" class="left">alabildiği değerler</th><th scope="col" class="left">açıklama</th><th scope="col" class="left">varsayılan değeri</th></tr>
+<tr>
+<th scope="col" class="left">parametre</th>
+<th scope="col" class="left">alabildiği değerler</th>
+<th scope="col" class="left">açıklama</th>
+<th scope="col" class="left">varsayılan değeri</th>
+</tr>
 </thead>
 <tbody>
-<tr><td class="left">alan</td><td class="left">baslik, girdi ya da yazar</td><td class="left">filtreleme işleminde dikkate alınacak alan. Birden fazla alan aralarına artı (+) işareti konularak seçilebilir. örn. "alan=baslik+girdi"</td><td class="left">yazar</td></tr>
-<tr><td class="left">değer</td><td class="left"><i>kısıtlama yok</i></td><td class="left">filtreden geçebilecek tokenlerin ~alan~larında sahip olmaları gereken değer. asteriksler kullanılabilir.</td><td class="left">ekşisözlük</td></tr>
-<tr><td class="left">dosyadandeğer</td><td class="left"><i>kısıtlama yok</i></td><td class="left">birden fazla değer parametresi geçirmek için bir tema dosyası verilebilir.</td><td class="left">-</td></tr>
-<tr><td class="left">benzerlik</td><td class="left">aynısı, sonuekli, başısonuekli, ayrık</td><td class="left"></td><td class="left">varsayılan değeri seçilen alana göre değişiyor. baslik ve yazar için <code>aynısı</code>, girdi için <code>ayrık</code> değerlerini alır.</td></tr>
-<tr><td class="left"></td><td class="left"></td><td class="left"></td><td class="left">aynısı: tokenin alanın değerinin parametre olarak verilen değerle/değerlerle aynı olduğu durumda geçirilmesini sağlar (örn. 'beşiktaş' sadece 'beşiktaş'a eşlenebilir).</td></tr>
-<tr><td class="left"></td><td class="left"></td><td class="left"></td><td class="left">sonuekli: alan değerinin metni içinde eşleştirme yapıp, eşlemenin sonunda verilen değer parametresinden fazla karakter olması durumda da geçirilmesini sağlar (örn. beşik beşiktaş'la eşleştirilebilir).</td></tr>
-<tr><td class="left"></td><td class="left"></td><td class="left"></td><td class="left">başısonuekli: alan değerinin metni içinde eşleştirme yapıp, eşleşmenin başında ya da sonunda verilen değer parametresinden fazla karakter olması durumda geçirilmesini sağlar (örn. eşik beşiktaş'la eşleştirilebilir).</td></tr>
-<tr><td class="left"></td><td class="left"></td><td class="left"></td><td class="left">ayrık: alan değerinin metni içinde eşleştirme yapıp, eşleşmenin başında boşluk, sonunda da boşluk ya da noktalama işaretleri olması durumda geçirilmesini sağlar (örn. 'beşiktaş' 'beşiktaş gibi' ile eşlenebilir ama 'beşiktaşlı' ile eşlenmez).</td></tr>
-<tr><td class="left">eleme</td><td class="left"><code>uymayan</code> ya da <code>uyan</code></td><td class="left">tokenin verilen kriterlere uyduğu durumda mı yoksa uymadığı durumunda mı eleneceğini belirler.</td><td class="left">uymayan</td></tr>
+<tr>
+<td class="left">alan</td>
+<td class="left">baslik, girdi ya da yazar</td>
+<td class="left">filtreleme işleminde dikkate alınacak alan. Birden fazla alan aralarına artı (+) işareti konularak seçilebilir. örn. "alan=baslik+girdi"</td>
+<td class="left">yazar</td>
+</tr>
+
+<tr>
+<td class="left">değer</td>
+<td class="left"><i>kısıtlama yok</i></td>
+<td class="left">filtreden geçebilecek tokenlerin ~alan~larında sahip olmaları gereken değer. asteriksler kullanılabilir.</td>
+<td class="left">ekşisözlük</td>
+</tr>
+
+<tr>
+<td class="left">dosyadandeğer</td>
+<td class="left"><i>kısıtlama yok</i></td>
+<td class="left">birden fazla değer parametresi geçirmek için bir tema dosyası verilebilir.</td>
+<td class="left">-</td>
+</tr>
+
+<tr>
+<td class="left">benzerlik</td>
+<td class="left">aynısı, sonuekli, başısonuekli, ayrık</td>
+<td class="left">&#xa0;</td>
+<td class="left">varsayılan değeri seçilen alana göre değişiyor. baslik ve yazar için <code>aynısı</code>, girdi için <code>ayrık</code> değerlerini alır.</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">aynısı: tokenin alanın değerinin parametre olarak verilen değerle/değerlerle aynı olduğu durumda geçirilmesini sağlar (örn. 'beşiktaş' sadece 'beşiktaş'a eşlenebilir).</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">sonuekli: alan değerinin metni içinde eşleştirme yapıp, eşlemenin sonunda verilen değer parametresinden fazla karakter olması durumda da geçirilmesini sağlar (örn. beşik beşiktaş'la eşleştirilebilir).</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">başısonuekli: alan değerinin metni içinde eşleştirme yapıp, eşleşmenin başında ya da sonunda verilen değer parametresinden fazla karakter olması durumda geçirilmesini sağlar (örn. eşik beşiktaş'la eşleştirilebilir).</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">ayrık: alan değerinin metni içinde eşleştirme yapıp, eşleşmenin başında boşluk, sonunda da boşluk ya da noktalama işaretleri olması durumda geçirilmesini sağlar (örn. 'beşiktaş' 'beşiktaş gibi' ile eşlenebilir ama 'beşiktaşlı' ile eşlenmez).</td>
+</tr>
+
+<tr>
+<td class="left">eleme</td>
+<td class="left"><code>uymayan</code> ya da <code>uyan</code></td>
+<td class="left">tokenin verilen kriterlere uyduğu durumda mı yoksa uymadığı durumunda mı eleneceğini belirler.</td>
+<td class="left">uymayan</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-genelflt.png"  alt="imgs/dit-genelflt.png" />
+<div class="figure">
+<p><img src="imgs/dit-genelflt.png" alt="dit-genelflt.png" />
 </p>
-
-
+</div>
+</div>
 </div>
 
-</div>
 
-<div id="outline-container-4-2" class="outline-3">
+
+<div id="outline-container-sec-4-2" class="outline-3">
 <h3 id="sec-4-2">kümeflt</h3>
 <div class="outline-text-3" id="text-4-2">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">kümeflt</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">girdi kapısındaki token listesini küme olarak çıktısına yazar, diğer bir deyişle yinelenen tokenler çıktıya yazılmaz.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Token</code>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Token</code>.</td></tr>
-<tr><td class="left">Örnek kullanım</td><td class="left">linux başlığındaki bkz kümesi:</td></tr>
-<tr><td class="left"></td><td class="left"><code>yürüt başlıkknk[başlık=linux] ! başlıkgirdileri ! girdibkzları ! kümeflt ! metinbtk</code></td></tr>
-<tr><td class="left">Parametreleri</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">kümeflt</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">girdi kapısındaki token listesini küme olarak çıktısına yazar, diğer bir deyişle yinelenen tokenler çıktıya yazılmaz.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Token</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Token</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Örnek kullanım</td>
+<td class="left">linux başlığındaki bkz kümesi:</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left"><code>yürüt başlıkknk[başlık=linux] ! başlıkgirdileri ! girdibkzları ! kümeflt ! metinbtk</code></td>
+</tr>
+
+<tr>
+<td class="left">Parametreleri</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-kumeflt.png"  alt="imgs/dit-kumeflt.png" />
+<div class="figure">
+<p><img src="imgs/dit-kumeflt.png" alt="dit-kumeflt.png" />
 </p>
-
-
-
+</div>
+</div>
 </div>
 
-</div>
 
-<div id="outline-container-4-3" class="outline-3">
+
+
+<div id="outline-container-sec-4-3" class="outline-3">
 <h3 id="sec-4-3">tarihflt</h3>
 <div class="outline-text-3" id="text-4-3">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">tarihflt</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">girdi kapısındaki girdinin tarihi parametre olarak verilen tarih aralığındaysa çıktı kapısına geçirir, değilse yutar. başlangıç tarihi aralığa dahilken, bitiş tarihi dahil değildir.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Girdi</code>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Girdi</code>.</td></tr>
-<tr><td class="left">Örnek kullanım</td><td class="left">linux.xml dosyasındaki nisan 2011'de düzenlenmiş girdiler:</td></tr>
-<tr><td class="left"></td><td class="left"><code>yürüt dosyaknk[dosya=linux.xml] ! tarihflt[baş=04.2011, son=05.2011, tip=düzenleme] ! metinbtk</code></td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">tarihflt</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">girdi kapısındaki girdinin tarihi parametre olarak verilen tarih aralığındaysa çıktı kapısına geçirir, değilse yutar. başlangıç tarihi aralığa dahilken, bitiş tarihi dahil değildir.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Girdi</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Girdi</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Örnek kullanım</td>
+<td class="left">linux.xml dosyasındaki nisan 2011'de düzenlenmiş girdiler:</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left"><code>yürüt dosyaknk[dosya=linux.xml] ! tarihflt[baş=04.2011, son=05.2011, tip=düzenleme] ! metinbtk</code></td>
+</tr>
 </tbody>
 </table>
-
 
 
 <p>
 Parametreleri
-</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">parametre</th><th scope="col" class="left">alabildiği değerler</th><th scope="col" class="left">açıklama</th><th scope="col" class="left">varsayılan değeri</th></tr>
+<tr>
+<th scope="col" class="left">parametre</th>
+<th scope="col" class="left">alabildiği değerler</th>
+<th scope="col" class="left">açıklama</th>
+<th scope="col" class="left">varsayılan değeri</th>
+</tr>
 </thead>
 <tbody>
-<tr><td class="left">baş</td><td class="left">gg.aa.yyyy, aa.yyyy, yyyy, bugün, dün</td><td class="left">geçirilmesi istenen tarih aralığının başlangıcı.</td><td class="left">1999</td></tr>
-<tr><td class="left">son</td><td class="left">gg.aa.yyyy, aa.yyyy, yyyy, bugün, dün</td><td class="left">geçirilmesi istenen tarih aralığının sonu.</td><td class="left">yarın</td></tr>
-<tr><td class="left">tip</td><td class="left">giriş ya da düzenleme</td><td class="left">filtreleme işinin girdinin giriş tarihine mi yoksa düzenleme tarihine mi bakılarak yapılacağını belirler.</td><td class="left">giriş</td></tr>
+<tr>
+<td class="left">baş</td>
+<td class="left">gg.aa.yyyy, aa.yyyy, yyyy, bugün, dün</td>
+<td class="left">geçirilmesi istenen tarih aralığının başlangıcı.</td>
+<td class="left">1999</td>
+</tr>
+
+<tr>
+<td class="left">son</td>
+<td class="left">gg.aa.yyyy, aa.yyyy, yyyy, bugün, dün</td>
+<td class="left">geçirilmesi istenen tarih aralığının sonu.</td>
+<td class="left">yarın</td>
+</tr>
+
+<tr>
+<td class="left">tip</td>
+<td class="left">giriş ya da düzenleme</td>
+<td class="left">filtreleme işinin girdinin giriş tarihine mi yoksa düzenleme tarihine mi bakılarak yapılacağını belirler.</td>
+<td class="left">giriş</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-tarihflt.png"  alt="imgs/dit-tarihflt.png" />
+<div class="figure">
+<p><img src="imgs/dit-tarihflt.png" alt="dit-tarihflt.png" />
 </p>
-
-
+</div>
+</div>
 </div>
 
-</div>
 
-<div id="outline-container-4-4" class="outline-3">
+
+<div id="outline-container-sec-4-4" class="outline-3">
 <h3 id="sec-4-4">genelsıralayıcı</h3>
 <div class="outline-text-3" id="text-4-4">
-
-<p><i>TODO: Dökümantasyon eklenecek.</i>
+<p>
+<i>TODO: Dökümantasyon eklenecek.</i>
 </p>
-
+</div>
 </div>
 
-</div>
 
-<div id="outline-container-4-5" class="outline-3">
+<div id="outline-container-sec-4-5" class="outline-3">
 <h3 id="sec-4-5"><del>başlıkflt</del></h3>
 <div class="outline-text-3" id="text-4-5">
-
-<p><i>Kullanımdan kalktı.</i> (bkz: <a href="#sec-4-1">genelflt</a>) <code>başlıkflt [başlık=lost]</code> \(\rightarrow\) <code>genelflt [alan=baslik, değer=lost]</code>
+<p>
+<i>Kullanımdan kalktı.</i> (bkz: <a href="#sec-4-1">genelflt</a>) <code>başlıkflt [başlık=lost]</code> \(\rightarrow\) <code>genelflt [alan=baslik, değer=lost]</code>
 </p>
+
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">başlıkflt</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">girdi kapısındaki başlığın adı parametre olarak verilen başlıkla aynıysa çıktı kapısına geçirir, değilse yutar.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Başlık</code>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Başlık</code>.</td></tr>
-<tr><td class="left">Örnek kullanım</td><td class="left"><code>yürüt hayvanknk [şey=lost, tarih=2011] ! başlıkflt [başlık=lost] ! başlıkgirdileri ! dosyabtk [dosya=lost2011.xml]</code></td></tr>
-<tr><td class="left"></td><td class="left"><code>yürüt hayvanknk [şey=barcelona real madrid maçı] ! başlıkflt [başlık=*barcelona*real madrid*] ! metinbtk</code></td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">başlıkflt</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">girdi kapısındaki başlığın adı parametre olarak verilen başlıkla aynıysa çıktı kapısına geçirir, değilse yutar.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Başlık</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Başlık</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Örnek kullanım</td>
+<td class="left"><code>yürüt hayvanknk [şey=lost, tarih=2011] ! başlıkflt [başlık=lost] ! başlıkgirdileri ! dosyabtk [dosya=lost2011.xml]</code></td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left"><code>yürüt hayvanknk [şey=barcelona real madrid maçı] ! başlıkflt [başlık=*barcelona*real madrid*] ! metinbtk</code></td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Parametreleri
-</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">parametre</th><th scope="col" class="left">alabildiği değerler</th><th scope="col" class="left">açıklama</th><th scope="col" class="left">varsayılan değeri</th></tr>
+<tr>
+<th scope="col" class="left">parametre</th>
+<th scope="col" class="left">alabildiği değerler</th>
+<th scope="col" class="left">açıklama</th>
+<th scope="col" class="left">varsayılan değeri</th>
+</tr>
 </thead>
 <tbody>
-<tr><td class="left">başlık</td><td class="left"><i>kısıtlama yok</i></td><td class="left">filtreden geçmesi istenen başlığın adı.</td><td class="left">ekşi sözlük</td></tr>
+<tr>
+<td class="left">başlık</td>
+<td class="left"><i>kısıtlama yok</i></td>
+<td class="left">filtreden geçmesi istenen başlığın adı.</td>
+<td class="left">ekşi sözlük</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-baslikflt.png"  alt="imgs/dit-baslikflt.png" />
+<div class="figure">
+<p><img src="imgs/dit-baslikflt.png" alt="dit-baslikflt.png" />
 </p>
-
-
-
+</div>
+</div>
 </div>
 </div>
 
-</div>
 
-<div id="outline-container-5" class="outline-2">
+
+
+<div id="outline-container-sec-5" class="outline-2">
 <h2 id="sec-5">Gözlemciler (gzc)</h2>
 <div class="outline-text-2" id="text-5">
-
-
 <p>
 Gözlemciler iş hatlarının ortalarında bulunan, girdi kapılarındaki veriyi aynen çıktı kapısına yazan bileşenlerdir. Dolayısıyla girdi ve çıktı kapıları aynı tiptedir. Üstlerinden geçen veriyi kullanarak bazı işler yaparlar.
 </p>
-
 </div>
 
-<div id="outline-container-5-1" class="outline-3">
+<div id="outline-container-sec-5-1" class="outline-3">
 <h3 id="sec-5-1">girdiresimlerigzc</h3>
 <div class="outline-text-3" id="text-5-1">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">girdiresimlerigzc</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">girdi kapısındaki girdinin içindeki resimlere verilmiş bağlantılardaki resimleri, twitter/facebook bağlantılarındaki durum bilgisi ve varsa resimleri mevcut klasöre indirir. Tanımlı resim dosyası uzantıları: .jpg, .gif, .png, .flv. İndirilen dosya başlık adı - girdi numarası - resmin orjinal adı şeklinde isimlendirilir. Twitter durumu tvit-tvit_no.xml, varsa resmi tvit-tvit_no dosyasına kaydedilir.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Girdi</code>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Girdi</code>.</td></tr>
-<tr><td class="left">Örnek kullanım</td><td class="left"><code>başlıkknk [başlık=charlize theron] ! başlıkgirdileri ! girdiresimlerigzc ! gnd</code></td></tr>
-<tr><td class="left">Parametreleri</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">girdiresimlerigzc</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">girdi kapısındaki girdinin içindeki resimlere verilmiş bağlantılardaki resimleri, twitter/facebook bağlantılarındaki durum bilgisi ve varsa resimleri mevcut klasöre indirir. Tanımlı resim dosyası uzantıları: .jpg, .gif, .png, .flv. İndirilen dosya başlık adı - girdi numarası - resmin orjinal adı şeklinde isimlendirilir. Twitter durumu tvit-tvit\<sub>no</sub>.xml, varsa resmi tvit-tvit\<sub>no</sub> dosyasına kaydedilir.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Girdi</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Girdi</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Örnek kullanım</td>
+<td class="left"><code>başlıkknk [başlık=charlize theron] ! başlıkgirdileri ! girdiresimlerigzc ! gnd</code></td>
+</tr>
+
+<tr>
+<td class="left">Parametreleri</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-girdiresimlerigzc.png"  alt="imgs/dit-girdiresimlerigzc.png" />
+<div class="figure">
+<p><img src="imgs/dit-girdiresimlerigzc.png" alt="dit-girdiresimlerigzc.png" />
 </p>
-
-
+</div>
+</div>
 </div>
 </div>
 
-</div>
 
-<div id="outline-container-6" class="outline-2">
+
+<div id="outline-container-sec-6" class="outline-2">
 <h2 id="sec-6">Bataklar (btk)</h2>
 <div class="outline-text-2" id="text-6">
-
-
 <p>
 Bataklar iş hatlarının sonlarında bulunan bileşenlerdir. Ekrana/dosyaya/ağa yazma gibi işler yaparlar.
 </p>
-
 </div>
 
-<div id="outline-container-6-1" class="outline-3">
+<div id="outline-container-sec-6-1" class="outline-3">
 <h3 id="sec-6-1">metinbtk</h3>
 <div class="outline-text-3" id="text-6-1">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">metinbtk</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">girdi kapısındaki veriyi metin tabanlı ekrana yazar. Sadece kabuk ortamında kullanılabilir.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Token</code>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">-</td></tr>
-<tr><td class="left">Örnek kullanım</td><td class="left">-</td></tr>
-<tr><td class="left">Parametreleri</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">girdi kapısındaki veriyi metin tabanlı ekrana yazar. Sadece kabuk ortamında kullanılabilir.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Token</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">-</td>
+</tr>
+
+<tr>
+<td class="left">Örnek kullanım</td>
+<td class="left">-</td>
+</tr>
+
+<tr>
+<td class="left">Parametreleri</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-metinbtk.png"  alt="imgs/dit-metinbtk.png" />
+<div class="figure">
+<p><img src="imgs/dit-metinbtk.png" alt="dit-metinbtk.png" />
 </p>
 </div>
-
+</div>
 </div>
 
-<div id="outline-container-6-2" class="outline-3">
+<div id="outline-container-sec-6-2" class="outline-3">
 <h3 id="sec-6-2"><del>görselbtk</del></h3>
 <div class="outline-text-3" id="text-6-2">
+<p>
+<i>Kullanımdan kalktı.</i> ssg++ web arayüzü Java Swing tabanlı görsel kullanıcı arayüzünün yerine geçti.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
-<p><i>Kullanımdan kalktı.</i> ssg++ web arayüzü Java Swing tabanlı görsel kullanıcı arayüzünün yerine geçti.
-</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">görselbtk</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">girdi kapısındaki veriyi ekşi sözlük'tekine benzeterek ekranda gösterir. Sadece görsel kullanıcı arayüzü ortamında kullanılabilir.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Başlık</code> ya da <code>Girdi</code>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">-</td></tr>
-<tr><td class="left">Örnek kullanım</td><td class="left">-</td></tr>
-<tr><td class="left">Parametreleri</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">görselbtk</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">girdi kapısındaki veriyi ekşi sözlük'tekine benzeterek ekranda gösterir. Sadece görsel kullanıcı arayüzü ortamında kullanılabilir.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Başlık</code> ya da <code>Girdi</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">-</td>
+</tr>
+
+<tr>
+<td class="left">Örnek kullanım</td>
+<td class="left">-</td>
+</tr>
+
+<tr>
+<td class="left">Parametreleri</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-gorselbtk.png"  alt="imgs/dit-gorselbtk.png" />
+<div class="figure">
+<p><img src="imgs/dit-gorselbtk.png" alt="dit-gorselbtk.png" />
 </p>
-
+</div>
+</div>
 </div>
 
-</div>
 
-<div id="outline-container-6-3" class="outline-3">
+<div id="outline-container-sec-6-3" class="outline-3">
 <h3 id="sec-6-3">dosyabtk</h3>
 <div class="outline-text-3" id="text-6-3">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">dosyabtk</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">girdi kapısındaki veriyi txt, XML, csv ya da HTML biçiminde dosyaya yazar.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Token</code>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">-</td></tr>
-<tr><td class="left">Örnek kullanım</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">dosyabtk</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">girdi kapısındaki veriyi txt, XML, csv ya da HTML biçiminde dosyaya yazar.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Token</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">-</td>
+</tr>
+
+<tr>
+<td class="left">Örnek kullanım</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Parametreleri
-</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">parametre</th><th scope="col" class="left">alabildiği değerler</th><th scope="col" class="left">açıklama</th><th scope="col" class="left">varsayılan değeri</th></tr>
+<tr>
+<th scope="col" class="left">parametre</th>
+<th scope="col" class="left">alabildiği değerler</th>
+<th scope="col" class="left">açıklama</th>
+<th scope="col" class="left">varsayılan değeri</th>
+</tr>
 </thead>
 <tbody>
-<tr><td class="left">dosya</td><td class="left">.xml, .html, .csv ya da .txt uzantılı dosya adı</td><td class="left">yazılmak istenen dosyanın yolu ve adı</td><td class="left">dosyabtk.xml</td></tr>
+<tr>
+<td class="left">dosya</td>
+<td class="left">.xml, .html, .csv ya da .txt uzantılı dosya adı</td>
+<td class="left">yazılmak istenen dosyanın yolu ve adı</td>
+<td class="left">dosyabtk.xml</td>
+</tr>
 </tbody>
 </table>
-
 
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-dosyabtk.png"  alt="imgs/dit-dosyabtk.png" />
+<div class="figure">
+<p><img src="imgs/dit-dosyabtk.png" alt="dit-dosyabtk.png" />
 </p>
-
-
+</div>
+</div>
 </div>
 
-</div>
 
-<div id="outline-container-6-4" class="outline-3">
+
+<div id="outline-container-sec-6-4" class="outline-3">
 <h3 id="sec-6-4">grafikbtk</h3>
 <div class="outline-text-3" id="text-6-4">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">grafikbtk</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">girdi kapısındaki grafik verisini sütunlu grafik olarak gösterir.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Grafik Verisi</code>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">-</td></tr>
-<tr><td class="left">Örnek kullanım</td><td class="left"><code>yürüt başlıkknk [başlık=sözlükçülerin en iyi 10 film listesi] ! başlıkgirdileri ! girdibkzları ! histogram ! grafikbtk</code></td></tr>
-<tr><td class="left">Parametreleri</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">grafikbtk</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">girdi kapısındaki grafik verisini sütunlu grafik olarak gösterir.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Grafik Verisi</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">-</td>
+</tr>
+
+<tr>
+<td class="left">Örnek kullanım</td>
+<td class="left"><code>yürüt başlıkknk [başlık=sözlükçülerin en iyi 10 film listesi] ! başlıkgirdileri ! girdibkzları ! histogram ! grafikbtk</code></td>
+</tr>
+
+<tr>
+<td class="left">Parametreleri</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-grafikbtk.png"  alt="imgs/dit-grafikbtk.png" />
+<div class="figure">
+<p><img src="imgs/dit-grafikbtk.png" alt="dit-grafikbtk.png" />
 </p>
-
+</div>
+</div>
 </div>
 
-</div>
 
-<div id="outline-container-6-5" class="outline-3">
+<div id="outline-container-sec-6-5" class="outline-3">
 <h3 id="sec-6-5">wordlebtk</h3>
 <div class="outline-text-3" id="text-6-5">
-
-
 <p>
 <b>Not</b>: <code>histogram</code> çıktısını <code>dosyabtk</code> ile bir dosyaya yazdırdıktan sonra doğrudan <a href="http://www.wordle.net/advanced">gelişmiş wordle</a> sayfasında kullanabilirsiniz. örn.: <code>... ! histogram ! dosyabtk [dosya=wordle.txt]</code>
 </p>
+
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">wordlebtk</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">girdi kapısındaki grafik verisini <a href="http://www.wordle.net/create">wordle</a> sayfasında etiket bulutu yaratmak için kullanılabilecek biçimde metin dosyasına yazar.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Grafik Verisi</code>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">-</td></tr>
-<tr><td class="left">Örnek kullanım</td><td class="left"><code>yürüt başlıkknk [başlık=sözlükçülerin en iyi 10 film listesi] ! başlıkgirdileri ! girdibkzları ! histogram ! wordlebtk</code></td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">wordlebtk</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">girdi kapısındaki grafik verisini <a href="http://www.wordle.net/create">wordle</a> sayfasında etiket bulutu yaratmak için kullanılabilecek biçimde metin dosyasına yazar.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Grafik Verisi</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">-</td>
+</tr>
+
+<tr>
+<td class="left">Örnek kullanım</td>
+<td class="left"><code>yürüt başlıkknk [başlık=sözlükçülerin en iyi 10 film listesi] ! başlıkgirdileri ! girdibkzları ! histogram ! wordlebtk</code></td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Parametreleri
-</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
-</colgroup>
-<thead>
-<tr><th scope="col" class="left">parametre</th><th scope="col" class="left">alabildiği değerler</th><th scope="col" class="left">açıklama</th><th scope="col" class="left">varsayılan değeri</th></tr>
-</thead>
-<tbody>
-<tr><td class="left">dosya</td><td class="left">.txt uzantılı dosya adı</td><td class="left">yazılmak istenen dosyanın yolu ve adı</td><td class="left">wordlebtk.txt</td></tr>
-</tbody>
-</table>
-
-
-
-<p>
-Görsel gösterimi
-</p>
-
-<p>
-<img src="imgs/dit-wordlebtk.png"  alt="imgs/dit-wordlebtk.png" />
-</p>
-
-</div>
-
-</div>
-
-<div id="outline-container-6-6" class="outline-3">
-<h3 id="sec-6-6"><del>maçsonucubtk</del></h3>
-<div class="outline-text-3" id="text-6-6">
-
-<p><i>Kullanımdan kalktı.</i> (bkz: <a href="#sec-3-6">maçsonucu</a>) <code>maçsonucubtk</code> \(\rightarrow\) <code>maçsonucu ! metinbtk</code>
 </p>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">parametre</th>
+<th scope="col" class="left">alabildiği değerler</th>
+<th scope="col" class="left">açıklama</th>
+<th scope="col" class="left">varsayılan değeri</th>
+</tr>
+</thead>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">maçsonucubtk</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">girdi kapısındaki girdinin içinde skor geçen cümleleri ekrana yazar. aralarında tire olan üçe kadar hanesi olan iki sayıyı skor olarak algılanır.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <code>Girdi</code>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">-</td></tr>
-<tr><td class="left">Örnek kullanım</td><td class="left"><code>yürüt başlıkknk [başlık=11 haziran 2008 isviçre türkiye maçı] ! başlıkgirdileri ! maçsonucubtk</code></td></tr>
-<tr><td class="left">Parametreleri</td><td class="left">-</td></tr>
+<tr>
+<td class="left">dosya</td>
+<td class="left">.txt uzantılı dosya adı</td>
+<td class="left">yazılmak istenen dosyanın yolu ve adı</td>
+<td class="left">wordlebtk.txt</td>
+</tr>
 </tbody>
 </table>
-
 
 
 <p>
 Görsel gösterimi
 </p>
 
+<div class="figure">
+<p><img src="imgs/dit-wordlebtk.png" alt="dit-wordlebtk.png" />
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-6-6" class="outline-3">
+<h3 id="sec-6-6"><del>maçsonucubtk</del></h3>
+<div class="outline-text-3" id="text-6-6">
 <p>
-<img src="imgs/dit-macsonucubtk.png"  alt="imgs/dit-macsonucubtk.png" />
+<i>Kullanımdan kalktı.</i> (bkz: <a href="#sec-3-6">maçsonucu</a>) <code>maçsonucubtk</code> \(\rightarrow\) <code>maçsonucu ! metinbtk</code>
 </p>
 
-</div>
-</div>
-</div>
-</div>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
-<div id="postamble">
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">Adı</td>
+<td class="left">maçsonucubtk</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">girdi kapısındaki girdinin içinde skor geçen cümleleri ekrana yazar. aralarında tire olan üçe kadar hanesi olan iki sayıyı skor olarak algılanır.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <code>Girdi</code>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">-</td>
+</tr>
+
+<tr>
+<td class="left">Örnek kullanım</td>
+<td class="left"><code>yürüt başlıkknk [başlık=11 haziran 2008 isviçre türkiye maçı] ! başlıkgirdileri ! maçsonucubtk</code></td>
+</tr>
+
+<tr>
+<td class="left">Parametreleri</td>
+<td class="left">-</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+Görsel gösterimi
+</p>
+
+<div class="figure">
+<p><img src="imgs/dit-macsonucubtk.png" alt="dit-macsonucubtk.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -1317,7 +2219,6 @@ Görsel gösterimi
   ga('send', 'pageview');
 
 </script>
-
 </div>
 </body>
 </html>

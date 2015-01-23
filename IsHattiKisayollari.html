@@ -1,65 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="tr" xml:lang="tr">
 <head>
 <title>İş hattı kısayolları</title>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="title" content="İş hattı kısayolları"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-07-17T15:34+0200"/>
-<meta name="author" content="Onur Derin"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
+<!-- 2015-01-23 Fri 23:58 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Onur Derin" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
   .title  { text-align: center; }
-  .todo   { color: red; }
+  .todo   { font-family: monospace; color: red; }
   .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
   pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
   }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
     background: #ffffcc;
   }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
   textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
-</style><link rel="stylesheet" type="text/css" href="./css/stylesheet.css" /> <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid Sans" />
+</style>
+<link rel="stylesheet" type="text/css" href="./css/stylesheet.css" /> <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid Sans" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -106,11 +136,9 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
-
 </head>
 <body>
-
-<div id="preamble">
+<div id="preamble" class="status">
 <table style="padding:0; width: 100%">
     <tr> 
         <td style="vertical-align: top; min-width:320px;">
@@ -149,16 +177,11 @@ for the JavaScript code in this tag.
 	    <a href="sitemap.html" style="color:white;text-decoration:none; font-size:120%;">site haritası ▮ </a>&nbsp;&nbsp;&nbsp;
 </div>
 <br />
-
 </div>
-
 <div id="content">
 <h1 class="title">İş hattı kısayolları</h1>
-
-
-
 <div id="table-of-contents">
-<h2>İçindekiler</h2>
+<h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#sec-1">İş hattı kısayolları</a>
@@ -201,42 +224,58 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-1" class="outline-2">
+
+<div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1">İş hattı kısayolları</h2>
 <div class="outline-text-2" id="text-1">
-
-
-</div>
-
-<div id="outline-container-ajanda" class="outline-3">
-<h3 id="ajanda"><a name="sec-1-1" id="sec-1-1"></a>ajanda</h3>
+</div><div id="outline-container-ajanda" class="outline-3">
+<h3 id="ajanda"><a id="sec-1-1" name="sec-1-1"></a>ajanda</h3>
 <div class="outline-text-3" id="text-ajanda">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">ajanda</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Bugün tarihli olayların başlıklarını yazar.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">hayvanknk [şey=%%BUGÜN%%] ! metinbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">ajanda</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Bugün tarihli olayların başlıklarını yazar.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">hayvanknk [şey=%%BUGÜN%%] ! metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Örnek:
 </p>
+
 <p>
 <code>$ ssg++ -l ajanda</code>
 </p>
+
 <p>
 Çıktısı:
 </p>
 
-
-
-<pre class="example">+ 6-7 temmuz 2013 küresel onur yürüyüşü
+<pre class="example">
++ 6-7 temmuz 2013 küresel onur yürüyüşü
 + 6 temmuz 2013 ajda pekkan konseri
 + 6 temmuz 2013 arctic monkeys istanbul konseri
 + 6 temmuz 2013 başörtü ve inanç özgürlüğü yürüyüşü
@@ -253,122 +292,193 @@ for the JavaScript code in this tag.
 + 6 temmuz 2013 taksim buluşması
 + 6 temmuz 2013 tekyumruk geziparki yürüyüşü
 </pre>
-
-
-
-
+</div>
 </div>
 
-</div>
+
 
 <div id="outline-container-ajanda-1" class="outline-3">
-<h3 id="ajanda-1"><a name="sec-1-2" id="sec-1-2"></a>ajanda-1</h3>
+<h3 id="ajanda-1"><a id="sec-1-2" name="sec-1-2"></a>ajanda-1</h3>
 <div class="outline-text-3" id="text-ajanda-1">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">ajanda-1</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Dün tarihli olayların başlıklarını yazar. Dünün ajandası.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">hayvanknk [şey=%%DÜN%%] ! metinbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">ajanda-1</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Dün tarihli olayların başlıklarını yazar. Dünün ajandası.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">hayvanknk [şey=%%DÜN%%] ! metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
-
-
-
+</div>
 </div>
 
-</div>
+
 
 <div id="outline-container-ajanda3" class="outline-3">
-<h3 id="ajanda3"><a name="sec-1-3" id="sec-1-3"></a>ajanda3</h3>
+<h3 id="ajanda3"><a id="sec-1-3" name="sec-1-3"></a>ajanda3</h3>
 <div class="outline-text-3" id="text-ajanda3">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">ajanda3</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Yarın, yarından sonra ve üç gün sonra tarihli olayların başlıklarını yazar. 3 günün ajandası.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">hayvanknk [şey=%%YARIN%%] &amp; hayvanknk [şey=%%YARINDANSONRA%%] &amp; hayvanknk [şey=%%BUGÜN<sub>ARTI</sub><sub>3</sub>%%] ! merge3x1 ! metinbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">ajanda3</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Yarın, yarından sonra ve üç gün sonra tarihli olayların başlıklarını yazar. 3 günün ajandası.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">hayvanknk [şey=%%YARIN%%] &amp; hayvanknk [şey=%%YARINDANSONRA%%] &amp; hayvanknk [şey=%%BUGÜN<sub>ARTI</sub><sub>3</sub>%%] ! merge3x1 ! metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
-
-
+</div>
 </div>
 
-</div>
 
 <div id="outline-container-anket" class="outline-3">
-<h3 id="anket"><a name="sec-1-4" id="sec-1-4"></a>anket</h3>
+<h3 id="anket"><a id="sec-1-4" name="sec-1-4"></a>anket</h3>
 <div class="outline-text-3" id="text-anket">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">anket</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Argüman olarak verilen başlıktaki bkz veya görünmez bkz verilmiş başlıkları atıf sayılarına göre grafik olarak gösterir.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">başlıkknk [başlık=%s] ! başlıkgirdileri ! girdibkzları ! histogram ! grafikbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">1</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">anket</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Argüman olarak verilen başlıktaki bkz veya görünmez bkz verilmiş başlıkları atıf sayılarına göre grafik olarak gösterir.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">başlıkknk [başlık=%s] ! başlıkgirdileri ! girdibkzları ! histogram ! grafikbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">1</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Örnek:
 </p>
+
 <p>
 Hangi filmi izlesem?
 </p>
+
 <p>
 <code>$ ssg++ anket sözlükçülerin en iyi 10 film listesi</code>
 </p>
+
 <p>
 Çıktısı:
 </p>
-<p>
-<img src="imgs/anket_sözlükçülerin_en_iyi_10_film_listesi.png"  alt="imgs/anket_sözlükçülerin_en_iyi_10_film_listesi.png" />
+
+
+<div class="figure">
+<p><img src="imgs/anket_sözlükçülerin_en_iyi_10_film_listesi.png" alt="anket_sözlükçülerin_en_iyi_10_film_listesi.png" />
 </p>
-
+</div>
+</div>
 </div>
 
-</div>
 
 <div id="outline-container-ara" class="outline-3">
-<h3 id="ara"><a name="sec-1-5" id="sec-1-5"></a>ara</h3>
+<h3 id="ara"><a id="sec-1-5" name="sec-1-5"></a>ara</h3>
 <div class="outline-text-3" id="text-ara">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">ara</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Argüman olarak verilen şekildeki başlıkları arar. Asteriks işareti (\*) ile aramalar yapılabilir.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">hayvanknk [şey=%s] ! metinbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">1</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">ara</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Argüman olarak verilen şekildeki başlıkları arar. Asteriks işareti (\*) ile aramalar yapılabilir.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">hayvanknk [şey=%s] ! metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">1</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Örnek:
 </p>
+
 <p>
 <code>$ ssg++ -l ara saraband\*</code>
 </p>
+
 <p>
 Çıktısı:
 </p>
 
-
-
-<pre class="example">+ bach si minör keman sonatı sarabande
+<pre class="example">
++ bach si minör keman sonatı sarabande
 + dead lovers' sarabande face one
 + dead lovers' sarabande face two
 + dead lovers sarabande
@@ -379,764 +489,1219 @@ Hangi filmi izlesem?
 + sarabande
 + sarabande from violin sonata in b minor
 </pre>
-
-
 </div>
-
 </div>
 
 <div id="outline-container-badi" class="outline-3">
-<h3 id="badi"><a name="sec-1-6" id="sec-1-6"></a>badi</h3>
+<h3 id="badi"><a id="sec-1-6" name="sec-1-6"></a>badi</h3>
 <div class="outline-text-3" id="text-badi">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">badi</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Badilere ait son girdileri yazar.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">badiknk ! başlıkgirdileri ! metinbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">badi</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Badilere ait son girdileri yazar.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">badiknk ! başlıkgirdileri ! metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
-
-
+</div>
 </div>
 
-</div>
 
 <div id="outline-container-baslikindir" class="outline-3">
-<h3 id="baslikindir"><a name="sec-1-7" id="sec-1-7"></a>başlıkindir</h3>
+<h3 id="baslikindir"><a id="sec-1-7" name="sec-1-7"></a>başlıkindir</h3>
 <div class="outline-text-3" id="text-baslikindir">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">başlıkindir</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">İlk argüman olarak verilen başlığın girdilerini ikinci argüman olarak verilen dosya ismi ve biçimiyle yazar. Geçerli uzantılar: xml, html ya da txt.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">başlıkknk [başlık=%s] ! başlıkgirdileri ! dosyabtk [dosya=%s]</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">2</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">başlıkindir</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">İlk argüman olarak verilen başlığın girdilerini ikinci argüman olarak verilen dosya ismi ve biçimiyle yazar. Geçerli uzantılar: xml, html ya da txt.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">başlıkknk [başlık=%s] ! başlıkgirdileri ! dosyabtk [dosya=%s]</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">2</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Örnek:
 </p>
+
 <p>
 <code>$ ssg++ başlıkindir sarabande, sarabande.txt</code>
 </p>
+
 <p>
 <code>$ ssg++ başlıkindir sarabande, sarabande.xml</code>
 </p>
+
 <p>
 Bağlantı verilmiş resimlerin, twitter durum bildirimlerinin, bkz verilmiş girdilerin dahil edilmesi gibi gelişmiş özelliklerin olduğu bir e-kitap okuyucusu dökümanı için
 </p>
-
-
-<pre class="example">$ ssg++ başlıkindir sarabande, sarabande.html
+<pre class="example">
+$ ssg++ başlıkindir sarabande, sarabande.html
 $ ebook-convert sarabande.html sarabande.mobi    # calibre ile gelen bir program
 $ send-to-kindle sarabande.mobi                  # kindle adresine dosya gönderen bir betik
 </pre>
-
-
 </div>
-
 </div>
 
 <div id="outline-container-baslikresimleri" class="outline-3">
-<h3 id="baslikresimleri"><a name="sec-1-8" id="sec-1-8"></a>başlıkresimleri</h3>
+<h3 id="baslikresimleri"><a id="sec-1-8" name="sec-1-8"></a>başlıkresimleri</h3>
 <div class="outline-text-3" id="text-baslikresimleri">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">başlıkresimleri</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Argüman olarak verilen başlıktaki bkz verilmiş tüm resimleri indirir.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">başlıkknk [başlık=%s] ! başlıkgirdileri ! girdiresimlerigzc ! gnd</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">1</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">başlıkresimleri</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Argüman olarak verilen başlıktaki bkz verilmiş tüm resimleri indirir.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">başlıkknk [başlık=%s] ! başlıkgirdileri ! girdiresimlerigzc ! gnd</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">1</td>
+</tr>
 </tbody>
 </table>
-
 
 
 <p>
 Örnek:
 </p>
+
 <p>
-<a href="http://antik.eksisozluk.com/show.asp?t=charlize theron'un ne kadar güzel bir kadın olması">charlize theron'un ne kadar güzel bir kadın olması</a>?
+<a href="http://antik.eksisozluk.com/show.asp?t=charlize%20theron'un%20ne%20kadar%20g%C3%BCzel%20bir%20kad%C4%B1n%20olmas%C4%B1">charlize theron'un ne kadar güzel bir kadın olması</a>?
 </p>
 
-
-
-<pre class="example">$ ssg++ başlıkresimleri charlize theron
+<pre class="example">
+$ ssg++ başlıkresimleri charlize theron
 $ ls
 charlize theron-18659736-charlize-theron-102809-3.jpg
 charlize theron-20123185-997DVA_Charlize_Theron_029.jpg
 charlize theron-20123185-Charlize%20Theron.jpg
 ...
 </pre>
-
-
 </div>
-
 </div>
 
 <div id="outline-container-bugun" class="outline-3">
-<h3 id="bugun"><a name="sec-1-9" id="sec-1-9"></a>bugün</h3>
+<h3 id="bugun"><a id="sec-1-9" name="sec-1-9"></a>bugün</h3>
 <div class="outline-text-3" id="text-bugun">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">bugün</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Bugüne ait son 50 başlığı yazar.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">hayvanknk [tarih=bugün, limit=50, sıralama=yeni-eski] ! metinbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">bugün</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Bugüne ait son 50 başlığı yazar.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">hayvanknk [tarih=bugün, limit=50, sıralama=yeni-eski] ! metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
-
 </div>
-
 </div>
 
 <div id="outline-container-debe" class="outline-3">
-<h3 id="debe"><a name="sec-1-10" id="sec-1-10"></a>debe</h3>
+<h3 id="debe"><a id="sec-1-10" name="sec-1-10"></a>debe</h3>
 <div class="outline-text-3" id="text-debe">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">debe</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Dünün en beğenilen girdilerini yazar.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">istatistikknk [tip=debe] ! başlıkgirdileri ! metinbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">debe</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Dünün en beğenilen girdilerini yazar.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">istatistikknk [tip=debe] ! başlıkgirdileri ! metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Örnek:
 </p>
+
 <p>
 Dünün en beğenilenlerini kindle'dan şundan bundan okumak:
 </p>
+
 <p>
 <code>$ ssg++ debe &gt; debe-20130706.txt</code>
 </p>
+
 <p>
 ya da bağlantı verilmiş resimlerin, twitter durum bildirimlerinin, bkz verilmiş girdilerin ve güncel başlıklar için başlığın ilk girdisinin de eklenmesi gibi gelişmiş özelliklerin olduğu bir döküman için
 </p>
-
-
-<pre class="example">$ ssg++ yürüt istatistikknk [tip=debe] ! başlıkgirdileri ! dosyabtk [dosya=debe-20130706.html]
+<pre class="example">
+$ ssg++ yürüt istatistikknk [tip=debe] ! başlıkgirdileri ! dosyabtk [dosya=debe-20130706.html]
 $ ebook-convert debe-20130706.html debe-20130706.mobi   # calibre ile gelen bir program
 $ send-to-kindle debe-20130706.mobi                     # kindle adresine dosya gönderen bir betik
 </pre>
-
-
 </div>
-
 </div>
 
 <div id="outline-container-dosyadananket" class="outline-3">
-<h3 id="dosyadananket"><a name="sec-1-11" id="sec-1-11"></a>dosyadananket</h3>
+<h3 id="dosyadananket"><a id="sec-1-11" name="sec-1-11"></a>dosyadananket</h3>
 <div class="outline-text-3" id="text-dosyadananket">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">dosyadananket</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Argüman olarak verilen dosyadaki girdiler için bkz veya görünmez bkz verilmiş başlıkları atıf sayılarına göre grafik olarak gösterir.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">dosyaknk [dosya=%s] ! girdibkzları ! histogram ! grafikbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">1</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">dosyadananket</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Argüman olarak verilen dosyadaki girdiler için bkz veya görünmez bkz verilmiş başlıkları atıf sayılarına göre grafik olarak gösterir.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">dosyaknk [dosya=%s] ! girdibkzları ! histogram ! grafikbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">1</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Örnek:
 </p>
+
 <p>
 Sözlükçüler denize kim düşse denizi kurtarır (03.08.2013 itibariyle)?
 </p>
-
-
-<pre class="example">$ ssg++ başlıkindir sözlükçülerin en antipatik 10 türk listesi, sözlükçülerin_en_antipatik_10_türk_listesi.xml
+<pre class="example">
+$ ssg++ başlıkindir sözlükçülerin en antipatik 10 türk listesi, sözlükçülerin_en_antipatik_10_türk_listesi.xml
 $ ssg++ dosyadananket sözlükçülerin_en_antipatik_10_türk_listesi.xml
 </pre>
 
-
 <p>
 Çıktısı:
 </p>
-<p>
-<img src="imgs/anket_sözlükçülerin_en_antipatik_10_türk_listesi.png"  alt="imgs/anket_sözlükçülerin_en_antipatik_10_türk_listesi.png" />
+
+
+<div class="figure">
+<p><img src="imgs/anket_sözlükçülerin_en_antipatik_10_türk_listesi.png" alt="anket_sözlükçülerin_en_antipatik_10_türk_listesi.png" />
 </p>
 </div>
-
+</div>
 </div>
 
 <div id="outline-container-dosyadanlafebeleri" class="outline-3">
-<h3 id="dosyadanlafebeleri"><a name="sec-1-12" id="sec-1-12"></a>dosyadanlafebeleri</h3>
+<h3 id="dosyadanlafebeleri"><a id="sec-1-12" name="sec-1-12"></a>dosyadanlafebeleri</h3>
 <div class="outline-text-3" id="text-dosyadanlafebeleri">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">dosyadanlafebeleri</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Argüman olarak verilen dosyadaki bir başlığın girdileri için o başlığa yazmış yazarları girdi sayılarına göre grafik olarak gösterir.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">dosyaknk [dosya=%s] ! histogram [eksen=kategori, kategori=yazar] ! grafikbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">1</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">dosyadanlafebeleri</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Argüman olarak verilen dosyadaki bir başlığın girdileri için o başlığa yazmış yazarları girdi sayılarına göre grafik olarak gösterir.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">dosyaknk [dosya=%s] ! histogram [eksen=kategori, kategori=yazar] ! grafikbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">1</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Örnek:
 </p>
+
 <p>
 İtfaiye ile ilgili bir konuda kime danışmalı? Sözlükteki itfaiyeci kim? (İtfaiye kelimesinin geçtiği başlıklara en çok sayıda girdiyi kim yazmış?)
 </p>
+
 <p>
 <code>$ ssg++ -l yürüt hayvanknk [şey=itfaiye] ! başlıkgirdileri ! dosyabtk [dosya=itfaiye.xml]</code>
 </p>
+
 <p>
 <code>$ ssg++ dosyadanlafebeleri itfaiye.xml</code>
 </p>
+
 <p>
 Çıktısı:
 </p>
-<p>
-<img src="imgs/dosyadanlafebeleri_itfaiye.png"  alt="imgs/dosyadanlafebeleri_itfaiye.png" />
+
+
+<div class="figure">
+<p><img src="imgs/dosyadanlafebeleri_itfaiye.png" alt="dosyadanlafebeleri_itfaiye.png" />
 </p>
 </div>
-
+</div>
 </div>
 
 <div id="outline-container-dosyadanzamansalegilim" class="outline-3">
-<h3 id="dosyadanzamansalegilim"><a name="sec-1-13" id="sec-1-13"></a>dosyadanzamansaleğilim</h3>
+<h3 id="dosyadanzamansalegilim"><a id="sec-1-13" name="sec-1-13"></a>dosyadanzamansaleğilim</h3>
 <div class="outline-text-3" id="text-dosyadanzamansalegilim">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">dosyadanzamansaleğilim</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Argüman olarak verilen dosyabtk ile oluşturulmuş XML dosyasındaki girdilerin sayılarını giriş zamanlarına göre argüman olarak verilen zaman çözünürlüğüyle (yıl, ay, hafta, gün, saat) grafik olarak gösterir.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">dosyaknk [dosya=%s] ! histogram [eksen=zaman, çözünürlük=%s] ! grafikbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">2</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">dosyadanzamansaleğilim</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Argüman olarak verilen dosyabtk ile oluşturulmuş XML dosyasındaki girdilerin sayılarını giriş zamanlarına göre argüman olarak verilen zaman çözünürlüğüyle (yıl, ay, hafta, gün, saat) grafik olarak gösterir.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">dosyaknk [dosya=%s] ! histogram [eksen=zaman, çözünürlük=%s] ! grafikbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">2</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Örnek:
 </p>
+
 <p>
 Hangi Lost bölümleri daha çok konuşulmuş? Lost'un popüleritesi nasıl değişmiş? Sezon finalleri ses getirmiş mi?
 </p>
 
-
-
-<pre class="example">$ ssg++ -l başlıkindir lost, lost.xml
+<pre class="example">
+$ ssg++ -l başlıkindir lost, lost.xml
 $ ssg++ dosyadanzamansaleğilim lost.xml, hafta
 </pre>
 
-
 <p>
 Çıktısı:
 </p>
-<p>
-<img src="imgs/dosyadanzamansalegilim_lost_hafta.png"  alt="imgs/dosyadanzamansalegilim_lost_hafta.png" />
+
+
+<div class="figure">
+<p><img src="imgs/dosyadanzamansalegilim_lost_hafta.png" alt="dosyadanzamansalegilim_lost_hafta.png" />
 </p>
 </div>
-
+</div>
 </div>
 
 <div id="outline-container-dun" class="outline-3">
-<h3 id="dun"><a name="sec-1-14" id="sec-1-14"></a>dün</h3>
+<h3 id="dun"><a id="sec-1-14" name="sec-1-14"></a>dün</h3>
 <div class="outline-text-3" id="text-dun">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">dün</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Düne ait son 50 başlığı yazar.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">hayvanknk [tarih=dün, limit=100, sıralama=yeni-eski] ! metinbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">dün</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Düne ait son 50 başlığı yazar.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">hayvanknk [tarih=dün, limit=100, sıralama=yeni-eski] ! metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
-
-
+</div>
 </div>
 
-</div>
 
 <div id="outline-container-farkbadi" class="outline-3">
-<h3 id="farkbadi"><a name="sec-1-15" id="sec-1-15"></a>farkbadi</h3>
+<h3 id="farkbadi"><a id="sec-1-15" name="sec-1-15"></a>farkbadi</h3>
 <div class="outline-text-3" id="text-farkbadi">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">farkbadi</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Bu komutun bir önceki çalıştırılmasından itibaren badiler tarafından yazılmış girdileri ekrana yazar.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">başlıkfarkknk [tip=badi, dosya=cache/checkpoint-badi.xml] ! başlıkgirdileri ! metinbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">farkbadi</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Bu komutun bir önceki çalıştırılmasından itibaren badiler tarafından yazılmış girdileri ekrana yazar.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">başlıkfarkknk [tip=badi, dosya=cache/checkpoint-badi.xml] ! başlıkgirdileri ! metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
-
-
+</div>
 </div>
 
-</div>
 
 <div id="outline-container-fark" class="outline-3">
-<h3 id="fark"><a name="sec-1-16" id="sec-1-16"></a>fark</h3>
+<h3 id="fark"><a id="sec-1-16" name="sec-1-16"></a>fark</h3>
 <div class="outline-text-3" id="text-fark">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">fark</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">fark veya frak komutunun aynı gün içindeki bir önceki çalıştırılmasından itibaren girdi yazılmış başlıkları yeniden eskiye yeni girdi sayıları ile birlikte ekrana yazar.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">başlıkfarkknk [tip=bugün, limit=250] ! metinbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">fark</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">fark veya frak komutunun aynı gün içindeki bir önceki çalıştırılmasından itibaren girdi yazılmış başlıkları yeniden eskiye yeni girdi sayıları ile birlikte ekrana yazar.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">başlıkfarkknk [tip=bugün, limit=250] ! metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
-
-
-
+</div>
 </div>
 
-</div>
+
 
 <div id="outline-container-frak" class="outline-3">
-<h3 id="frak"><a name="sec-1-17" id="sec-1-17"></a>frak</h3>
+<h3 id="frak"><a id="sec-1-17" name="sec-1-17"></a>frak</h3>
 <div class="outline-text-3" id="text-frak">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">frak</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">fark veya frak komutunun aynı gün içindeki bir önceki çalıştırılmasından itibaren girdi yazılmış başlıkları yeni girdi sayılarına göre sıralayarak ekrana yazar.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">başlıkfarkknk [tip=bugün, limit=250] ! genelsıralayıcı ! metinbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">frak</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">fark veya frak komutunun aynı gün içindeki bir önceki çalıştırılmasından itibaren girdi yazılmış başlıkları yeni girdi sayılarına göre sıralayarak ekrana yazar.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">başlıkfarkknk [tip=bugün, limit=250] ! genelsıralayıcı ! metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
-
-
-
+</div>
 </div>
 
-</div>
+
 
 <div id="outline-container-fokur" class="outline-3">
-<h3 id="fokur"><a name="sec-1-18" id="sec-1-18"></a>fokur</h3>
+<h3 id="fokur"><a id="sec-1-18" name="sec-1-18"></a>fokur</h3>
 <div class="outline-text-3" id="text-fokur">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">fokur</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Fokurdayan başlıkları ekrana yazar.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">indeksknk [tip=fokur, limit=50, sayfa=1] ! metinbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">fokur</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Fokurdayan başlıkları ekrana yazar.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">indeksknk [tip=fokur, limit=50, sayfa=1] ! metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
-
-
-
+</div>
 </div>
 
-</div>
+
 
 <div id="outline-container-getir" class="outline-3">
-<h3 id="getir"><a name="sec-1-19" id="sec-1-19"></a>getir</h3>
+<h3 id="getir"><a id="sec-1-19" name="sec-1-19"></a>getir</h3>
 <div class="outline-text-3" id="text-getir">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">getir</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Argüman olarak verilen başlık girdilerini getirir. başlık, başlık/@yazar, \#girdinumarası, başlık/\#girdinumarası biçimleri argüman olarak verilebilir.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">başlıkknk [başlık=%s] ! başlıkgirdileri ! metinbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">1</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">getir</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Argüman olarak verilen başlık girdilerini getirir. başlık, başlık/@yazar, \#girdinumarası, başlık/\#girdinumarası biçimleri argüman olarak verilebilir.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">başlıkknk [başlık=%s] ! başlıkgirdileri ! metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">1</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Örnek:
 </p>
+
 <p>
 <code>$ ssg++ getir hesap işletim ücretini geri almak</code>
 </p>
-
+</div>
 </div>
 
-</div>
 
 <div id="outline-container-ghebe" class="outline-3">
-<h3 id="ghebe"><a name="sec-1-20" id="sec-1-20"></a>ghebe</h3>
+<h3 id="ghebe"><a id="sec-1-20" name="sec-1-20"></a>ghebe</h3>
 <div class="outline-text-3" id="text-ghebe">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">ghebe</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Geçen haftanın en beğenilen girdilerini yazar.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">istatistikknk [tip=ghebe] ! başlıkgirdileri ! metinbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">ghebe</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Geçen haftanın en beğenilen girdilerini yazar.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">istatistikknk [tip=ghebe] ! başlıkgirdileri ! metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
-
 </div>
-
 </div>
 
 <div id="outline-container-ghebce" class="outline-3">
-<h3 id="ghebce"><a name="sec-1-21" id="sec-1-21"></a><del>ghebçe</del></h3>
+<h3 id="ghebce"><a id="sec-1-21" name="sec-1-21"></a><del>ghebçe</del></h3>
 <div class="outline-text-3" id="text-ghebce">
-
-<p><i>Kullanımdan kalktı.</i>
+<p>
+<i>Kullanımdan kalktı.</i>
 </p>
+
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">ghebçe</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Geçen haftanın en beğenilen çaylak girdilerini yazar.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">istatistikknk [tip=ghebçe] ! başlıkgirdileri ! metinbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">ghebçe</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Geçen haftanın en beğenilen çaylak girdilerini yazar.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">istatistikknk [tip=ghebçe] ! başlıkgirdileri ! metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
-
 </div>
-
 </div>
 
 <div id="outline-container-gundem" class="outline-3">
-<h3 id="gundem"><a name="sec-1-22" id="sec-1-22"></a>gündem</h3>
+<h3 id="gundem"><a id="sec-1-22" name="sec-1-22"></a>gündem</h3>
 <div class="outline-text-3" id="text-gundem">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">gündem</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Bugüne ait en çok girdi yazılmış 50 başlığı yazar.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">hayvanknk [tarih=bugün, limit=50, sıralama=gudik] ! metinbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">gündem</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Bugüne ait en çok girdi yazılmış 50 başlığı yazar.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">hayvanknk [tarih=bugün, limit=50, sıralama=gudik] ! metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
-
 </div>
-
 </div>
 
 <div id="outline-container-lafebeleri" class="outline-3">
-<h3 id="lafebeleri"><a name="sec-1-23" id="sec-1-23"></a>lafebeleri</h3>
+<h3 id="lafebeleri"><a id="sec-1-23" name="sec-1-23"></a>lafebeleri</h3>
 <div class="outline-text-3" id="text-lafebeleri">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">lafebeleri</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Argüman olarak verilen başlığa yazmış yazarları girdi sayılarına göre grafik olarak gösterir.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">başlıkknk [başlık=%s] ! başlıkgirdileri ! histogram [eksen=kategori, kategori=yazar] ! grafikbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">1</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">lafebeleri</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Argüman olarak verilen başlığa yazmış yazarları girdi sayılarına göre grafik olarak gösterir.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">başlıkknk [başlık=%s] ! başlıkgirdileri ! histogram [eksen=kategori, kategori=yazar] ! grafikbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">1</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Örnek:
 </p>
+
 <p>
 Lewandowski Bayern Münih'e gidecek mi? Bunu kim bilir?
 </p>
+
 <p>
 <code>$ ssg++ lafebeleri borussia dortmund</code>
 </p>
+
 <p>
 Çıktısı:
 </p>
-<p>
-<img src="imgs/lafebeleri_borussia_dortmund.png"  alt="imgs/lafebeleri_borussia_dortmund.png" />
+
+
+<div class="figure">
+<p><img src="imgs/lafebeleri_borussia_dortmund.png" alt="lafebeleri_borussia_dortmund.png" />
 </p>
-
-
+</div>
+</div>
 </div>
 
-</div>
+
 
 <div id="outline-container-macskoru" class="outline-3">
-<h3 id="macskoru"><a name="sec-1-24" id="sec-1-24"></a>maçskoru</h3>
+<h3 id="macskoru"><a id="sec-1-24" name="sec-1-24"></a>maçskoru</h3>
 <div class="outline-text-3" id="text-macskoru">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">maçskoru</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Argüman olarak verilen maç başlığındaki skor içeren cümleleri ekrana yazar.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">başlıkknk [başlık=%s] ! başlıkgirdileri ! maçsonucu ! metinbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">1</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">maçskoru</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Argüman olarak verilen maç başlığındaki skor içeren cümleleri ekrana yazar.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">başlıkknk [başlık=%s] ! başlıkgirdileri ! maçsonucu ! metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">1</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Örnek:
 </p>
+
 <p>
 <code>$ ssg++ maçskoru 24 temmuz 2013 bayern münih barcelona maçı</code>
 </p>
+
 <p>
 Çıktısı:
 </p>
 
-
-
-<pre class="example">&gt;&gt; (...) ilk yarısı 1-0 bayern üstünlüğüyle biten maç. (...)
+<pre class="example">
+&gt;&gt; (...) ilk yarısı 1-0 bayern üstünlüğüyle biten maç. (...)
 
 &gt;&gt; (...) maç 1-1 biterse şaşırmam. (...)
 
 &gt;&gt; (...) `mario mandzukic` attı, 2-0 oldu. (...)
 </pre>
-
-
-
+</div>
 </div>
 
-</div>
 
 <div id="outline-container-manset" class="outline-3">
-<h3 id="manset"><a name="sec-1-25" id="sec-1-25"></a>manşet</h3>
+<h3 id="manset"><a id="sec-1-25" name="sec-1-25"></a>manşet</h3>
 <div class="outline-text-3" id="text-manset">
-
-<p>(bkz: <a href="#sec-1-22">gündem</a>)
+<p>
+(bkz: <a href="#sec-1-22">gündem</a>)
 </p>
 </div>
-
 </div>
 
 <div id="outline-container-ortakbasliklari" class="outline-3">
-<h3 id="ortakbasliklari"><a name="sec-1-26" id="sec-1-26"></a>ortakbaşlıkları</h3>
+<h3 id="ortakbasliklari"><a id="sec-1-26" name="sec-1-26"></a>ortakbaşlıkları</h3>
 <div class="outline-text-3" id="text-ortakbasliklari">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">ortakbaşlıkları</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Argüman olarak verilen iki yazarın ortak başlıklarını yeniden eskiye bulup yazar.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">hayvanknk [yazar=%s, sıralama=yeni-eski] &amp; hayvanknk [yazar=%s, sıralama=yeni-eski] ! intersection ! metinbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">2</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">ortakbaşlıkları</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Argüman olarak verilen iki yazarın ortak başlıklarını yeniden eskiye bulup yazar.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">hayvanknk [yazar=%s, sıralama=yeni-eski] &amp; hayvanknk [yazar=%s, sıralama=yeni-eski] ! intersection ! metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">2</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Örnek:
 </p>
+
 <p>
 `sözlükteki evli çiftler` düğünlerinde "beraber yazdık biz bu başlıklarda" şarkısını çaldırmışlar mı? 
 Ya da sözlükte mesaj yoluyla `selam güzel bayan` demeden önce seviyeli bir kafa denkliği testi yapmaya ne dersin?
 </p>
+
 <p>
 <code>$ ssg++ -l ortakbaşlıkları suser1, suser2</code>
 </p>
-
+</div>
 </div>
 
-</div>
 
 <div id="outline-container-saibeli" class="outline-3">
-<h3 id="saibeli"><a name="sec-1-27" id="sec-1-27"></a>şaibeli</h3>
+<h3 id="saibeli"><a id="sec-1-27" name="sec-1-27"></a>şaibeli</h3>
 <div class="outline-text-3" id="text-saibeli">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">şaibeli</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">şaibeli bir girdiyi ekrana yazar.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">cımbızknk [tip=şaibeli, adet=1] ! metinbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">şaibeli</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">şaibeli bir girdiyi ekrana yazar.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">cımbızknk [tip=şaibeli, adet=1] ! metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
-
-
+</div>
 </div>
 
-</div>
 
 <div id="outline-container-sukela" class="outline-3">
-<h3 id="sukela"><a name="sec-1-28" id="sec-1-28"></a>şükela</h3>
+<h3 id="sukela"><a id="sec-1-28" name="sec-1-28"></a>şükela</h3>
 <div class="outline-text-3" id="text-sukela">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">şükela</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">şükela bir girdiyi ekrana yazar.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">cımbızknk [tip=şükela, adet=1] ! metinbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">şükela</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">şükela bir girdiyi ekrana yazar.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">cımbızknk [tip=şükela, adet=1] ! metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
-
-
-
+</div>
 </div>
 
-</div>
+
 
 <div id="outline-container-takip" class="outline-3">
-<h3 id="takip"><a name="sec-1-29" id="sec-1-29"></a>takip</h3>
+<h3 id="takip"><a id="sec-1-29" name="sec-1-29"></a>takip</h3>
 <div class="outline-text-3" id="text-takip">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">takip</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">takip.txt dosyasında belirtilen başlıklardan komutun son çalıştırıldığı zamandan beri yeni girdileri olanları yeni girdi sayıları ile birlikte yazar.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">takipknk ! metinbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">takip</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">takip.txt dosyasında belirtilen başlıklardan komutun son çalıştırıldığı zamandan beri yeni girdileri olanları yeni girdi sayıları ile birlikte yazar.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">takipknk ! metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 <code>takip.txt</code> dosyası ssg++ kullanıcı klasöründe (örn. Linux için: <code>~/.ssgpp/conf/</code>) bulunur. Takip edilmek istenen başlıklar satır satır yazılmalıdır.
 </p>
-
+</div>
 </div>
 
-</div>
 
 <div id="outline-container-tsllbn" class="outline-3">
-<h3 id="tsllbn"><a name="sec-1-30" id="sec-1-30"></a>tsllbn</h3>
+<h3 id="tsllbn"><a id="sec-1-30" name="sec-1-30"></a>tsllbn</h3>
 <div class="outline-text-3" id="text-tsllbn">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">tsllbn</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Geçen haftanın tsllbn'nin formülü ile en beğenilen girdilerini yazar.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">istatistikknk [tip=tsllbn] ! başlıkgirdileri ! metinbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">tsllbn</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Geçen haftanın tsllbn'nin formülü ile en beğenilen girdilerini yazar.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">istatistikknk [tip=tsllbn] ! başlıkgirdileri ! metinbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
-
 </div>
-
 </div>
 
 <div id="outline-container-yedekle" class="outline-3">
-<h3 id="yedekle"><a name="sec-1-31" id="sec-1-31"></a>yedekle</h3>
+<h3 id="yedekle"><a id="sec-1-31" name="sec-1-31"></a>yedekle</h3>
 <div class="outline-text-3" id="text-yedekle">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">yedekle</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">İlk argümanda verilen yazarın girdilerini ikinci argümanda verilen dosyaya yazar.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">hayvanknk [yazar=%s] ! başlıkgirdileri ! dosyabtk [dosya=%s]</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">2</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">yedekle</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">İlk argümanda verilen yazarın girdilerini ikinci argümanda verilen dosyaya yazar.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">hayvanknk [yazar=%s] ! başlıkgirdileri ! dosyabtk [dosya=%s]</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">2</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Örnek:
 </p>
+
 <p>
 <code>$ ssg++ -l yedekle suser1 suser1.txt</code>
 </p>
+
 <p>
 <code>$ ssg++ -l yedekle suser2 suser2.xml</code>
 </p>
+
 <p>
 ya da resimleri vs. de dahil etmek için
 </p>
+
 <p>
 <code>$ ssg++ -l yedekle suser2 suser2.html</code>
 </p>
-
+</div>
 </div>
 
-</div>
 
 <div id="outline-container-zamansalegilim" class="outline-3">
-<h3 id="zamansalegilim"><a name="sec-1-32" id="sec-1-32"></a>zamansaleğilim</h3>
+<h3 id="zamansalegilim"><a id="sec-1-32" name="sec-1-32"></a>zamansaleğilim</h3>
 <div class="outline-text-3" id="text-zamansalegilim">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Komut</td><td class="left">zamansaleğilim</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Argüman olarak verilen başlığa yazılan girdi sayılarını argüman olarak verilen zaman çözünürlüğüne (yıl, ay, hafta, gün, saat) göre grafik olarak gösterir.</td></tr>
-<tr><td class="left">İşhattı kısayolu</td><td class="left">başlıkknk [başlık=%s] ! başlıkgirdileri ! histogram [eksen=zaman, çözünürlük=%s] ! grafikbtk</td></tr>
-<tr><td class="left">Argümanları</td><td class="left">2</td></tr>
+<tr>
+<td class="left">Komut</td>
+<td class="left">zamansaleğilim</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Argüman olarak verilen başlığa yazılan girdi sayılarını argüman olarak verilen zaman çözünürlüğüne (yıl, ay, hafta, gün, saat) göre grafik olarak gösterir.</td>
+</tr>
+
+<tr>
+<td class="left">İşhattı kısayolu</td>
+<td class="left">başlıkknk [başlık=%s] ! başlıkgirdileri ! histogram [eksen=zaman, çözünürlük=%s] ! grafikbtk</td>
+</tr>
+
+<tr>
+<td class="left">Argümanları</td>
+<td class="left">2</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Örnek:
 </p>
+
 <p>
 Geleneksel Mısır devrimleri kaç senede bir yapılır?
 </p>
+
 <p>
 <code>$ ssg++ zamansaleğilim mısır, ay</code>
 </p>
+
 <p>
 Çıktısı:
 </p>
-<p>
-<img src="imgs/zamansaleğilim_mısır_ay.png"  alt="imgs/zamansaleğilim_mısır_ay.png" />
-</p></div>
-</div>
-</div>
-</div>
 
-<div id="postamble">
+
+<div class="figure">
+<p><img src="imgs/zamansaleğilim_mısır_ay.png" alt="zamansaleğilim_mısır_ay.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -1147,7 +1712,6 @@ Geleneksel Mısır devrimleri kaç senede bir yapılır?
   ga('send', 'pageview');
 
 </script>
-
 </div>
 </body>
 </html>

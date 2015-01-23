@@ -1,65 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="tr" xml:lang="tr">
 <head>
 <title>Değişim günlüğü</title>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="title" content="Değişim günlüğü"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-07-28T22:30+0200"/>
-<meta name="author" content="Onur Derin"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
+<!-- 2015-01-23 Fri 23:58 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Onur Derin" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
   .title  { text-align: center; }
-  .todo   { color: red; }
+  .todo   { font-family: monospace; color: red; }
   .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
   pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
   }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
     background: #ffffcc;
   }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
   textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
-</style><link rel="stylesheet" type="text/css" href="./css/stylesheet.css" /> <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid Sans" />
+</style>
+<link rel="stylesheet" type="text/css" href="./css/stylesheet.css" /> <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid Sans" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -106,11 +136,9 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
-
 </head>
 <body>
-
-<div id="preamble">
+<div id="preamble" class="status">
 <table style="padding:0; width: 100%">
     <tr> 
         <td style="vertical-align: top; min-width:320px;">
@@ -149,42 +177,47 @@ for the JavaScript code in this tag.
 	    <a href="sitemap.html" style="color:white;text-decoration:none; font-size:120%;">site haritası ▮ </a>&nbsp;&nbsp;&nbsp;
 </div>
 <br />
-
 </div>
-
 <div id="content">
 <h1 class="title">Değişim günlüğü</h1>
-
-
 <div id="table-of-contents">
-<h2>İçindekiler</h2>
+<h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">Sürüm: 0.5</a></li>
-<li><a href="#sec-2">Sürüm: 0.5.1</a></li>
-<li><a href="#sec-3">Sürüm: 0.9</a></li>
-<li><a href="#sec-4">Sürüm: 0.9.1</a></li>
-<li><a href="#sec-5">Sürüm: 1.0</a></li>
-<li><a href="#sec-6">Sürüm: 1.1 (kod adı: re-antik)</a></li>
-<li><a href="#v1.2">Sürüm 1.2 (kod adı: antik++)</a>
+<li><a href="#sec-1"><span class="done DONE">DONE</span> Sürüm: 0.5</a></li>
+<li><a href="#sec-2"><span class="done DONE">DONE</span> Sürüm: 0.5.1</a></li>
+<li><a href="#sec-3"><span class="done DONE">DONE</span> Sürüm: 0.9</a></li>
+<li><a href="#sec-4"><span class="done DONE">DONE</span> Sürüm: 0.9.1</a></li>
+<li><a href="#sec-5"><span class="done DONE">DONE</span> Sürüm: 1.0</a></li>
+<li><a href="#sec-6"><span class="done DONE">DONE</span> Sürüm: 1.1 (kod adı: re-antik)</a></li>
+<li><a href="#v1.2"><span class="done DONE">DONE</span> Sürüm 1.2 (kod adı: antik++)</a>
 <ul>
 <li><a href="#sec-7-1">Değişiklikler</a></li>
 <li><a href="#sec-7-2">Sürüm yükseltme notları</a></li>
 <li><a href="#sec-7-3">Bilinen sorunlar/eksiklikler</a></li>
 </ul>
 </li>
+<li><a href="#sec-8">Sürüm 1.2.1</a>
+<ul>
+<li><a href="#sec-8-1">Değişiklikler</a></li>
+</ul>
+</li>
+<li><a href="#sec-9">Sürüm 1.3</a>
+<ul>
+<li><a href="#sec-9-1">Değişiklikler</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-1" class="outline-2">
+<div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1"><span class="done DONE">DONE</span> Sürüm: 0.5</h2>
 <div class="outline-text-2" id="text-1">
-
-<ul>
-<li>State "DONE"       from "TODO" <span class="timestamp-wrapper"> <span class="timestamp">2009-05-13</span></span>
-
+<ul class="org-ul">
+<li>State "DONE"       from "TODO"           <span class="timestamp-wrapper"><span class="timestamp">[2009-05-13]</span></span>
 </li>
+
 <li><code>[X]</code> projenin ilk sunumu
 </li>
 <li><code>[X]</code> proje yönetiminin oluşturulması
@@ -192,37 +225,29 @@ for the JavaScript code in this tag.
 <li><code>[X]</code> haberleşme listesinin açılışı 
 </li>
 </ul>
-
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-2" class="outline-2">
+<div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2"><span class="done DONE">DONE</span> Sürüm: 0.5.1</h2>
 <div class="outline-text-2" id="text-2">
-
-<ul>
-<li>State "DONE"       from "TODO" <span class="timestamp-wrapper"> <span class="timestamp">2009-06-15</span></span>
-
+<ul class="org-ul">
+<li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2009-06-15]</span></span>
 </li>
+
 <li><code>[X]</code> Görsel kullanıcı arayüzünün ilk eklenişi, hata giderimleri ve ufak iyileştirmeler.
 </li>
 </ul>
-
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-3" class="outline-2">
+<div id="outline-container-sec-3" class="outline-2">
 <h2 id="sec-3"><span class="done DONE">DONE</span> Sürüm: 0.9</h2>
 <div class="outline-text-2" id="text-3">
-
-<ul>
-<li>State "DONE"       from "TODO" <span class="timestamp-wrapper"> <span class="timestamp">2013-07-09</span></span>
-
+<ul class="org-ul">
+<li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2013-07-09]</span></span>
 </li>
+
 <li><code>[X]</code> Komut satırı odaklı yenilikler
 </li>
 <li><code>[X]</code> Yeni bileşenlerin eklenmesi
@@ -230,83 +255,65 @@ for the JavaScript code in this tag.
 <li><code>[X]</code> Değişmiş sözlük sayfa yapısından dolayı ortaya çıkan sorunların giderilmesi 
 </li>
 </ul>
-
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-4" class="outline-2">
+<div id="outline-container-sec-4" class="outline-2">
 <h2 id="sec-4"><span class="done DONE">DONE</span> Sürüm: 0.9.1</h2>
 <div class="outline-text-2" id="text-4">
-
-<ul>
-<li>State "DONE"       from "TODO" <span class="timestamp-wrapper"> <span class="timestamp">2013-07-14</span></span>
-
+<ul class="org-ul">
+<li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2013-07-14]</span></span>
 </li>
+
 <li><code>[X]</code> Yeni bileşenler
 </li>
 <li><code>[X]</code> Küçük iyileştirmeler
 </li>
 </ul>
-
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-5" class="outline-2">
+<div id="outline-container-sec-5" class="outline-2">
 <h2 id="sec-5"><span class="done DONE">DONE</span> Sürüm: 1.0</h2>
 <div class="outline-text-2" id="text-5">
-
-<ul>
-<li>State "DONE"       from "TODO" <span class="timestamp-wrapper"> <span class="timestamp">2014-03-07</span></span>
-
+<ul class="org-ul">
+<li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2014-03-07]</span></span>
 </li>
+
 <li><code>[X]</code> web arayüzünün eklenmesi
 </li>
 </ul>
-
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-6" class="outline-2">
+<div id="outline-container-sec-6" class="outline-2">
 <h2 id="sec-6"><span class="done DONE">DONE</span> Sürüm: 1.1 (kod adı: re-antik)</h2>
 <div class="outline-text-2" id="text-6">
-
-<ul>
-<li>State "DONE"       from "TODO" <span class="timestamp-wrapper"> <span class="timestamp">2014-07-23</span></span>
-
+<ul class="org-ul">
+<li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2014-07-23]</span></span>
 </li>
+
 <li><code>[X]</code> antik'in kapanması sonrası etkilenen bileşenlerin beta'ya göre değiştirilmesi
 </li>
 </ul>
-
-
 </div>
-
 </div>
 
 <div id="outline-container-v1.2" class="outline-2">
-<h2 id="v1.2"><a name="sec-7" id="sec-7"></a><span class="done DONE">DONE</span> Sürüm 1.2 (kod adı: antik++)</h2>
+<h2 id="v1.2"><a id="sec-7" name="sec-7"></a><span class="done DONE">DONE</span> Sürüm 1.2 (kod adı: antik++)</h2>
 <div class="outline-text-2" id="text-v1.2">
-
-<ul>
-<li>State "DONE"       from "" <span class="timestamp-wrapper"> <span class="timestamp">2014-07-28 Mon 22:23</span></span>
+<ul class="org-ul">
+<li>State "DONE"       from ""           <span class="timestamp-wrapper"><span class="timestamp">[2014-07-28 Mon 22:23]</span></span>
 </li>
 </ul>
-
-
 </div>
-
-<div id="outline-container-7-1" class="outline-3">
+<div id="outline-container-sec-7-1" class="outline-3">
 <h3 id="sec-7-1">Değişiklikler</h3>
 <div class="outline-text-3" id="text-7-1">
-
-<p>ssg++ bileşenlerindeki yenilikler
-</p><ul>
+<p>
+ssg++ bileşenlerindeki yenilikler
+</p>
+<ul class="org-ul">
 <li>indeksknk için yeni tip argumanı: badifavorileri
 </li>
 <li>badilistesiknk
@@ -315,10 +322,10 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 
-
 <p>
 web arayüzündeki yenilikler
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>keşfet düğmesi: her bir badinin favorilediği son 5 girdiyi solda listeliyor ('badi favorileri' ve 'fark badi favorileri' düğmeleri eklendi).
 </li>
 <li>oylama (oeehh(:O) düğmesi beta'da desteklenmediği için düğmeyi kaldırmak yerine düğmeye 'oyu geri al' işlevi verildi.)
@@ -330,7 +337,7 @@ web arayüzündeki yenilikler
 <li>biri düğmesi (başlık form alanına girilen yazar için ben düğmesine benzer bir işlev sunuyor.)
 </li>
 <li>başlık altındaki üç nokta menüsü
-<ul>
+<ul class="org-ul">
 <li>başlık takip et/etme
 </li>
 <li>şükela modu
@@ -344,16 +351,15 @@ web arayüzündeki yenilikler
 <li>bugün girilenler
 </li>
 </ul>
-
 </li>
 <li>antik görünümündeki gibi bir hayvan ara formu
 </li>
 </ul>
 
-
-<p>     
+<p>
 küçük değişiklikler:
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>twitter'daki bir değişiklikten dolayı twitter resimlerinin gömülmesinde bazı değişiklikler
 </li>
 <li>gömülü resimlerin büyük olmaları durumunda ekrana sığmaması sorunu düzeltildi.
@@ -363,38 +369,111 @@ küçük değişiklikler:
 <li>akıllı bkz'ların yükseltilmiş olarak gösterilmesi
 </li>
 </ul>
-
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-7-2" class="outline-3">
+<div id="outline-container-sec-7-2" class="outline-3">
 <h3 id="sec-7-2">Sürüm yükseltme notları</h3>
 <div class="outline-text-3" id="text-7-2">
-
-<p>1.1 kullanıcıları için yapılandırma dosyalarında herhangi bir değişiklik gerekli değil. Program doğrudan yeni sürümün klasöründen çalıştırılabilir.
+<p>
+1.1 kullanıcıları için yapılandırma dosyalarında herhangi bir değişiklik gerekli değil. Program doğrudan yeni sürümün klasöründen çalıştırılabilir.
 </p>
 </div>
-
 </div>
 
-<div id="outline-container-7-3" class="outline-3">
+<div id="outline-container-sec-7-3" class="outline-3">
 <h3 id="sec-7-3">Bilinen sorunlar/eksiklikler</h3>
 <div class="outline-text-3" id="text-7-3">
-
-
-<ul>
-<li><code>[&nbsp;]</code> girdi yazma
+<ul class="org-ul">
+<li><code>[&#xa0;]</code> girdi yazma
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8">Sürüm 1.2.1</h2>
+<div class="outline-text-2" id="text-8">
+</div><div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1">Değişiklikler</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+ssg++'daki yenilikler/değişiklikler
+</p>
+<ul class="org-ul">
+<li>yapılandırma dosyasına nabız özelliğiyle ilgili parametreler eklendi.
 </li>
 </ul>
 
-</div>
+<p>
+NabizOlcumu=1
+</p>
+<p>
+NabizAraligi=10
+</p>
+<p>
+NabizEsigi=2
+</p>
+<p>
+MesajKontrolu=1
+</p>
+
+<ul class="org-ul">
+<li>web arayüzünde başlığın pop-up menüsünde kesme işareti içeren başlıklarda yaşanan sorun düzeltildi.
+</li>
+<li>iş hattı kısayolları listesi 1.0 sürümünden beri ilk kez düzenlendi.
+</li>
+</ul>
+
+<p>
+ekşi sözlük kaynaklı değişiklikler
+</p>
+<ul class="org-ul">
+<li>tsllbn'nin formülü istatistiklerden kaldırıldı.
+</li>
+<li>debe sayfasının farklı gösterilme durumlarından kaynaklanan ilk 10 debe girdisinin iki kez tekrar etmesi sorunu düzeltildi.
+</li>
+</ul>
 </div>
 </div>
 </div>
 
-<div id="postamble">
+
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9">Sürüm 1.3</h2>
+<div class="outline-text-2" id="text-9">
+</div><div id="outline-container-sec-9-1" class="outline-3">
+<h3 id="sec-9-1">Değişiklikler</h3>
+<div class="outline-text-3" id="text-9-1">
+<ul class="org-ul">
+<li>üst panel yeniden düzenlendi.
+</li>
+<li><i>favori modu</i>
+  başlıktaki girdileri favorilenme sayılarına göre sıralayan <i>favori modu</i> eklendi. (Web arayüzünde daha hızlı çalışması için sayfa sayfa çalışıyor.)
+</li>
+<li><i>yakın takip</i>
+  günün başlıklarını bir dosyada belirlenen anahtar kelime listesine göre filtreler. örn. ilan, duyuru, kampanya gibi anahtar kelimelerle günün sizin ilgilerinize daha yakın olan başlıklarını takip edebilirsiniz.
+</li>
+<li><i>kelime ağacı</i>
+  başlığın girdilerinin içinde verilen bir kelimenin geçtiği bütün cümleleri dikkate alarak bir kelime ağacı oluşturur. <a href="https://eksisozluk.com/entry/48391569">Şu girdideki</a> bağlantısı verilmiş resimlerdeki gösterimlere kelime ağacı deniyor. Örn. 'interstellar' başlığında 'film' köküyle 'sonda' gösterim seçeneğini kullanarak kelime ağacı oluştursanız hızlı şekilde genel görüş alabilirsiniz.
+</li>
+<li><i>sondan başa sıralama</i>
+başlıkgirdileri bileşenine sıralama seçeneği eklendi. Alabildiği değerler eski-yeni (öntanımlı değeri) ya da yeni-eski.
+Bu şekilde komut satırında watch gibi bir programla son yazılan girdiler otomatik olarak görülebilir.
+örn.: watch -b -n 60 'ssg++ yürüt başlıkknk [başlık=6 ağustos 2014 beşiktaş feyenoord maçı] ! başlıkgirdileri [sıralama=yeni-eski, limit=10] ! metinbtk'
+</li>
+<li>popüler &gt; <i>gündemin başucuları</i>
+  günün en çok sayıda girdi yazılmış başlıklarındaki beğenilen uzun girdileri getirir.
+</li>
+<li><i>favorileyenleri</i>
+  yeni eklenen <i>favorileyenleri</i> bileşeni sayesinde <i>favorileyenleri</i> ve <i>favorileyenlerim</i> komutları eklendi. <i>favorileyenleri</i> komutu parametre olarak verilen bir yazarı en çok favorileyen kullanıcıları listeler.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -405,7 +484,6 @@ küçük değişiklikler:
   ga('send', 'pageview');
 
 </script>
-
 </div>
 </body>
 </html>

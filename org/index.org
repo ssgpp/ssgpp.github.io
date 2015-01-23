@@ -1,23 +1,20 @@
 #+TITLE: ssg++ ana sayfa
 # C-c C-e X ssgpp
+# C-c C-e P x ssgpp ya da org-publish-project > ssgpp
 # #+STYLE: <link rel="stylesheet" type="text/css" href="./css/stylesheet.css" /> <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid Sans" /> 
 
 * ssg++ nedir?
 
-ssg++ (
-#+BEGIN_HTML
-<span style="font-size:100%"><span style="text-decoration:underline">s</span>ozluk <span style="text-decoration:underline">sh</span>ell</span>
-#+END_HTML
-), [[http://antik.eksisozluk.com][ekşi sözlük]] için bir komut satırı arayüzüdür. 
-Her ne kadar ekşi sözlük'ü kendi arayüzüyle, hatta [[http://antik.eksisozluk.com/show.asp?t=eksi%2B%2B][eksi++]] gibi eklentilerle, seve seve kullanıyor olsak da bu arayüz her ihtiyaca cevap veremiyor.
-ssg++ basit arayüzüyle pek çok zor işi tek satırlık bir komut çalıştırmak kadar kolay hale getiriyor.
-Bunun yanında esnek yapısı sayesinde istediğiniz işi yapmanızı sağlayan yeni komutlar ve bileşenler tanımlamanızı sağlıyor.
+ssg++, [[http://antik.eksisozluk.com][ekşi sözlük]] için alternatif arayüzler sunan bir projedir. ekşi sözlük için bir komut satırı arayüzü, bir web arayüzü ve bir de programlama arayüzü sağlar. 
+Her ne kadar ekşi sözlük'ü kendi arayüzüyle seve seve kullanıyor olsak da bu arayüz her ihtiyaca cevap veremiyor.
+ssg++ sağladığı arayüzlerle pek çok zor işi tek satırlık bir komut çalıştırmak kadar kolay hale getiriyor.
+
+Komut satırı arayüzü girdi madenciliği ile çözümlemeler yapmayı sağlarken, web arayüzü  ssg++'nın işlevselliğinin internet tarayıcısı ortamında kullanılmasını sağlar.
+Bunun yanında esnek yapısı sayesinde istediğiniz işi yapmanızı sağlayan yeni komutlar ve bileşenler tanımlamanız mümkün.
 ssg++ /bileşen tabanlı tasarım/ prensipleri üzerine kuruludur. Veri işlemeye dönük uygulamalar için bileşen tanımlayı ve kendisiyle gelen dille bileşen dizilimleri yaratmayı sağlayan /sacre/ adındaki bileşen tabanlı çerçeve kullanılarak oluşturulmuştur. Esas olarak ssg++ ekşi sözlük'e özel tanımlanmış bileşenlere ve /iş hattı/ dediğimiz bileşen dizilimlerine dayanır.
 Daha fazla bilgi için 
 (bkz: [[file:SsgppComps.org][ssg++ bileşenleri]])
 (bkz: [[file:Sacre.org][iş hattı oluşturma]])
-
-Çözümlemeler yapmaya daha uygun olan bir komut satırı arayüzünün yanında ssg++'nın işlevselliğinin internet tarayıcısı ortamında kullanılmasını sağlayan bir de web arayüzü vardır.
 
 ** Ekran çıktıları
 # #+CAPTION: This is a table with lines around and between cells
@@ -100,45 +97,97 @@ ssg++ kullanılarak yapılmış daha geniş kapsamlı çalışmalar için (bkz: 
 
 ssg++'nın çalıştırılabilmesi için sisteminizde [[http://www.oracle.com/technetwork/java/javase/downloads/index.html][JRE 7]] veya daha üst bir sürümü kurulu olmalıdır. Bir komut uçbiriminde ~java -version~ komutunu çalıştırarak bunu kontrol edebilirsiniz.
 
-Edindiğiniz sıkıştırılmış dosyayı istediğiniz bir klasöre (~SSG++_DIR~) açın. Komut uçbiriminde ~cd SSG++_DIR~ komutuyla ~ssgpp.jar~ dosyasını içeren klasöre girin. İstenilen bir [[ssg++ komutları][komut]]u çalıştırmak için şunu girin:
+Edindiğiniz sıkıştırılmış dosyayı istediğiniz bir klasöre (örn. =~/Downloads/ssg++-1.0=) açın. Bu klasöre ~SSG++_DIR~ diyelim. Komut uçbiriminde ~cd SSG++_DIR~ komutuyla ~ssgpp-cli-1.0-SNAPSHOT.jar~ dosyasını içeren klasöre girin. İstenilen bir [[ssg++ komutları][komut]]u çalıştırmak için şunu girin:
 #+BEGIN_EXAMPLE
-java -cp ssgpp.jar ssgpp.console.Shell komut
+java -jar ssgpp-cli-1.0-SNAPSHOT.jar komut
 #+END_EXAMPLE
 
-Linux altında bash kullanıcıları =~/.bashrc= dosyalarında alias ile kısayol tanımlayabilir: 
+Linux altında =~/.bashrc= dosyasını aşağıdaki şekilde düzenleyerek ~bin~ klasörü altındaki betikler kullanılır hale getirilebilir: 
 #+BEGIN_EXAMPLE 
-alias ssg++='cd SSG++_DIR; java -cp ssgpp.jar ssgpp.console.Shell' 
+export PATH=$PATH:SSG++_DIR/bin
 #+END_EXAMPLE
 
-Komuttan önce =-l= argümanı verilirse komut ekşi sözlük'e giriş yapıldıktan sonra çalıştırılır. 
+Bu durumda komut satırı arayüzü için sadece =ssg++= yazmanız yeterli.
+#+BEGIN_EXAMPLE
+ssg++ komut
+#+END_EXAMPLE
+
+Komuttan önce =-l= argümanı verilirse komut ekşi sözlük'e giriş yapıldıktan sonra çalıştırılır (örn. =ssg++ -l komut=). 
 
 ssg++'yı web arayüzü ile kullanmak için:
 #+BEGIN_EXAMPLE 
-java -jar ssgpp.jar
+java -jar ssgpp-web-1.0-SNAPSHOT.jar
 #+END_EXAMPLE
-komutunu kullanarak ssg++ web sunucusunu çalıştırıp tarayıcınızda [[http://localhost:8081/index.html]] adresini açın.
+komutunu kullanarak ssg++ web sunucusunu çalıştırın (Ctrl-C ile kapatabilirsiniz).
+
+Linux kullanıcıları =~/.bashrc= dosyasını yukarda anlatıldığı gibi düzenlemişlerse, sunucuyu başlatmak için
+#+BEGIN_EXAMPLE 
+ssgppd start
+#+END_EXAMPLE
+komutunu kullanabilirler (kapatmak içinse =ssgppd stop=).
+
+Sunucuyu başlattıktan sonra tarayıcınızda [[http://localhost:8081/index.html]] adresini açın.
 
 ** Yapılandırma
 Programın çalışmasıyla ilgili bazı ayarlar kullanıcının ev dizinindeki =.ssgpp= klasöründe (örn. Linux altında =~/.ssgpp/conf/=) tutulur. Burdaki =app.properties= dosyası program ilk kez çalıştırıldığında otomatik oluşturulur. 
-İsterseniz oluşturulmuş dosyayı düzenleyerek isterseniz aşağıdaki şablonu kullanarak kendi yapılandırma dosyanızı oluşturabilirsiniz. Aşağıdaki örnekte "#" ile başlayan satırlar açıklama (comment) satırlarıdır, dikkate alınmaz.
+İsterseniz oluşturulmuş dosyayı düzenleyerek isterseniz aşağıdaki şablonu kullanarak kendi yapılandırma dosyanızı oluşturabilirsiniz. Aşağıdaki örnekte "#" ile başlayan satırlar açıklama (comment) satırlarıdır, dikkate alınmaz. Baştaki dört değerin doğru girildiğinden emin olun. Diğerleri varsayılan değerlerinde kalabilir.
 #+BEGIN_EXAMPLE
 # ekşi sözlük'e giriş yaparken kullandığınız e-mail adresi (eğer tanımladıysanız, kullanıcı adı)
 EksiSozluk-KullaniciAdi=...
 # Önemli not: Şifreniz şifrelenmemiş olarak tutulur.
 EksiSozluk-Sifresi=...
-ZamanDilimi=Europe/Istanbul
 # Ekşi Sözlük hesabınızda belirlediğiniz ayarlar > tercihler > gösterim > sayfa başı entry sayısı
 SayfaBasiGirdiSayisi=10
 # Ekşi Sözlük hesabınızda belirlediğiniz ayarlar > tercihler > gösterim > sayfa başı başlık sayısı
 SayfaBasiBaslikSayisi=50
+# Web arayüzünde bağlantıları verilen resimler gömülü olarak gösterilsin mi? evet:1, hayır:0
+ResimleriGoster=1
+# Otomatik olarak yeni mesaj kontrolü yapılsın mı? Evet için 1, hayır için 0. 
+# Mesaj kontrolu mesaj yeşilini söndürür. 
+# Mesaj kontrol aralığı NabizAraligi+5'tir. Öntanımlı değeri 15 dk'dır.
+# Değer 1 olarak verilirse UyarmaProgrami'nın da aşağıda verilmesi gerekir.
+MesajKontrolu=1
 # Bir uyarı mesajı argümanı ile çalıştırılabilen bir komut satırı programı. 
 # Linux Gnome için notify-send kullanılabilir. 
-# Tek bir mesaj argumanı alarak çalışabilen bir program olmalı. (boş bırakabilirsiniz)
+# Tek bir mesaj argümanı alarak çalışabilen bir program olmalı. (boş bırakabilirsiniz)
 UyarmaProgrami=
-# Web arayüzü bağlantıları verilen resimleri gömülü olarak göstersin mi? evet:1, hayır:0
-ResimleriGoster=1
+# nabız işlevi etkinlestirilsin mi? Evet icin 1, hayir icin 0.
+# nabız aralığı süresince en çok girdi yazılmış başlıkları getirir.
+NabizOlcumu=1
+# Nabiz olcme periyodu (dakika cinsinden). 10'dan kucuk olamaz.
+NabizAraligi=10
+# Eger NabizOlcumu=1 ise ve UyarmaProgrami da verilmisse, 
+# bir başlığa son NabizAraligi süresince girilen 
+# girdi sayısı NabizEsigi * NabizAraligi değerini aşarsa uyarı verilir.
+# Doğal sayı değerleri alabilir.
+# Örn. 2 için 10 dk'da 20'den fazla girdi yazilmasi durumunda uyarir.
+# NabizEsigi'ni 1000 gibi buyuk bir deger yaparak bu uyarilari kapatabilirsiniz.
+NabizEsigi=2
+# Bir girdinin başucu sayılabilmesi için sahip olması gereken karakter sayısı
+BasucuBoyutu=1000
+# zaman diliminiz
+ZamanDilimi=Europe/Istanbul
 # Eklenti bileşenlerin konumu (boş bırakabilirsiniz.)
 EklentiDizini=
+#+END_EXAMPLE
+
+Bunun dışında Linux kullanıcıları =bin= klasöründeki bazı betikleri kullanabilmek için =ssgpp_conf.sh= dosyası içinde bazı düzenlemeler yapmalıdır. Ayrıntılı bilgiler dosya içinde bulunabilir.
+
+Web arayüzündeki /yakın takip/ özelliği için =~/.ssgpp/conf/yakin_takip.txt= dosyası oluşturmanız gerekiyor. /yakın takip/ düğmesi günün başlıklarını bu dosyada belirlenen anahtar kelime listesine göre filtreler. örn. ilan, duyuru, kampanya gibi anahtar kelimelerle günün sizin ilgilerinize daha yakın olan başlıklarını takip edebilirsiniz.
+#+BEGIN_EXAMPLE 
+beşiktaş
+bilgisayar
+bilim
+duyuru
+film
+ilan
+istanbul
+kampanya
+kita
+linux
+türkiye
+üniversite
+veritabanı
 #+END_EXAMPLE
 
 ** ssg++ komutları

@@ -1,65 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="tr" xml:lang="tr">
 <head>
 <title>sacre bileşen çerçevesi</title>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="title" content="sacre bileşen çerçevesi"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-07-17T15:34+0200"/>
-<meta name="author" content="Onur Derin"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
+<!-- 2015-01-23 Fri 23:58 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Onur Derin" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
   .title  { text-align: center; }
-  .todo   { color: red; }
+  .todo   { font-family: monospace; color: red; }
   .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
   pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
   }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
     background: #ffffcc;
   }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
   textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
-</style><link rel="stylesheet" type="text/css" href="./css/stylesheet.css" /> <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid Sans" />
+</style>
+<link rel="stylesheet" type="text/css" href="./css/stylesheet.css" /> <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid Sans" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -106,11 +136,9 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
-
 </head>
 <body>
-
-<div id="preamble">
+<div id="preamble" class="status">
 <table style="padding:0; width: 100%">
     <tr> 
         <td style="vertical-align: top; min-width:320px;">
@@ -149,15 +177,11 @@ for the JavaScript code in this tag.
 	    <a href="sitemap.html" style="color:white;text-decoration:none; font-size:120%;">site haritası ▮ </a>&nbsp;&nbsp;&nbsp;
 </div>
 <br />
-
 </div>
-
 <div id="content">
 <h1 class="title">sacre bileşen çerçevesi</h1>
-
-
 <div id="table-of-contents">
-<h2>İçindekiler</h2>
+<h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#sec-1">sacre bileşen çerçevesi</a></li>
@@ -177,276 +201,434 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-1" class="outline-2">
+<div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1">sacre bileşen çerçevesi</h2>
 <div class="outline-text-2" id="text-1">
-
-
 <p>
 sacre (<a href="https://github.com/derino/sacre">https://github.com/derino/sacre</a>), bileşen tabanlı bir duraksız veri işleme çerçevesidir. Açık kaynaklı bir yazılımdır. 
 sacre bileşen çerçevesi ile uygulama geliştirmek iki adımdan oluşuyor.
 </p>
-<ul>
+
+<ul class="org-ul">
 <li>iş hattı oluşturmak
 
 <p>
- İş hattı oluşturmak bileşenleri dizerek uygulama oluşturmak isteyen kullanıcıların nasıl yapıldığını bilmesi gereken bir faaliyettir.
+İş hattı oluşturmak bileşenleri dizerek uygulama oluşturmak isteyen kullanıcıların nasıl yapıldığını bilmesi gereken bir faaliyettir.
 </p>
 </li>
+
 <li>bileşen tanımlamak
 
 <p>
- Yeni bileşen yaratmak belirli bir uygulama alanı için uygulama geliştirilebilmesini sağlamak için yapılır. Geliştiricilere yönelik bir faaliyettir. 
-</p></li>
+Yeni bileşen yaratmak belirli bir uygulama alanı için uygulama geliştirilebilmesini sağlamak için yapılır. Geliştiricilere yönelik bir faaliyettir. 
+</p>
+</li>
 </ul>
-
-
-
+</div>
 </div>
 
-</div>
 
-<div id="outline-container-2" class="outline-2">
+<div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2">İş hattı oluşturmak</h2>
 <div class="outline-text-2" id="text-2">
-
-<p>sacre'de bileşenler iş parçacığı olarak çalışırlar ve kapılarına bağlı diğer bileşenlerle belirli tipteki verileri alıp vererek iletişirler. Hangi bileşenlerin birbiriyle hangi kapıları üzerinden bağlı olduğunu tanımlayan dizilime <i>iş hattı</i> denir. sacre'de iş hattı oluşturmak için basit bir dil var. En basit haliyle bileşenler birbirlerine <code>!</code> işlemiyle seri, <code>&amp;</code> işlemiyle paralel bağlanıyor. <code>&amp;</code> işleminin <code>!</code> işlemine göre önceliği var. Dikkat edilmesi gereken nokta birbirine bağlanan kapıların aynı veri tipini geçiriyor olmalarıdır.
-</p>
-
-
 <p>
-<img src="imgs/ornek-is-hatti.png"  alt="imgs/ornek-is-hatti.png" />
+sacre'de bileşenler iş parçacığı olarak çalışırlar ve kapılarına bağlı diğer bileşenlerle belirli tipteki verileri alıp vererek iletişirler. Hangi bileşenlerin birbiriyle hangi kapıları üzerinden bağlı olduğunu tanımlayan dizilime <i>iş hattı</i> denir. sacre'de iş hattı oluşturmak için basit bir dil var. En basit haliyle bileşenler birbirlerine <code>!</code> işlemiyle seri, <code>&amp;</code> işlemiyle paralel bağlanıyor. <code>&amp;</code> işleminin <code>!</code> işlemine göre önceliği var. Dikkat edilmesi gereken nokta birbirine bağlanan kapıların aynı veri tipini geçiriyor olmalarıdır.
 </p>
+
+
+<div class="figure">
+<p><img src="imgs/ornek-is-hatti.png" alt="ornek-is-hatti.png" />
+</p>
+</div>
+
 
 <p>
 Üstteki resimde görülen örnek iş hattını tanımlamak için <code>A &amp; B ! C ! D ! E &amp; F</code> ifadesi yeterli.
 </p>
 </div>
-
 </div>
 
-<div id="outline-container-3" class="outline-2">
+<div id="outline-container-sec-3" class="outline-2">
 <h2 id="sec-3">Öz sacre bileşenleri</h2>
 <div class="outline-text-2" id="text-3">
-
-<p>Uygulamaya özgü tanımlanmış bileşenlerin dışında sacre'nin kendiliğinden gelen bazı bileşenleri de var.
+<p>
+Uygulamaya özgü tanımlanmış bileşenlerin dışında sacre'nin kendiliğinden gelen bazı bileşenleri de var.
 </p>
-
 </div>
 
-<div id="outline-container-3-1" class="outline-3">
+<div id="outline-container-sec-3-1" class="outline-3">
 <h3 id="sec-3-1">apisink</h3>
 <div class="outline-text-3" id="text-3-1">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">apisink</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Geliştiricilerin işhattı sonuçlarını fonksiyon sonucu olarak almasını sağlar. Tip parametresi senkron olarak verildiğinde döndürülen sonuç apisink bileşenine giren tüm tokenlerin bir listesidir. Asenkron olarak verildiğinde öncesinde dinleyici olarak eklenmiş nesneler her yeni token geldiğinde ve iş hattı tamamlandığında haberdar edilir.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <i>Token</i>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">apisink</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Geliştiricilerin işhattı sonuçlarını fonksiyon sonucu olarak almasını sağlar. Tip parametresi senkron olarak verildiğinde döndürülen sonuç apisink bileşenine giren tüm tokenlerin bir listesidir. Asenkron olarak verildiğinde öncesinde dinleyici olarak eklenmiş nesneler her yeni token geldiğinde ve iş hattı tamamlandığında haberdar edilir.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <i>Token</i>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Parametreleri
-</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">parametre</th><th scope="col" class="left">alabildiği değerler</th><th scope="col" class="left">açıklama</th><th scope="col" class="left">varsayılan değeri</th></tr>
+<tr>
+<th scope="col" class="left">parametre</th>
+<th scope="col" class="left">alabildiği değerler</th>
+<th scope="col" class="left">açıklama</th>
+<th scope="col" class="left">varsayılan değeri</th>
+</tr>
 </thead>
 <tbody>
-<tr><td class="left">tip</td><td class="left">senkron ya da asenkron</td><td class="left">sonuçların alınma şeklini belirler.</td><td class="left"><i>senkron</i></td></tr>
+<tr>
+<td class="left">tip</td>
+<td class="left">senkron ya da asenkron</td>
+<td class="left">sonuçların alınma şeklini belirler.</td>
+<td class="left"><i>senkron</i></td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-apisink.png"  alt="imgs/dit-apisink.png" />
+<div class="figure">
+<p><img src="imgs/dit-apisink.png" alt="dit-apisink.png" />
 </p>
-
+</div>
+</div>
 </div>
 
-</div>
 
-<div id="outline-container-3-2" class="outline-3">
+<div id="outline-container-sec-3-2" class="outline-3">
 <h3 id="sec-3-2">fork</h3>
 <div class="outline-text-3" id="text-3-2">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">fork</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Girdi kapısındaki veriyi ikileyerek iki çıktı kapısına birden gönderir.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <i>Token</i>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">2 tane. Kapıdan geçen veri tipi <i>Token</i>.</td></tr>
-<tr><td class="left">Parametreleri</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">fork</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Girdi kapısındaki veriyi ikileyerek iki çıktı kapısına birden gönderir.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <i>Token</i>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">2 tane. Kapıdan geçen veri tipi <i>Token</i>.</td>
+</tr>
+
+<tr>
+<td class="left">Parametreleri</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-fork.png"  alt="imgs/dit-fork.png" />
+<div class="figure">
+<p><img src="imgs/dit-fork.png" alt="dit-fork.png" />
 </p>
 </div>
-
+</div>
 </div>
 
-<div id="outline-container-3-3" class="outline-3">
+<div id="outline-container-sec-3-3" class="outline-3">
 <h3 id="sec-3-3">merge</h3>
 <div class="outline-text-3" id="text-3-3">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">merge</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">İki girdi kapısındaki verileri çıktı kapısına gönderir.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">2 tane. Kapıdan geçen veri tipi <i>Token</i>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <i>Token</i>.</td></tr>
-<tr><td class="left">Parametreleri</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">merge</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">İki girdi kapısındaki verileri çıktı kapısına gönderir.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">2 tane. Kapıdan geçen veri tipi <i>Token</i>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <i>Token</i>.</td>
+</tr>
+
+<tr>
+<td class="left">Parametreleri</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-merge.png"  alt="imgs/dit-merge.png" />
+<div class="figure">
+<p><img src="imgs/dit-merge.png" alt="dit-merge.png" />
 </p>
 </div>
-
+</div>
 </div>
 
-<div id="outline-container-3-4" class="outline-3">
+<div id="outline-container-sec-3-4" class="outline-3">
 <h3 id="sec-3-4">intersection</h3>
 <div class="outline-text-3" id="text-3-4">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">intersection</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">İki girdi kapısındaki verilerin kesişim kümesini çıktı kapısına gönderir.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">2 tane. Kapıdan geçen veri tipi <i>Token</i>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <i>Token</i>.</td></tr>
-<tr><td class="left">Parametreleri</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">intersection</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">İki girdi kapısındaki verilerin kesişim kümesini çıktı kapısına gönderir.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">2 tane. Kapıdan geçen veri tipi <i>Token</i>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <i>Token</i>.</td>
+</tr>
+
+<tr>
+<td class="left">Parametreleri</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-intersection.png"  alt="imgs/dit-intersection.png" />
+<div class="figure">
+<p><img src="imgs/dit-intersection.png" alt="dit-intersection.png" />
 </p>
 </div>
-
+</div>
 </div>
 
-<div id="outline-container-3-5" class="outline-3">
+<div id="outline-container-sec-3-5" class="outline-3">
 <h3 id="sec-3-5">GND (ground)</h3>
 <div class="outline-text-3" id="text-3-5">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">gnd</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">Girdi kapısındaki verileri alır ve onlarla hiçbir şey yapmaz.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <i>Token</i>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">-</td></tr>
-<tr><td class="left">Parametreleri</td><td class="left">-</td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">gnd</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">Girdi kapısındaki verileri alır ve onlarla hiçbir şey yapmaz.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <i>Token</i>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">-</td>
+</tr>
+
+<tr>
+<td class="left">Parametreleri</td>
+<td class="left">-</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-gnd.png"  alt="imgs/dit-gnd.png" />
+<div class="figure">
+<p><img src="imgs/dit-gnd.png" alt="dit-gnd.png" />
 </p>
 </div>
-
+</div>
 </div>
 
-<div id="outline-container-3-6" class="outline-3">
+<div id="outline-container-sec-3-6" class="outline-3">
 <h3 id="sec-3-6">limitflt</h3>
 <div class="outline-text-3" id="text-3-6">
-
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" />
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <tbody>
-<tr><td class="left">Adı</td><td class="left">limitflt</td></tr>
-<tr><td class="left">İşlevi</td><td class="left">yalnızca limit parametresi ile verilen sayıdaki tokeni girdi kapısından çıktı kapısına geçirir.</td></tr>
-<tr><td class="left">Girdi kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <i>Token</i>.</td></tr>
-<tr><td class="left">Çıktı kapısı</td><td class="left">1 tane. Kapıdan geçen veri tipi <i>Token</i>.</td></tr>
+<tr>
+<td class="left">Adı</td>
+<td class="left">limitflt</td>
+</tr>
+
+<tr>
+<td class="left">İşlevi</td>
+<td class="left">yalnızca limit parametresi ile verilen sayıdaki tokeni girdi kapısından çıktı kapısına geçirir.</td>
+</tr>
+
+<tr>
+<td class="left">Girdi kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <i>Token</i>.</td>
+</tr>
+
+<tr>
+<td class="left">Çıktı kapısı</td>
+<td class="left">1 tane. Kapıdan geçen veri tipi <i>Token</i>.</td>
+</tr>
 </tbody>
 </table>
-
 
 <p>
 Parametreleri
-</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">parametre</th><th scope="col" class="left">alabildiği değerler</th><th scope="col" class="left">açıklama</th><th scope="col" class="left">varsayılan değeri</th></tr>
+<tr>
+<th scope="col" class="left">parametre</th>
+<th scope="col" class="left">alabildiği değerler</th>
+<th scope="col" class="left">açıklama</th>
+<th scope="col" class="left">varsayılan değeri</th>
+</tr>
 </thead>
 <tbody>
-<tr><td class="left">limit</td><td class="left">herhangi bir pozitif sayı</td><td class="left">geçirilecek en fazla token sayısını belirler.</td><td class="left"><i>1</i></td></tr>
+<tr>
+<td class="left">limit</td>
+<td class="left">herhangi bir pozitif sayı</td>
+<td class="left">geçirilecek en fazla token sayısını belirler.</td>
+<td class="left"><i>1</i></td>
+</tr>
 </tbody>
 </table>
-
 
 
 <p>
 Görsel gösterimi
 </p>
 
-<p>
-<img src="imgs/dit-limitflt.png"  alt="imgs/dit-limitflt.png" />
+<div class="figure">
+<p><img src="imgs/dit-limitflt.png" alt="dit-limitflt.png" />
 </p>
-
+</div>
+</div>
 </div>
 </div>
 
-</div>
 
-<div id="outline-container-4" class="outline-2">
+<div id="outline-container-sec-4" class="outline-2">
 <h2 id="sec-4">Bileşen tanımlamak</h2>
 <div class="outline-text-2" id="text-4">
-
-
 <p>
 sacre için yeni bileşenler tanımlamak için <code>ch.alari.sacre.Component</code> sınıfından yeni bir bileşen sınıfı türetmek yeterlidir. 
 sacre açık kaynaklı bir proje olduğu için halihazırda tanımlanmış sacre bileşenlerinin kodlarını inceleyerek nasıl yapıldığını daha iyi görebilirsiniz.
 ssg++ için bileşenler çalışma zamanında yüklenecek şekilde eklenti olarak tanımlanabilir (bkz: <a href="SsgppIcinEklentiBilesenTanimlamak.html">ssg++ için eklenti bileşen tanımlamak</a>). 
 ssg++'da tanımlanmış bileşenleri görmek için (bkz: <a href="SsgppComps.html">ssg++ bileşenleri</a>).
-</p></div>
+</p>
 </div>
 </div>
-
-<div id="postamble">
+</div>
+<div id="postamble" class="status">
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -457,7 +639,6 @@ ssg++'da tanımlanmış bileşenleri görmek için (bkz: <a href="SsgppComps.htm
   ga('send', 'pageview');
 
 </script>
-
 </div>
 </body>
 </html>
