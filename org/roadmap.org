@@ -73,7 +73,8 @@ küçük değişiklikler:
 ** Bilinen sorunlar/eksiklikler
 
 + [ ] girdi yazma
-* Sürüm 1.2.1
+* DONE Sürüm 1.2.1
+  - State "DONE"       from ""           [2014-08-02 Sat 15:51]
 ** Değişiklikler
 ssg++'daki yenilikler/değişiklikler
    - yapılandırma dosyasına nabız özelliğiyle ilgili parametreler eklendi.
@@ -101,20 +102,27 @@ ekşi sözlük kaynaklı değişiklikler
    - debe sayfasının farklı gösterilme durumlarından kaynaklanan ilk 10 debe girdisinin iki kez tekrar etmesi sorunu düzeltildi.
 
 
-* Sürüm 1.3
+* DONE Sürüm 1.3 (kod adı: power suser)
+  - State "DONE"       from ""           [2015-01-24 Sat 00:31]
 ** Değişiklikler
 - üst panel yeniden düzenlendi.
 - /favori modu/
+
   başlıktaki girdileri favorilenme sayılarına göre sıralayan /favori modu/ eklendi. (Web arayüzünde daha hızlı çalışması için sayfa sayfa çalışıyor.)
 - /yakın takip/
+
   günün başlıklarını bir dosyada belirlenen anahtar kelime listesine göre filtreler. örn. ilan, duyuru, kampanya gibi anahtar kelimelerle günün sizin ilgilerinize daha yakın olan başlıklarını takip edebilirsiniz.
 - /kelime ağacı/
+
   başlığın girdilerinin içinde verilen bir kelimenin geçtiği bütün cümleleri dikkate alarak bir kelime ağacı oluşturur. [[https://eksisozluk.com/entry/48391569][Şu girdideki]] bağlantısı verilmiş resimlerdeki gösterimlere kelime ağacı deniyor. Örn. 'interstellar' başlığında 'film' köküyle 'sonda' gösterim seçeneğini kullanarak kelime ağacı oluştursanız hızlı şekilde genel görüş alabilirsiniz.
 - /sondan başa sıralama/
+
   başlıkgirdileri bileşenine sıralama seçeneği eklendi. Alabildiği değerler eski-yeni (öntanımlı değeri) ya da yeni-eski.
   Bu şekilde komut satırında watch gibi bir programla son yazılan girdiler otomatik olarak görülebilir.
   örn.: watch -b -n 60 'ssg++ yürüt başlıkknk [başlık=6 ağustos 2014 beşiktaş feyenoord maçı] ! başlıkgirdileri [sıralama=yeni-eski, limit=10] ! metinbtk'
 - popüler > /gündemin başucuları/
+
   günün en çok sayıda girdi yazılmış başlıklarındaki beğenilen uzun girdileri getirir.
 - /favorileyenleri/
+
   yeni eklenen /favorileyenleri/ bileşeni sayesinde /favorileyenleri/ ve /favorileyenlerim/ komutları eklendi. /favorileyenleri/ komutu parametre olarak verilen bir yazarı en çok favorileyen kullanıcıları listeler.
