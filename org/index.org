@@ -5,8 +5,8 @@
 
 * ssg++ nedir?
 
-ssg++, [[http://antik.eksisozluk.com][ekşi sözlük]] için alternatif arayüzler sunan bir projedir. ekşi sözlük için bir komut satırı arayüzü, bir web arayüzü ve bir de programlama arayüzü sağlar. 
-Her ne kadar ekşi sözlük'ü kendi arayüzüyle seve seve kullanıyor olsak da bu arayüz her ihtiyaca cevap veremiyor.
+ssg++, [[http://antik.eksisozluk.com][ekşi sözlük]] için alternatif arayüzler sunan bir projedir. ekşi sözlük için komut satırı arayüzü, web arayüzü ve programlama arayüzü sağlar. 
+Her ne kadar ekşi sözlük'ü kendi arayüzüyle severek kullanıyor olsak da bu arayüz her ihtiyaca cevap veremiyor.
 ssg++ sağladığı arayüzlerle pek çok zor işi tek satırlık bir komut çalıştırmak kadar kolay hale getiriyor.
 
 Komut satırı arayüzü girdi madenciliği ile çözümlemeler yapmayı sağlarken, web arayüzü  ssg++'nın işlevselliğinin internet tarayıcısı ortamında kullanılmasını sağlar.
@@ -258,7 +258,7 @@ ssg++ ticari olmayan kişisel kullanım için ücretsiz bir uygulamadır ve kull
  * Sadece ticari olmayan kişisel amaçlar için kullanılabilir. Şirket ya da organizasyon içinde kullanılması için ayrı tipte bir lisans gerekir. Bunun için oderin at users.sourceforge.net adresine "ssg++ ticari lisans isteği" konulu bir e-posta gönderebilirsiniz.
  * Kaynak kodu değiştirilemez ve program başka bir program ile bağlantılı olarak kullanılamaz. Bunun için ayrı bir lisans gerekir. oderin at users.sourceforge.net adresine "ssg++ gelistirici lisansi isteği" konulu bir e-posta gönderebilirsiniz.
  * Program kullanılarak elde edilen her türlü çıktı, herhangi bir yerde kullanılıyorsa, program adına (ssg++) ve programın internet adresine (http://ssgpp.github.io) uygun şekilde atıfta bulunulmalıdır.
- * Programın bazı parçaları başka bir takım lisanslara tabidir: commons, xalan-j and jcommander için Apache License Version 2.0, jfreechart için GNU LGPL v2.1, sacre için BSD lisansı.
+ * Programın bazı parçaları başka bir takım lisanslara tabidir: commons, xalan-j, opennlp ve jcommander için Apache License Version 2.0, jfreechart için GNU LGPL v2.1, sacre için BSD lisansı.
 
 ** Yasal Uyarı
 ssg++'nın Ekşi Teknoloji ve Bilişim Ltd. Şti. ile bir bağlantısı yoktur. ekşi sözlük, Ekşi Teknoloji ve Bilişim Ltd. Şti.’nin tescilli bir markasıdır. Uygulama üzerinden erişilebilen ekşi sözlük içeriği, ve bu içeriğe dair tüm haklar Ekşi Teknoloji ve Bilişim Ltd. Şti.’ne aittir.
