@@ -115,6 +115,12 @@ ekşi sözlük kaynaklı değişiklikler
 - /kelime ağacı/
 
   başlığın girdilerinin içinde verilen bir kelimenin geçtiği bütün cümleleri dikkate alarak bir kelime ağacı oluşturur. [[https://eksisozluk.com/entry/48391569][Şu girdideki]] bağlantısı verilmiş resimlerdeki gösterimlere kelime ağacı deniyor. Örn. 'interstellar' başlığında 'film' köküyle 'sonda' gösterim seçeneğini kullanarak kelime ağacı oluştursanız hızlı şekilde genel görüş alabilirsiniz.
+
+#+BEGIN_HTML
+<blockquote class="twitter-tweet" lang="en"><p>TLDR&#39;ciler için yeni sürümün kelime ağacı özelliğine bir örnek. <a href="https://twitter.com/hashtag/ssg?src=hash">#ssg</a>++ <a href="https://twitter.com/hashtag/v1?src=hash">#v1</a>.3 <a href="https://twitter.com/hashtag/powersuser?src=hash">#powersuser</a> <a href="http://t.co/O25LuKHsGT">pic.twitter.com/O25LuKHsGT</a></p>&mdash; ssg++ (@sozlukshell) <a href="https://twitter.com/sozlukshell/status/558948547908104194">January 24, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+#+END_HTML
+
 - /sondan başa sıralama/
 
   başlıkgirdileri bileşenine sıralama seçeneği eklendi. Alabildiği değerler eski-yeni (öntanımlı değeri) ya da yeni-eski.
