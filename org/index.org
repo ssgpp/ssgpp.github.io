@@ -92,6 +92,8 @@ Kendi iş hattı kısayollarınızı tanımlamak için (bkz: [[file:YeniIsHattiK
 
 ssg++ kullanılarak yapılmış daha geniş kapsamlı çalışmalar için (bkz: [[http://ssgpp.wordpress.com][ssg++ blogu]]).
 
+Tek satırın yetmediği ya da başka programlarla bir arada kullanılmasının gerektiği durumlar için oluşturulmuş betikleri görmek için (bkz: [[https://github.com/ssgpp/betikler][ssg++ betikleri]])
+
 * Kurulum ve kullanım
   [[*Lisans][Lisans]] metnini okuyup kabul ettikten sonra ssg++ programını indirmek ve ücretsiz bir lisans edinmek için [[file:indir.org][lisans istek formu]]nu doldurmanız yeterli.
 
@@ -118,7 +120,7 @@ ssg++'yı web arayüzü ile kullanmak için:
 #+BEGIN_EXAMPLE 
 java -jar ssgpp-web-1.0-SNAPSHOT.jar
 #+END_EXAMPLE
-komutunu kullanarak ssg++ web sunucusunu çalıştırın (Ctrl-C ile kapatabilirsiniz).
+komutunu kullanarak ssg++ web sunucusunu çalıştırın (=Ctrl-c= ile kapatabilirsiniz).
 
 Linux kullanıcıları =~/.bashrc= dosyasını yukarda anlatıldığı gibi düzenlemişlerse, sunucuyu başlatmak için
 #+BEGIN_EXAMPLE 
