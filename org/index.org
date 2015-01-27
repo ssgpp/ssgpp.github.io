@@ -136,7 +136,7 @@ Programın çalışmasıyla ilgili bazı ayarlar kullanıcının ev dizinindeki 
 #+BEGIN_EXAMPLE
 # ekşi sözlük'e giriş yaparken kullandığınız e-mail adresi (eğer tanımladıysanız, kullanıcı adı)
 EksiSozluk-KullaniciAdi=...
-# Önemli not: Şifreniz şifrelenmemiş olarak tutulur.
+# Önemli not: Şifreniz şifrelenmemiş olarak tutulur. (şifreniz ters taksim işareti içeriyorsa onu ikileyerek yazın (örn. a\bc yerine a\\bc))
 EksiSozluk-Sifresi=...
 # Ekşi Sözlük hesabınızda belirlediğiniz ayarlar > tercihler > gösterim > sayfa başı entry sayısı
 SayfaBasiGirdiSayisi=10
