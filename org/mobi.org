@@ -44,6 +44,8 @@
 + bağlantısı verilmiş tivitlerin gömülmesi
 + güncel başlıklarda ilk girdinin eklenmesi
 + bakınız verilmiş girdilerin eklenmesi
++ başlıkların içindekiler olarak listelenmesi
++ fiziksel ya da dokunmatik tuşlar ile girdiler arası hızlı geçiş yapabilme
 
 # #+ATTR_HTML: :width 500px
 #+BEGIN_HTML

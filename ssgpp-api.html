@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="tr" xml:lang="tr">
 <head>
 <title>ekşi sözlük için ssg++ API</title>
-<!-- 2015-01-23 Fri 23:58 -->
+<!-- 2015-02-10 Tue 15:20 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Onur Derin" />
@@ -194,12 +194,12 @@ for the JavaScript code in this tag.
 <h2 id="sec-1">ekşi sözlük için ssg++ API</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-ssg++ iş hatlarının yapabildiği her şeye kendi uygulamanızda kullanmak için bir API ile ulaşmanız mümkün. 
+Kendi uygulamanızda kullanmak için ssg++ iş hatlarının yapabildiği her şeye bir API ile ulaşmanız mümkün. 
 İş hattının batak elemanını apisink olarak değiştirip <code>List&lt;Token&gt; SozlukApi.runPipeline(String ishatti)</code> metodunu çağırmanız yeterli.
-Örnek olarak badi başlıklarını yazdırmak için kullanılacak <code>badiknk ! metinbtk</code> iş hattında <code>metinbtk</code> bileşeni yerine <code>apisink</code> kullanarak başlıkları içinde <code>Baslik</code> nesneleri olan bir listeye alabiliriz:
+Örnek olarak badi başlıklarını yazdırmak için kullanılacak <code>indeksknk [tip=badi] ! metinbtk</code> iş hattında <code>metinbtk</code> bileşeni yerine <code>apisink</code> kullanarak başlıkları içinde <code>Baslik</code> nesneleri olan bir listeye alabiliriz:
 </p>
 <pre class="example">
-List&lt;Token&gt; badilerden = SozlukApi.runPipeline("badiknk ! apisink");
+List&lt;Token&gt; badilerden = SozlukApi.runPipeline("indeksknk [tip=badi] ! apisink");
 </pre>
 
 <p>

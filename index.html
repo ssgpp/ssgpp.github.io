@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="tr" xml:lang="tr">
 <head>
 <title>ssg++ ana sayfa</title>
-<!-- 2015-01-27 Tue 18:56 -->
+<!-- 2015-02-10 Tue 19:03 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Onur Derin" />
@@ -184,29 +184,32 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">ssg++ nedir?</a>
+<li><a href="#sec-1">ssg++ nedir?</a></li>
+<li><a href="#sec-2">Web arayüzü</a></li>
+<li><a href="#sec-3">Komut satırı arayüzü</a>
 <ul>
-<li><a href="#sec-1-1">Ekran çıktıları</a></li>
+<li><a href="#sec-3-1">ssg++ komutları</a></li>
+<li><a href="#sec-3-2">Kulanım örnekleri</a></li>
 </ul>
 </li>
-<li><a href="#sec-2">ssg++ ile yapabileceklerinize örnekler</a></li>
-<li><a href="#sec-3">Kurulum ve kullanım</a>
-<ul>
-<li><a href="#sec-3-1">Yapılandırma</a></li>
-<li><a href="#sec-3-2">ssg++ komutları</a></li>
-</ul>
-</li>
-<li><a href="#sec-4">Geliştiriciler için</a>
+<li><a href="#sec-4">Programlama arayüzü</a>
 <ul>
 <li><a href="#sec-4-1">Eklenti tanımlamak</a></li>
 <li><a href="#sec-4-2">ssg++ API</a></li>
 </ul>
 </li>
-<li><a href="#sec-5">Değişim günlüğü</a></li>
-<li><a href="#sec-6">Destek olun</a></li>
-<li><a href="#sec-7">Lisans</a>
+<li><a href="#sec-5">Kurulum</a>
 <ul>
-<li><a href="#sec-7-1">Yasal Uyarı</a></li>
+<li><a href="#sec-5-1">Web arayüzü</a></li>
+<li><a href="#sec-5-2">Komut satırı arayüzü</a></li>
+<li><a href="#sec-5-3">Yapılandırma</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">Değişim günlüğü</a></li>
+<li><a href="#sec-7">Destek olun</a></li>
+<li><a href="#sec-8">Lisans</a>
+<ul>
+<li><a href="#sec-8-1">Yasal Uyarı</a></li>
 </ul>
 </li>
 </ul>
@@ -217,32 +220,46 @@ for the JavaScript code in this tag.
 <h2 id="sec-1">ssg++ nedir?</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-ssg++, <a href="http://antik.eksisozluk.com">ekşi sözlük</a> için alternatif arayüzler sunan bir projedir. ekşi sözlük için komut satırı arayüzü, web arayüzü ve programlama arayüzü sağlar. 
+ssg++, <a href="https://eksisozluk.com">ekşi sözlük</a> için alternatif arayüzler sunan bir projedir. ekşi sözlük için <b>web arayüzü</b>, <b>komut satırı arayüzü</b> ve <b>programlama arayüzü</b> sağlar. 
 Her ne kadar ekşi sözlük'ü kendi arayüzüyle severek kullanıyor olsak da bu arayüz her ihtiyaca cevap veremiyor.
 ssg++ sağladığı arayüzlerle pek çok zor işi tek satırlık bir komut çalıştırmak kadar kolay hale getiriyor.
 </p>
 
 <p>
-Komut satırı arayüzü girdi madenciliği ile çözümlemeler yapmayı sağlarken, web arayüzü  ssg++'nın işlevselliğinin internet tarayıcısı ortamında kullanılmasını sağlar.
-Bunun yanında esnek yapısı sayesinde istediğiniz işi yapmanızı sağlayan yeni komutlar ve bileşenler tanımlamanız mümkün.
-ssg++ <i>bileşen tabanlı tasarım</i> prensipleri üzerine kuruludur. Veri işlemeye dönük uygulamalar için bileşen tanımlayı ve kendisiyle gelen dille bileşen dizilimleri yaratmayı sağlayan <i>sacre</i> adındaki bileşen tabanlı çerçeve kullanılarak oluşturulmuştur. Esas olarak ssg++ ekşi sözlük'e özel tanımlanmış bileşenlere ve <i>iş hattı</i> dediğimiz bileşen dizilimlerine dayanır.
-Daha fazla bilgi için 
-(bkz: <a href="SsgppComps.html">ssg++ bileşenleri</a>)
-(bkz: <a href="Sacre.html">iş hattı oluşturma</a>)
+ssg++ üç seviyede kullanılabilir:
 </p>
+<ul class="org-ul">
+<li><b>Başlangıç seviye kullanıcılar için web arayüzü:</b> Web arayüzü ssg++'nın işlevselliğinin bir internet tarayıcısı ile kullanılmasını sağlar.
+</li>
+<li><b>Orta seviye kullanıcılar için komut satırı arayüzü:</b> Komut satırı arayüzü girdi madenciliği ile çözümlemeler yapmayı sağlar.
+<ul class="org-ul">
+<li>Halihazırda tanımlanmış iş hatlarını komut satırında kullanabilirsiniz.
+</li>
+<li>ssg++'nın esnek yapısı sayesinde mevcut bileşenleri değişik şekillerde bağlayarak yeni iş hatları oluşturup yeni işlevler tanımlayabilirsiniz.
+</li>
+</ul>
+</li>
+<li><b>İleri seviye kullanıcılar (geliştiriciler) için programlama arayüzü:</b> 
+<ul class="org-ul">
+<li>İstediğiniz işi yapan bir bileşen mevcut değilse eklenti bileşenler tanımlayabilirsiniz.
+</li>
+<li>ssg++'nın sağladığı tüm işlevleri basit bir API ile kendi programınızda kullanabilirsiniz. Bunun için geliştirici lisansı edinmeniz gerekiyor.
+</li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 
-<div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1">Ekran çıktıları</h3>
-<div class="outline-text-3" id="text-1-1">
+
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Web arayüzü</h2>
+<div class="outline-text-2" id="text-2">
 <iframe width="640" height="480" src="//www.youtube.com/embed/eQl2paFPH3c?rel=0" frameborder="0" allowfullscreen></iframe>
 
 <table style="text-align: center;" cellpadding="10px">
   <tr>
-    <td>
-      <p>gündem</p>
-      <a href="imgs/ekran-ciktisi-ks-gundem.png"><img src="imgs/ekran-ciktisi-ks-gundem.png" width="400"></a>
-    </td>
     <td>
       <p>nabız</p>
       <a href="imgs/ekran-ciktisi-web-nabiz.png"><img src="imgs/ekran-ciktisi-web-nabiz.png" width="400"></a>
@@ -250,19 +267,11 @@ Daha fazla bilgi için
   </tr>
   <tr>
     <td>
-      <p>şükela</p>
-      <a href="imgs/ekran-ciktisi-ks-sukela.png"><img src="imgs/ekran-ciktisi-ks-sukela.png" width="400"></a>
-    </td>
-    <td>
       <p>dünün en beğenilenleri</p>
       <a href="imgs/ekran-ciktisi-web-debe-bugun.png"><img src="imgs/ekran-ciktisi-web-debe-bugun.png" width="400"></a>
     </td>
   </tr>
   <tr>
-    <td>
-      <p>maç skoru</p>
-      <a href="imgs/ekran-ciktisi-ks-macskoru.png"><img src="imgs/ekran-ciktisi-ks-macskoru.png" width="400"></a>
-    </td>
     <td>
       <p>bkz'ları (anket) ve ajanda</p>
       <a href="imgs/ekran-ciktisi-web-bkzlari-ajanda.png"><img src="imgs/ekran-ciktisi-web-bkzlari-ajanda.png" width="400"></a>
@@ -271,165 +280,177 @@ Daha fazla bilgi için
 </table>
 </div>
 </div>
-</div>
 
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">ssg++ ile yapabileceklerinize örnekler</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-ssg++ komutları iş hattı kısayolu şeklinde tanımlanarak genişletilebilir. 
-Mevcut tanımlı iş hattı kısayolları: 
-</p>
-
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="left" />
-
-<col  class="left" />
-
-<col  class="left" />
-
-<col  class="left" />
-</colgroup>
-<tbody>
-<tr>
-<td class="left"><a href="IsHattiKisayollari.html">ajanda-1</a></td>
-<td class="left"><a href="IsHattiKisayollari.html">ajanda</a></td>
-<td class="left"><a href="IsHattiKisayollari.html">ajanda3</a></td>
-<td class="left"><a href="IsHattiKisayollari.html">anket</a></td>
-</tr>
-
-<tr>
-<td class="left"><a href="IsHattiKisayollari.html">ara</a></td>
-<td class="left"><a href="IsHattiKisayollari.html">badi</a></td>
-<td class="left"><a href="IsHattiKisayollari.html">başlıkindir</a></td>
-<td class="left"><a href="IsHattiKisayollari.html">başlıkresimleri</a></td>
-</tr>
-
-<tr>
-<td class="left"><a href="IsHattiKisayollari.html">bugün</a></td>
-<td class="left"><a href="IsHattiKisayollari.html">debe</a></td>
-<td class="left"><a href="IsHattiKisayollari.html">dosyadananket</a></td>
-<td class="left"><a href="IsHattiKisayollari.html">dosyadanlafebeleri</a></td>
-</tr>
-
-<tr>
-<td class="left"><a href="IsHattiKisayollari.html">dosyadanzamansaleğilim</a></td>
-<td class="left"><a href="IsHattiKisayollari.html">dün</a></td>
-<td class="left"><a href="IsHattiKisayollari.html">farkbadi</a></td>
-<td class="left"><a href="IsHattiKisayollari.html">getir</a></td>
-</tr>
-
-<tr>
-<td class="left"><a href="IsHattiKisayollari.html">ghebe</a></td>
-<td class="left"><a href="IsHattiKisayollari.html">ghebçe</a></td>
-<td class="left"><a href="IsHattiKisayollari.html">gündem</a></td>
-<td class="left"><a href="IsHattiKisayollari.html">lafebeleri</a></td>
-</tr>
-
-<tr>
-<td class="left"><a href="IsHattiKisayollari.html">maçskoru</a></td>
-<td class="left"><a href="IsHattiKisayollari.html">manşet</a></td>
-<td class="left"><a href="IsHattiKisayollari.html">ortakbaşlıkları</a></td>
-<td class="left"><a href="IsHattiKisayollari.html">takip</a></td>
-</tr>
-
-<tr>
-<td class="left"><a href="IsHattiKisayollari.html">tsllbn</a></td>
-<td class="left"><a href="IsHattiKisayollari.html">yedekle</a></td>
-<td class="left"><a href="IsHattiKisayollari.html">zamansaleğilim</a></td>
-<td class="left">&#xa0;</td>
-</tr>
-</tbody>
-</table>
-<p>
-Örnek olarak, <i>lafebeleri</i> komutunun iş hattı şöyle:
-</p>
-<pre class="example">
-başlıkknk [başlık=%s] ! başlıkgirdileri ! histogram [eksen=kategori, kategori=yazar] ! grafikbtk
-</pre>
-<p>
-<i>lafebeleri</i> komutu argüman olarak verilen başlığa yazmış yazarları girdi sayılarına göre grafik olarak gösterir. 
-</p>
-
-<p>
-Komut örneği:
-</p>
-<pre class="example">
-$ ssg++ lafebeleri borussia dortmund
-</pre>
-
-<p>
-Çıktısı:
-</p>
-
-
-<div class="figure">
-<p><img src="imgs/lafebeleri_borussia_dortmund.png" alt="lafebeleri_borussia_dortmund.png" />
-</p>
-</div>
-
-<p>
-Demek ki Lewandowski'nin Bayern Münih'e gidip gitmeyeceğini spacetimereality'ye sormak gerekiyormuş.
-</p>
-
-<p>
-Tüm tanımlı iş hatlarının detayları ve örnek kullanımları için (bkz: <a href="IsHattiKisayollari.html">iş hattı kısayolları</a>).
-</p>
-
-<p>
-Kendi iş hattı kısayollarınızı tanımlamak için (bkz: <a href="YeniIsHattiKisayoluTanimlama.html">yeni iş hattı kısayolu tanımlama</a>).
-</p>
-
-<p>
-ssg++ kullanılarak yapılmış daha geniş kapsamlı çalışmalar için (bkz: <a href="http://ssgpp.wordpress.com">ssg++ blogu</a>).
-</p>
-
-<p>
-Tek satırın yetmediği ya da başka programlarla bir arada kullanılmasının gerektiği durumlar için oluşturulmuş betikleri görmek için (bkz: <a href="https://github.com/ssgpp/betikler">ssg++ betikleri</a>)
-</p>
-</div>
-</div>
 
 <div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3">Kurulum ve kullanım</h2>
+<h2 id="sec-3">Komut satırı arayüzü</h2>
 <div class="outline-text-2" id="text-3">
 <p>
-<a href="#sec-7">Lisans</a> metnini okuyup kabul ettikten sonra ssg++ programını indirmek ve ücretsiz bir lisans edinmek için <a href="indir.html">lisans istek formu</a>nu doldurmanız yeterli.
+ssg++ <i>bileşen tabanlı tasarım</i> prensipleri üzerine kuruludur. Veri işlemeye dönük uygulamalar için bileşen tanımlayı ve kendisiyle gelen dille bileşen dizilimleri yaratmayı sağlayan <i>sacre</i> çerçevesi kullanılarak oluşturulmuştur. Esas olarak ssg++ ekşi sözlük'e özel tanımlanmış bileşenlere ve <i>iş hattı</i> dediğimiz bileşen dizilimlerine dayanır.
+Daha fazla bilgi için 
+(bkz: <a href="SsgppComps.html">ssg++ bileşenleri</a>)
+(bkz: <a href="Sacre.html">iş hattı oluşturma</a>)
 </p>
 
 <p>
-ssg++'nın çalıştırılabilmesi için sisteminizde <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JRE 7</a> veya daha üst bir sürümü kurulu olmalıdır. Bir komut uçbiriminde <code>java -version</code> komutunu çalıştırarak bunu kontrol edebilirsiniz.
+ssg++ çok sayıda halihazırda tanımlanmış iş hattı içerir. Bunları kısaltılmış olarak kullanabilmek için iş hattı kısayolları tanımlanmıştır. Tüm tanımlı iş hatlarının detayları için (bkz: <a href="IsHattiKisayollari.html">iş hattı kısayolları</a>)
 </p>
 
 <p>
-Edindiğiniz sıkıştırılmış dosyayı istediğiniz bir klasöre (örn. <code>~/Downloads/ssg++-1.0</code>) açın. Bu klasöre <code>SSG++_DIR</code> diyelim. Komut uçbiriminde <code>cd SSG++_DIR</code> komutuyla <code>ssgpp-cli-1.0-SNAPSHOT.jar</code> dosyasını içeren klasöre girin. İstenilen bir <a href="#sec-3-2">komut</a>u çalıştırmak için şunu girin:
+ssg++ komutları iş hattı kısayolu şeklinde tanımlanarak genişletilebilir. (bkz: <a href="YeniIsHattiKisayoluTanimlama.html">yeni iş hattı kısayolu tanımlama</a>)
+</p>
+</div>
+
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1">ssg++ komutları</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li><code>yardım</code>
+
+<p>
+komutların kullanımıyla ilgili yardım sağlar.
+</p>
+</li>
+
+<li><code>yardım</code> <i>iş hattı kısayolu</i>
+
+<p>
+verilen iş hattı kısayolu hakkında bilgi verir. (bkz: <a href="IsHattiKisayollari.html">iş hattı kısayolları</a>)
+</p>
+</li>
+
+<li><code>yardım</code> <i>bileşen adı</i>
+
+<p>
+verilen bileşen hakkında bilgi verir. (bkz: <a href="SsgppComps.html">ssg++ bileşenleri</a>)
+</p>
+</li>
+
+<li><code>yürüt</code> <i>iş hattı</i>
+
+<p>
+verilen iş hattını çalıştırır. (bkz: <a href="Sacre.html">iş hattı oluşturma</a>)
+</p>
+</li>
+
+<li><i>iş hattı kısayolu</i> 
+
+<p>
+girilen iş hattı kısayolunu çalıştırır. (bkz: <a href="YeniIsHattiKisayoluTanimlama.html">yeni iş hattı kısayolu tanımlama</a>)
+</p>
+</li>
+
+<li><code>mesaj</code> 
+
+<p>
+giriş yapmış kullanıcının mesajı olup olmadığı kontrol edilir.
+</p>
+</li>
+
+<li><code>-l</code> <i>komut</i>
+
+<p>
+Verilen komutu ekşi sözlük'e giriş yaptıktan sonra çalıştırır.
+</p>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2">Kulanım örnekleri</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>Basit kullanım örnekleri için (bkz: <a href="ssgpp-ornekler.html">ssg++ kullanım örnekleri</a>)
+</li>
+<li>ssg++ kullanılarak yapılmış daha geniş kapsamlı çalışmalar için (bkz: <a href="http://ssgpp.wordpress.com">ssg++ blogu</a>).
+</li>
+<li>Tek satırın yetmediği ya da başka programlarla bir arada kullanılmasının gerektiği durumlar için oluşturulmuş betikler için (bkz: <a href="https://github.com/ssgpp/betikler">ssg++ betikleri</a>).
+</li>
+</ul>
+
+<table style="text-align: center;" cellpadding="10px">
+  <tr>
+    <td>
+      <p>gündem</p>
+      <a href="imgs/ekran-ciktisi-ks-gundem.png"><img src="imgs/ekran-ciktisi-ks-gundem.png" width="400"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>şükela</p>
+      <a href="imgs/ekran-ciktisi-ks-sukela.png"><img src="imgs/ekran-ciktisi-ks-sukela.png" width="400"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>maç skoru</p>
+      <a href="imgs/ekran-ciktisi-ks-macskoru.png"><img src="imgs/ekran-ciktisi-ks-macskoru.png" width="400"></a>
+    </td>
+  </tr>
+</table>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">Programlama arayüzü</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1">Eklenti tanımlamak</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Yapmak istediğiniz şey için iş hattı tanımlamak yeterli gelmedi ise iş hatlarında kullanmak üzere kendi bileşenlerinizi eklenti olarak tanımlayabilirsiniz (bkz: <a href="SsgppIcinEklentiBilesenTanimlamak.html">ssg++ için eklenti bileşen tanımlamak</a>).
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2">ssg++ API</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Kendi uygulamanızda kullanmak için ssg++ iş hatlarının yapabildiği her şeye bir API ile ulaşmanız mümkün. 
+İş hattının batak elemanını apisink olarak değiştirip <code>List&lt;Token&gt; SozlukApi.runPipeline(String ishatti)</code> metodunu çağırmanız yeterli.
+Örnek olarak badi başlıklarını yazdırmak için kullanılacak <code>indeksknk [tip=badi] ! metinbtk</code> iş hattında <code>metinbtk</code> bileşeni yerine <code>apisink</code> kullanarak başlıkları içinde <code>Baslik</code> nesneleri olan bir listeye alabiliriz:
 </p>
 <pre class="example">
-java -jar ssgpp-cli-1.0-SNAPSHOT.jar komut
+List&lt;Token&gt; badilerden = SozlukApi.runPipeline("indeksknk [tip=badi] ! apisink");
 </pre>
 
 <p>
-Linux altında <code>~/.bashrc</code> dosyasını aşağıdaki şekilde düzenleyerek <code>bin</code> klasörü altındaki betikler kullanılır hale getirilebilir: 
-</p>
-<pre class="example">
-export PATH=$PATH:SSG++_DIR/bin
-</pre>
-
-<p>
-Bu durumda komut satırı arayüzü için sadece <code>ssg++</code> yazmanız yeterli.
-</p>
-<pre class="example">
-ssg++ komut
-</pre>
-
-<p>
-Komuttan önce <code>-l</code> argümanı verilirse komut ekşi sözlük'e giriş yapıldıktan sonra çalıştırılır (örn. <code>ssg++ -l komut</code>). 
+ssg++ API ile ilgili daha fazla ayrıntı için (bkz: <a href="ssgpp-api.html">ssg++ API kullanımı</a>)
 </p>
 
 <p>
+<b>ÖNEMLİ NOT</b>: Geliştirici olarak kullanmak için geliştirici lisansı edinmeniz gerekiyor.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">Kurulum</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+<a href="#sec-8">Lisans</a> metnini okuyup kabul ettikten sonra ssg++ programını indirmek ve ücretsiz bir lisans edinmek için <a href="indir.html">lisans istek formu</a>nu doldurmanız yeterli.
+</p>
+
+<p>
+ssg++'nın çalıştırılabilmesi için sisteminizde <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">JRE 8</a> veya daha üst bir sürümü kurulu olmalıdır. Bir komut uçbiriminde <code>java -version</code> komutunu çalıştırarak bunu kontrol edebilirsiniz.
+</p>
+
+<p>
+Edindiğiniz sıkıştırılmış dosyayı istediğiniz bir klasöre (örn. <code>~/Downloads/ssg++-1.0</code>) açın. Bu klasöre <code>SSG++_DIR</code> diyelim. 
+</p>
+</div>
+
+<div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1">Web arayüzü</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Komut uçbiriminde <code>cd SSG++_DIR</code> komutuyla <code>ssgpp-web-1.0-SNAPSHOT.jar</code> dosyasını içeren klasöre girin.
 ssg++'yı web arayüzü ile kullanmak için:
 </p>
 <pre class="example">
@@ -440,7 +461,7 @@ komutunu kullanarak ssg++ web sunucusunu çalıştırın (<code>Ctrl-c</code> il
 </p>
 
 <p>
-Linux kullanıcıları <code>~/.bashrc</code> dosyasını yukarda anlatıldığı gibi düzenlemişlerse, sunucuyu başlatmak için
+Linux kullanıcıları <code>~/.bashrc</code> dosyasında <code>PATH</code> değişkenini aşağıdaki bölümde anlatıldığı gibi düzenlemişlerse, sunucuyu başlatmak için
 </p>
 <pre class="example">
 ssgppd start
@@ -453,12 +474,40 @@ komutunu kullanabilirler (kapatmak içinse <code>ssgppd stop</code>).
 Sunucuyu başlattıktan sonra tarayıcınızda <a href="http://localhost:8081/index.html">http://localhost:8081/index.html</a> adresini açın.
 </p>
 </div>
+</div>
 
-<div id="outline-container-sec-3-1" class="outline-3">
-<h3 id="sec-3-1">Yapılandırma</h3>
-<div class="outline-text-3" id="text-3-1">
+
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2">Komut satırı arayüzü</h3>
+<div class="outline-text-3" id="text-5-2">
 <p>
-Programın çalışmasıyla ilgili bazı ayarlar kullanıcının ev dizinindeki <code>.ssgpp</code> klasöründe (örn. Linux altında <code>~/.ssgpp/conf/</code>) tutulur. Burdaki <code>app.properties</code> dosyası program ilk kez çalıştırıldığında otomatik oluşturulur. 
+Komut uçbiriminde <code>cd SSG++_DIR</code> komutuyla <code>ssgpp-cli-1.0-SNAPSHOT.jar</code> dosyasını içeren klasöre girin. İstenilen bir <a href="#sec-3-1">komut</a>u çalıştırmak için şunu girin:
+</p>
+<pre class="example">
+java -jar ssgpp-cli-1.0-SNAPSHOT.jar komut
+</pre>
+
+<p>
+Linux altında <code>~/.bashrc</code> dosyasını aşağıdaki şekilde düzenleyerek <code>bin</code> klasörü altındaki betikler yalnızca isimleriyle kullanılır hale getirilebilir: 
+</p>
+<pre class="example">
+export PATH=$PATH:SSG++_DIR/bin
+</pre>
+
+<p>
+Bu durumda komut satırı arayüzü için sadece <code>ssg++</code> yazmanız yeterli.
+</p>
+<pre class="example">
+ssg++ komut
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-5-3" class="outline-3">
+<h3 id="sec-5-3">Yapılandırma</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+Komut satırı ve web arayüzünün çalışmasıyla ilgili bazı ayarlar kullanıcının ev dizinindeki <code>.ssgpp</code> klasöründe (örn. Linux altında <code>~/.ssgpp/conf/</code>) tutulur. Burdaki <code>app.properties</code> dosyası program ilk kez çalıştırıldığında otomatik oluşturulur. 
 İsterseniz oluşturulmuş dosyayı düzenleyerek isterseniz aşağıdaki şablonu kullanarak kendi yapılandırma dosyanızı oluşturabilirsiniz. Aşağıdaki örnekte "#" ile başlayan satırlar açıklama (comment) satırlarıdır, dikkate alınmaz. Baştaki dört değerin doğru girildiğinden emin olun. Diğerleri varsayılan değerlerinde kalabilir.
 </p>
 <pre class="example">
@@ -502,7 +551,7 @@ EklentiDizini=
 </pre>
 
 <p>
-Bunun dışında Linux kullanıcıları <code>bin</code> klasöründeki bazı betikleri kullanabilmek için <code>ssgpp_conf.sh</code> dosyası içinde bazı düzenlemeler yapmalıdır. Ayrıntılı bilgiler dosya içinde bulunabilir.
+Bunun dışında Linux kullanıcıları <code>bin</code> klasöründeki bazı betikleri kullanabilmek için <code>ssgpp_conf.sh</code> dosyası içinde bazı düzenlemeler yapmalıdır. Ayrıntılı bilgi dosya içinde bulunabilir.
 </p>
 
 <p>
@@ -525,90 +574,23 @@ veritabanı
 </pre>
 </div>
 </div>
-
-<div id="outline-container-sec-3-2" class="outline-3">
-<h3 id="sec-3-2">ssg++ komutları</h3>
-<div class="outline-text-3" id="text-3-2">
-<ul class="org-ul">
-<li><code>yardım</code>
-
-<p>
-komutların kullanımıyla ilgili yardım sağlar.
-</p>
-</li>
-
-<li><code>yürüt</code> <i>iş hattı</i>
-
-<p>
-verilen <i>iş hattı</i> çalıştırılır. (bkz: <a href="SsgppComps.html">ssg++ bileşenleri</a>) (bkz: <a href="Sacre.html">iş hattı oluşturma</a>)
-</p>
-</li>
-
-<li><i>iş hattı kısayolu</i> 
-
-<p>
-girilen iş hattı kısayolu çalıştırılır. (bkz: <a href="IsHattiKisayollari.html">iş hattı kısayolları</a>) (bkz: <a href="YeniIsHattiKisayoluTanimlama.html">yeni iş hattı kısayolu tanımlama</a>)
-</p>
-</li>
-
-<li><code>mesaj</code> 
-
-<p>
-giriş yapmış kullanıcının mesajı olup olmadığı kontrol edilir.
-</p>
-</li>
-</ul>
-</div>
-</div>
 </div>
 
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4">Geliştiriciler için</h2>
-<div class="outline-text-2" id="text-4">
-</div><div id="outline-container-sec-4-1" class="outline-3">
-<h3 id="sec-4-1">Eklenti tanımlamak</h3>
-<div class="outline-text-3" id="text-4-1">
-<p>
-Yapmak istediğiniz şey için iş hattı tanımlamak yeterli gelmedi ise iş hatlarında kullanmak üzere kendi bileşenlerinizi eklenti olarak tanımlayabilirsiniz (bkz: <a href="SsgppIcinEklentiBilesenTanimlamak.html">ssg++ için eklenti bileşen tanımlamak</a>).
-</p>
-</div>
-</div>
 
-<div id="outline-container-sec-4-2" class="outline-3">
-<h3 id="sec-4-2">ssg++ API</h3>
-<div class="outline-text-3" id="text-4-2">
-<p>
-ssg++ iş hatlarının yapabildiği her şeye kendi uygulamanızda kullanmak için bir API ile ulaşmanız mümkün. 
-İş hattının batak elemanını apisink olarak değiştirip <code>List&lt;Token&gt; SozlukApi.runPipeline(String ishatti)</code> metodunu çağırmanız yeterli.
-Örnek olarak badi başlıklarını yazdırmak için kullanılacak <code>badiknk ! metinbtk</code> iş hattında <code>metinbtk</code> bileşeni yerine <code>apisink</code> kullanarak başlıkları içinde <code>Baslik</code> nesneleri olan bir listeye alabiliriz:
-</p>
-<pre class="example">
-List&lt;Token&gt; badilerden = SozlukApi.runPipeline("badiknk ! apisink");
-</pre>
 
-<p>
-ssg++ API ile ilgili daha fazla ayrıntı için (bkz: <a href="ssgpp-api.html">ssg++ API kullanımı</a>)
-</p>
-
-<p>
-<b>ÖNEMLİ NOT</b>: Geliştirici olarak kullanmak için geliştirici lisansı edinmeniz gerekiyor.
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5">Değişim günlüğü</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">Değişim günlüğü</h2>
+<div class="outline-text-2" id="text-6">
 <p>
 Sürümlere ait özellikler ve değişimler için (bkz: <a href="roadmap.html">değişim günlüğü</a>)
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6">Destek olun</h2>
-<div class="outline-text-2" id="text-6">
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7">Destek olun</h2>
+<div class="outline-text-2" id="text-7">
 <p>
 Onur Derin &lt;oderin at users.sourceforge.net&gt; adresine yazarak
 </p>
@@ -643,9 +625,9 @@ Bitcoin bağış adresi: 1D1PX1w317pmib5TwoP7K2chiE1r7CrXyq
 
 
 
-<div id="outline-container-sec-7" class="outline-2">
-<h2 id="sec-7">Lisans</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8">Lisans</h2>
+<div class="outline-text-2" id="text-8">
 <p>
 ssg++ ticari olmayan kişisel kullanım için ücretsiz bir uygulamadır ve kullanımı şu <a href="http://www.binpress.com/license/view/l/f069102d24b7a1d5e3aeb0bf23a621a5">lisans</a>a tabidir. Özetle,
 </p>
@@ -665,9 +647,9 @@ ssg++ ticari olmayan kişisel kullanım için ücretsiz bir uygulamadır ve kull
 </ul>
 </div>
 
-<div id="outline-container-sec-7-1" class="outline-3">
-<h3 id="sec-7-1">Yasal Uyarı</h3>
-<div class="outline-text-3" id="text-7-1">
+<div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1">Yasal Uyarı</h3>
+<div class="outline-text-3" id="text-8-1">
 <p>
 ssg++'nın Ekşi Teknoloji ve Bilişim Ltd. Şti. ile bir bağlantısı yoktur. ekşi sözlük, Ekşi Teknoloji ve Bilişim Ltd. Şti.’nin tescilli bir markasıdır. Uygulama üzerinden erişilebilen ekşi sözlük içeriği, ve bu içeriğe dair tüm haklar Ekşi Teknoloji ve Bilişim Ltd. Şti.’ne aittir.
 </p>

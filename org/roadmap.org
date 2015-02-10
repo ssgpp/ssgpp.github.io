@@ -1,39 +1,65 @@
 #+TITLE: Değişim günlüğü
 
-* DONE Sürüm: 0.5
-  - State "DONE"       from "TODO"           [2009-05-13]
+* DONE Sürüm 1.3 (kod adı: power suser)
+  - State "DONE"       from ""           [2015-01-24 Sat 00:31]
+** Değişiklikler
+- üst panel yeniden düzenlendi.
+- /favori modu/
 
-+ [X] projenin ilk sunumu
-+ [X] proje yönetiminin oluşturulması
-+ [X] haberleşme listesinin açılışı 
+  başlıktaki girdileri favorilenme sayılarına göre sıralayan /favori modu/ eklendi. (Web arayüzünde daha hızlı çalışması için sayfa sayfa çalışıyor.)
+- /yakın takip/
 
-* DONE Sürüm: 0.5.1
-  - State "DONE"       from "TODO"       [2009-06-15]
+  günün başlıklarını bir dosyada belirlenen anahtar kelime listesine göre filtreler. örn. ilan, duyuru, kampanya gibi anahtar kelimelerle günün sizin ilgilerinize daha yakın olan başlıklarını takip edebilirsiniz.
+- /kelime ağacı/
 
-+ [X] Görsel kullanıcı arayüzünün ilk eklenişi, hata giderimleri ve ufak iyileştirmeler.
-    
-* DONE Sürüm: 0.9
-  - State "DONE"       from "TODO"       [2013-07-09]
+  başlığın girdilerinin içinde verilen bir kelimenin geçtiği bütün cümleleri dikkate alarak bir kelime ağacı oluşturur. [[https://eksisozluk.com/entry/48391569][Şu girdideki]] bağlantısı verilmiş resimlerdeki gösterimlere kelime ağacı deniyor. Örn. 'interstellar' başlığında 'film' köküyle 'sonda' gösterim seçeneğini kullanarak kelime ağacı oluştursanız hızlı şekilde genel görüş alabilirsiniz.
 
-  + [X]     Komut satırı odaklı yenilikler
-  + [X]     Yeni bileşenlerin eklenmesi
-  + [X]     Değişmiş sözlük sayfa yapısından dolayı ortaya çıkan sorunların giderilmesi 
-  
-* DONE Sürüm: 0.9.1
-  - State "DONE"       from "TODO"       [2013-07-14]
+#+BEGIN_HTML
+<blockquote class="twitter-tweet" lang="en"><p>TLDR&#39;ciler için yeni sürümün kelime ağacı özelliğine bir örnek. <a href="https://twitter.com/hashtag/ssg?src=hash">#ssg</a>++ <a href="https://twitter.com/hashtag/v1?src=hash">#v1</a>.3 <a href="https://twitter.com/hashtag/powersuser?src=hash">#powersuser</a> <a href="http://t.co/O25LuKHsGT">pic.twitter.com/O25LuKHsGT</a></p>&mdash; ssg++ (@sozlukshell) <a href="https://twitter.com/sozlukshell/status/558948547908104194">January 24, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+#+END_HTML
 
-+ [X] Yeni bileşenler
-+ [X] Küçük iyileştirmeler
+- /sondan başa sıralama/
 
-* DONE Sürüm: 1.0
-  - State "DONE"       from "TODO"       [2014-03-07]
+  başlıkgirdileri bileşenine sıralama seçeneği eklendi. Alabildiği değerler eski-yeni (öntanımlı değeri) ya da yeni-eski.
+  Bu şekilde komut satırında watch gibi bir programla son yazılan girdiler otomatik olarak görülebilir.
+  örn.: watch -b -n 60 'ssg++ yürüt başlıkknk [başlık=6 ağustos 2014 beşiktaş feyenoord maçı] ! başlıkgirdileri [sıralama=yeni-eski, limit=10] ! metinbtk'
+- popüler > /gündemin başucuları/
 
-  + [X] web arayüzünün eklenmesi
+  günün en çok sayıda girdi yazılmış başlıklarındaki beğenilen uzun girdileri getirir.
+- /favorileyenleri/
 
-* DONE Sürüm: 1.1 (kod adı: re-antik)
-  - State "DONE"       from "TODO"       [2014-07-23]
+  yeni eklenen /favorileyenleri/ bileşeni sayesinde /favorileyenleri/ ve /favorileyenlerim/ komutları eklendi. /favorileyenleri/ komutu parametre olarak verilen bir yazarı en çok favorileyen kullanıcıları listeler.
 
-+ [X] antik'in kapanması sonrası etkilenen bileşenlerin beta'ya göre değiştirilmesi
+
+* DONE Sürüm 1.2.1
+  - State "DONE"       from ""           [2014-08-02 Sat 15:51]
+** Değişiklikler
+ssg++'daki yenilikler/değişiklikler
+   - yapılandırma dosyasına nabız özelliğiyle ilgili parametreler eklendi.
+
+   # Son nabiz olcme araligi boyunca en çok girdi yazilmis basliklarini getiren ust menudeki nabiz islevi etkinlestirilsin mi? Evet icin 1, hayir icin 0.
+   NabizOlcumu=1
+   # Nabiz olcme periyodu (dakika cinsinden). 10'dan kucuk olamaz. Komut satırından ilk argüman olarak da verilebilir. (örn. java -jar ssgpp.jar 10)
+   NabizAraligi=10
+   # Eger NabizOlcumu=1 ise ve UyarmaProgrami da verilmisse, nabiz olcme araligi (NabizAraligi) suresince dakikada ortalama NabizEsigi'nden fazla girdi yazilmis basliklar ile ilgili UyarmaProgrami ile uyari yapilir. 
+   # Dogal sayi degerleri alabilir.
+   # Ontanimli deger: 2 (10 dk'da 20'den fazla girdi yazilmasi durumunda uyarir.)
+   # NabizEsigi'ni 1000 gibi buyuk bir deger yaparak bu uyarilari kapatabilirsiniz.
+   NabizEsigi=2
+   # Otomatik olarak yeni mesaj olup olmadigi kontrol edilsin mi? Evet icin 1, hayir icin 0. 
+   # Mesaj kontrolu mesaj yesilini sondurur. 
+   # Mesaj kontrol araligi NabizAraligi+5'tir. Ontanimli degeri 15 dk'dir.
+   # Deger 1 olarak verilirse UyarmaProgrami'nin da asagida verilmesi gerekir.
+   MesajKontrolu=1
+
+   - web arayüzünde başlığın pop-up menüsünde kesme işareti içeren başlıklarda yaşanan sorun düzeltildi.
+   - iş hattı kısayolları listesi 1.0 sürümünden beri ilk kez düzenlendi.
+
+ekşi sözlük kaynaklı değişiklikler
+   - tsllbn'nin formülü istatistiklerden kaldırıldı.
+   - debe sayfasının farklı gösterilme durumlarından kaynaklanan ilk 10 debe girdisinin iki kez tekrar etmesi sorunu düzeltildi.
+
 
 * DONE Sürüm 1.2 (kod adı: antik++)
   - State "DONE"       from ""           [2014-07-28 Mon 22:23]
@@ -73,62 +99,45 @@ küçük değişiklikler:
 ** Bilinen sorunlar/eksiklikler
 
 + [ ] girdi yazma
-* DONE Sürüm 1.2.1
-  - State "DONE"       from ""           [2014-08-02 Sat 15:51]
-** Değişiklikler
-ssg++'daki yenilikler/değişiklikler
-   - yapılandırma dosyasına nabız özelliğiyle ilgili parametreler eklendi.
-
-   # Son nabiz olcme araligi boyunca en çok girdi yazilmis basliklarini getiren ust menudeki nabiz islevi etkinlestirilsin mi? Evet icin 1, hayir icin 0.
-   NabizOlcumu=1
-   # Nabiz olcme periyodu (dakika cinsinden). 10'dan kucuk olamaz. Komut satırından ilk argüman olarak da verilebilir. (örn. java -jar ssgpp.jar 10)
-   NabizAraligi=10
-   # Eger NabizOlcumu=1 ise ve UyarmaProgrami da verilmisse, nabiz olcme araligi (NabizAraligi) suresince dakikada ortalama NabizEsigi'nden fazla girdi yazilmis basliklar ile ilgili UyarmaProgrami ile uyari yapilir. 
-   # Dogal sayi degerleri alabilir.
-   # Ontanimli deger: 2 (10 dk'da 20'den fazla girdi yazilmasi durumunda uyarir.)
-   # NabizEsigi'ni 1000 gibi buyuk bir deger yaparak bu uyarilari kapatabilirsiniz.
-   NabizEsigi=2
-   # Otomatik olarak yeni mesaj olup olmadigi kontrol edilsin mi? Evet icin 1, hayir icin 0. 
-   # Mesaj kontrolu mesaj yesilini sondurur. 
-   # Mesaj kontrol araligi NabizAraligi+5'tir. Ontanimli degeri 15 dk'dir.
-   # Deger 1 olarak verilirse UyarmaProgrami'nin da asagida verilmesi gerekir.
-   MesajKontrolu=1
-
-   - web arayüzünde başlığın pop-up menüsünde kesme işareti içeren başlıklarda yaşanan sorun düzeltildi.
-   - iş hattı kısayolları listesi 1.0 sürümünden beri ilk kez düzenlendi.
-
-ekşi sözlük kaynaklı değişiklikler
-   - tsllbn'nin formülü istatistiklerden kaldırıldı.
-   - debe sayfasının farklı gösterilme durumlarından kaynaklanan ilk 10 debe girdisinin iki kez tekrar etmesi sorunu düzeltildi.
 
 
-* DONE Sürüm 1.3 (kod adı: power suser)
-  - State "DONE"       from ""           [2015-01-24 Sat 00:31]
-** Değişiklikler
-- üst panel yeniden düzenlendi.
-- /favori modu/
+* DONE Sürüm: 1.1 (kod adı: re-antik)
+  - State "DONE"       from "TODO"       [2014-07-23]
 
-  başlıktaki girdileri favorilenme sayılarına göre sıralayan /favori modu/ eklendi. (Web arayüzünde daha hızlı çalışması için sayfa sayfa çalışıyor.)
-- /yakın takip/
++ [X] antik'in kapanması sonrası etkilenen bileşenlerin beta'ya göre değiştirilmesi
 
-  günün başlıklarını bir dosyada belirlenen anahtar kelime listesine göre filtreler. örn. ilan, duyuru, kampanya gibi anahtar kelimelerle günün sizin ilgilerinize daha yakın olan başlıklarını takip edebilirsiniz.
-- /kelime ağacı/
 
-  başlığın girdilerinin içinde verilen bir kelimenin geçtiği bütün cümleleri dikkate alarak bir kelime ağacı oluşturur. [[https://eksisozluk.com/entry/48391569][Şu girdideki]] bağlantısı verilmiş resimlerdeki gösterimlere kelime ağacı deniyor. Örn. 'interstellar' başlığında 'film' köküyle 'sonda' gösterim seçeneğini kullanarak kelime ağacı oluştursanız hızlı şekilde genel görüş alabilirsiniz.
+* DONE Sürüm: 1.0
+  - State "DONE"       from "TODO"       [2014-03-07]
 
-#+BEGIN_HTML
-<blockquote class="twitter-tweet" lang="en"><p>TLDR&#39;ciler için yeni sürümün kelime ağacı özelliğine bir örnek. <a href="https://twitter.com/hashtag/ssg?src=hash">#ssg</a>++ <a href="https://twitter.com/hashtag/v1?src=hash">#v1</a>.3 <a href="https://twitter.com/hashtag/powersuser?src=hash">#powersuser</a> <a href="http://t.co/O25LuKHsGT">pic.twitter.com/O25LuKHsGT</a></p>&mdash; ssg++ (@sozlukshell) <a href="https://twitter.com/sozlukshell/status/558948547908104194">January 24, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-#+END_HTML
+  + [X] web arayüzünün eklenmesi
 
-- /sondan başa sıralama/
 
-  başlıkgirdileri bileşenine sıralama seçeneği eklendi. Alabildiği değerler eski-yeni (öntanımlı değeri) ya da yeni-eski.
-  Bu şekilde komut satırında watch gibi bir programla son yazılan girdiler otomatik olarak görülebilir.
-  örn.: watch -b -n 60 'ssg++ yürüt başlıkknk [başlık=6 ağustos 2014 beşiktaş feyenoord maçı] ! başlıkgirdileri [sıralama=yeni-eski, limit=10] ! metinbtk'
-- popüler > /gündemin başucuları/
+* DONE Sürüm: 0.9.1
+  - State "DONE"       from "TODO"       [2013-07-14]
 
-  günün en çok sayıda girdi yazılmış başlıklarındaki beğenilen uzun girdileri getirir.
-- /favorileyenleri/
++ [X] Yeni bileşenler
++ [X] Küçük iyileştirmeler
 
-  yeni eklenen /favorileyenleri/ bileşeni sayesinde /favorileyenleri/ ve /favorileyenlerim/ komutları eklendi. /favorileyenleri/ komutu parametre olarak verilen bir yazarı en çok favorileyen kullanıcıları listeler.
+
+* DONE Sürüm: 0.9
+  - State "DONE"       from "TODO"       [2013-07-09]
+
+  + [X]     Komut satırı odaklı yenilikler
+  + [X]     Yeni bileşenlerin eklenmesi
+  + [X]     Değişmiş sözlük sayfa yapısından dolayı ortaya çıkan sorunların giderilmesi 
+  
+
+* DONE Sürüm: 0.5.1
+  - State "DONE"       from "TODO"       [2009-06-15]
+
++ [X] Görsel kullanıcı arayüzünün ilk eklenişi, hata giderimleri ve ufak iyileştirmeler.
+    
+
+* DONE Sürüm: 0.5
+  - State "DONE"       from "TODO"           [2009-05-13]
+
++ [X] projenin ilk sunumu
++ [X] proje yönetiminin oluşturulması
++ [X] haberleşme listesinin açılışı 
+

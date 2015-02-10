@@ -1,633 +1,1262 @@
 #+TITLE: ssg++ bileşenleri
-
 * ssg++ bileşenleri
 
-Aşağıda ssg++ için tanımlanmış, iş hattı oluştururken kullanabileceğiniz bileşenleri bulabilirsiniz.
-
-* Kaynaklar (knk)
-
+Aşağıda ssg++ ve sacre için tanımlanmış, iş hattı oluştururken kullanabileceğiniz bileşenleri bulabilirsiniz.
 Kaynaklar iş hatlarının başlarında bulunan bileşenlerdir. Değişik sorgularla veri çekip iş hattının geri kalanını beslerler.
-
-** hayvanknk 
-| Adı            | hayvanknk                                                                          |
-| İşlevi         | ekşi sözlük'teki /hayvan ara/ formunun sağladığı şekilde arama yapılmasını sağlar. |
-| Girdi kapısı   | -                                                                                  |
-| Çıktı kapısı   | 1 tane. Kapıdan geçen veri tipi ~Başlık~.                                          |
-| Örnek kullanım | -                                                                                  |
-
-Parametreleri
-| parametre  | alabildiği değerler                   | açıklama                                                                                         | varsayılan değeri |
-| <l>        | <l>                                   | <l>                                                                                              | <l>               |
-|------------+---------------------------------------+--------------------------------------------------------------------------------------------------+-------------------|
-| şey        | /kısıtlama yok/                       | verilen kelimeleri içeren başlıkları arar. '*' kullanılabilir.                                   | /yok/             |
-| yazar      | /kısıtlama yok/                       | verilen yazara ait başlıkları buldurur.                                                          | /yok/             |
-| tarih      | gg.aa.yyyy, aa.yyyy, yyyy, bugün, dün | verilen tarihte girdileri başlıkları buldurur.                                                   | /yok/             |
-| sıralama   | yeni-eski, alfa-beta, gudik, rastgele | giriş zamanına göre, alfabetik olarak, en çok girdi yapılan başlığa göre ya da rastgele sıralar. | yeni-eski         |
-| limit      | 50, 100, 150, 200, ... 50n            | aranan başlık adetini kısıtlar. 50 ve katları olmalıdır.                                         | sonsuz            |
-| güzelinden | evet, hayır                           | güzel girdileri olan başlıkları buldurur.                                                        | hayır             |
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-hayvanknk.png :cmdline -r -s 0.8
-        +----------------+
-        |                |
-        |                |   Başlık
-        |   hayvanknk    |>----
-        |                |
-        |                |
-        +----------------+
-#+END_SRC
-
-
-** badiknk 
-| Adı            | badiknk                                                                                         |
-| İşlevi         | ekşi sözlük'teki /badi/ düğmesinin sağladığı şekilde son badi başlıklarının bulunmasını sağlar. |
-| Girdi kapısı   | -                                                                                               |
-| Çıktı kapısı   | 1 tane. Kapıdan geçen veri tipi ~Başlık~.                                                       |
-| Örnek kullanım | -                                                                                               |
-| Parametreleri  | -                                                                                               |
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-badiknk.png :cmdline -r -s 0.8
-        +----------------+
-        |                |
-        |                |   Başlık
-        |    badiknk     |>----
-        |                |
-        |                |
-        +----------------+
-#+END_SRC
-
-** başlıkknk 
-| Adı            | başlıkknk                                                     |
-| İşlevi         | verilen parametrelere göre Başlık tipinde bir veri oluşturur. |
-| Girdi kapısı   | -                                                             |
-| Çıktı kapısı   | 1 tane. Kapıdan geçen veri tipi ~Başlık~.                     |
-| Örnek kullanım | -                                                             |
-
-Parametreleri
-| parametre      | alabildiği değerler | açıklama                                                                                           | varsayılan değeri |
-| <l>            | <l>                 | <l>                                                                                                | <l>               |
-|----------------+---------------------+----------------------------------------------------------------------------------------------------+-------------------|
-| başlık         | /kısıtlama yok/     | oluşturulmak istenen başlığın adı.                                                                 | ekşi sözlük       |
-| dosyadanbaşlık | /kısıtlama yok/     | bir temaya ait birden fazla başlığı çıktı kapısına yazmak için başlıkların listelendiği dosya adı. | -                 |
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-baslikknk.png :cmdline -r -s 0.8
-        +----------------+
-        |                |
-        |                |   Başlık
-        |   başlıkknk    |>----
-        |                |
-        |                |
-        +----------------+
-#+END_SRC
-
-** istatistikknk 
-| Adı            | istatistikknk                                                      |
-| İşlevi         | geçen haftanın girdilerinden istatistiklerde görünenleri listeler. |
-| Girdi kapısı   | -                                                                  |
-| Çıktı kapısı   | 1 tane. Kapıdan geçen veri tipi ~Başlık~.                          |
-| Örnek kullanım | -                                                                  |
-
-
-Parametreleri
-| parametre | alabildiği değerler        | açıklama                                                                                  | varsayılan değeri |
-| <l>       | <l>                        | <l>                                                                                       | <l>               |
-|-----------+----------------------------+-------------------------------------------------------------------------------------------+-------------------|
-| tip       | debe, ghebe, ghedçe, gheke | dünün en beğenilen, geçen haftanın en beğenilen, en dikkat çeken, en kötülenmiş girdileri | ghebe             |
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-istatistikknk.png :cmdline -r -s 0.8
-        +-------------------+
-        |                   |
-        |                   |   Başlık
-        |   istatistikknk   |>----
-        |                   |
-        |                   |
-        +-------------------+
-#+END_SRC
-
-
-** indeksknk 
-/TODO: Dökümantasyon eklenecek./
-
-
-** dosyaknk 
-| Adı            | dosyaknk                                          |
-| İşlevi         | verilen dosyadaki girdileri çıkış kapısına yazar. |
-| Girdi kapısı   | -                                                 |
-| Çıktı kapısı   | 1 tane. Kapıdan geçen veri tipi ~Girdi~.          |
-| Örnek kullanım | -                                                 |
-
-Parametreleri
-| parametre | alabildiği değerler                                                                                       | açıklama                      | varsayılan değeri |
-| <l>       | <l>                                                                                                       | <l>                           | <l>               |
-|-----------+-----------------------------------------------------------------------------------------------------------+-------------------------------+-------------------|
-| dosya     | dosyabtk ile oluşturulmuş XML biçimli dosya adı (dosya yolu da mutlak ya da göreceli olarak verilebilir.) | okunmak istenen dosyanın adı. | dosyabtk.xml      |
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-dosyaknk.png :cmdline -r -s 0.8
-        +----------------+
-        |                |
-        |                |   Girdi
-        |    dosyaknk    |>----
-        |                |
-        |                |
-        +----------------+
-#+END_SRC
-
-
-** başlıkfarkknk 
-/TODO: Dökümantasyon eklenecek./
-
-
-** cımbızknk 
-/TODO: Dökümantasyon eklenecek./
-
-
-* Dönüştürücüler
-
-Dönüştürücüler iş hatlarının ortalarında bulunan veri işleyip sonucu muhtemelen başka bir veri tipine sahip sonucu çıktı olarak üreten bileşenlerdir.
-
-** başlıkgirdileri 
-| Adı            | başlıkgirdileri                                               |
-| İşlevi         | girdi kapısındaki başlığa ait girdileri çıktısında oluşturur. |
-| Girdi kapısı   | 1 tane. Kapıdan geçen veri tipi ~Başlık~.                     |
-| Çıktı kapısı   | 1 tane. Kapıdan geçen veri tipi ~Girdi~.                      |
-| Örnek kullanım | -                                                             |
-
-Parametreleri
-| parametre | alabildiği değerler | açıklama                              | varsayılan değeri |
-| <l>       | <l>                 | <l>                                   | <l>               |
-|-----------+---------------------+---------------------------------------+-------------------|
-| limit     | /kısıtlama yok/     | başlığa ait indirilecek girdi sayısı. | tümü (limitsiz)   |
-
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-baslikgirdileri.png :cmdline -r -s 0.8
-          +------------------+
-          |                  |
- Başlık   |                  |   Girdi
-     -----+> başlıkgirdileri |>----
-          |                  |
-          |                  |
-          +------------------+
-#+END_SRC
-
-
-
-** girdibkzları 
-| Adı            | girdibkzları                                                                               |
-| İşlevi         | girdi kapısındaki girdinin bkz ve görünmez bkz verilmiş başlıklarını çıktı kapısına yazar. |
-| Girdi kapısı   | 1 tane. Kapıdan geçen veri tipi ~Girdi~.                                                   |
-| Çıktı kapısı   | 1 tane. Kapıdan geçen veri tipi ~Başlık~.                                                  |
-| Örnek kullanım | -                                                                                          |
-| Parametreleri  | -                                                                                          |
-
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-girdibkzlari.png :cmdline -r -s 0.8
-          +------------------+
-          |                  |
-   Girdi  |                  |   Başlık
-     -----+>   girdibkzları  |>----
-          |                  |
-          |                  |
-          +------------------+
-#+END_SRC
-
-
-
-
-** +anketçi+ 
-/Kullanımdan kalktı./ (bkz: [[girdibkzları]]) (bkz: [[histogram]]) ~anketçi~ $\rightarrow$ ~girdibkzları ! histogram~
-| Adı            | anketçi                                                                                                                             |
-| İşlevi         | girdi kapısındaki girdilerde bkz veya görünmez bkz verilmiş başlıkları bkz verilme sayısına göre sıralayıp grafik verisi oluşturur. |
-| Girdi kapısı   | 1 tane. Kapıdan geçen veri tipi ~Girdi~.                                                                                            |
-| Çıktı kapısı   | 1 tane. Kapıdan geçen veri tipi ~Grafik Verisi~.                                                                                    |
-| Örnek kullanım | ~yürüt başlıkknk [başlık=sözlükçülerin en iyi 10 dizi listesi] ! başlıkgirdileri ! anketçi ! grafikbtk~                             |
-| Parametreleri  | -                                                                                                                                   |
-
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-anketci.png :cmdline -r -s 0.8
-          +--------------+
-          |              |
-  Girdi   |              |   Grafik Verisi
-     -----+>   anketçi   |>----
-          |              |
-          |              |
-          +--------------+
-#+END_SRC
-
-
-** histogram 
-| Adı            | histogram                                                                                                                                                                                                                                                                                                                                                                                                           |
-| İşlevi         | kategori zaman olarak seçilmişse girdi kapısındaki girdilerin sayılarını parametre olarak verilen zaman çözünürlüğüne (yıl, ay, hafta, gün) göre grafik verisi haline getirir. kategori yazar/başlık olarak seçilmişse yazarına/başlığına göre girdileri sayarak grafik verisi oluşturur. Girdi kapısındaki veri tipi Başlık ise verilen parametreler dikkate alınmaz histogram başlık kategorisine göre çıkarılır. |
-| Girdi kapısı   | 1 tane. Kapıdan geçen veri tipi ~Girdi~ ya da ~Başlık~.                                                                                                                                                                                                                                                                                                                                                             |
-| Çıktı kapısı   | 1 tane. Kapıdan geçen veri tipi ~Grafik Verisi~.                                                                                                                                                                                                                                                                                                                                                                    |
-| Örnek kullanım | bir başlığa en fazla sayıda girdi yazmış yazarlar:                                                                                                                                                                                                                                                                                                                                                                  |
-|                | ~yürüt başlıkknk [başlık=minimal öykü denemeleri] ! başlıkgirdileri ! histogram [kategori=yazar] ! grafikbtk~                                                                                                                                                                                                                                                                                                       |
-|                | bir başlığa zaman içinde girilmiş girdi sayıları:                                                                                                                                                                                                                                                                                                                                                                   |
-|                | ~yürüt başlıkknk [başlık=behzat ç.] ! başlıkgirdileri ! histogram [kategori=zaman, çözünürlük=hafta] ! grafikbtk~                                                                                                                                                                                                                                                                                                   |
-|                | suser1 kullanıcısı girdilerini en çok günün hangi saatlerinde girmiş:                                                                                                                                                                                                                                                                                                                                               |
-|                | ~hayvanknk [yazar=suser1] ! başlıkgirdileri ! histogram [kategori=zaman, çözünürlük=saat] ! grafikbtk~                                                                                                                                                                                                                                                                                                              |
-
-
-Parametreleri
-| parametre  | alabildiği değerler            | açıklama                                                                                                                                                                                                                     | varsayılan değeri |
-| <l>        | <l>                            | <l>                                                                                                                                                                                                                          | <l>               |
-|------------+--------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------|
-| eksen      | kategori ya da zaman           | girdilerin gruplandırılacağı eksenin tipini belirler. kategori: bir başka parametre ile verilecek olan kategori tipine göre grafik verisi oluşturur. zaman: girdileri giriş zamanlarına göre grafik verisi oluşturur.        | kategori          |
-| kategori   | yazar ya da başlık             | yalnızca eksen olarak kategori seçilmişse kullanılabilir, kategori tipini belirler.  yazar: girdileri yazarlarına göre sayarak grafik verisi oluşturur. başlık: girdileri başlıklarına göre sayarak zaman bilgisi oluşturur. | yazar             |
-| çözünürlük | yıl, ay, hafta, gün ya da saat | yalnızca eksen olarak zaman seçilmişse kullanılabilir. zamana bağlı veriyi seçilen çözünürlükte gruplayıp toplayarak grafik verisi oluşturur.                                                                                | ay                |
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-histogram.png :cmdline -r -s 0.8
-                       +--------------+
-                       |              |
-  Girdi ya da Başlık   |              |   Grafik Verisi
-                  -----+>  histogram  |>----
-                       |              |
-                       |              |
-                       +--------------+
-#+END_SRC
-
-
-** alanseçici 
-| Adı            | alanseçici                                                                                                                                                                                                                                    |
-| İşlevi         | girdi kapısındaki tokenlerin parametre olarak verilen alanındaki değere sahip o alan tipinde yeni bir veri oluşturup çıktı kapısına gönderir.                                                                                                 |
-| Girdi kapısı   | 1 tane. Kapıdan geçen veri tipi ~Token~.                                                                                                                                                                                                      |
-| Çıktı kapısı   | 1 tane. Kapıdan geçen veri tipi değişkendir. Parametre olarak seçilen alan tipindedir. /Alan/.                                                                                                                                                |
-| Örnek kullanım | lost başlığına yazmış yazarlar:                                                                                                                                                                                                               |
-|                | ~yürüt başlıkknk [başlık=lost] ! başlıkgirdileri ! alanseçici [alan=yazar] ! kümeflt ! metinbtk~                                                                                                                                              |
-|                | bir başlıktaki youtube bağlantıları:                                                                                                                                                                                                          |
-|                | ~ssg++ yürüt başlıkknk [başlık=insanı mutlu eden şarkılar] ! başlıkgirdileri ! alanseçici [alan=disariBaglantilar] ! genelflt [alan=text, değer=http://www.youtube.com, benzerlik=sonuekli] ! dosyabtk [dosya=basligin-youtube-linkleri.txt]~ |
-
-Parametreleri
-| parametre | alabildiği değerler                                                                                                                                                                                      | açıklama                                                          | varsayılan değeri |
-| <l>       | <l>                                                                                                                                                                                                      | <l>                                                               | <l>               |
-|-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+-------------------|
-| alan      | Girdi kapısındaki veri tipinin alanlarından biri. Örneğin, Girdi tipindeki veriler için alan şu değerleri alabilir: yazar, baslik, id, girdiSirasi, bkzBasliklari, gorunmezBkzBasliklari, disBaglantilar | Girdi kapısındaki verilerin hangi alanının seçileceğini belirler. | yazar             |
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-alansecici.png :cmdline -r -s 0.8
-          +-----------------+
-          |                 |
-  Token   |                 |   ''Alan''
-     -----+>   alanseçici   |>----
-          |                 |
-          |                 |
-          +-----------------+
-
-Somut örnek:
-          +------------------------------+
-          |                              |
-  Girdi   |                              |   Başlık
-     -----+>   alanseçici [alan=baslik]  |>----
-          |                              |
-          |                              |
-          +------------------------------+
-
-#+END_SRC
-
-
-
-** maçsonucu 
-
-| Adı            | maçsonucu                                                                                                                                                 |
-| İşlevi         | girdi kapısındaki girdinin içinde skor geçen cümleleri çıktı kapısına yazar. aralarında tire olan üçe kadar hanesi olan iki sayıyı skor olarak algılanır. |
-| Girdi kapısı   | 1 tane. Kapıdan geçen veri tipi ~Girdi~.                                                                                                                  |
-| Çıktı kapısı   | 1 tane. Kapıdan geçen veri tipi ~Metin~.                                                                                                                  |
-| Örnek kullanım | ~yürüt başlıkknk [başlık=11 haziran 2008 isviçre türkiye maçı] ! başlıkgirdileri ! maçsonucu ! metinbtk~                                                  |
-| Parametreleri  | -                                                                                                                                                         |
-
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-macsonucu.png :cmdline -r -s 0.8
-         +----------------+
-         |                |
- Girdi   |                |    Metin
-    -----+>   maçsonucu   |>-----
-         |                |
-         |                |
-         +----------------+
-#+END_SRC
-
-
-
-
-
-
-* Filtreler (flt)
-
+Dönüştürücüler iş hatlarının ortalarında bulunan veri işleyip muhtemelen başka bir veri tipine sahip sonucu çıktı olarak üreten bileşenlerdir.
 Filtreler iş hatlarının ortalarında bulunan ve aynı tip girdi ve çıktı kapılarına sahip bileşenlerdir. İstenen özellikteki tokenleri geçirip geri kalanlarını yutarlar.
-
-** genelflt 
-| Adı            | genelflt                                                                                                                                                                                                                                     |
-| İşlevi         | girdi kapısındaki tokenin ~alan~ parametresi ile verilen alanındaki değer, ~değer~ parametresi ile verilen değerle eşleşiyorsa çıktı kapısına geçirir, değilse yutar. eşleşme olan tokenlere eşleşmeyi sağlayan değer etiket olarak eklenir. |
-| Girdi kapısı   | 1 tane. Kapıdan geçen veri tipi ~Token~.                                                                                                                                                                                                     |
-| Çıktı kapısı   | 1 tane. Kapıdan geçen veri tipi ~Token~.                                                                                                                                                                                                     |
-| Örnek kullanım | lost başlığına 2011'de girilmiş girdiler:                                                                                                                                                                                                    |
-|                | ~yürüt hayvanknk [şey=lost, tarih=2011] ! genelflt [alan=baslik, değer=lost] ! başlıkgirdileri ! dosyabtk [dosya=lost2011.xml]~                                                                                                              |
-|                | barcelona'nın evinde oynadığı el classico maçları:                                                                                                                                                                                           |
-|                | ~yürüt hayvanknk [şey=barcelona real madrid maçı] ! genelflt [alan=baslik, değer=*barcelona*real madrid*] ! metinbtk~                                                                                                                        |
-|                | dün yazılan girdilerden içinde barack obama geçenler:                                                                                                                                                                                        |
-|                | ~yürüt hayvanknk [tarih=dün] ! başlıkgirdileri ! genelflt [alan=girdi, değer=*barack obama*] ! metinbtk~                                                                                                                                     |
-|                | dünün en beğenilen entry'lerindeki suser1 yazarının girdileri:                                                                                                                                                                               |
-|                | ~yürüt istatistikknk [tip=debe] ! başlıkgirdileri ! genelflt [alan=yazar, değer=suser1] ! metinbtk~                                                                                                                                          |
-|                | suser'in muhtemelen tuttuğu takım                                                                                                                                                                                                            |
-|                | ~yürüt hayvanknk [yazar=suser] ! başlıkgirdileri ! genelflt [alan=baslik+girdi, dosyadandeğer=turkiye_futbol_takimlari.tema] ! histogram [kategori=etiket] ! grafikbtk~                                                                      |
-
-
-Parametreleri
-| parametre     | alabildiği değerler                   | açıklama                                                                                                                                 | varsayılan değeri                                                                                                                                                                                                                                 |
-| <l>           | <l>                                   | <l>                                                                                                                                      | <l>                                                                                                                                                                                                                                               |
-|---------------+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| alan          | baslik, girdi ya da yazar             | filtreleme işleminde dikkate alınacak alan. Birden fazla alan aralarına artı (+) işareti konularak seçilebilir. örn. "alan=baslik+girdi" | yazar                                                                                                                                                                                                                                             |
-| değer         | /kısıtlama yok/                       | filtreden geçebilecek tokenlerin ~alan~larında sahip olmaları gereken değer. asteriksler kullanılabilir.                                 | ekşisözlük                                                                                                                                                                                                                                        |
-| dosyadandeğer | /kısıtlama yok/                       | birden fazla değer parametresi geçirmek için bir tema dosyası verilebilir.                                                               | -                                                                                                                                                                                                                                                 |
-| benzerlik     | aynısı, sonuekli, başısonuekli, ayrık |                                                                                                                                          | varsayılan değeri seçilen alana göre değişiyor. baslik ve yazar için ~aynısı~, girdi için ~ayrık~ değerlerini alır.                                                                                                                               |
-|               |                                       |                                                                                                                                          | aynısı: tokenin alanın değerinin parametre olarak verilen değerle/değerlerle aynı olduğu durumda geçirilmesini sağlar (örn. 'beşiktaş' sadece 'beşiktaş'a eşlenebilir).                                                                           |
-|               |                                       |                                                                                                                                          | sonuekli: alan değerinin metni içinde eşleştirme yapıp, eşlemenin sonunda verilen değer parametresinden fazla karakter olması durumda da geçirilmesini sağlar (örn. beşik beşiktaş'la eşleştirilebilir).                                          |
-|               |                                       |                                                                                                                                          | başısonuekli: alan değerinin metni içinde eşleştirme yapıp, eşleşmenin başında ya da sonunda verilen değer parametresinden fazla karakter olması durumda geçirilmesini sağlar (örn. eşik beşiktaş'la eşleştirilebilir).                           |
-|               |                                       |                                                                                                                                          | ayrık: alan değerinin metni içinde eşleştirme yapıp, eşleşmenin başında boşluk, sonunda da boşluk ya da noktalama işaretleri olması durumda geçirilmesini sağlar (örn. 'beşiktaş' 'beşiktaş gibi' ile eşlenebilir ama 'beşiktaşlı' ile eşlenmez). |
-| eleme         | ~uymayan~ ya da ~uyan~                | tokenin verilen kriterlere uyduğu durumda mı yoksa uymadığı durumunda mı eleneceğini belirler.                                           | uymayan                                                                                                                                                                                                                                           |
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-genelflt.png :cmdline -r -s 0.8
-          +---------------------+
-          |                     |
-  Token   |                     |   Token
-     -----+>     genelflt       |>----
-          |                     |
-          |                     |
-          +---------------------+
-#+END_SRC
-
-
-
-** kümeflt 
-| Adı            | kümeflt                                                                                                               |
-| İşlevi         | girdi kapısındaki token listesini küme olarak çıktısına yazar, diğer bir deyişle yinelenen tokenler çıktıya yazılmaz. |
-| Girdi kapısı   | 1 tane. Kapıdan geçen veri tipi ~Token~.                                                                              |
-| Çıktı kapısı   | 1 tane. Kapıdan geçen veri tipi ~Token~.                                                                              |
-| Örnek kullanım | linux başlığındaki bkz kümesi:                                                                                        |
-|                | ~yürüt başlıkknk[başlık=linux] ! başlıkgirdileri ! girdibkzları ! kümeflt ! metinbtk~                                 |
-| Parametreleri  | -                                                                                                                     |
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-kumeflt.png :cmdline -r -s 0.8
-          +---------------------+
-          |                     |
-  Token   |                     |   Token
-     -----+>     kümeflt        |>----
-          |                     |
-          |                     |
-          +---------------------+
-#+END_SRC
-
-
-
-
-** tarihflt 
-| Adı            | tarihflt                                                                                                                                                                              |
-| İşlevi         | girdi kapısındaki girdinin tarihi parametre olarak verilen tarih aralığındaysa çıktı kapısına geçirir, değilse yutar. başlangıç tarihi aralığa dahilken, bitiş tarihi dahil değildir. |
-| Girdi kapısı   | 1 tane. Kapıdan geçen veri tipi ~Girdi~.                                                                                                                                              |
-| Çıktı kapısı   | 1 tane. Kapıdan geçen veri tipi ~Girdi~.                                                                                                                                              |
-| Örnek kullanım | linux.xml dosyasındaki nisan 2011'de düzenlenmiş girdiler:                                                                                                                            |
-|                | ~yürüt dosyaknk[dosya=linux.xml] ! tarihflt[baş=04.2011, son=05.2011, tip=düzenleme] ! metinbtk~                                                                                      |
-
-
-Parametreleri
-| parametre | alabildiği değerler                   | açıklama                                                                                                  | varsayılan değeri |
-| <l>       | <l>                                   | <l>                                                                                                       | <l>               |
-|-----------+---------------------------------------+-----------------------------------------------------------------------------------------------------------+-------------------|
-| baş       | gg.aa.yyyy, aa.yyyy, yyyy, bugün, dün | geçirilmesi istenen tarih aralığının başlangıcı.                                                          | 1999              |
-| son       | gg.aa.yyyy, aa.yyyy, yyyy, bugün, dün | geçirilmesi istenen tarih aralığının sonu.                                                                | yarın             |
-| tip       | giriş ya da düzenleme                 | filtreleme işinin girdinin giriş tarihine mi yoksa düzenleme tarihine mi bakılarak yapılacağını belirler. | giriş             |
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-tarihflt.png :cmdline -r -s 0.8
-          +---------------------+
-          |                     |
-  Girdi   |                     |   Girdi
-     -----+>     tarihflt       |>----
-          |                     |
-          |                     |
-          +---------------------+
-#+END_SRC
-
-
-
-** genelsıralayıcı 
-/TODO: Dökümantasyon eklenecek./
-
-
-** +başlıkflt+ 
-/Kullanımdan kalktı./ (bkz: [[genelflt]]) ~başlıkflt [başlık=lost]~ $\rightarrow$ ~genelflt [alan=baslik, değer=lost]~
-
-| Adı            | başlıkflt                                                                                                            |
-| İşlevi         | girdi kapısındaki başlığın adı parametre olarak verilen başlıkla aynıysa çıktı kapısına geçirir, değilse yutar.      |
-| Girdi kapısı   | 1 tane. Kapıdan geçen veri tipi ~Başlık~.                                                                            |
-| Çıktı kapısı   | 1 tane. Kapıdan geçen veri tipi ~Başlık~.                                                                            |
-| Örnek kullanım | ~yürüt hayvanknk [şey=lost, tarih=2011] ! başlıkflt [başlık=lost] ! başlıkgirdileri ! dosyabtk [dosya=lost2011.xml]~ |
-|                | ~yürüt hayvanknk [şey=barcelona real madrid maçı] ! başlıkflt [başlık=*barcelona*real madrid*] ! metinbtk~           |
-
-Parametreleri
-| parametre | alabildiği değerler | açıklama                                | varsayılan değeri |
-| <l>       | <l>                 | <l>                                     | <l>               |
-|-----------+---------------------+-----------------------------------------+-------------------|
-| başlık    | /kısıtlama yok/     | filtreden geçmesi istenen başlığın adı. | ekşi sözlük       |
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-baslikflt.png :cmdline -r -s 0.8
-          +---------------------+
-          |                     |
-  Başlık  |                     |   Başlık
-     -----+>     başlıkflt      |>----
-          |                     |
-          |                     |
-          +---------------------+
-#+END_SRC
-
-
-
-
-* Gözlemciler (gzc)
-
 Gözlemciler iş hatlarının ortalarında bulunan, girdi kapılarındaki veriyi aynen çıktı kapısına yazan bileşenlerdir. Dolayısıyla girdi ve çıktı kapıları aynı tiptedir. Üstlerinden geçen veriyi kullanarak bazı işler yaparlar.
-
-** girdiresimlerigzc 
-| Adı            | girdiresimlerigzc                                                                                                                                                                                                                                                                                                                                                                                                   |
-| İşlevi         | girdi kapısındaki girdinin içindeki resimlere verilmiş bağlantılardaki resimleri, twitter/facebook bağlantılarındaki durum bilgisi ve varsa resimleri mevcut klasöre indirir. Tanımlı resim dosyası uzantıları: .jpg, .gif, .png, .flv. İndirilen dosya başlık adı - girdi numarası - resmin orjinal adı şeklinde isimlendirilir. Twitter durumu tvit-tvit\_no.xml, varsa resmi tvit-tvit\_no dosyasına kaydedilir. |
-| Girdi kapısı   | 1 tane. Kapıdan geçen veri tipi ~Girdi~.                                                                                                                                                                                                                                                                                                                                                                            |
-| Çıktı kapısı   | 1 tane. Kapıdan geçen veri tipi ~Girdi~.                                                                                                                                                                                                                                                                                                                                                                            |
-| Örnek kullanım | ~başlıkknk [başlık=charlize theron] ! başlıkgirdileri ! girdiresimlerigzc ! gnd~                                                                                                                                                                                                                                                                                                                                    |
-| Parametreleri  | -                                                                                                                                                                                                                                                                                                                                                                                                                   |
-
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-girdiresimlerigzc.png :cmdline -r -s 0.8
-          +------------------------+
-          |                        |
-  Girdi   |                        |   Girdi
-     -----+>   girdiresimlerigzc   |>----
-          |                        |
-          |                        |
-          +------------------------+
-#+END_SRC
-
-
-
-* Bataklar (btk)
-
 Bataklar iş hatlarının sonlarında bulunan bileşenlerdir. Ekrana/dosyaya/ağa yazma gibi işler yaparlar.
 
-** metinbtk 
-| Adı            | metinbtk                                                                                    |
-| İşlevi         | girdi kapısındaki veriyi metin tabanlı ekrana yazar. Sadece kabuk ortamında kullanılabilir. |
-| Girdi kapısı   | 1 tane. Kapıdan geçen veri tipi ~Token~.                                                    |
-| Çıktı kapısı   | -                                                                                           |
-| Örnek kullanım | -                                                                                           |
-| Parametreleri  | -                                                                                           |
+** alanseçici
 
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-metinbtk.png :cmdline -r -s 0.8
-          +---------------+
-          |               |
-          |               |
-     -----+>   metinbtk   |
-          |               |
-          |               |
-          +---------------+
+ :PROPERTIES:
+    :CUSTOM_ID: alanseçici
+ :END:
+
+| Adı | alanseçici |
+| İşlevi | Girdi kapısındaki tokenlerin parametre olarak verilen alanındaki değere sahip o alan tipinde yeni bir veri oluşturup çıktı kapısına gönderir. (Çıkış kapısı veri tipi aslında Token değil, seçilen alan tipindedir.) |
+| Giriş Kapısı | 1 |
+|  | alanseçici.inport1(token tipi: Token) |
+ | Çıkış kapısı | 1 |
+|  | alanseçici.outport1(token tipi: Token) |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| alan | ~yazar~ | Girdi kapısındaki verilerin hangi alanının seçileceğini belirler. Girdi kapısındaki veri tipinin alanlarından biri. Örneğin, Girdi tipindeki veriler için alan şu değerleri alabilir: yazar, baslik, id, girdiSirasi, bkzBasliklari, gorunmezBkzBasliklari, disBaglantilar |  |  | 
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-alanseçici.png :cmdline -r -s 0.8
+          +------------+          
+          | alanseçici |          
+Token     |            |      Token
+     -----+>           |>-----
+          |            |          
+          +------------+          
+
 #+END_SRC
+** apisink
 
-** +görselbtk+
-/Kullanımdan kalktı./ ssg++ web arayüzü Java Swing tabanlı görsel kullanıcı arayüzünün yerine geçti.
-| Adı            | görselbtk                                                                                                                          |
-| İşlevi         | girdi kapısındaki veriyi ekşi sözlük'tekine benzeterek ekranda gösterir. Sadece görsel kullanıcı arayüzü ortamında kullanılabilir. |
-| Girdi kapısı   | 1 tane. Kapıdan geçen veri tipi ~Başlık~ ya da ~Girdi~.                                                                            |
-| Çıktı kapısı   | -                                                                                                                                  |
-| Örnek kullanım | -                                                                                                                                  |
-| Parametreleri  | -                                                                                                                                  |
+ :PROPERTIES:
+    :CUSTOM_ID: apisink
+ :END:
 
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-gorselbtk.png :cmdline -r -s 0.8
-                  +------------------+
-                  |                  |
-    Başlık/Girdi  |                  |
-             -----+>    görselbtk    |
-                  |                  |
-                  |                  |
-                  +------------------+
+| Adı | apisink |
+| İşlevi | Geliştiricilerin işhattı sonuçlarını fonksiyon sonucu olarak almasını sağlar. Tip parametresi senkron olarak verildiğinde döndürülen sonuç apisink bileşenine giren tüm tokenlerin bir listesidir. Asenkron olarak verildiğinde öncesinde dinleyici olarak eklenmiş nesneler her yeni token geldiğinde ve iş hattı tamamlandığında haberdar edilir. |
+| Giriş Kapısı | 1 |
+|  | apisink.inport1(token tipi: Token) |
+ | Çıkış kapısı | yok |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| tip | ~SYNCHRONOUS~ | Sonuçların alınma şeklini belirler. | [senkron, asenkron] |  | 
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-apisink.png :cmdline -r -s 0.8
+          +---------+     
+          | apisink |     
+Token     |         |
+     -----+>        |
+          |         |     
+          +---------+     
+
 #+END_SRC
+** badilistesiknk
 
+ :PROPERTIES:
+    :CUSTOM_ID: badilistesiknk
+ :END:
 
-** dosyabtk 
-| Adı            | dosyabtk                                                                   |
-| İşlevi         | girdi kapısındaki veriyi txt, XML, csv ya da HTML biçiminde dosyaya yazar. |
-| Girdi kapısı   | 1 tane. Kapıdan geçen veri tipi ~Token~.                                   |
-| Çıktı kapısı   | -                                                                          |
-| Örnek kullanım | -                                                                          |
+| Adı | badilistesiknk |
+| İşlevi | Giriş yapmış kullanıcının badi ya da troll olarak eklediği çıkış kapısına yazar. |
+| Giriş Kapısı | yok |
+ | Çıkış kapısı | 1 |
+|  | badilistesiknk.outport1(token tipi: Yazar) |
 
-Parametreleri
-| parametre | alabildiği değerler                             | açıklama                              | varsayılan değeri |
-| <l>       | <l>                                             | <l>                                   | <l>               |
-|-----------+-------------------------------------------------+---------------------------------------+-------------------|
-| dosya     | .xml, .html, .csv ya da .txt uzantılı dosya adı | yazılmak istenen dosyanın yolu ve adı | dosyabtk.xml      |
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| tip | ~BADI~ | Yazar listesi tipi. | [badi, troll] |  | 
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-badilistesiknk.png :cmdline -r -s 0.8
+     +----------------+          
+     | badilistesiknk |          
+     |                |      Yazar
+     |                |>-----
+     |                |          
+     +----------------+          
 
+#+END_SRC
+** başlıkfarkknk
 
-Görsel gösterimi
+ :PROPERTIES:
+    :CUSTOM_ID: başlıkfarkknk
+ :END:
+
+| Adı | başlıkfarkknk |
+| İşlevi | Bugünün ya da badi başlıklarından daha önceki bir zamanda kaydedilmiş olanlardan farklı olanları listelemeye yarar. Çalıştırıldığında kaydedilen başlıkları da günceller. |
+| Giriş Kapısı | yok |
+ | Çıkış kapısı | 1 |
+|  | başlıkfarkknk.outport1(token tipi: Baslik) |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| dosya | ~cache/checkpoint-bugun-2015210.xml~ | Başlıkların kaydedildiği dosya adı. |  |  | 
+| tip | ~BUGUN~ | Fark alma işleminin yapılacağı liste tipi. | [bugün, badi, badifavorileri] |  | 
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-başlıkfarkknk.png :cmdline -r -s 0.8
+     +---------------+           
+     | başlıkfarkknk |           
+     |               |      Baslik
+     |               |>-----
+     |               |           
+     +---------------+           
+
+#+END_SRC
+** başlıkgirdileri
+
+ :PROPERTIES:
+    :CUSTOM_ID: başlıkgirdileri
+ :END:
+
+| Adı | başlıkgirdileri |
+| İşlevi | Girdi kapısındaki başlığa ait girdileri çıktısında oluşturur. |
+| Giriş Kapısı | 1 |
+|  | başlıkgirdileri.inport1(token tipi: Baslik) |
+ | Çıkış kapısı | 1 |
+|  | başlıkgirdileri.outport1(token tipi: Entry) |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| ara | ~akilfikir~ | Tip başlıktaara olarak seçilmişse, anahtar kelime(leri) içeren girdiler çıktıya yazılır. |  |  | 
+| sayfa | ~1~ | Belirli bir sayfadan başlayarak girdileri indirmeye yarar. |  |  | 
+| başucu | ~false~ | Yalnızca başucu girdileri çıktıya yazar. | [0, 1] |  | 
+| tarih | ~yok~ | Verilen tarihli girdileri çıktıya yazar. |  |  | 
+| limit | ~-1~ | Başlığa ait indirilecek girdi sayısı. Öntanımlı olarak limit yok. |  |  | 
+| tip | ~~ | Başlığa ait indirilen girdilerin filtrelenme şekli. Öntanımlı olarak filtresiz. | [hepsi, şükela, badi, tarih, başlıktaara] |  | 
+| yeniden-eskiye | ~false~ | Girdiler yeniden eskiye doğru çıktıya yazılır. | [0, 1] |  | 
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-başlıkgirdileri.png :cmdline -r -s 0.8
+           +-----------------+          
+           | başlıkgirdileri |          
+Baslik     |                 |      Entry
+      -----+>                |>-----
+           |                 |          
+           +-----------------+          
+
+#+END_SRC
+** başlıkknk
+
+ :PROPERTIES:
+    :CUSTOM_ID: başlıkknk
+ :END:
+
+| Adı | başlıkknk |
+| İşlevi | Başlık tipinde veri oluşturmaya yarar. |
+| Giriş Kapısı | yok |
+ | Çıkış kapısı | 1 |
+|  | başlıkknk.outport1(token tipi: Baslik) |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| başlık | ~yok~ | oluşturulmak istenen başlığın adı. |  |  | 
+| adres | ~yok~ | başlığın adresi. (komut satırı kullanıcısı için önemli değil) |  |  | 
+| dosyadanbaşlık | ~yok~ | bir temaya ait birden fazla başlığı çıktı kapısına yazmak için başlıkların listelendiği dosya adı. |  |  | 
+Önkoşulları: 
+ - only one of the following should be true: başlık is set; dosyadanbaşlık is set
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-başlıkknk.png :cmdline -r -s 0.8
+     +-----------+           
+     | başlıkknk |           
+     |           |      Baslik
+     |           |>-----
+     |           |           
+     +-----------+           
+
+#+END_SRC
+** başucuflt
+
+ :PROPERTIES:
+    :CUSTOM_ID: başucuflt
+ :END:
+
+| Adı | başucuflt |
+| İşlevi | Girdileri boyutlarına göre filtrelemeye yarar. |
+| Giriş Kapısı | 1 |
+|  | başucuflt.inport1(token tipi: Entry) |
+ | Çıkış kapısı | 1 |
+|  | başucuflt.outport1(token tipi: Entry) |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| boyut | ~1000~ | minimum girdi boyutu |  |  | 
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-başucuflt.png :cmdline -r -s 0.8
+          +-----------+          
+          | başucuflt |          
+Entry     |           |      Entry
+     -----+>          |>-----
+          |           |          
+          +-----------+          
+
+#+END_SRC
+** biriknk
+
+ :PROPERTIES:
+    :CUSTOM_ID: biriknk
+ :END:
+
+| Adı | biriknk |
+| İşlevi | Yazarlar hakkında bilgi almaya yarar. |
+| Giriş Kapısı | yok |
+ | Çıkış kapısı | 1 |
+|  | biriknk.outport1(token tipi: Baslik) |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| sayfa | ~1~ | Belirli bir sayfadan başlayarak başlıkları indirmeye yarar. |  |  | 
+| yazar | ~ekşisözlük~ | Sorgulanan yazar. |  |  | 
+| limit | ~yok~ | Başlığa ait indirilecek başlık sayısı. Başlık sayısını limitlemekten ziyade çekilecek sayfa sayısını limitlemek için kullanılıyor. Başlık sayısını limitlemek için limitflt bileşenini kullanabilirsiniz. Öntanımlı olarak limit yok. |  |  | 
+| tip | ~en-begenilenleri~ | Sorgu tipi. | [son-girdileri, son-oylananları, dikkat-çekenleri, en-beğenilenleri, favorilenenleri, favorileri] |  | 
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-biriknk.png :cmdline -r -s 0.8
+     +---------+           
+     | biriknk |           
+     |         |      Baslik
+     |         |>-----
+     |         |           
+     +---------+           
+
+#+END_SRC
+** cümlelerdenkelimeağacı
+
+ :PROPERTIES:
+    :CUSTOM_ID: cümlelerdenkelimeağacı
+ :END:
+
+| Adı | cümlelerdenkelimeağacı |
+| İşlevi | Giriş kapısındaki cümlelerden kelime ağacı oluşturur. |
+| Giriş Kapısı | 1 |
+|  | cümlelerdenkelimeağacı.inport1(token tipi: TextToken) |
+ | Çıkış kapısı | 1 |
+|  | cümlelerdenkelimeağacı.outport1(token tipi: WordTreeData) |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| kök | ~(bkz~ | Kelime ağacının kök kelimesi. |  |  | 
+| sade | ~false~ | Sadece kök kelimeyi içeren cümleleri kullanmaya yarar. Büyük metinler için kullanılması gerekir. |  |  | 
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-cümlelerdenkelimeağacı.png :cmdline -r -s 0.8
+              +------------------------+                 
+              | cümlelerdenkelimeağacı |                 
+TextToken     |                        |      WordTreeData
+         -----+>                       |>-----
+              |                        |                 
+              +------------------------+                 
+
+#+END_SRC
+** cümleleri
+
+ :PROPERTIES:
+    :CUSTOM_ID: cümleleri
+ :END:
+
+| Adı | cümleleri |
+| İşlevi | Giriş kapısındaki metni cümlelerine ayırarak çıkış kapısına yazar. |
+| Giriş Kapısı | 1 |
+|  | cümleleri.inport1(token tipi: Token) |
+ | Çıkış kapısı | 1 |
+|  | cümleleri.outport1(token tipi: TextToken) |
+
+Parametreleri: yok
+
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-cümleleri.png :cmdline -r -s 0.8
+          +-----------+              
+          | cümleleri |              
+Token     |           |      TextToken
+     -----+>          |>-----
+          |           |              
+          +-----------+              
+
+#+END_SRC
+** debetocgzc
+
+ :PROPERTIES:
+    :CUSTOM_ID: debetocgzc
+ :END:
+
+| Adı | debetocgzc |
+| İşlevi | kindlegen ile debe için mobi oluştururken gerekli yardımcı dosyaları oluşturur. Girişteki tokenler aynen çıktıya yazılır. |
+| Giriş Kapısı | 1 |
+|  | debetocgzc.inport1(token tipi: Entry) |
+ | Çıkış kapısı | 1 |
+|  | debetocgzc.outport1(token tipi: Entry) |
+
+Parametreleri: yok
+
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-debetocgzc.png :cmdline -r -s 0.8
+          +------------+          
+          | debetocgzc |          
+Entry     |            |      Entry
+     -----+>           |>-----
+          |            |          
+          +------------+          
+
+#+END_SRC
+** dosyabtk
+
+ :PROPERTIES:
+    :CUSTOM_ID: dosyabtk
+ :END:
+
+| Adı | dosyabtk |
+| İşlevi | Giriş kapısındaki veriyi txt, XML, csv ya da HTML biçiminde dosyaya yazar. |
+| Giriş Kapısı | 1 |
+|  | dosyabtk.inport1(token tipi: Token) |
+ | Çıkış kapısı | yok |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| dosya | ~dosyabtk.xml~ | Yazılmak istenen dosyanın yolu ve adı. |  |  | 
+| detaylı | ~true~ | .htm ya da .html biçimli dosyaya yazılan durumlarda girdilerin sonuna başlığın ilk girdisi ve bakınız verilmiş girdilerin de eklenip eklenmeyeceğini belirler. | [0, 1] | at least one of the following should be true: biçim=htm; biçim=html;  | 
+| biçim | ~xml~ | dosya biçimi. (verilmesine gerek yok, dosyanın uzantısından elde ediliyor.) | [xml, txt, html, htm, csv] |  | 
+Görsel gösterimi: 
 #+BEGIN_SRC ditaa :file imgs/dit-dosyabtk.png :cmdline -r -s 0.8
-          +---------------+
-          |               |
-          |               |
-     -----+>   dosyabtk   |
-          |               |
-          |               |
-          +---------------+
+          +----------+     
+          | dosyabtk |     
+Token     |          |
+     -----+>         |
+          |          |     
+          +----------+     
+
 #+END_SRC
+** dosyaknk
 
+ :PROPERTIES:
+    :CUSTOM_ID: dosyaknk
+ :END:
 
+| Adı | dosyaknk |
+| İşlevi | Verilen dosyadaki girdileri, başlıkları ya da metni çıkış kapısına yazar. |
+| Giriş Kapısı | yok |
+ | Çıkış kapısı | 1 |
+|  | dosyaknk.outport1(token tipi: Token) |
 
-** grafikbtk 
-| Adı            | grafikbtk                                                                                                                |
-| İşlevi         | girdi kapısındaki grafik verisini sütunlu grafik olarak gösterir.                                                        |
-| Girdi kapısı   | 1 tane. Kapıdan geçen veri tipi ~Grafik Verisi~.                                                                         |
-| Çıktı kapısı   | -                                                                                                                        |
-| Örnek kullanım | ~yürüt başlıkknk [başlık=sözlükçülerin en iyi 10 film listesi] ! başlıkgirdileri ! girdibkzları ! histogram ! grafikbtk~ |
-| Parametreleri  | -                                                                                                                        |
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| dosya | ~dosyabtk.xml~ | Okunmak istenen dosyanın adı. (dosya yolu da mutlak ya da göreceli olarak verilebilir.) |  |  | 
+| küçükharfli | ~false~ | Txt biçimli dosyanın metnindeki tüm büyük harfleri küçük harfe dönüştürerek kullanmaya yarar. | [0, 1] | biçim=txt;  | 
+| biçim | ~xml~ | dosya biçimi. (verilmesine gerek yok, dosyanın uzantısından elde ediliyor.) | [xml, txt] |  | 
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-dosyaknk.png :cmdline -r -s 0.8
+     +----------+          
+     | dosyaknk |          
+     |          |      Token
+     |          |>-----
+     |          |          
+     +----------+          
 
+#+END_SRC
+** favorileyenleri
 
-Görsel gösterimi
+ :PROPERTIES:
+    :CUSTOM_ID: favorileyenleri
+ :END:
+
+| Adı | favorileyenleri |
+| İşlevi | Girdilerin favorileyenlerini listelemeye yarar. (Giriş kapısında tokenler Entry veya Başlık tipinde.) |
+| Giriş Kapısı | 1 |
+|  | favorileyenleri.inport1(token tipi: Token) |
+ | Çıkış kapısı | 1 |
+|  | favorileyenleri.outport1(token tipi: Yazar) |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| tip | ~TUMU~ | Favorileyen yazar tipi. | [tümü, yazar, çaylak] |  | 
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-favorileyenleri.png :cmdline -r -s 0.8
+          +-----------------+          
+          | favorileyenleri |          
+Token     |                 |      Yazar
+     -----+>                |>-----
+          |                 |          
+          +-----------------+          
+
+#+END_SRC
+** fork
+
+ :PROPERTIES:
+    :CUSTOM_ID: fork
+ :END:
+
+| Adı | fork |
+| İşlevi | no description given |
+| Giriş Kapısı | 1 |
+|  | fork.inport1(token tipi: Token) |
+ | Çıkış kapısı | 2 |
+|  | fork.outport1(token tipi: Token) |
+|  | fork.outport2(token tipi: Token) |
+
+Parametreleri: yok
+
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-fork.png :cmdline -r -s 0.8
+          +------+          
+          | fork |          
+Token     |      |      Token
+     -----+>     |>-----
+          |      |      Token
+          |      |>-----
+          |      |          
+          +------+          
+
+#+END_SRC
+** fork1x3
+
+ :PROPERTIES:
+    :CUSTOM_ID: fork1x3
+ :END:
+
+| Adı | fork1x3 |
+| İşlevi | no description given |
+| Giriş Kapısı | 1 |
+|  | fork1x3.inport1(token tipi: Token) |
+ | Çıkış kapısı | 3 |
+|  | fork1x3.outport1(token tipi: Token) |
+|  | fork1x3.outport2(token tipi: Token) |
+|  | fork1x3.outport3(token tipi: Token) |
+
+Parametreleri: yok
+
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-fork1x3.png :cmdline -r -s 0.8
+          +---------+          
+          | fork1x3 |          
+Token     |         |      Token
+     -----+>        |>-----
+          |         |      Token
+          |         |>-----
+          |         |      Token
+          |         |>-----
+          |         |          
+          +---------+          
+
+#+END_SRC
+** fork1xn
+
+ :PROPERTIES:
+    :CUSTOM_ID: fork1xn
+ :END:
+
+| Adı | fork1xn |
+| İşlevi | Girdi kapısındaki veriyi kopyalayarak her bir çıktı kapısına gönderir. |
+| Giriş Kapısı | 1 |
+|  | fork1xn.inport1(token tipi: Token) |
+ | Çıkış kapısı | 2 |
+|  | fork1xn.outport1(token tipi: Token) |
+|  | fork1xn.outport2(token tipi: Token) |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| n | ~2~ | Çıkış kapısı adedi. |  |  | 
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-fork1xn.png :cmdline -r -s 0.8
+          +---------+          
+          | fork1xn |          
+Token     |         |      Token
+     -----+>        |>-----
+          |         |      Token
+          |         |>-----
+          |         |          
+          +---------+          
+
+#+END_SRC
+** genelflt
+
+ :PROPERTIES:
+    :CUSTOM_ID: genelflt
+ :END:
+
+| Adı | genelflt |
+| İşlevi | Giriş kapısındaki tokenin alan parametresi ile verilen alanındaki değer, değer parametresi ile verilen değerle eşleşiyorsa çıktı kapısına geçirir, değilse yutar. eşleşme olan tokenlere eşleşmeyi sağlayan değer etiket olarak eklenir. |
+| Giriş Kapısı | 1 |
+|  | genelflt.inport1(token tipi: Token) |
+ | Çıkış kapısı | 1 |
+|  | genelflt.outport1(token tipi: Token) |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| alan | ~[yazar]~ | filtreleme işleminde dikkate alınacak alan. Birden fazla alan aralarına artı (+) işareti konularak seçilebilir. örn. "alan=baslik+girdi" |  |  | 
+| eleme | ~UYMAYAN~ | Tokenin verilen kriterlere uyduğu durumda mı yoksa uymadığı durumunda mı eleneceğini belirler. | [uyan, uymayan] |  | 
+| değer | ~yok~ | Filtreden geçebilecek tokenlerin alanlarında sahip olmaları gereken değer. asteriksler kullanılabilir. |  | dosyadandeğer is not set;  | 
+| benzerlik | ~AYNISI~ | varsayılan değeri seçilen alana göre değişiyor. baslik ve yazar için aynısı, girdi için ayrık değerlerini alır.   	  	  	aynısı: tokenin alanın değerinin parametre olarak verilen değerle/değerlerle aynı olduğu durumda geçirilmesini sağlar (örn. 'beşiktaş' sadece 'beşiktaş'a eşlenebilir).   	  	  	sonuekli: alan değerinin metni içinde eşleştirme yapıp, eşlemenin sonunda verilen değer parametresinden fazla karakter olması durumda da geçirilmesini sağlar (örn. beşik beşiktaş'la eşleştirilebilir).   	  	  	başısonuekli: alan değerinin metni içinde eşleştirme yapıp, eşleşmenin başında ya da sonunda verilen değer parametresinden fazla karakter olması durumda geçirilmesini sağlar (örn. eşik beşiktaş'la eşleştirilebilir).   	  	  	ayrık: alan değerinin metni içinde eşleştirme yapıp, eşleşmenin başında boşluk, sonunda da boşluk ya da noktalama işaretleri olması durumda geçirilmesini sağlar (örn. 'beşiktaş' 'beşiktaş gibi' ile eşlenebilir ama 'beşiktaşlı' ile eşlenmez). | [aynısı, sonuekli, başısonuekli, ayrık] |  | 
+| dosyadandeğer | ~yok~ | Birden fazla değer parametresi geçirmek için bir tema dosyası verilebilir. |  | değer is not set;  | 
+Önkoşulları: 
+ - only one of the following should be true: değer is set; dosyadandeğer is set
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-genelflt.png :cmdline -r -s 0.8
+          +----------+          
+          | genelflt |          
+Token     |          |      Token
+     -----+>         |>-----
+          |          |          
+          +----------+          
+
+#+END_SRC
+** genelsıralayıcı
+
+ :PROPERTIES:
+    :CUSTOM_ID: genelsıralayıcı
+ :END:
+
+| Adı | genelsıralayıcı |
+| İşlevi | Giriş kapısındaki tokenleri verilen bir alanın değerlerine göre sıralayarak çıkış kapısına yazar. |
+| Giriş Kapısı | 1 |
+|  | genelsıralayıcı.inport1(token tipi: Token) |
+ | Çıkış kapısı | 1 |
+|  | genelsıralayıcı.outport1(token tipi: Token) |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| alan | ~baslikGirdiSayisi~ | Sıralama için kullanılan alan. |  |  | 
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-genelsıralayıcı.png :cmdline -r -s 0.8
+          +-----------------+          
+          | genelsıralayıcı |          
+Token     |                 |      Token
+     -----+>                |>-----
+          |                 |          
+          +-----------------+          
+
+#+END_SRC
+** girdibkzları
+
+ :PROPERTIES:
+    :CUSTOM_ID: girdibkzları
+ :END:
+
+| Adı | girdibkzları |
+| İşlevi | Girdi kapısındaki girdinin bkz ve görünmez bkz verilmiş başlıklarını çıktı kapısına yazar. |
+| Giriş Kapısı | 1 |
+|  | girdibkzları.inport1(token tipi: Entry) |
+ | Çıkış kapısı | 1 |
+|  | girdibkzları.outport1(token tipi: Baslik) |
+
+Parametreleri: yok
+
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-girdibkzları.png :cmdline -r -s 0.8
+          +--------------+           
+          | girdibkzları |           
+Entry     |              |      Baslik
+     -----+>             |>-----
+          |              |           
+          +--------------+           
+
+#+END_SRC
+** girdiresimlerigzc
+
+ :PROPERTIES:
+    :CUSTOM_ID: girdiresimlerigzc
+ :END:
+
+| Adı | girdiresimlerigzc |
+| İşlevi | Giriş kapısındaki girdinin içindeki resimlere verilmiş bağlantılardaki resimleri, twitter/facebook bağlantılarındaki durum bilgisi ve varsa resimleri mevcut klasöre indirir. Tanımlı resim dosyası uzantıları: .jpg, .gif, .png, .flv. İndirilen dosya başlık adı - girdi numarası - resmin orjinal adı şeklinde isimlendirilir. Twitter durumu tvit-tvit\no.xml, varsa resmi tvit-tvit\no dosyasına kaydedilir. |
+| Giriş Kapısı | 1 |
+|  | girdiresimlerigzc.inport1(token tipi: Entry) |
+ | Çıkış kapısı | 1 |
+|  | girdiresimlerigzc.outport1(token tipi: Entry) |
+
+Parametreleri: yok
+
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-girdiresimlerigzc.png :cmdline -r -s 0.8
+          +-------------------+          
+          | girdiresimlerigzc |          
+Entry     |                   |      Entry
+     -----+>                  |>-----
+          |                   |          
+          +-------------------+          
+
+#+END_SRC
+** gnd
+
+ :PROPERTIES:
+    :CUSTOM_ID: gnd
+ :END:
+
+| Adı | gnd |
+| İşlevi | Girdi kapısındaki verileri alır ve onlarla hiçbir şey yapmaz. |
+| Giriş Kapısı | 1 |
+|  | gnd.inport1(token tipi: Token) |
+ | Çıkış kapısı | yok |
+
+Parametreleri: yok
+
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-gnd.png :cmdline -r -s 0.8
+          +-----+     
+          | gnd |     
+Token     |     |
+     -----+>    |
+          |     |     
+          +-----+     
+
+#+END_SRC
+** grafikbtk
+
+ :PROPERTIES:
+    :CUSTOM_ID: grafikbtk
+ :END:
+
+| Adı | grafikbtk |
+| İşlevi | Giriş kapısındaki grafik verisini sütunlu grafik olarak gösterir. |
+| Giriş Kapısı | 1 |
+|  | grafikbtk.inport1(token tipi: ChartData) |
+ | Çıkış kapısı | yok |
+
+Parametreleri: yok
+
+Görsel gösterimi: 
 #+BEGIN_SRC ditaa :file imgs/dit-grafikbtk.png :cmdline -r -s 0.8
-                 +----------------+
-                 |                |
- Grafik Verisi   |                |
-            -----+>   grafikbtk   |
-                 |                |
-                 |                |
-                 +----------------+
+              +-----------+     
+              | grafikbtk |     
+ChartData     |           |
+         -----+>          |
+              |           |     
+              +-----------+     
+
 #+END_SRC
+** görselbtk
 
+ :PROPERTIES:
+    :CUSTOM_ID: görselbtk
+ :END:
 
-** wordlebtk 
+| Adı | görselbtk |
+| İşlevi | Swing arayüzü sağlar. (Kullanımdan kalktı.) |
+| Giriş Kapısı | 1 |
+|  | görselbtk.inport1(token tipi: Token) |
+ | Çıkış kapısı | yok |
 
-*Not*: ~histogram~ çıktısını ~dosyabtk~ ile bir dosyaya yazdırdıktan sonra doğrudan [[http://www.wordle.net/advanced][gelişmiş wordle]] sayfasında kullanabilirsiniz. örn.: ~... ! histogram ! dosyabtk [dosya=wordle.txt]~
+Parametreleri: yok
 
-| Adı            | wordlebtk                                                                                                                                                      |
-| İşlevi         | girdi kapısındaki grafik verisini [[http://www.wordle.net/create][wordle]] sayfasında etiket bulutu yaratmak için kullanılabilecek biçimde metin dosyasına yazar.  |
-| Girdi kapısı   | 1 tane. Kapıdan geçen veri tipi ~Grafik Verisi~.                                                                                                               |
-| Çıktı kapısı   | -                                                                                                                                                              |
-| Örnek kullanım | ~yürüt başlıkknk [başlık=sözlükçülerin en iyi 10 film listesi] ! başlıkgirdileri ! girdibkzları ! histogram ! wordlebtk~                                       |
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-görselbtk.png :cmdline -r -s 0.8
+          +-----------+     
+          | görselbtk |     
+Token     |           |
+     -----+>          |
+          |           |     
+          +-----------+     
 
-Parametreleri
-| parametre | alabildiği değerler     | açıklama                              | varsayılan değeri |
-| <l>       | <l>                     | <l>                                   | <l>               |
-|-----------+-------------------------+---------------------------------------+-------------------|
-| dosya     | .txt uzantılı dosya adı | yazılmak istenen dosyanın yolu ve adı | wordlebtk.txt     |
+#+END_SRC
+** hayvanknk
 
+ :PROPERTIES:
+    :CUSTOM_ID: hayvanknk
+ :END:
 
-Görsel gösterimi
+| Adı | hayvanknk |
+| İşlevi | Ekşi Sözlük'teki hayvan ara formunun sağladığı şekilde arama yapılmasını sağlar. |
+| Giriş Kapısı | yok |
+ | Çıkış kapısı | 1 |
+|  | hayvanknk.outport1(token tipi: Baslik) |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| baş | ~yok~ | Başlangıç tarihi |  |  | 
+| sıralama | ~Date~ | Giriş zamanına göre, alfabetik olarak ya da en çok girdi yapılan başlığa göre sıralar. | [yeni-eski, alfa-beta, gudik] |  | 
+| son | ~yok~ | Bitiş tarihi |  |  | 
+| sayfa | ~1~ | Belirli bir sayfadan başlayarak başlıkları indirmeye yarar. |  |  | 
+| yazar | ~yok~ | Verilen yazara ait başlıkları buldurur. |  |  | 
+| şey | ~yok~ | verilen kelimeleri içeren başlıkları arar. '*' kullanılabilir. |  |  | 
+| limit | ~yok~ | Başlığa ait indirilecek başlık sayısı. Başlık sayısını limitlemekten ziyade çekilecek sayfa sayısını limitlemek için kullanılıyor. Başlık sayısını limitlemek için limitflt bileşenini kullanabilirsiniz. Öntanımlı olarak limit yok. |  |  | 
+| güzelinden | ~false~ | Güzel girdileri olan başlıkları buldurur. | [0, 1] |  | 
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-hayvanknk.png :cmdline -r -s 0.8
+     +-----------+           
+     | hayvanknk |           
+     |           |      Baslik
+     |           |>-----
+     |           |           
+     +-----------+           
+
+#+END_SRC
+** histogram
+
+ :PROPERTIES:
+    :CUSTOM_ID: histogram
+ :END:
+
+| Adı | histogram |
+| İşlevi | Kategori zaman olarak seçilmişse girdi kapısındaki girdilerin sayılarını parametre olarak verilen zaman çözünürlüğüne (yıl, ay, hafta, gün) göre grafik verisi haline getirir. kategori yazar/başlık olarak seçilmişse yazarına/başlığına göre girdileri sayarak grafik verisi oluşturur. Girdi kapısındaki veri tipi Başlık ise verilen parametreler dikkate alınmaz histogram başlık kategorisine göre çıkarılır. (Girdi ya da Başlık tipli token kullanabilir.) |
+| Giriş Kapısı | 1 |
+|  | histogram.inport1(token tipi: Token) |
+ | Çıkış kapısı | 1 |
+|  | histogram.outport1(token tipi: ChartData) |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| eksen | ~kategori~ | Girdilerin gruplandırılacağı eksenin tipini belirler. kategori: bir başka parametre ile verilecek olan kategori tipine göre grafik verisi oluşturur. zaman: girdileri giriş zamanlarına göre grafik verisi oluşturur. | [kategori, zaman] |  | 
+| kategori | ~yazar~ | Yalnızca eksen olarak kategori seçilmişse kullanılabilir, kategori tipini belirler. yazar: girdileri yazarlarına göre sayarak grafik verisi oluşturur. başlık: girdileri başlıklarına göre sayarak zaman bilgisi oluşturur vb. Etiket kategorisi ile tokenlerdeki etiketlere gruplama ve sayma yapılır. | [yazar, başlık, girdisırası, favorisayısı, etiket] | eksen=kategori;  | 
+| çözünürlük | ~ay~ | yalnızca eksen olarak zaman seçilmişse kullanılabilir. zamana bağlı veriyi seçilen çözünürlükte gruplayıp toplayarak grafik verisi oluşturur. | [yıl, ay, gün, saat] | eksen=zaman;  | 
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-histogram.png :cmdline -r -s 0.8
+          +-----------+              
+          | histogram |              
+Token     |           |      ChartData
+     -----+>          |>-----
+          |           |              
+          +-----------+              
+
+#+END_SRC
+** indeksknk
+
+ :PROPERTIES:
+    :CUSTOM_ID: indeksknk
+ :END:
+
+| Adı | indeksknk |
+| İşlevi | Seçilen bir tipe göre sol başlık akışındaki başlıkları listeler. |
+| Giriş Kapısı | yok |
+ | Çıkış kapısı | 1 |
+|  | indeksknk.outport1(token tipi: Baslik) |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| kanal | ~sinema~ | Tip olarak kanal seçilmişse, başlıkları listelenmek istenen kanal | [sinema, siyaset, müzik, bilim, spor, edebiyat, ilişkiler, tarih, teknoloji, sanat, tv, oyun, anket, meta, programlama, sağlık] |  | 
+| sayfa | ~1~ | Belirli bir sayfadan başlayarak başlıkları indirmeye yarar. |  |  | 
+| limit | ~yok~ | Başlığa ait indirilecek başlık sayısı. Başlık sayısını limitlemekten ziyade çekilecek sayfa sayısını limitlemek için kullanılıyor. Başlık sayısını limitlemek için limitflt bileşenini kullanabilirsiniz. Öntanımlı olarak limit yok. |  |  | 
+| tip | ~today~ | listelemede kullanılacak tip | [bugün, popüler, badi, badifav, son, kenar, olay, çaylaklar, kanal] |  | 
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-indeksknk.png :cmdline -r -s 0.8
+     +-----------+           
+     | indeksknk |           
+     |           |      Baslik
+     |           |>-----
+     |           |           
+     +-----------+           
+
+#+END_SRC
+** intersection
+
+ :PROPERTIES:
+    :CUSTOM_ID: intersection
+ :END:
+
+| Adı | intersection |
+| İşlevi | İki girdi kapısındaki verilerin kesişim kümesini çıktı kapısına gönderir. |
+| Giriş Kapısı | 2 |
+|  | intersection.inport1(token tipi: Token) |
+|  | intersection.inport2(token tipi: Token) |
+ | Çıkış kapısı | 1 |
+|  | intersection.outport1(token tipi: Token) |
+
+Parametreleri: yok
+
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-intersection.png :cmdline -r -s 0.8
+          +--------------+          
+          | intersection |          
+Token     |              |      Token
+     -----+>             |>-----
+Token     |              |
+     -----+>             |
+          |              |          
+          +--------------+          
+
+#+END_SRC
+** istatistikknk
+
+ :PROPERTIES:
+    :CUSTOM_ID: istatistikknk
+ :END:
+
+| Adı | istatistikknk |
+| İşlevi | Geçen haftanın veya dünün en beğenilen girdilerini listeler. |
+| Giriş Kapısı | yok |
+ | Çıkış kapısı | 1 |
+|  | istatistikknk.outport1(token tipi: Baslik) |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| tip | ~istatistik/gecen-haftanin-en-begenilen-entryleri~ | Dünün en beğenilen ya da geçen haftanın en beğenilen girdileri | [debe, ghebe] |  | 
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-istatistikknk.png :cmdline -r -s 0.8
+     +---------------+           
+     | istatistikknk |           
+     |               |      Baslik
+     |               |>-----
+     |               |           
+     +---------------+           
+
+#+END_SRC
+** kümeflt
+
+ :PROPERTIES:
+    :CUSTOM_ID: kümeflt
+ :END:
+
+| Adı | kümeflt |
+| İşlevi | Giriş kapısındaki token listesini küme olarak çıktısına yazar, diğer bir deyişle yinelenen tokenler çıktıya yazılmaz. |
+| Giriş Kapısı | 1 |
+|  | kümeflt.inport1(token tipi: Token) |
+ | Çıkış kapısı | 1 |
+|  | kümeflt.outport1(token tipi: Token) |
+
+Parametreleri: yok
+
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-kümeflt.png :cmdline -r -s 0.8
+          +---------+          
+          | kümeflt |          
+Token     |         |      Token
+     -----+>        |>-----
+          |         |          
+          +---------+          
+
+#+END_SRC
+** limitflt
+
+ :PROPERTIES:
+    :CUSTOM_ID: limitflt
+ :END:
+
+| Adı | limitflt |
+| İşlevi | Yalnızca limit parametresi ile verilen sayıdaki tokeni girdi kapısından çıktı kapısına geçirir. |
+| Giriş Kapısı | 1 |
+|  | limitflt.inport1(token tipi: Token) |
+ | Çıkış kapısı | 1 |
+|  | limitflt.outport1(token tipi: Token) |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| limit | ~1~ | Geçirilecek en fazla token sayısını belirler. |  |  | 
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-limitflt.png :cmdline -r -s 0.8
+          +----------+          
+          | limitflt |          
+Token     |          |      Token
+     -----+>         |>-----
+          |          |          
+          +----------+          
+
+#+END_SRC
+** maçsonucu
+
+ :PROPERTIES:
+    :CUSTOM_ID: maçsonucu
+ :END:
+
+| Adı | maçsonucu |
+| İşlevi | Giriş kapısındaki girdinin içinde skor geçen cümleleri çıktı kapısına yazar. aralarında tire olan üçe kadar hanesi olan iki sayıyı skor olarak algılanır. |
+| Giriş Kapısı | 1 |
+|  | maçsonucu.inport1(token tipi: Entry) |
+ | Çıkış kapısı | 1 |
+|  | maçsonucu.outport1(token tipi: TextToken) |
+
+Parametreleri: yok
+
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-maçsonucu.png :cmdline -r -s 0.8
+          +-----------+              
+          | maçsonucu |              
+Entry     |           |      TextToken
+     -----+>          |>-----
+          |           |              
+          +-----------+              
+
+#+END_SRC
+** merge
+
+ :PROPERTIES:
+    :CUSTOM_ID: merge
+ :END:
+
+| Adı | merge |
+| İşlevi | no description given |
+| Giriş Kapısı | 2 |
+|  | merge.inport1(token tipi: Token) |
+|  | merge.inport2(token tipi: Token) |
+ | Çıkış kapısı | 1 |
+|  | merge.outport1(token tipi: Token) |
+
+Parametreleri: yok
+
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-merge.png :cmdline -r -s 0.8
+          +-------+          
+          | merge |          
+Token     |       |      Token
+     -----+>      |>-----
+Token     |       |
+     -----+>      |
+          |       |          
+          +-------+          
+
+#+END_SRC
+** merge3x1
+
+ :PROPERTIES:
+    :CUSTOM_ID: merge3x1
+ :END:
+
+| Adı | merge3x1 |
+| İşlevi | no description given |
+| Giriş Kapısı | 3 |
+|  | merge3x1.inport1(token tipi: Token) |
+|  | merge3x1.inport2(token tipi: Token) |
+|  | merge3x1.inport3(token tipi: Token) |
+ | Çıkış kapısı | 1 |
+|  | merge3x1.outport1(token tipi: Token) |
+
+Parametreleri: yok
+
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-merge3x1.png :cmdline -r -s 0.8
+          +----------+          
+          | merge3x1 |          
+Token     |          |      Token
+     -----+>         |>-----
+Token     |          |
+     -----+>         |
+Token     |          |
+     -----+>         |
+          |          |          
+          +----------+          
+
+#+END_SRC
+** merge8x1
+
+ :PROPERTIES:
+    :CUSTOM_ID: merge8x1
+ :END:
+
+| Adı | merge8x1 |
+| İşlevi | no description given |
+| Giriş Kapısı | 8 |
+|  | merge8x1.inport1(token tipi: Token) |
+|  | merge8x1.inport2(token tipi: Token) |
+|  | merge8x1.inport3(token tipi: Token) |
+|  | merge8x1.inport4(token tipi: Token) |
+|  | merge8x1.inport5(token tipi: Token) |
+|  | merge8x1.inport6(token tipi: Token) |
+|  | merge8x1.inport7(token tipi: Token) |
+|  | merge8x1.inport8(token tipi: Token) |
+ | Çıkış kapısı | 1 |
+|  | merge8x1.outport1(token tipi: Token) |
+
+Parametreleri: yok
+
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-merge8x1.png :cmdline -r -s 0.8
+          +----------+          
+          | merge8x1 |          
+Token     |          |      Token
+     -----+>         |>-----
+Token     |          |
+     -----+>         |
+Token     |          |
+     -----+>         |
+Token     |          |
+     -----+>         |
+Token     |          |
+     -----+>         |
+Token     |          |
+     -----+>         |
+Token     |          |
+     -----+>         |
+Token     |          |
+     -----+>         |
+          |          |          
+          +----------+          
+
+#+END_SRC
+** mergenx1
+
+ :PROPERTIES:
+    :CUSTOM_ID: mergenx1
+ :END:
+
+| Adı | mergenx1 |
+| İşlevi | Giriş kapılarındaki tokenleri tek bir çıkış kapısına gönderir. |
+| Giriş Kapısı | 2 |
+|  | mergenx1.inport1(token tipi: Token) |
+|  | mergenx1.inport2(token tipi: Token) |
+ | Çıkış kapısı | 1 |
+|  | mergenx1.outport1(token tipi: Token) |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| n | ~2~ | Giriş kapısı adedi. |  |  | 
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-mergenx1.png :cmdline -r -s 0.8
+          +----------+          
+          | mergenx1 |          
+Token     |          |      Token
+     -----+>         |>-----
+Token     |          |
+     -----+>         |
+          |          |          
+          +----------+          
+
+#+END_SRC
+** metinbtk
+
+ :PROPERTIES:
+    :CUSTOM_ID: metinbtk
+ :END:
+
+| Adı | metinbtk |
+| İşlevi | Giriş kapısındaki veriyi metin tabanlı ekrana yazar. Sadece kabuk ortamında kullanılabilir. |
+| Giriş Kapısı | 1 |
+|  | metinbtk.inport1(token tipi: Token) |
+ | Çıkış kapısı | yok |
+
+Parametreleri: yok
+
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-metinbtk.png :cmdline -r -s 0.8
+          +----------+     
+          | metinbtk |     
+Token     |          |
+     -----+>         |
+          |          |     
+          +----------+     
+
+#+END_SRC
+** takipknk
+
+ :PROPERTIES:
+    :CUSTOM_ID: takipknk
+ :END:
+
+| Adı | takipknk |
+| İşlevi | Dosya ile belirlenen başlıkları takip etmeye yarar. |
+| Giriş Kapısı | yok |
+ | Çıkış kapısı | 1 |
+|  | takipknk.outport1(token tipi: Baslik) |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| dosya | ~/home/onur/.ssgpp/conf/takip.txt~ | Takip edilmek istenen başlıkların listelendiği dosya. |  |  | 
+| limit | ~2147483647~ | Çıkışta listelen başlık sayısını limitlemeye yarar. |  |  | 
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-takipknk.png :cmdline -r -s 0.8
+     +----------+           
+     | takipknk |           
+     |          |      Baslik
+     |          |>-----
+     |          |           
+     +----------+           
+
+#+END_SRC
+** tarihflt
+
+ :PROPERTIES:
+    :CUSTOM_ID: tarihflt
+ :END:
+
+| Adı | tarihflt |
+| İşlevi | Giriş kapısındaki girdinin tarihi parametre olarak verilen tarih aralığındaysa çıktı kapısına geçirir, değilse yutar. başlangıç tarihi aralığa dahilken, bitiş tarihi dahil değildir. |
+| Giriş Kapısı | 1 |
+|  | tarihflt.inport1(token tipi: Entry) |
+ | Çıkış kapısı | 1 |
+|  | tarihflt.outport1(token tipi: Entry) |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| baş | ~1.1.1999~ | Geçirilmesi istenen tarih aralığının başlangıcı. |  |  | 
+| son | ~11.2.2015~ | Geçirilmesi istenen tarih aralığının sonu. |  |  | 
+| tip | ~GIRIS~ | Filtreleme işinin girdinin giriş tarihine mi yoksa düzenleme tarihine mi bakılarak yapılacağını belirler. | [giriş, düzenleme] |  | 
+Önkoşulları: 
+ - at least one of the following should be true: baş is set; son is set
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-tarihflt.png :cmdline -r -s 0.8
+          +----------+          
+          | tarihflt |          
+Entry     |          |      Entry
+     -----+>         |>-----
+          |          |          
+          +----------+          
+
+#+END_SRC
+** testbtk
+
+ :PROPERTIES:
+    :CUSTOM_ID: testbtk
+ :END:
+
+| Adı | testbtk |
+| İşlevi | no description given |
+| Giriş Kapısı | 1 |
+|  | testbtk.inport1(token tipi: TextToken) |
+ | Çıkış kapısı | yok |
+
+Parametreleri: yok
+
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-testbtk.png :cmdline -r -s 0.8
+              +---------+     
+              | testbtk |     
+TextToken     |         |
+         -----+>        |
+              |         |     
+              +---------+     
+
+#+END_SRC
+** testcvt
+
+ :PROPERTIES:
+    :CUSTOM_ID: testcvt
+ :END:
+
+| Adı | testcvt |
+| İşlevi | no description given |
+| Giriş Kapısı | 1 |
+|  | testcvt.inport1(token tipi: Token) |
+ | Çıkış kapısı | 1 |
+|  | testcvt.outport1(token tipi: Token) |
+
+Parametreleri: yok
+
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-testcvt.png :cmdline -r -s 0.8
+          +---------+          
+          | testcvt |          
+Token     |         |      Token
+     -----+>        |>-----
+          |         |          
+          +---------+          
+
+#+END_SRC
+** testknk
+
+ :PROPERTIES:
+    :CUSTOM_ID: testknk
+ :END:
+
+| Adı | testknk |
+| İşlevi | no description given |
+| Giriş Kapısı | yok |
+ | Çıkış kapısı | 1 |
+|  | testknk.outport1(token tipi: TextToken) |
+
+Parametreleri: yok
+
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-testknk.png :cmdline -r -s 0.8
+     +---------+              
+     | testknk |              
+     |         |      TextToken
+     |         |>-----
+     |         |              
+     +---------+              
+
+#+END_SRC
+** wordlebtk
+
+ :PROPERTIES:
+    :CUSTOM_ID: wordlebtk
+ :END:
+
+| Adı | wordlebtk |
+| İşlevi | Giriş kapısındaki grafik verisini wordle sayfasında etiket bulutu yaratmak için kullanılabilecek biçimde metin dosyasına yazar. |
+| Giriş Kapısı | 1 |
+|  | wordlebtk.inport1(token tipi: ChartData) |
+ | Çıkış kapısı | yok |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| dosya | ~wordlebtk.txt~ | Yazılmak istenen dosyanın yolu ve adı. |  |  | 
+Görsel gösterimi: 
 #+BEGIN_SRC ditaa :file imgs/dit-wordlebtk.png :cmdline -r -s 0.8
-                 +----------------+
-                 |                |
- Grafik Verisi   |                |
-            -----+>   wordlebtk   |
-                 |                |
-                 |                |
-                 +----------------+
+              +-----------+     
+              | wordlebtk |     
+ChartData     |           |
+         -----+>          |
+              |           |     
+              +-----------+     
+
 #+END_SRC
+** yazarlistesiknk
 
+ :PROPERTIES:
+    :CUSTOM_ID: yazarlistesiknk
+ :END:
 
-** +maçsonucubtk+ 
-/Kullanımdan kalktı./ (bkz: [[maçsonucu]]) ~maçsonucubtk~ $\rightarrow$ ~maçsonucu ! metinbtk~
+| Adı | yazarlistesiknk |
+| İşlevi | hayvanknk veya biriknk bileşenini çok sayıdaki yazar ile kullanmaya yarar. Yazar listesi dosya ile ya da badi veya troll listesi olarak belirlenebilir. |
+| Giriş Kapısı | yok |
+ | Çıkış kapısı | 1 |
+|  | yazarlistesiknk.outport1(token tipi: Baslik) |
 
-| Adı            | maçsonucubtk                                                                                                                                      |
-| İşlevi         | girdi kapısındaki girdinin içinde skor geçen cümleleri ekrana yazar. aralarında tire olan üçe kadar hanesi olan iki sayıyı skor olarak algılanır. |
-| Girdi kapısı   | 1 tane. Kapıdan geçen veri tipi ~Girdi~.                                                                                                          |
-| Çıktı kapısı   | -                                                                                                                                                 |
-| Örnek kullanım | ~yürüt başlıkknk [başlık=11 haziran 2008 isviçre türkiye maçı] ! başlıkgirdileri ! maçsonucubtk~                                                  |
-| Parametreleri  | -                                                                                                                                                 |
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| gpy | ~5~ | Yazar başına üretilen başlık sayısı |  |  | 
+| kip | ~HAYVANKNK~ | Kullanılmak istenen bileşen. Bu bileşenin kabul ettiği parametreler de yazarlistesiknk ile verilebilir. | [hayvanknk, biriknk] |  | 
+| yazar | ~yok~ | Tek bir yazar için kullanılır. |  | dosyadanyazar is not set; liste is not set;  | 
+| liste | ~yok~ | Yazarları belirleyen hazır liste. | [badi, troll] | yazar is not set; dosyadanyazar is not set;  | 
+| dosyadanyazar | ~yok~ | Yazar listesini içeren dosya. |  | yazar is not set; liste is not set;  | 
+Önkoşulları: 
+ - only one of the following should be true: yazar is set; dosyadanyazar is set; liste is set
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-yazarlistesiknk.png :cmdline -r -s 0.8
+     +-----------------+           
+     | yazarlistesiknk |           
+     |                 |      Baslik
+     |                 |>-----
+     |                 |           
+     +-----------------+           
 
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-macsonucubtk.png :cmdline -r -s 0.8
-         +-------------------+
-         |                   |
- Girdi   |                   |
-    -----+>   maçsonucubtk   |
-         |                   |
-         |                   |
-         +-------------------+
 #+END_SRC
-
-
-* Tanımlanması planlanan bileşenler				   :noexport:
-[[file:SsgppIcinEklentiBilesenTanimlamak.org][ssg++ için eklenti bileşen tanımlamak]]ta anlatıldığı üzere kendi bileşenlerinizi tanımlamak mümkün. Geliştirici lisansı koşulları gereği eklenti bileşen kodlarını benimle paylaşmanız gerekiyor.
-
-** spoilerfiltresi 
-
-** uyarıbtk 
-

@@ -1,22 +1,27 @@
 #+TITLE: ssg++ ana sayfa
+# ssgpp-yardim'i org klasoru icinde calistirip SsgppComps.org ve IshattiKisayollari.org dosyalarini olustur. Sonra org projesini yayinla:
 # C-c C-e X ssgpp
 # C-c C-e P x ssgpp ya da org-publish-project > ssgpp
 # #+STYLE: <link rel="stylesheet" type="text/css" href="./css/stylesheet.css" /> <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid Sans" /> 
 
 * ssg++ nedir?
 
-ssg++, [[http://antik.eksisozluk.com][ekşi sözlük]] için alternatif arayüzler sunan bir projedir. ekşi sözlük için komut satırı arayüzü, web arayüzü ve programlama arayüzü sağlar. 
+ssg++, [[https://eksisozluk.com][ekşi sözlük]] için alternatif arayüzler sunan bir projedir. ekşi sözlük için *web arayüzü*, *komut satırı arayüzü* ve *programlama arayüzü* sağlar. 
 Her ne kadar ekşi sözlük'ü kendi arayüzüyle severek kullanıyor olsak da bu arayüz her ihtiyaca cevap veremiyor.
 ssg++ sağladığı arayüzlerle pek çok zor işi tek satırlık bir komut çalıştırmak kadar kolay hale getiriyor.
 
-Komut satırı arayüzü girdi madenciliği ile çözümlemeler yapmayı sağlarken, web arayüzü  ssg++'nın işlevselliğinin internet tarayıcısı ortamında kullanılmasını sağlar.
-Bunun yanında esnek yapısı sayesinde istediğiniz işi yapmanızı sağlayan yeni komutlar ve bileşenler tanımlamanız mümkün.
-ssg++ /bileşen tabanlı tasarım/ prensipleri üzerine kuruludur. Veri işlemeye dönük uygulamalar için bileşen tanımlayı ve kendisiyle gelen dille bileşen dizilimleri yaratmayı sağlayan /sacre/ adındaki bileşen tabanlı çerçeve kullanılarak oluşturulmuştur. Esas olarak ssg++ ekşi sözlük'e özel tanımlanmış bileşenlere ve /iş hattı/ dediğimiz bileşen dizilimlerine dayanır.
-Daha fazla bilgi için 
-(bkz: [[file:SsgppComps.org][ssg++ bileşenleri]])
-(bkz: [[file:Sacre.org][iş hattı oluşturma]])
+ssg++ üç seviyede kullanılabilir:
++ *Başlangıç seviye kullanıcılar için web arayüzü:* Web arayüzü ssg++'nın işlevselliğinin bir internet tarayıcısı ile kullanılmasını sağlar.
++ *Orta seviye kullanıcılar için komut satırı arayüzü:* Komut satırı arayüzü girdi madenciliği ile çözümlemeler yapmayı sağlar.
+ - Halihazırda tanımlanmış iş hatlarını komut satırında kullanabilirsiniz.
+ - ssg++'nın esnek yapısı sayesinde mevcut bileşenleri değişik şekillerde bağlayarak yeni iş hatları oluşturup yeni işlevler tanımlayabilirsiniz.
++ *İleri seviye kullanıcılar (geliştiriciler) için programlama arayüzü:* 
+ - İstediğiniz işi yapan bir bileşen mevcut değilse eklenti bileşenler tanımlayabilirsiniz.
+ - ssg++'nın sağladığı tüm işlevleri basit bir API ile kendi programınızda kullanabilirsiniz. Bunun için geliştirici lisansı edinmeniz gerekiyor.
 
-** Ekran çıktıları
+
+
+* Web arayüzü
 # #+CAPTION: This is a table with lines around and between cells
 # #+ATTR_HTML: :width 500px
 #+BEGIN_HTML
@@ -25,29 +30,17 @@ Daha fazla bilgi için
 <table style="text-align: center;" cellpadding="10px">
   <tr>
     <td>
-      <p>gündem</p>
-      <a href="imgs/ekran-ciktisi-ks-gundem.png"><img src="imgs/ekran-ciktisi-ks-gundem.png" width="400"></a>
-    </td>
-    <td>
       <p>nabız</p>
       <a href="imgs/ekran-ciktisi-web-nabiz.png"><img src="imgs/ekran-ciktisi-web-nabiz.png" width="400"></a>
     </td>
   </tr>
   <tr>
     <td>
-      <p>şükela</p>
-      <a href="imgs/ekran-ciktisi-ks-sukela.png"><img src="imgs/ekran-ciktisi-ks-sukela.png" width="400"></a>
-    </td>
-    <td>
       <p>dünün en beğenilenleri</p>
       <a href="imgs/ekran-ciktisi-web-debe-bugun.png"><img src="imgs/ekran-ciktisi-web-debe-bugun.png" width="400"></a>
     </td>
   </tr>
   <tr>
-    <td>
-      <p>maç skoru</p>
-      <a href="imgs/ekran-ciktisi-ks-macskoru.png"><img src="imgs/ekran-ciktisi-ks-macskoru.png" width="400"></a>
-    </td>
     <td>
       <p>bkz'ları (anket) ve ajanda</p>
       <a href="imgs/ekran-ciktisi-web-bkzlari-ajanda.png"><img src="imgs/ekran-ciktisi-web-bkzlari-ajanda.png" width="400"></a>
@@ -56,55 +49,128 @@ Daha fazla bilgi için
 </table>
 #+END_HTML
 
-* ssg++ ile yapabileceklerinize örnekler
 
-ssg++ komutları iş hattı kısayolu şeklinde tanımlanarak genişletilebilir. 
-Mevcut tanımlı iş hattı kısayolları: 
+* Komut satırı arayüzü
 
-#+ATTR_HTML: cellpadding="15"
-| [[file:IsHattiKisayollari.org::ajanda-1][ajanda-1]]               | [[file:IsHattiKisayollari.org::ajanda][ajanda]]  | [[file:IsHattiKisayollari.org::ajanda3][ajanda3]]         | [[file:IsHattiKisayollari.org::anket][anket]]              |
-| [[file:IsHattiKisayollari.org::ara][ara]]                    | [[file:IsHattiKisayollari.org::badi][badi]]    | [[file:IsHattiKisayollari.org::baslikindir][başlıkindir]]     | [[file:IsHattiKisayollari.org::baslikresimleri][başlıkresimleri]]    |
-| [[file:IsHattiKisayollari.org::bugun][bugün]]                  | [[file:IsHattiKisayollari.org::debe][debe]]    | [[file:IsHattiKisayollari.org::dosyadananket][dosyadananket]]   | [[file:IsHattiKisayollari.org::dosyadanlafebeleri][dosyadanlafebeleri]] |
-| [[file:IsHattiKisayollari.org::dosyadanzamansalegilim][dosyadanzamansaleğilim]] | [[file:IsHattiKisayollari.org::dun][dün]]     | [[file:IsHattiKisayollari.org::farkbadi][farkbadi]]        | [[file:IsHattiKisayollari.org::getir][getir]]              |
-| [[file:IsHattiKisayollari.org::ghebe][ghebe]]                  | [[file:IsHattiKisayollari.org::ghebce][ghebçe]]  | [[file:IsHattiKisayollari.org::gundem][gündem]]          | [[file:IsHattiKisayollari.org::lafebeleri][lafebeleri]]         |
-| [[file:IsHattiKisayollari.org::macskoru][maçskoru]]               | [[file:IsHattiKisayollari.org::manset][manşet]]  | [[file:IsHattiKisayollari.org::ortakbasliklari][ortakbaşlıkları]] | [[file:IsHattiKisayollari.org::takip][takip]]              |
-| [[file:IsHattiKisayollari.org::tsllbn][tsllbn]]                 | [[file:IsHattiKisayollari.org::yedekle][yedekle]] | [[file:IsHattiKisayollari.org::zamansalegilim][zamansaleğilim]]  |                    |
-Örnek olarak, /lafebeleri/ komutunun iş hattı şöyle:
-#+BEGIN_EXAMPLE
-başlıkknk [başlık=%s] ! başlıkgirdileri ! histogram [eksen=kategori, kategori=yazar] ! grafikbtk 
-#+END_EXAMPLE
-/lafebeleri/ komutu argüman olarak verilen başlığa yazmış yazarları girdi sayılarına göre grafik olarak gösterir. 
+ssg++ /bileşen tabanlı tasarım/ prensipleri üzerine kuruludur. Veri işlemeye dönük uygulamalar için bileşen tanımlayı ve kendisiyle gelen dille bileşen dizilimleri yaratmayı sağlayan /sacre/ çerçevesi kullanılarak oluşturulmuştur. Esas olarak ssg++ ekşi sözlük'e özel tanımlanmış bileşenlere ve /iş hattı/ dediğimiz bileşen dizilimlerine dayanır.
+Daha fazla bilgi için 
+(bkz: [[file:SsgppComps.org][ssg++ bileşenleri]])
+(bkz: [[file:Sacre.org][iş hattı oluşturma]])
 
-Komut örneği:
-#+BEGIN_EXAMPLE
-$ ssg++ lafebeleri borussia dortmund
-#+END_EXAMPLE
+ssg++ çok sayıda halihazırda tanımlanmış iş hattı içerir. Bunları kısaltılmış olarak kullanabilmek için iş hattı kısayolları tanımlanmıştır. Tüm tanımlı iş hatlarının detayları için (bkz: [[file:IsHattiKisayollari.org][iş hattı kısayolları]])
 
-Çıktısı:
+ssg++ komutları iş hattı kısayolu şeklinde tanımlanarak genişletilebilir. (bkz: [[file:YeniIsHattiKisayoluTanimlama.org][yeni iş hattı kısayolu tanımlama]])
 
-[[file:imgs/lafebeleri_borussia_dortmund.png]]
+** ssg++ komutları
 
-Demek ki Lewandowski'nin Bayern Münih'e gidip gitmeyeceğini spacetimereality'ye sormak gerekiyormuş.
++ ~yardım~
 
-Tüm tanımlı iş hatlarının detayları ve örnek kullanımları için (bkz: [[file:IsHattiKisayollari.org][iş hattı kısayolları]]).
+  komutların kullanımıyla ilgili yardım sağlar.
 
-Kendi iş hattı kısayollarınızı tanımlamak için (bkz: [[file:YeniIsHattiKisayoluTanimlama.org][yeni iş hattı kısayolu tanımlama]]).
++ ~yardım~ /iş hattı kısayolu/
 
-ssg++ kullanılarak yapılmış daha geniş kapsamlı çalışmalar için (bkz: [[http://ssgpp.wordpress.com][ssg++ blogu]]).
+  verilen iş hattı kısayolu hakkında bilgi verir. (bkz: [[file:IsHattiKisayollari.org][iş hattı kısayolları]])
 
-Tek satırın yetmediği ya da başka programlarla bir arada kullanılmasının gerektiği durumlar için oluşturulmuş betikleri görmek için (bkz: [[https://github.com/ssgpp/betikler][ssg++ betikleri]])
++ ~yardım~ /bileşen adı/
+  
+  verilen bileşen hakkında bilgi verir. (bkz: [[file:SsgppComps.org][ssg++ bileşenleri]])
 
-* Kurulum ve kullanım
++ ~yürüt~ /iş hattı/
+
+  verilen iş hattını çalıştırır. (bkz: [[file:Sacre.org][iş hattı oluşturma]])
+
++ /iş hattı kısayolu/ 
+
+  girilen iş hattı kısayolunu çalıştırır. (bkz: [[file:YeniIsHattiKisayoluTanimlama.org][yeni iş hattı kısayolu tanımlama]])
+
++ ~mesaj~ 
+
+  giriş yapmış kullanıcının mesajı olup olmadığı kontrol edilir.
+
++ ~-l~ /komut/
+
+  Verilen komutu ekşi sözlük'e giriş yaptıktan sonra çalıştırır.
+
+** Kulanım örnekleri
++ Basit kullanım örnekleri için (bkz: [[file:ssgpp-ornekler.org][ssg++ kullanım örnekleri]])
++ ssg++ kullanılarak yapılmış daha geniş kapsamlı çalışmalar için (bkz: [[http://ssgpp.wordpress.com][ssg++ blogu]]).
++ Tek satırın yetmediği ya da başka programlarla bir arada kullanılmasının gerektiği durumlar için oluşturulmuş betikler için (bkz: [[https://github.com/ssgpp/betikler][ssg++ betikleri]]).
+
+# #+CAPTION: This is a table with lines around and between cells
+# #+ATTR_HTML: :width 500px
+#+BEGIN_HTML
+<table style="text-align: center;" cellpadding="10px">
+  <tr>
+    <td>
+      <p>gündem</p>
+      <a href="imgs/ekran-ciktisi-ks-gundem.png"><img src="imgs/ekran-ciktisi-ks-gundem.png" width="400"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>şükela</p>
+      <a href="imgs/ekran-ciktisi-ks-sukela.png"><img src="imgs/ekran-ciktisi-ks-sukela.png" width="400"></a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>maç skoru</p>
+      <a href="imgs/ekran-ciktisi-ks-macskoru.png"><img src="imgs/ekran-ciktisi-ks-macskoru.png" width="400"></a>
+    </td>
+  </tr>
+</table>
+#+END_HTML
+
+
+* Programlama arayüzü
+
+** Eklenti tanımlamak
+Yapmak istediğiniz şey için iş hattı tanımlamak yeterli gelmedi ise iş hatlarında kullanmak üzere kendi bileşenlerinizi eklenti olarak tanımlayabilirsiniz (bkz: [[file:SsgppIcinEklentiBilesenTanimlamak.org][ssg++ için eklenti bileşen tanımlamak]]).
+
+** ssg++ API
+Kendi uygulamanızda kullanmak için ssg++ iş hatlarının yapabildiği her şeye bir API ile ulaşmanız mümkün. 
+İş hattının batak elemanını apisink olarak değiştirip ~List<Token> SozlukApi.runPipeline(String ishatti)~ metodunu çağırmanız yeterli.
+Örnek olarak badi başlıklarını yazdırmak için kullanılacak ~indeksknk [tip=badi] ! metinbtk~ iş hattında ~metinbtk~ bileşeni yerine ~apisink~ kullanarak başlıkları içinde ~Baslik~ nesneleri olan bir listeye alabiliriz:
+#+BEGIN_EXAMPLE 
+List<Token> badilerden = SozlukApi.runPipeline("indeksknk [tip=badi] ! apisink");
+#+END_EXAMPLE 
+
+ssg++ API ile ilgili daha fazla ayrıntı için (bkz: [[file:ssgpp-api.org][ssg++ API kullanımı]])
+
+*ÖNEMLİ NOT*: Geliştirici olarak kullanmak için geliştirici lisansı edinmeniz gerekiyor.
+
+
+* Kurulum
   [[*Lisans][Lisans]] metnini okuyup kabul ettikten sonra ssg++ programını indirmek ve ücretsiz bir lisans edinmek için [[file:indir.org][lisans istek formu]]nu doldurmanız yeterli.
 
-ssg++'nın çalıştırılabilmesi için sisteminizde [[http://www.oracle.com/technetwork/java/javase/downloads/index.html][JRE 7]] veya daha üst bir sürümü kurulu olmalıdır. Bir komut uçbiriminde ~java -version~ komutunu çalıştırarak bunu kontrol edebilirsiniz.
+ssg++'nın çalıştırılabilmesi için sisteminizde [[http://www.oracle.com/technetwork/java/javase/downloads/index.html][JRE 8]] veya daha üst bir sürümü kurulu olmalıdır. Bir komut uçbiriminde ~java -version~ komutunu çalıştırarak bunu kontrol edebilirsiniz.
 
-Edindiğiniz sıkıştırılmış dosyayı istediğiniz bir klasöre (örn. =~/Downloads/ssg++-1.0=) açın. Bu klasöre ~SSG++_DIR~ diyelim. Komut uçbiriminde ~cd SSG++_DIR~ komutuyla ~ssgpp-cli-1.0-SNAPSHOT.jar~ dosyasını içeren klasöre girin. İstenilen bir [[ssg++ komutları][komut]]u çalıştırmak için şunu girin:
+Edindiğiniz sıkıştırılmış dosyayı istediğiniz bir klasöre (örn. =~/Downloads/ssg++-1.0=) açın. Bu klasöre ~SSG++_DIR~ diyelim. 
+
+** Web arayüzü
+Komut uçbiriminde ~cd SSG++_DIR~ komutuyla ~ssgpp-web-1.0-SNAPSHOT.jar~ dosyasını içeren klasöre girin.
+ssg++'yı web arayüzü ile kullanmak için:
+#+BEGIN_EXAMPLE 
+java -jar ssgpp-web-1.0-SNAPSHOT.jar
+#+END_EXAMPLE
+komutunu kullanarak ssg++ web sunucusunu çalıştırın (=Ctrl-c= ile kapatabilirsiniz).
+
+Linux kullanıcıları =~/.bashrc= dosyasında =PATH= değişkenini aşağıdaki bölümde anlatıldığı gibi düzenlemişlerse, sunucuyu başlatmak için
+#+BEGIN_EXAMPLE 
+ssgppd start
+#+END_EXAMPLE
+komutunu kullanabilirler (kapatmak içinse =ssgppd stop=).
+
+Sunucuyu başlattıktan sonra tarayıcınızda [[http://localhost:8081/index.html]] adresini açın.
+
+
+** Komut satırı arayüzü
+Komut uçbiriminde ~cd SSG++_DIR~ komutuyla ~ssgpp-cli-1.0-SNAPSHOT.jar~ dosyasını içeren klasöre girin. İstenilen bir [[ssg++ komutları][komut]]u çalıştırmak için şunu girin:
 #+BEGIN_EXAMPLE
 java -jar ssgpp-cli-1.0-SNAPSHOT.jar komut
 #+END_EXAMPLE
 
-Linux altında =~/.bashrc= dosyasını aşağıdaki şekilde düzenleyerek ~bin~ klasörü altındaki betikler kullanılır hale getirilebilir: 
+Linux altında =~/.bashrc= dosyasını aşağıdaki şekilde düzenleyerek ~bin~ klasörü altındaki betikler yalnızca isimleriyle kullanılır hale getirilebilir: 
 #+BEGIN_EXAMPLE 
 export PATH=$PATH:SSG++_DIR/bin
 #+END_EXAMPLE
@@ -114,24 +180,8 @@ Bu durumda komut satırı arayüzü için sadece =ssg++= yazmanız yeterli.
 ssg++ komut
 #+END_EXAMPLE
 
-Komuttan önce =-l= argümanı verilirse komut ekşi sözlük'e giriş yapıldıktan sonra çalıştırılır (örn. =ssg++ -l komut=). 
-
-ssg++'yı web arayüzü ile kullanmak için:
-#+BEGIN_EXAMPLE 
-java -jar ssgpp-web-1.0-SNAPSHOT.jar
-#+END_EXAMPLE
-komutunu kullanarak ssg++ web sunucusunu çalıştırın (=Ctrl-c= ile kapatabilirsiniz).
-
-Linux kullanıcıları =~/.bashrc= dosyasını yukarda anlatıldığı gibi düzenlemişlerse, sunucuyu başlatmak için
-#+BEGIN_EXAMPLE 
-ssgppd start
-#+END_EXAMPLE
-komutunu kullanabilirler (kapatmak içinse =ssgppd stop=).
-
-Sunucuyu başlattıktan sonra tarayıcınızda [[http://localhost:8081/index.html]] adresini açın.
-
 ** Yapılandırma
-Programın çalışmasıyla ilgili bazı ayarlar kullanıcının ev dizinindeki =.ssgpp= klasöründe (örn. Linux altında =~/.ssgpp/conf/=) tutulur. Burdaki =app.properties= dosyası program ilk kez çalıştırıldığında otomatik oluşturulur. 
+Komut satırı ve web arayüzünün çalışmasıyla ilgili bazı ayarlar kullanıcının ev dizinindeki =.ssgpp= klasöründe (örn. Linux altında =~/.ssgpp/conf/=) tutulur. Burdaki =app.properties= dosyası program ilk kez çalıştırıldığında otomatik oluşturulur. 
 İsterseniz oluşturulmuş dosyayı düzenleyerek isterseniz aşağıdaki şablonu kullanarak kendi yapılandırma dosyanızı oluşturabilirsiniz. Aşağıdaki örnekte "#" ile başlayan satırlar açıklama (comment) satırlarıdır, dikkate alınmaz. Baştaki dört değerin doğru girildiğinden emin olun. Diğerleri varsayılan değerlerinde kalabilir.
 #+BEGIN_EXAMPLE
 # ekşi sözlük'e giriş yaparken kullandığınız e-mail adresi (eğer tanımladıysanız, kullanıcı adı)
@@ -173,7 +223,7 @@ ZamanDilimi=Europe/Istanbul
 EklentiDizini=
 #+END_EXAMPLE
 
-Bunun dışında Linux kullanıcıları =bin= klasöründeki bazı betikleri kullanabilmek için =ssgpp_conf.sh= dosyası içinde bazı düzenlemeler yapmalıdır. Ayrıntılı bilgiler dosya içinde bulunabilir.
+Bunun dışında Linux kullanıcıları =bin= klasöründeki bazı betikleri kullanabilmek için =ssgpp_conf.sh= dosyası içinde bazı düzenlemeler yapmalıdır. Ayrıntılı bilgi dosya içinde bulunabilir.
 
 Web arayüzündeki /yakın takip/ özelliği için =~/.ssgpp/conf/yakin_takip.txt= dosyası oluşturmanız gerekiyor. /yakın takip/ düğmesi günün başlıklarını bu dosyada belirlenen anahtar kelime listesine göre filtreler. örn. ilan, duyuru, kampanya gibi anahtar kelimelerle günün sizin ilgilerinize daha yakın olan başlıklarını takip edebilirsiniz.
 #+BEGIN_EXAMPLE 
@@ -192,43 +242,11 @@ türkiye
 veritabanı
 #+END_EXAMPLE
 
-** ssg++ komutları
 
-+ ~yardım~
-
-  komutların kullanımıyla ilgili yardım sağlar.
-
-+ ~yürüt~ /iş hattı/
-
-  verilen /iş hattı/ çalıştırılır. (bkz: [[file:SsgppComps.org][ssg++ bileşenleri]]) (bkz: [[file:Sacre.org][iş hattı oluşturma]])
-
-+ /iş hattı kısayolu/ 
-
-  girilen iş hattı kısayolu çalıştırılır. (bkz: [[file:IsHattiKisayollari.org][iş hattı kısayolları]]) (bkz: [[file:YeniIsHattiKisayoluTanimlama.org][yeni iş hattı kısayolu tanımlama]])
-
-+ ~mesaj~ 
-
-  giriş yapmış kullanıcının mesajı olup olmadığı kontrol edilir.
-
-* Geliştiriciler için
-
-** Eklenti tanımlamak
-Yapmak istediğiniz şey için iş hattı tanımlamak yeterli gelmedi ise iş hatlarında kullanmak üzere kendi bileşenlerinizi eklenti olarak tanımlayabilirsiniz (bkz: [[file:SsgppIcinEklentiBilesenTanimlamak.org][ssg++ için eklenti bileşen tanımlamak]]).
-
-** ssg++ API
-ssg++ iş hatlarının yapabildiği her şeye kendi uygulamanızda kullanmak için bir API ile ulaşmanız mümkün. 
-İş hattının batak elemanını apisink olarak değiştirip ~List<Token> SozlukApi.runPipeline(String ishatti)~ metodunu çağırmanız yeterli.
-Örnek olarak badi başlıklarını yazdırmak için kullanılacak ~badiknk ! metinbtk~ iş hattında ~metinbtk~ bileşeni yerine ~apisink~ kullanarak başlıkları içinde ~Baslik~ nesneleri olan bir listeye alabiliriz:
-#+BEGIN_EXAMPLE 
-List<Token> badilerden = SozlukApi.runPipeline("badiknk ! apisink");
-#+END_EXAMPLE 
-
-ssg++ API ile ilgili daha fazla ayrıntı için (bkz: [[file:ssgpp-api.org][ssg++ API kullanımı]])
-
-*ÖNEMLİ NOT*: Geliştirici olarak kullanmak için geliştirici lisansı edinmeniz gerekiyor.
 
 * Değişim günlüğü
 Sürümlere ait özellikler ve değişimler için (bkz: [[file:roadmap.org][değişim günlüğü]])
+
 
 * Destek olun
 Onur Derin <oderin at users.sourceforge.net> adresine yazarak

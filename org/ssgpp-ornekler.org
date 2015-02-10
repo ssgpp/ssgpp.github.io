@@ -1,0 +1,267 @@
+#+TITLE: ssg++ kullanımına dair örnekler
+
+ssg++ kullanılarak yapılmış daha geniş kapsamlı çalışmalar için (bkz: [[http://ssgpp.wordpress.com][ssg++ blogu]]). 
+Tek satırın yetmediği ya da başka programlarla bir arada kullanılmasının gerektiği durumlar için oluşturulmuş betikler için (bkz: [[https://github.com/ssgpp/betikler][ssg++ betikleri]]).
+
+* Bazı iş hattı kısayolu kullanımı örnekleri
+
+** ajanda
+    :PROPERTIES:
+      :CUSTOM_ID: ajanda
+    :END:
+Örnek:
+
+~$ ssg++ -l ajanda~
+
+Çıktısı:
+
+#+BEGIN_EXAMPLE
++ 6-7 temmuz 2013 küresel onur yürüyüşü
++ 6 temmuz 2013 ajda pekkan konseri
++ 6 temmuz 2013 arctic monkeys istanbul konseri
++ 6 temmuz 2013 başörtü ve inanç özgürlüğü yürüyüşü
++ 6 temmuz 2013 başörtülü yürüyüşü
++ 6 temmuz 2013 başörtüsü yürüyüşü
++ 6 temmuz 2013 doğu türkistan'a destek eylemi
++ 6 temmuz 2013 fransa özbekistan u20 maçı
++ 6 temmuz 2013 gezi parkı buluşması
++ 6 temmuz 2013 gezi parki bulusmasi
++ 6 temmuz 2013 grup yorum konseri
++ 6 temmuz 2013 ispanya uruguay u20 maçı
++ 6 temmuz 2013 polis tacizine karşı yürüyüş
++ 6 temmuz 2013 sabine lisicki marion bartoli maçı
++ 6 temmuz 2013 taksim buluşması
++ 6 temmuz 2013 tekyumruk geziparki yürüyüşü
+#+END_EXAMPLE
+
+** anket
+    :PROPERTIES:
+      :CUSTOM_ID: anket
+    :END:
+Örnek:
+
+Hangi filmi izlesem?
+
+~$ ssg++ anket sözlükçülerin en iyi 10 film listesi~
+
+Çıktısı:
+
+[[file:imgs/anket_sözlükçülerin_en_iyi_10_film_listesi.png]]
+
+** ara
+    :PROPERTIES:
+      :CUSTOM_ID: ara
+    :END:
+Örnek:
+
+~$ ssg++ -l ara saraband\*~
+
+Çıktısı:
+
+#+BEGIN_EXAMPLE
++ bach si minör keman sonatı sarabande
++ dead lovers' sarabande face one
++ dead lovers' sarabande face two
++ dead lovers sarabande
++ dead lovers sarabande face one
++ dead lovers sarabande face two
++ handel's sarabande
++ saraband
++ sarabande
++ sarabande from violin sonata in b minor
+#+END_EXAMPLE
+
+** başlıkindir
+    :PROPERTIES:
+      :CUSTOM_ID: baslikindir
+    :END:
+Örnek:
+
+~$ ssg++ başlıkindir sarabande, sarabande.txt~
+
+~$ ssg++ başlıkindir sarabande, sarabande.xml~
+
+Bağlantı verilmiş resimlerin, twitter durum bildirimlerinin, bkz verilmiş girdilerin dahil edilmesi gibi gelişmiş özelliklerin olduğu bir e-kitap okuyucusu dökümanı için
+#+BEGIN_EXAMPLE
+$ ssg++ başlıkindir sarabande, sarabande.html
+$ ebook-convert sarabande.html sarabande.mobi    # calibre ile gelen bir program
+$ send-to-kindle sarabande.mobi                  # kindle adresine dosya gönderen bir betik
+#+END_EXAMPLE
+
+** başlıkresimleri
+    :PROPERTIES:
+      :CUSTOM_ID: baslikresimleri
+    :END:
+Örnek:
+
+[[http://antik.eksisozluk.com/show.asp?t=charlize%20theron'un%20ne%20kadar%20g%C3%BCzel%20bir%20kad%C4%B1n%20olmas%C4%B1][charlize theron'un ne kadar güzel bir kadın olması]]?
+
+#+BEGIN_EXAMPLE
+$ ssg++ başlıkresimleri charlize theron
+$ ls
+charlize theron-18659736-charlize-theron-102809-3.jpg
+charlize theron-20123185-997DVA_Charlize_Theron_029.jpg
+charlize theron-20123185-Charlize%20Theron.jpg
+...
+#+END_EXAMPLE
+
+
+** debe
+    :PROPERTIES:
+      :CUSTOM_ID: debe
+    :END:
+
+Örnek:
+
+Dünün en beğenilenlerini kindle'dan şundan bundan okumak:
+
+~$ ssg++ debe > debe-20130706.txt~
+
+ya da bağlantı verilmiş resimlerin, twitter durum bildirimlerinin, bkz verilmiş girdilerin ve güncel başlıklar için başlığın ilk girdisinin de eklenmesi gibi gelişmiş özelliklerin olduğu bir döküman için
+#+BEGIN_EXAMPLE
+$ ssg++ yürüt istatistikknk [tip=debe] ! başlıkgirdileri ! dosyabtk [dosya=debe-20130706.html]
+$ ebook-convert debe-20130706.html debe-20130706.mobi   # calibre ile gelen bir program
+$ send-to-kindle debe-20130706.mobi                     # kindle adresine dosya gönderen bir betik
+#+END_EXAMPLE
+
+** dosyadananket
+    :PROPERTIES:
+      :CUSTOM_ID: dosyadananket
+    :END:
+
+Örnek:
+
+Sözlükçüler denize kim düşse denizi kurtarır (03.08.2013 itibariyle)?
+#+BEGIN_EXAMPLE
+$ ssg++ başlıkindir sözlükçülerin en antipatik 10 türk listesi, sözlükçülerin_en_antipatik_10_türk_listesi.xml
+$ ssg++ dosyadananket sözlükçülerin_en_antipatik_10_türk_listesi.xml
+#+END_EXAMPLE
+
+Çıktısı:
+
+[[file:imgs/anket_sözlükçülerin_en_antipatik_10_türk_listesi.png]]
+
+** dosyadanlafebeleri
+    :PROPERTIES:
+      :CUSTOM_ID: dosyadanlafebeleri
+    :END:
+
+Örnek:
+
+İtfaiye ile ilgili bir konuda kime danışmalı? Sözlükteki itfaiyeci kim? (İtfaiye kelimesinin geçtiği başlıklara en çok sayıda girdiyi kim yazmış?)
+
+~$ ssg++ -l yürüt hayvanknk [şey=itfaiye] ! başlıkgirdileri ! dosyabtk [dosya=itfaiye.xml]~
+
+~$ ssg++ dosyadanlafebeleri itfaiye.xml~
+
+Çıktısı:
+
+[[file:imgs/dosyadanlafebeleri_itfaiye.png]]
+
+** dosyadanzamansaleğilim
+    :PROPERTIES:
+      :CUSTOM_ID: dosyadanzamansalegilim
+    :END:
+
+Örnek:
+
+Hangi Lost bölümleri daha çok konuşulmuş? Lost'un popüleritesi nasıl değişmiş? Sezon finalleri ses getirmiş mi?
+
+#+BEGIN_EXAMPLE
+$ ssg++ -l başlıkindir lost, lost.xml
+$ ssg++ dosyadanzamansaleğilim lost.xml, hafta
+#+END_EXAMPLE
+
+Çıktısı:
+
+[[file:imgs/dosyadanzamansalegilim_lost_hafta.png]]
+
+** getir
+    :PROPERTIES:
+      :CUSTOM_ID: getir
+    :END:
+
+Örnek:
+
+~$ ssg++ getir hesap işletim ücretini geri almak~
+
+
+** lafebeleri
+    :PROPERTIES:
+      :CUSTOM_ID: lafebeleri
+    :END:
+
+Örnek:
+
+Lewandowski Bayern Münih'e gidecek mi? Bunu kim bilir?
+
+~$ ssg++ lafebeleri borussia dortmund~
+
+Çıktısı:
+
+[[file:imgs/lafebeleri_borussia_dortmund.png]]
+
+
+
+** maçskoru
+    :PROPERTIES:
+      :CUSTOM_ID: macskoru
+    :END:
+
+Örnek:
+
+~$ ssg++ maçskoru 24 temmuz 2013 bayern münih barcelona maçı~
+
+Çıktısı:
+
+#+BEGIN_EXAMPLE
+>> (...) ilk yarısı 1-0 bayern üstünlüğüyle biten maç. (...)
+
+>> (...) maç 1-1 biterse şaşırmam. (...)
+
+>> (...) `mario mandzukic` attı, 2-0 oldu. (...)
+#+END_EXAMPLE
+
+** ortakbaşlıkları
+    :PROPERTIES:
+      :CUSTOM_ID: ortakbasliklari
+    :END:
+
+Örnek:
+
+`sözlükteki evli çiftler` düğünlerinde "beraber yazdık biz bu başlıklarda" şarkısını çaldırmışlar mı? 
+Ya da sözlükte mesaj yoluyla `selam güzel bayan` demeden önce seviyeli bir kafa denkliği testi yapmaya ne dersin?
+
+~$ ssg++ -l ortakbaşlıkları suser1, suser2~
+
+
+** yedekle
+    :PROPERTIES:
+      :CUSTOM_ID: yedekle
+    :END:
+
+Örnek:
+
+~$ ssg++ -l yedekle suser1 suser1.txt~
+
+~$ ssg++ -l yedekle suser2 suser2.xml~
+
+ya da resimleri vs. de dahil etmek için
+
+~$ ssg++ -l yedekle suser2 suser2.html~
+
+
+** zamansaleğilim
+    :PROPERTIES:
+      :CUSTOM_ID: zamansalegilim
+    :END:
+
+Örnek:
+
+Geleneksel Mısır devrimleri kaç senede bir yapılır?
+
+~$ ssg++ zamansaleğilim mısır, ay~
+
+Çıktısı:
+
+[[file:imgs/zamansaleğilim_mısır_ay.png]]

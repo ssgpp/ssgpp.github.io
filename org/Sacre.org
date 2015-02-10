@@ -37,126 +37,13 @@ sacre'de bileşenler iş parçacığı olarak çalışırlar ve kapılarına ba�
 Üstteki resimde görülen örnek iş hattını tanımlamak için ~A & B ! C ! D ! E & F~ ifadesi yeterli.
 
 * Öz sacre bileşenleri
-Uygulamaya özgü tanımlanmış bileşenlerin dışında sacre'nin kendiliğinden gelen bazı bileşenleri de var.
-
-** apisink 
-| Adı          | apisink                                                                                                                                                                                                                                                                                                                                             |
-| İşlevi       | Geliştiricilerin işhattı sonuçlarını fonksiyon sonucu olarak almasını sağlar. Tip parametresi senkron olarak verildiğinde döndürülen sonuç apisink bileşenine giren tüm tokenlerin bir listesidir. Asenkron olarak verildiğinde öncesinde dinleyici olarak eklenmiş nesneler her yeni token geldiğinde ve iş hattı tamamlandığında haberdar edilir. |
-| Girdi kapısı | 1 tane. Kapıdan geçen veri tipi /Token/.                                                                                                                                                                                                                                                                                                            |
-| Çıktı kapısı | -                                                                                                                                                                                                                                                                                                                                                   |
-
-Parametreleri
-| parametre | alabildiği değerler    | açıklama                            | varsayılan değeri |
-|-----------+------------------------+-------------------------------------+-------------------|
-| tip       | senkron ya da asenkron | sonuçların alınma şeklini belirler. | /senkron/         |
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-apisink.png :cmdline -r -s 0.8
-        +----------------+
-        |                |
- Token  |                |
-   -----+>   apisink     |
-        |                |
-        |                |
-        +----------------+
-#+END_SRC
-
-
-** fork 
-| Adı           | fork                                                                    |
-| İşlevi        | Girdi kapısındaki veriyi ikileyerek iki çıktı kapısına birden gönderir. |
-| Girdi kapısı  | 1 tane. Kapıdan geçen veri tipi /Token/.                                |
-| Çıktı kapısı  | 2 tane. Kapıdan geçen veri tipi /Token/.                                |
-| Parametreleri | -                                                                       |
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-fork.png :cmdline -r -s 0.8
-        +----------------+
-        |                |    Token
-Token   |                |>----
-   -----+>     fork      |    Token
-        |                |>----
-        |                |
-        +----------------+
-#+END_SRC
-
-** merge 
-| Adı           | merge                                                   |
-| İşlevi        | İki girdi kapısındaki verileri çıktı kapısına gönderir. |
-| Girdi kapısı  | 2 tane. Kapıdan geçen veri tipi /Token/.                |
-| Çıktı kapısı  | 1 tane. Kapıdan geçen veri tipi /Token/.                |
-| Parametreleri | -                                                       |
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-merge.png :cmdline -r -s 0.8
-        +----------------+
-Token   |                |
-   -----+>               |   Token
-Token   |     merge      |>----
-   -----+>               |
-        |                |
-        +----------------+
-#+END_SRC
-
-** intersection 
-| Adı           | intersection                                                              |
-| İşlevi        | İki girdi kapısındaki verilerin kesişim kümesini çıktı kapısına gönderir. |
-| Girdi kapısı  | 2 tane. Kapıdan geçen veri tipi /Token/.                                  |
-| Çıktı kapısı  | 1 tane. Kapıdan geçen veri tipi /Token/.                                  |
-| Parametreleri | -                                                                         |
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-intersection.png :cmdline -r -s 0.8
-        +----------------+
-Token   |                |
-   -----+>               |   Token
-Token   |  intersection  |>----
-   -----+>               |
-        |                |
-        +----------------+
-#+END_SRC
-
-** GND (ground) 
-| Adı           | gnd                                                           |
-| İşlevi        | Girdi kapısındaki verileri alır ve onlarla hiçbir şey yapmaz. |
-| Girdi kapısı  | 1 tane. Kapıdan geçen veri tipi /Token/.                      |
-| Çıktı kapısı  | -                                                             |
-| Parametreleri | -                                                             |
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-gnd.png :cmdline -r -s 0.8
-       +----------------+
-       |                |
-Token  |                |
-  -----+>     gnd       |
-       |                |
-       |                |
-       +----------------+
-#+END_SRC
-
-** limitflt 
-| Adı          | limitflt                                                                                        |
-| İşlevi       | yalnızca limit parametresi ile verilen sayıdaki tokeni girdi kapısından çıktı kapısına geçirir. |
-| Girdi kapısı | 1 tane. Kapıdan geçen veri tipi /Token/.                                                        |
-| Çıktı kapısı | 1 tane. Kapıdan geçen veri tipi /Token/.                                                        |
-
-Parametreleri
-| parametre | alabildiği değerler       | açıklama                                      | varsayılan değeri |
-|-----------+---------------------------+-----------------------------------------------+-------------------|
-| limit     | herhangi bir pozitif sayı | geçirilecek en fazla token sayısını belirler. | /1/               |
-
-
-Görsel gösterimi
-#+BEGIN_SRC ditaa :file imgs/dit-limitflt.png :cmdline -r -s 0.8
-          +------------+
-          |            |
-  Token   |            |   Token
-     -----+> limitflt  |>----
-          |            |
-          |            |
-          +------------+
-#+END_SRC
-
+Uygulamaya özgü tanımlanmış bileşenlerin dışında sacre'nin kendiliğinden gelen bazı bileşenleri de var:
+- [[file:SsgppComps.org::*apisink][apisink]] 
+- [[file:SsgppComps.org::*fork1xn][fork1xn]]
+- [[file:SsgppComps.org::*mergenx1][mergenx1]]
+- [[file:SsgppComps.org::*intersection][intersection]]
+- [[file:SsgppComps.org::*gnd][gnd (ground)]]
+- [[file:SsgppComps.org::*limitflt][limitflt]]
 
 * Bileşen tanımlamak
 

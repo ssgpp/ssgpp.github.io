@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr" xml:lang="tr">
+<head>
+<title>ssg++ kullanımına dair örnekler</title>
+<!-- 2015-02-10 Tue 19:03 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Onur Derin" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="./css/stylesheet.css" /> <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid Sans" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+<table style="padding:0; width: 100%">
+    <tr> 
+        <td style="vertical-align: top; min-width:320px;">
+            <h1 style="font-size:400%"><a href="http://ssgpp.github.io/" rel="home" style="text-decoration:none; color:black;">$ ssg++ ▮</a></h1>
+            <!--span style="font-size:120%"><span style="text-decoration:underline">s</span>ozluk <span style="text-decoration:underline">sh</span>ell: ekşi sözlük komut satırı arayüzü</span-->
+            <!--img src="http://apps.sourceforge.net/trac/ssgpp/raw-attachment/wiki/WikiStart/ssgpp-logo.png" /-->
+        </td>
+        <td style="text-align:right; vertical-align: top;">
+            <!--span id="ssgsozlukshell" style="font-size:200%">ssg++ (<span class="underline">s</span>ozluk <span class="underline">sh</span>ell)</span-->
+
+            <p style="font-size:80%">
+               "sosyal medya analistinin başucu programı." --henüz söylenmedi <br /> 
+               "reserved" --@2 <br />
+               "yaşasın bağzı proğramlar!" --anonim <br />
+               <!--"olmasaydın, olmazdım." --<a href="http://ssgpp.wordpress.com" target="_blank">ssg++ blog</a><br /-->
+               <!--"bilginin harman yeri" --<a href="https://twitter.com/sozlukshell" target="_blank">@sozlukshell</a><br /-->
+"abi seviyorsanız gidin belli edin bence." --geliştiricisi 
+<p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="ZRHG23R9UNHLL">
+<input type="image" src="https://www.paypalobjects.com/tr_TR/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - Online ödeme yapmanın daha güvenli ve kolay yolu!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+<a href="https://twitter.com/sozlukshell" class="twitter-follow-button" data-show-count="false" data-lang="tr" data-show-screen-name="false" data-dnt="true">takip edin</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</p>
+        </td>
+    </tr>
+</table>
+<div style="width:100%; text-align:right; background-color:black;">
+	    <a href="index.html" style="color:white;text-decoration:none; font-size:120%;">ana sayfa ▮ </a>&nbsp;&nbsp;&nbsp;
+	    <a href="indir.html" style="color:white;text-decoration:none; font-size:120%;">indir ▮ </a>&nbsp;&nbsp;&nbsp;
+	    <a href="http://ssgpp.wordpress.com" style="color:white;text-decoration:none; font-size:120%;" target="_blank">blog ▮ </a>&nbsp;&nbsp;&nbsp;
+	    <a href="mobi.html" style="color:white;text-decoration:none; font-size:120%;">kindle için ▮ </a>&nbsp;&nbsp;&nbsp;
+	    <a href="sitemap.html" style="color:white;text-decoration:none; font-size:120%;">site haritası ▮ </a>&nbsp;&nbsp;&nbsp;
+</div>
+<br />
+</div>
+<div id="content">
+<h1 class="title">ssg++ kullanımına dair örnekler</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Bazı iş hattı kısayolu kullanımı örnekleri</a>
+<ul>
+<li><a href="#ajanda">ajanda</a></li>
+<li><a href="#anket">anket</a></li>
+<li><a href="#ara">ara</a></li>
+<li><a href="#baslikindir">başlıkindir</a></li>
+<li><a href="#baslikresimleri">başlıkresimleri</a></li>
+<li><a href="#debe">debe</a></li>
+<li><a href="#dosyadananket">dosyadananket</a></li>
+<li><a href="#dosyadanlafebeleri">dosyadanlafebeleri</a></li>
+<li><a href="#dosyadanzamansalegilim">dosyadanzamansaleğilim</a></li>
+<li><a href="#getir">getir</a></li>
+<li><a href="#lafebeleri">lafebeleri</a></li>
+<li><a href="#macskoru">maçskoru</a></li>
+<li><a href="#ortakbasliklari">ortakbaşlıkları</a></li>
+<li><a href="#yedekle">yedekle</a></li>
+<li><a href="#zamansalegilim">zamansaleğilim</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+ssg++ kullanılarak yapılmış daha geniş kapsamlı çalışmalar için (bkz: <a href="http://ssgpp.wordpress.com">ssg++ blogu</a>). 
+Tek satırın yetmediği ya da başka programlarla bir arada kullanılmasının gerektiği durumlar için oluşturulmuş betikler için (bkz: <a href="https://github.com/ssgpp/betikler">ssg++ betikleri</a>).
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Bazı iş hattı kısayolu kullanımı örnekleri</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-ajanda" class="outline-3">
+<h3 id="ajanda"><a id="sec-1-1" name="sec-1-1"></a>ajanda</h3>
+<div class="outline-text-3" id="text-ajanda">
+<p>
+Örnek:
+</p>
+
+<p>
+<code>$ ssg++ -l ajanda</code>
+</p>
+
+<p>
+Çıktısı:
+</p>
+
+<pre class="example">
++ 6-7 temmuz 2013 küresel onur yürüyüşü
++ 6 temmuz 2013 ajda pekkan konseri
++ 6 temmuz 2013 arctic monkeys istanbul konseri
++ 6 temmuz 2013 başörtü ve inanç özgürlüğü yürüyüşü
++ 6 temmuz 2013 başörtülü yürüyüşü
++ 6 temmuz 2013 başörtüsü yürüyüşü
++ 6 temmuz 2013 doğu türkistan'a destek eylemi
++ 6 temmuz 2013 fransa özbekistan u20 maçı
++ 6 temmuz 2013 gezi parkı buluşması
++ 6 temmuz 2013 gezi parki bulusmasi
++ 6 temmuz 2013 grup yorum konseri
++ 6 temmuz 2013 ispanya uruguay u20 maçı
++ 6 temmuz 2013 polis tacizine karşı yürüyüş
++ 6 temmuz 2013 sabine lisicki marion bartoli maçı
++ 6 temmuz 2013 taksim buluşması
++ 6 temmuz 2013 tekyumruk geziparki yürüyüşü
+</pre>
+</div>
+</div>
+
+<div id="outline-container-anket" class="outline-3">
+<h3 id="anket"><a id="sec-1-2" name="sec-1-2"></a>anket</h3>
+<div class="outline-text-3" id="text-anket">
+<p>
+Örnek:
+</p>
+
+<p>
+Hangi filmi izlesem?
+</p>
+
+<p>
+<code>$ ssg++ anket sözlükçülerin en iyi 10 film listesi</code>
+</p>
+
+<p>
+Çıktısı:
+</p>
+
+
+<div class="figure">
+<p><img src="imgs/anket_sözlükçülerin_en_iyi_10_film_listesi.png" alt="anket_sözlükçülerin_en_iyi_10_film_listesi.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-ara" class="outline-3">
+<h3 id="ara"><a id="sec-1-3" name="sec-1-3"></a>ara</h3>
+<div class="outline-text-3" id="text-ara">
+<p>
+Örnek:
+</p>
+
+<p>
+<code>$ ssg++ -l ara saraband\*</code>
+</p>
+
+<p>
+Çıktısı:
+</p>
+
+<pre class="example">
++ bach si minör keman sonatı sarabande
++ dead lovers' sarabande face one
++ dead lovers' sarabande face two
++ dead lovers sarabande
++ dead lovers sarabande face one
++ dead lovers sarabande face two
++ handel's sarabande
++ saraband
++ sarabande
++ sarabande from violin sonata in b minor
+</pre>
+</div>
+</div>
+
+<div id="outline-container-baslikindir" class="outline-3">
+<h3 id="baslikindir"><a id="sec-1-4" name="sec-1-4"></a>başlıkindir</h3>
+<div class="outline-text-3" id="text-baslikindir">
+<p>
+Örnek:
+</p>
+
+<p>
+<code>$ ssg++ başlıkindir sarabande, sarabande.txt</code>
+</p>
+
+<p>
+<code>$ ssg++ başlıkindir sarabande, sarabande.xml</code>
+</p>
+
+<p>
+Bağlantı verilmiş resimlerin, twitter durum bildirimlerinin, bkz verilmiş girdilerin dahil edilmesi gibi gelişmiş özelliklerin olduğu bir e-kitap okuyucusu dökümanı için
+</p>
+<pre class="example">
+$ ssg++ başlıkindir sarabande, sarabande.html
+$ ebook-convert sarabande.html sarabande.mobi    # calibre ile gelen bir program
+$ send-to-kindle sarabande.mobi                  # kindle adresine dosya gönderen bir betik
+</pre>
+</div>
+</div>
+
+<div id="outline-container-baslikresimleri" class="outline-3">
+<h3 id="baslikresimleri"><a id="sec-1-5" name="sec-1-5"></a>başlıkresimleri</h3>
+<div class="outline-text-3" id="text-baslikresimleri">
+<p>
+Örnek:
+</p>
+
+<p>
+<a href="http://antik.eksisozluk.com/show.asp?t=charlize%20theron'un%20ne%20kadar%20g%C3%BCzel%20bir%20kad%C4%B1n%20olmas%C4%B1">charlize theron'un ne kadar güzel bir kadın olması</a>?
+</p>
+
+<pre class="example">
+$ ssg++ başlıkresimleri charlize theron
+$ ls
+charlize theron-18659736-charlize-theron-102809-3.jpg
+charlize theron-20123185-997DVA_Charlize_Theron_029.jpg
+charlize theron-20123185-Charlize%20Theron.jpg
+...
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-debe" class="outline-3">
+<h3 id="debe"><a id="sec-1-6" name="sec-1-6"></a>debe</h3>
+<div class="outline-text-3" id="text-debe">
+
+<p>
+Örnek:
+</p>
+
+<p>
+Dünün en beğenilenlerini kindle'dan şundan bundan okumak:
+</p>
+
+<p>
+<code>$ ssg++ debe &gt; debe-20130706.txt</code>
+</p>
+
+<p>
+ya da bağlantı verilmiş resimlerin, twitter durum bildirimlerinin, bkz verilmiş girdilerin ve güncel başlıklar için başlığın ilk girdisinin de eklenmesi gibi gelişmiş özelliklerin olduğu bir döküman için
+</p>
+<pre class="example">
+$ ssg++ yürüt istatistikknk [tip=debe] ! başlıkgirdileri ! dosyabtk [dosya=debe-20130706.html]
+$ ebook-convert debe-20130706.html debe-20130706.mobi   # calibre ile gelen bir program
+$ send-to-kindle debe-20130706.mobi                     # kindle adresine dosya gönderen bir betik
+</pre>
+</div>
+</div>
+
+<div id="outline-container-dosyadananket" class="outline-3">
+<h3 id="dosyadananket"><a id="sec-1-7" name="sec-1-7"></a>dosyadananket</h3>
+<div class="outline-text-3" id="text-dosyadananket">
+
+<p>
+Örnek:
+</p>
+
+<p>
+Sözlükçüler denize kim düşse denizi kurtarır (03.08.2013 itibariyle)?
+</p>
+<pre class="example">
+$ ssg++ başlıkindir sözlükçülerin en antipatik 10 türk listesi, sözlükçülerin_en_antipatik_10_türk_listesi.xml
+$ ssg++ dosyadananket sözlükçülerin_en_antipatik_10_türk_listesi.xml
+</pre>
+
+<p>
+Çıktısı:
+</p>
+
+
+<div class="figure">
+<p><img src="imgs/anket_sözlükçülerin_en_antipatik_10_türk_listesi.png" alt="anket_sözlükçülerin_en_antipatik_10_türk_listesi.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-dosyadanlafebeleri" class="outline-3">
+<h3 id="dosyadanlafebeleri"><a id="sec-1-8" name="sec-1-8"></a>dosyadanlafebeleri</h3>
+<div class="outline-text-3" id="text-dosyadanlafebeleri">
+
+<p>
+Örnek:
+</p>
+
+<p>
+İtfaiye ile ilgili bir konuda kime danışmalı? Sözlükteki itfaiyeci kim? (İtfaiye kelimesinin geçtiği başlıklara en çok sayıda girdiyi kim yazmış?)
+</p>
+
+<p>
+<code>$ ssg++ -l yürüt hayvanknk [şey=itfaiye] ! başlıkgirdileri ! dosyabtk [dosya=itfaiye.xml]</code>
+</p>
+
+<p>
+<code>$ ssg++ dosyadanlafebeleri itfaiye.xml</code>
+</p>
+
+<p>
+Çıktısı:
+</p>
+
+
+<div class="figure">
+<p><img src="imgs/dosyadanlafebeleri_itfaiye.png" alt="dosyadanlafebeleri_itfaiye.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-dosyadanzamansalegilim" class="outline-3">
+<h3 id="dosyadanzamansalegilim"><a id="sec-1-9" name="sec-1-9"></a>dosyadanzamansaleğilim</h3>
+<div class="outline-text-3" id="text-dosyadanzamansalegilim">
+
+<p>
+Örnek:
+</p>
+
+<p>
+Hangi Lost bölümleri daha çok konuşulmuş? Lost'un popüleritesi nasıl değişmiş? Sezon finalleri ses getirmiş mi?
+</p>
+
+<pre class="example">
+$ ssg++ -l başlıkindir lost, lost.xml
+$ ssg++ dosyadanzamansaleğilim lost.xml, hafta
+</pre>
+
+<p>
+Çıktısı:
+</p>
+
+
+<div class="figure">
+<p><img src="imgs/dosyadanzamansalegilim_lost_hafta.png" alt="dosyadanzamansalegilim_lost_hafta.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-getir" class="outline-3">
+<h3 id="getir"><a id="sec-1-10" name="sec-1-10"></a>getir</h3>
+<div class="outline-text-3" id="text-getir">
+
+<p>
+Örnek:
+</p>
+
+<p>
+<code>$ ssg++ getir hesap işletim ücretini geri almak</code>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-lafebeleri" class="outline-3">
+<h3 id="lafebeleri"><a id="sec-1-11" name="sec-1-11"></a>lafebeleri</h3>
+<div class="outline-text-3" id="text-lafebeleri">
+
+<p>
+Örnek:
+</p>
+
+<p>
+Lewandowski Bayern Münih'e gidecek mi? Bunu kim bilir?
+</p>
+
+<p>
+<code>$ ssg++ lafebeleri borussia dortmund</code>
+</p>
+
+<p>
+Çıktısı:
+</p>
+
+
+<div class="figure">
+<p><img src="imgs/lafebeleri_borussia_dortmund.png" alt="lafebeleri_borussia_dortmund.png" />
+</p>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-macskoru" class="outline-3">
+<h3 id="macskoru"><a id="sec-1-12" name="sec-1-12"></a>maçskoru</h3>
+<div class="outline-text-3" id="text-macskoru">
+
+<p>
+Örnek:
+</p>
+
+<p>
+<code>$ ssg++ maçskoru 24 temmuz 2013 bayern münih barcelona maçı</code>
+</p>
+
+<p>
+Çıktısı:
+</p>
+
+<pre class="example">
+&gt;&gt; (...) ilk yarısı 1-0 bayern üstünlüğüyle biten maç. (...)
+
+&gt;&gt; (...) maç 1-1 biterse şaşırmam. (...)
+
+&gt;&gt; (...) `mario mandzukic` attı, 2-0 oldu. (...)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-ortakbasliklari" class="outline-3">
+<h3 id="ortakbasliklari"><a id="sec-1-13" name="sec-1-13"></a>ortakbaşlıkları</h3>
+<div class="outline-text-3" id="text-ortakbasliklari">
+
+<p>
+Örnek:
+</p>
+
+<p>
+`sözlükteki evli çiftler` düğünlerinde "beraber yazdık biz bu başlıklarda" şarkısını çaldırmışlar mı? 
+Ya da sözlükte mesaj yoluyla `selam güzel bayan` demeden önce seviyeli bir kafa denkliği testi yapmaya ne dersin?
+</p>
+
+<p>
+<code>$ ssg++ -l ortakbaşlıkları suser1, suser2</code>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-yedekle" class="outline-3">
+<h3 id="yedekle"><a id="sec-1-14" name="sec-1-14"></a>yedekle</h3>
+<div class="outline-text-3" id="text-yedekle">
+
+<p>
+Örnek:
+</p>
+
+<p>
+<code>$ ssg++ -l yedekle suser1 suser1.txt</code>
+</p>
+
+<p>
+<code>$ ssg++ -l yedekle suser2 suser2.xml</code>
+</p>
+
+<p>
+ya da resimleri vs. de dahil etmek için
+</p>
+
+<p>
+<code>$ ssg++ -l yedekle suser2 suser2.html</code>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-zamansalegilim" class="outline-3">
+<h3 id="zamansalegilim"><a id="sec-1-15" name="sec-1-15"></a>zamansaleğilim</h3>
+<div class="outline-text-3" id="text-zamansalegilim">
+
+<p>
+Örnek:
+</p>
+
+<p>
+Geleneksel Mısır devrimleri kaç senede bir yapılır?
+</p>
+
+<p>
+<code>$ ssg++ zamansaleğilim mısır, ay</code>
+</p>
+
+<p>
+Çıktısı:
+</p>
+
+
+<div class="figure">
+<p><img src="imgs/zamansaleğilim_mısır_ay.png" alt="zamansaleğilim_mısır_ay.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-52121802-1', 'ssgpp.github.io');
+  ga('send', 'pageview');
+
+</script>
+</div>
+</body>
+</html>
