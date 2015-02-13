@@ -134,6 +134,15 @@
 | İş hattı | biriknk [yazar=%%BEN%%, tip=favorilenenleri, limit=50, sayfa=1] ! metinbtk |
 | İşlevi | Giriş yapmış yazarın favorilenen girdilerini listeler.
 
+** bensg
+ :PROPERTIES:
+		:CUSTOM_ID: bensg
+		:END:
+
+| Komut | bensg |
+| İş hattı | biriknk [yazar=%%BEN%%, tip=son-girdileri, limit=50, sayfa=1] ! metinbtk |
+| İşlevi | Giriş yapmış yazarın son girdi başlıklarını listeler.
+
 ** benso
  :PROPERTIES:
 		:CUSTOM_ID: benso
@@ -278,13 +287,32 @@
 | İş hattı | başlıkfarkknk [tip=badi, dosya=cache/checkpoint-badi.xml] ! başlıkgirdileri ! metinbtk |
 | İşlevi | Bu komutun bir önceki çalıştırılmasından itibaren badiler tarafından yazılmış girdileri ekrana yazar.
 
+** favorilenenleri
+ :PROPERTIES:
+		:CUSTOM_ID: favorilenenleri
+		:END:
+
+| Komut | favorilenenleri |
+| İş hattı | biriknk [yazar=%s, tip=favorilenenleri] ! başlıkgirdileri ! histogram [kategori=favorisayısı] ! grafikbtk |
+| Argüman sayısı | 1 |
+| İşlevi | Bir yazarın favorilenmiş girdilerini favorilenme sayılarıyla birlikte grafik olarak gösterir.
+
+** favorilenenlerim
+ :PROPERTIES:
+		:CUSTOM_ID: favorilenenlerim
+		:END:
+
+| Komut | favorilenenlerim |
+| İş hattı | biriknk [yazar=%%BEN%%, tip=favorilenenleri] ! başlıkgirdileri ! histogram [kategori=favorisayısı] ! grafikbtk |
+| İşlevi | Giriş yapmış yazarın favorilenmiş girdilerini favorilenme sayılarıyla birlikte grafik olarak gösterir.
+
 ** favorileyenleri
  :PROPERTIES:
 		:CUSTOM_ID: favorileyenleri
 		:END:
 
 | Komut | favorileyenleri |
-| İş hattı | biriknk [yazar=%s, tip=favorilenenleri] ! favorileyenleri [tip=tümü] ! histogram [kategori=yazar] ! metinbtk |
+| İş hattı | biriknk [yazar=%s, tip=favorilenenleri] ! favorileyenleri [tip=tümü] ! histogram [kategori=yazar] ! grafikbtk |
 | Argüman sayısı | 1 |
 | İşlevi | Bir yazarın girdilerini en çok favorileyen kullanıcıları listeler. Giriş yapmayı gerektirir.
 
@@ -294,7 +322,7 @@
 		:END:
 
 | Komut | favorileyenlerim |
-| İş hattı | biriknk [yazar=%%BEN%%, tip=favorilenenleri] ! favorileyenleri [tip=tümü] ! histogram [kategori=yazar] ! metinbtk |
+| İş hattı | biriknk [yazar=%%BEN%%, tip=favorilenenleri] ! favorileyenleri [tip=tümü] ! histogram [kategori=yazar] ! grafikbtk |
 | İşlevi | Giriş yapmış yazarın girdilerini en çok favorileyen kullanıcıları listeler.
 
 ** frak
@@ -340,7 +368,7 @@
 		:END:
 
 | Komut | izle |
-| İş hattı | başlıkknk [başlık=%s] ! başlıkgirdileri [sıralama=yeni-eski, limit=10] ! metinbtk |
+| İş hattı | başlıkknk [başlık=%s] ! başlıkgirdileri [yeniden-eskiye=1, limit=10] ! metinbtk |
 | Argüman sayısı | 1 |
 | İşlevi | Argüman olarak verilen başlığa yazılmış son 10 girdiyi yeniden eskiye doğru yazar. başlık, başlık/@yazar, \#girdinumarası, başlık/\#girdinumarası biçimleri argüman olarak verilebilir.
 
@@ -409,6 +437,15 @@
 | Komut | takip |
 | İş hattı | indeksknk [tip=olay, limit=50] ! metinbtk |
 | İşlevi | Takip edilen başlıklardan görmeyeli birşeyler yazılanlarını listeler.
+
+** yakıntakip
+ :PROPERTIES:
+		:CUSTOM_ID: yakıntakip
+		:END:
+
+| Komut | yakıntakip |
+| İş hattı | indeksknk [tip=bugün] ! genelflt [alan=baslik, dosyadandeğer=/home/onur/.ssgpp/conf/yakin_takip.txt, benzerlik=sonuekli] ! metinbtk |
+| İşlevi | /home/onur/.ssgpp/conf/yakin_takip.txt dosyasında belirtilen anahtar kelimelere göre günün başlıklarını filtreler.
 
 ** yedekle
  :PROPERTIES:

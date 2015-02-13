@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="tr" xml:lang="tr">
 <head>
 <title>Değişim günlüğü</title>
-<!-- 2015-02-10 Tue 16:04 -->
+<!-- 2015-02-13 Fri 16:29 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Onur Derin" />
@@ -184,44 +184,87 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1"><span class="done DONE">DONE</span> Sürüm 1.3 (kod adı: power suser)</a>
+<li><a href="#v1.3.5">Sürüm 1.3.5</a>
 <ul>
 <li><a href="#sec-1-1">Değişiklikler</a></li>
 </ul>
 </li>
-<li><a href="#sec-2"><span class="done DONE">DONE</span> Sürüm 1.2.1</a>
+<li><a href="#sec-2"><span class="done DONE">DONE</span> Sürüm 1.3 (kod adı: power suser)</a>
 <ul>
 <li><a href="#sec-2-1">Değişiklikler</a></li>
 </ul>
 </li>
-<li><a href="#v1.2"><span class="done DONE">DONE</span> Sürüm 1.2 (kod adı: antik++)</a>
+<li><a href="#sec-3"><span class="done DONE">DONE</span> Sürüm 1.2.1</a>
 <ul>
 <li><a href="#sec-3-1">Değişiklikler</a></li>
-<li><a href="#sec-3-2">Sürüm yükseltme notları</a></li>
-<li><a href="#sec-3-3">Bilinen sorunlar/eksiklikler</a></li>
 </ul>
 </li>
-<li><a href="#sec-4"><span class="done DONE">DONE</span> Sürüm: 1.1 (kod adı: re-antik)</a></li>
-<li><a href="#sec-5"><span class="done DONE">DONE</span> Sürüm: 1.0</a></li>
-<li><a href="#sec-6"><span class="done DONE">DONE</span> Sürüm: 0.9.1</a></li>
-<li><a href="#sec-7"><span class="done DONE">DONE</span> Sürüm: 0.9</a></li>
-<li><a href="#sec-8"><span class="done DONE">DONE</span> Sürüm: 0.5.1</a></li>
-<li><a href="#sec-9"><span class="done DONE">DONE</span> Sürüm: 0.5</a></li>
+<li><a href="#v1.2"><span class="done DONE">DONE</span> Sürüm 1.2 (kod adı: antik++)</a>
+<ul>
+<li><a href="#sec-4-1">Değişiklikler</a></li>
+<li><a href="#sec-4-2">Sürüm yükseltme notları</a></li>
+<li><a href="#sec-4-3">Bilinen sorunlar/eksiklikler</a></li>
+</ul>
+</li>
+<li><a href="#sec-5"><span class="done DONE">DONE</span> Sürüm: 1.1 (kod adı: re-antik)</a></li>
+<li><a href="#sec-6"><span class="done DONE">DONE</span> Sürüm: 1.0</a></li>
+<li><a href="#sec-7"><span class="done DONE">DONE</span> Sürüm: 0.9.1</a></li>
+<li><a href="#sec-8"><span class="done DONE">DONE</span> Sürüm: 0.9</a></li>
+<li><a href="#sec-9"><span class="done DONE">DONE</span> Sürüm: 0.5.1</a></li>
+<li><a href="#sec-10"><span class="done DONE">DONE</span> Sürüm: 0.5</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="done DONE">DONE</span> Sürüm 1.3 (kod adı: power suser)</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-v1.3.5" class="outline-2">
+<h2 id="v1.3.5"><a id="sec-1" name="sec-1"></a>Sürüm 1.3.5</h2>
+<div class="outline-text-2" id="text-v1.3.5">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">Değişiklikler</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>gereken Java sürümü 8'e (Java JRE 8) yükseltildi.
+</li>
+
+<li>web arayüzünde yeni düğmeler: histogram olarak grafiksel gösterim sağlayan @favorileyenleri, @favorileyenlerim, favorilenenleri, favorilenenlerim.
+</li>
+
+<li>web arayüzündeki yakın takip işlevi nabız ölçümü özelliğinin oluşturduğu 'cache/nabiz-xxxxxx.xml' dosyasını kullanmaya başladı ve böylece hızlı çalışır hale geldi. Yakın takibi kullanabilmek için properties dosyasında NabızÖlçümü=1 olmalı. 
+</li>
+
+<li>Komut satırı arayüzünde yeni iş hattı kısayolları: grafiksel gösterim sağlayan favorileyenleri, favorileyenlerim, favorilenenleri, favorilenenlerim; ve yakıntakip
+</li>
+
+<li>Komut satırı arayüzünde bileşenlerle ilgili de yardım alınabilir hale geldi. (Örn. ssg++ yardım hayvanknk)
+</li>
+
+<li>iş hattı kısayolları ve bileşenlerle ilgili dokümantasyon 'bin/ssgpp-yardım' betiği ile otomatik üretilir hale geldi. Dolayısıyla sitedeki sayfalar her zaman son sürümü yansıtacak. Bileşenler kendilerini dokümante edebilir hale geldi.
+</li>
+
+<li>ekşi sözlük tasarımındaki değişikliklere göre düzeltmeler yapıldı. Yeni kanallar eklendi.
+</li>
+
+<li>sacre 2.0'a dönük değişiklikler yapıldı. (performans iyileşmeleri, iş hattı oluşturmada daha iyi hata kontrolü, bileşen tanımlamada parametrelerin daha jenerik tanımlanabilmesi)
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="done DONE">DONE</span> Sürüm 1.3 (kod adı: power suser)</h2>
+<div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>State "DONE"       from ""           <span class="timestamp-wrapper"><span class="timestamp">[2015-01-24 Sat 00:31]</span></span>
 </li>
 </ul>
 </div>
-<div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1">Değişiklikler</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">Değişiklikler</h3>
+<div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>üst panel yeniden düzenlendi.
 </li>
@@ -275,17 +318,17 @@ yeni eklenen <i>favorileyenleri</i> bileşeni sayesinde <i>favorileyenleri</i> v
 </div>
 
 
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="done DONE">DONE</span> Sürüm 1.2.1</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="done DONE">DONE</span> Sürüm 1.2.1</h2>
+<div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>State "DONE"       from ""           <span class="timestamp-wrapper"><span class="timestamp">[2014-08-02 Sat 15:51]</span></span>
 </li>
 </ul>
 </div>
-<div id="outline-container-sec-2-1" class="outline-3">
-<h3 id="sec-2-1">Değişiklikler</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1">Değişiklikler</h3>
+<div class="outline-text-3" id="text-3-1">
 <p>
 ssg++'daki yenilikler/değişiklikler
 </p>
@@ -329,16 +372,16 @@ ekşi sözlük kaynaklı değişiklikler
 
 
 <div id="outline-container-v1.2" class="outline-2">
-<h2 id="v1.2"><a id="sec-3" name="sec-3"></a><span class="done DONE">DONE</span> Sürüm 1.2 (kod adı: antik++)</h2>
+<h2 id="v1.2"><a id="sec-4" name="sec-4"></a><span class="done DONE">DONE</span> Sürüm 1.2 (kod adı: antik++)</h2>
 <div class="outline-text-2" id="text-v1.2">
 <ul class="org-ul">
 <li>State "DONE"       from ""           <span class="timestamp-wrapper"><span class="timestamp">[2014-07-28 Mon 22:23]</span></span>
 </li>
 </ul>
 </div>
-<div id="outline-container-sec-3-1" class="outline-3">
-<h3 id="sec-3-1">Değişiklikler</h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1">Değişiklikler</h3>
+<div class="outline-text-3" id="text-4-1">
 <p>
 ssg++ bileşenlerindeki yenilikler
 </p>
@@ -401,18 +444,18 @@ küçük değişiklikler:
 </div>
 </div>
 
-<div id="outline-container-sec-3-2" class="outline-3">
-<h3 id="sec-3-2">Sürüm yükseltme notları</h3>
-<div class="outline-text-3" id="text-3-2">
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2">Sürüm yükseltme notları</h3>
+<div class="outline-text-3" id="text-4-2">
 <p>
 1.1 kullanıcıları için yapılandırma dosyalarında herhangi bir değişiklik gerekli değil. Program doğrudan yeni sürümün klasöründen çalıştırılabilir.
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-3-3" class="outline-3">
-<h3 id="sec-3-3">Bilinen sorunlar/eksiklikler</h3>
-<div class="outline-text-3" id="text-3-3">
+<div id="outline-container-sec-4-3" class="outline-3">
+<h3 id="sec-4-3">Bilinen sorunlar/eksiklikler</h3>
+<div class="outline-text-3" id="text-4-3">
 <ul class="org-ul">
 <li><code>[&#xa0;]</code> girdi yazma
 </li>
@@ -422,9 +465,9 @@ küçük değişiklikler:
 </div>
 
 
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4"><span class="done DONE">DONE</span> Sürüm: 1.1 (kod adı: re-antik)</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="done DONE">DONE</span> Sürüm: 1.1 (kod adı: re-antik)</h2>
+<div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2014-07-23]</span></span>
 </li>
@@ -436,9 +479,9 @@ küçük değişiklikler:
 </div>
 
 
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5"><span class="done DONE">DONE</span> Sürüm: 1.0</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="done DONE">DONE</span> Sürüm: 1.0</h2>
+<div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2014-03-07]</span></span>
 </li>
@@ -450,9 +493,9 @@ küçük değişiklikler:
 </div>
 
 
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6"><span class="done DONE">DONE</span> Sürüm: 0.9.1</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="done DONE">DONE</span> Sürüm: 0.9.1</h2>
+<div class="outline-text-2" id="text-7">
 <ul class="org-ul">
 <li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2013-07-14]</span></span>
 </li>
@@ -466,9 +509,9 @@ küçük değişiklikler:
 </div>
 
 
-<div id="outline-container-sec-7" class="outline-2">
-<h2 id="sec-7"><span class="done DONE">DONE</span> Sürüm: 0.9</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="done DONE">DONE</span> Sürüm: 0.9</h2>
+<div class="outline-text-2" id="text-8">
 <ul class="org-ul">
 <li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2013-07-09]</span></span>
 </li>
@@ -484,9 +527,9 @@ küçük değişiklikler:
 </div>
 
 
-<div id="outline-container-sec-8" class="outline-2">
-<h2 id="sec-8"><span class="done DONE">DONE</span> Sürüm: 0.5.1</h2>
-<div class="outline-text-2" id="text-8">
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="done DONE">DONE</span> Sürüm: 0.5.1</h2>
+<div class="outline-text-2" id="text-9">
 <ul class="org-ul">
 <li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2009-06-15]</span></span>
 </li>
@@ -498,9 +541,9 @@ küçük değişiklikler:
 </div>
 
 
-<div id="outline-container-sec-9" class="outline-2">
-<h2 id="sec-9"><span class="done DONE">DONE</span> Sürüm: 0.5</h2>
-<div class="outline-text-2" id="text-9">
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="done DONE">DONE</span> Sürüm: 0.5</h2>
+<div class="outline-text-2" id="text-10">
 <ul class="org-ul">
 <li>State "DONE"       from "TODO"           <span class="timestamp-wrapper"><span class="timestamp">[2009-05-13]</span></span>
 </li>

@@ -205,6 +205,7 @@ MesajKontrolu=1
 UyarmaProgrami=
 # nabız işlevi etkinlestirilsin mi? Evet icin 1, hayir icin 0.
 # nabız aralığı süresince en çok girdi yazılmış başlıkları getirir.
+# Web arayüzündeki yakın takip özelliği için nabız ölçümü etkin olmalıdır.
 NabizOlcumu=1
 # Nabiz olcme periyodu (dakika cinsinden). 10'dan kucuk olamaz.
 NabizAraligi=10

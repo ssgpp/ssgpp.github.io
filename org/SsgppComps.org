@@ -106,7 +106,7 @@ Parametreleri:
 | parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
 | <l>       |                   |          |                     |             |
 |-----------+-------------------+----------+---------------------+-------------|
-| dosya | ~cache/checkpoint-bugun-2015210.xml~ | Başlıkların kaydedildiği dosya adı. |  |  | 
+| dosya | ~cache/checkpoint-bugun-2015213.xml~ | Başlıkların kaydedildiği dosya adı. |  |  | 
 | tip | ~BUGUN~ | Fark alma işleminin yapılacağı liste tipi. | [bugün, badi, badifavorileri] |  | 
 Görsel gösterimi: 
 #+BEGIN_SRC ditaa :file imgs/dit-başlıkfarkknk.png :cmdline -r -s 0.8
@@ -733,7 +733,7 @@ Parametreleri:
 |-----------+-------------------+----------+---------------------+-------------|
 | eksen | ~kategori~ | Girdilerin gruplandırılacağı eksenin tipini belirler. kategori: bir başka parametre ile verilecek olan kategori tipine göre grafik verisi oluşturur. zaman: girdileri giriş zamanlarına göre grafik verisi oluşturur. | [kategori, zaman] |  | 
 | kategori | ~yazar~ | Yalnızca eksen olarak kategori seçilmişse kullanılabilir, kategori tipini belirler. yazar: girdileri yazarlarına göre sayarak grafik verisi oluşturur. başlık: girdileri başlıklarına göre sayarak zaman bilgisi oluşturur vb. Etiket kategorisi ile tokenlerdeki etiketlere gruplama ve sayma yapılır. | [yazar, başlık, girdisırası, favorisayısı, etiket] | eksen=kategori;  | 
-| çözünürlük | ~ay~ | yalnızca eksen olarak zaman seçilmişse kullanılabilir. zamana bağlı veriyi seçilen çözünürlükte gruplayıp toplayarak grafik verisi oluşturur. | [yıl, ay, gün, saat] | eksen=zaman;  | 
+| çözünürlük | ~ay~ | yalnızca eksen olarak zaman seçilmişse kullanılabilir. zamana bağlı veriyi seçilen çözünürlükte gruplayıp toplayarak grafik verisi oluşturur. | [yıl, ay, hafta, gün, saat] | eksen=zaman;  | 
 Görsel gösterimi: 
 #+BEGIN_SRC ditaa :file imgs/dit-histogram.png :cmdline -r -s 0.8
           +-----------+              
@@ -760,10 +760,10 @@ Parametreleri:
 | parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
 | <l>       |                   |          |                     |             |
 |-----------+-------------------+----------+---------------------+-------------|
-| kanal | ~sinema~ | Tip olarak kanal seçilmişse, başlıkları listelenmek istenen kanal | [sinema, siyaset, müzik, bilim, spor, edebiyat, ilişkiler, tarih, teknoloji, sanat, tv, oyun, anket, meta, programlama, sağlık] |  | 
+| kanal | ~sinema~ | Tip olarak kanal seçilmişse, başlıkları listelenmek istenen kanal | [sinema, siyaset, müzik, bilim, spor, edebiyat, ilişkiler, tarih, teknoloji, sanat, tv, oyun, anket, ekşi-sözlük, programlama, sağlık, eğitim, ekonomi, haber, magazin, moda, motosiklet, otomotiv, yeme-içme] |  | 
 | sayfa | ~1~ | Belirli bir sayfadan başlayarak başlıkları indirmeye yarar. |  |  | 
 | limit | ~yok~ | Başlığa ait indirilecek başlık sayısı. Başlık sayısını limitlemekten ziyade çekilecek sayfa sayısını limitlemek için kullanılıyor. Başlık sayısını limitlemek için limitflt bileşenini kullanabilirsiniz. Öntanımlı olarak limit yok. |  |  | 
-| tip | ~today~ | listelemede kullanılacak tip | [bugün, popüler, badi, badifav, son, kenar, olay, çaylaklar, kanal] |  | 
+| tip | ~index/today~ | listelemede kullanılacak tip | [bugün, popüler, badi, badifav, son, kenar, olay, çaylaklar, başıboşlar, kanal] |  | 
 Görsel gösterimi: 
 #+BEGIN_SRC ditaa :file imgs/dit-indeksknk.png :cmdline -r -s 0.8
      +-----------+           
@@ -1113,7 +1113,7 @@ Parametreleri:
 | <l>       |                   |          |                     |             |
 |-----------+-------------------+----------+---------------------+-------------|
 | baş | ~1.1.1999~ | Geçirilmesi istenen tarih aralığının başlangıcı. |  |  | 
-| son | ~11.2.2015~ | Geçirilmesi istenen tarih aralığının sonu. |  |  | 
+| son | ~14.2.2015~ | Geçirilmesi istenen tarih aralığının sonu. |  |  | 
 | tip | ~GIRIS~ | Filtreleme işinin girdinin giriş tarihine mi yoksa düzenleme tarihine mi bakılarak yapılacağını belirler. | [giriş, düzenleme] |  | 
 Önkoşulları: 
  - at least one of the following should be true: baş is set; son is set

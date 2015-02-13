@@ -1,5 +1,29 @@
 #+TITLE: Değişim günlüğü
 
+* Sürüm 1.3.5
+    :PROPERTIES:
+      :CUSTOM_ID: v1.3.5
+    :END:
+** Değişiklikler
+
+- gereken Java sürümü 8'e (Java JRE 8) yükseltildi.
+
+- web arayüzünde yeni düğmeler: histogram olarak grafiksel gösterim sağlayan @favorileyenleri, @favorileyenlerim, favorilenenleri, favorilenenlerim.
+
+- web arayüzündeki yakın takip işlevi nabız ölçümü özelliğinin oluşturduğu 'cache/nabiz-xxxxxx.xml' dosyasını kullanmaya başladı ve böylece hızlı çalışır hale geldi. Yakın takibi kullanabilmek için properties dosyasında NabızÖlçümü=1 olmalı. 
+
+- Komut satırı arayüzünde yeni iş hattı kısayolları: grafiksel gösterim sağlayan favorileyenleri, favorileyenlerim, favorilenenleri, favorilenenlerim; ve yakıntakip
+
+- Komut satırı arayüzünde bileşenlerle ilgili de yardım alınabilir hale geldi. (Örn. ssg++ yardım hayvanknk)
+
+- iş hattı kısayolları ve bileşenlerle ilgili dokümantasyon 'bin/ssgpp-yardım' betiği ile otomatik üretilir hale geldi. Dolayısıyla sitedeki sayfalar her zaman son sürümü yansıtacak. Bileşenler kendilerini dokümante edebilir hale geldi.
+
+- ekşi sözlük tasarımındaki değişikliklere göre düzeltmeler yapıldı. Yeni kanallar eklendi.
+
+- sacre 2.0'a dönük değişiklikler yapıldı. (performans iyileşmeleri, iş hattı oluşturmada daha iyi hata kontrolü, bileşen tanımlamada parametrelerin daha jenerik tanımlanabilmesi)
+
+
+
 * DONE Sürüm 1.3 (kod adı: power suser)
   - State "DONE"       from ""           [2015-01-24 Sat 00:31]
 ** Değişiklikler
