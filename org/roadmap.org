@@ -1,6 +1,7 @@
 #+TITLE: Değişim günlüğü
 
-* Sürüm 1.3.5
+* DONE Sürüm 1.3.5
+  - State "DONE"       from ""           [2015-02-13 Fri 16:34]
     :PROPERTIES:
       :CUSTOM_ID: v1.3.5
     :END:

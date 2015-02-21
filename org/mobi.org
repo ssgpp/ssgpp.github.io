@@ -1,42 +1,24 @@
 #+TITLE: e-okuyucular için güncel sözlük içeriği edinme
 #+OPTIONS: toc:nil
 
-* Kindle için dünün en beğenilen entry'leri (DEBE)
+* Kindle için dünün en beğenilen entry'leri (debe)
 
 #+BEGIN_HTML
 <div style="float: left; display: block; margin: 5px;">
-<img src="imgs/debe-cover.png" />
+<img src="imgs/debe-cover.png" width="200px" />
 </div>
 #+END_HTML
 
+Günün debe dosyasını her gün düzenli olarak erken bir saatte kindle'ınıza alabilirsiniz. Bu hizmete abone olmak için aşağıdaki formu doldurun.
+
+- Bu hizmetin amacı ekşi sözlük kullanıcılarının beğenileriyle şekillenen, gündeme ve hayata alternatif bakış sunan debe girdilerinin okunabilirliğini artırmaktır.
+- Hizmetin sürekliliği için bu hizmete altyapı sağlayan sunucunun maliyetinin karşılanmasına katkı sağlayabilirsiniz. Bunun için sağ üstteki bağlantıyı kullanarak *bağış* yapabilirsiniz.
+- Bir kindle cihazına sahip olmadan bilgisayarınıza ya da akıllı telefonunuza [[http://www.amazon.com/gp/feature.html/ref=sv_kstore_3?ie=UTF8&docId=1000493771][kindle uygulamasını yükle]]yerek de bu hizmetten faydalanabilirsiniz.
+- Bu hizmetin kapsamı dışında cihazınıza dosya gönderilmez.
+- 17 temmuz 2013'ten itibaren gün gün mobi biçiminde derlenen debe dosyaları arşivine [[http://bit.ly/debe_arsivi][şurdan]] ulaşabilirsiniz.
 
 #+BEGIN_HTML
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><form id="emf-form" target="_self" enctype="multipart/form-data" method="post" action="http://www.emailmeform.com/builder/form/LKSddXs4dbw4G77OAc">
-<table style="text-align:left;" cellpadding="2" cellspacing="0" border="0" bgcolor="#FFFFFF">
-<tr>
-<td style="" colspan="2">
-<font face="Verdana" size="2" color="#000000"><b style="font-size:20px;">abonelik formu</b><br /><label style="font-size:15px;">Dünün en beğenilen entry'lerini birleştirilmiş olarak tek bir mobi dosyası şeklinde her gün kindle'ınıza almak için @free.kindle.com ya da @kindle.com'lu e-posta adresinizi girin.<br /></label><br /></font>
-</td>
-</tr><tr valign="top" ><td id="td_element_label_0" style="" align="left"><font face="Verdana" size="2" color="#000000"><b>kindle adresiniz:</b></font>
-<span style="color:red;"><small>*</small></span>
-</td><td id="td_element_field_0" style=""><input id="element_0" name="element_0"
-				class="validate[required,custom[email]]"
-				value="kullaniciadi@kindle.com" size="30" type="text" /><div style="padding-bottom:8px;color:#000000;"><small><font face="Verdana"></font></small></div>
-</td>
-</tr><tr valign="top" ><td id="td_element_label_1" style="" align="left"><font face="Verdana" size="2" color="#000000"><b>işlem:</b></font>
-<span style="color:red;"><small>*</small></span>
-</td><td id="td_element_field_1" style=""><div style="width:100%;padding-bottom:5px;"><input id="element_1_0" name="element_1" value="abone ol" class="validate[required]"  type="radio" /><font face="Verdana" size="2" color="#000000">&nbsp;abone ol&nbsp;</font></div><div style="width:100%;padding-bottom:5px;"><input id="element_1_1" name="element_1" value="aboneliği sonlandır" class="validate[required]"  type="radio" /><font face="Verdana" size="2" color="#000000">&nbsp;aboneliği sonlandır&nbsp;</font></div><div style="clear:both;"></div><div style="padding-bottom:8px;color:#000000;"><small><font face="Verdana"></font></small></div>
-</td>
-</tr><tr valign="top" ><td id="td_element_label_2" style="" align="left"><font face="Verdana" size="2" color="#000000"><b>amazon.com hesabınızda düzenleme yaptınız mı?</b></font>
-<span style="color:red;"><small>*</small></span>
-</td><td id="td_element_field_2" style=""><div style="width:100%;padding-bottom:5px;"><input id="element_2_0" name="element_2[]" value="amazon.com listemi düzenledim."
-					class="validate[required]"  type="checkbox" /><font face="Verdana" size="2" color="#000000">&nbsp;amazon.com listemi düzenledim.&nbsp;</font></div><div style="clear:both;"></div><div style="padding-bottom:8px;color:#000000;"><small><font face="Verdana">https://www.amazon.com/myk adresine gidip "personal document settings > approved personal document e-mail list > add a new approved e-mail address" yolunu takip ederek sethi.eksi at gmail.com adresini kindle adresinize doküman göndermeye izinli e-posta adresleri listesine eklemeniz gerekiyor. </font></small></div>
-</td>
-</tr><tr><td colspan="2" align="center">
-<input name="element_counts" value="3" type="hidden" />
-<input name="embed" value="forms" type="hidden" /><input  value="Gönder" type="submit" />
-</td></tr></table></form><!--div style="margin-top:18px;text-align:center"><div id='emf_advertisement'><font face="Verdana" size="2" color="#000000">Powered by</font><span style="position: relative; padding-left: 3px; bottom: -5px;"><img src="//app.emailmeform.com/images/footer-logo.png?RU1GLTAyLTE5LTEwNTQx" /></span><font face="Verdana" size="2" color="#000000">EMF </font><a style="text-decoration:none;" href="http://www.emailmeform.com/" target="_blank"><font face="Verdana" size="2" color="#000000">Online Form Builder</font></a></div><div><font face="Verdana" size="2" color="#000000"><a style="line-height:20px;font-size:70%;text-decoration:none;" href="https://www.emailmeform.com/report-abuse.html?http://www.emailmeform.com/builder/form/LKSddXs4dbw4G77OAc" target="_blank">Report Abuse</a></font></div></div-->
-
+<iframe src="https://docs.google.com/forms/d/1X6LBaK6ZVjYkDi1rMNryT_rJ0_Oj0FEntvE804p1LgA/viewform?embedded=true" width="800" height="700" frameborder="0" marginheight="0" marginwidth="0">Yükleniyor...</iframe>
 #+END_HTML
 
 * Özellikler ve ekran çıktıları
@@ -46,6 +28,8 @@
 + bakınız verilmiş girdilerin eklenmesi
 + başlıkların içindekiler olarak listelenmesi
 + fiziksel ya da dokunmatik tuşlar ile girdiler arası hızlı geçiş yapabilme
+
+
 
 # #+ATTR_HTML: :width 500px
 #+BEGIN_HTML
@@ -69,11 +53,6 @@
 </table>
 #+END_HTML
 
-- Bir kindle cihazına sahip olmadan bilgisayarınıza ya da akıllı telefonunuza [[http://www.amazon.com/gp/feature.html/ref=sv_kstore_3?ie=UTF8&docId=1000493771][kindle uygulamasını yükle]]yerek de bu hizmetten faydalanabilirsiniz.
-- Bu hizmetin kapsamı dışında cihazınıza dosya gönderilmez.
-- Hizmetin sürekliliği ve düzenliliği konusunda herhangi bir garanti verilmez.
-- Bu hizmetin amacı gündeme ve hayata alternatif bakış sunan ekşi sözlük'ün kullanıcılarının beğenileriyle şekillenen DEBE girdilerinin okunabilirliğini artırmaktır.
-- 17 temmuz 2013'ten itibaren gün gün *mobi biçiminde derlenen DEBE arşivine* [[https://drive.google.com/?tab=mo&authuser=0#folders/0BwFEb0DXFz0IWmZBSkVLZDRiSGc][şurdan]] ulaşabilirsiniz.
 
 ** eski tanitim							   :noexport:
 Dünün en beğenilen entry'lerini birleştirilmiş olarak tek bir mobi dosyası şeklinde her gün kindle'ınıza almak için:

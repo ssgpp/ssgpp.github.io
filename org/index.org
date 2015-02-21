@@ -273,6 +273,9 @@ Bitcoin bağış adresi: 1D1PX1w317pmib5TwoP7K2chiE1r7CrXyq
 
 
 * Lisans
+  :PROPERTIES:
+    :CUSTOM_ID: lisans
+  :END:
 ssg++ ticari olmayan kişisel kullanım için ücretsiz bir uygulamadır ve kullanımı şu [[http://www.binpress.com/license/view/l/f069102d24b7a1d5e3aeb0bf23a621a5][lisans]]a tabidir. Özetle,
  * Sadece lisansta adı geçen kişi tarafından aynı anda tek bir bilgisayara kurularak kullanılabilir.
  * Programın kaynak kodu ya da çalıştırılabilir dosyaları satılamaz ya da dağıtılamaz.
