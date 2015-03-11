@@ -106,7 +106,7 @@ Parametreleri:
 | parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
 | <l>       |                   |          |                     |             |
 |-----------+-------------------+----------+---------------------+-------------|
-| dosya | ~cache/checkpoint-bugun-2015213.xml~ | Başlıkların kaydedildiği dosya adı. |  |  | 
+| dosya | ~cache/checkpoint-bugun-2015312.xml~ | Başlıkların kaydedildiği dosya adı. |  |  | 
 | tip | ~BUGUN~ | Fark alma işleminin yapılacağı liste tipi. | [bugün, badi, badifavorileri] |  | 
 Görsel gösterimi: 
 #+BEGIN_SRC ditaa :file imgs/dit-başlıkfarkknk.png :cmdline -r -s 0.8
@@ -744,6 +744,37 @@ Token     |           |      ChartData
           +-----------+              
 
 #+END_SRC
+** hn_indeksknk
+
+ :PROPERTIES:
+    :CUSTOM_ID: hn_indeksknk
+ :END:
+
+| Adı | hn_indeksknk |
+| İşlevi | Seçilen bir tipe göre gönderi akışındaki başlıkları listeler. |
+| Giriş Kapısı | yok |
+ | Çıkış kapısı | 1 |
+|  | hn_indeksknk.outport1(token tipi: HNPost) |
+
+Parametreleri: 
+| parametre | varsayılan değeri | açıklama | alabildiği değerler | önkoşulları |
+| <l>       |                   |          |                     |             |
+|-----------+-------------------+----------+---------------------+-------------|
+| limit | ~yok~ | İndirilecek gönderi sayısı. Öntanımlı olarak limit yok. |  |  | 
+| tip | ~yok~ | listelemede kullanılacak tip | [new, news, show, ask, jobs] | urlparam is not set;  | 
+| urlparam | ~yok~ | Gönderi akışı URL parametresi. |  | tip is not set;  | 
+Önkoşulları: 
+ - only one of the following should be true: tip is set; urlparam is set
+Görsel gösterimi: 
+#+BEGIN_SRC ditaa :file imgs/dit-hn_indeksknk.png :cmdline -r -s 0.8
+     +--------------+           
+     | hn_indeksknk |           
+     |              |      HNPost
+     |              |>-----
+     |              |           
+     +--------------+           
+
+#+END_SRC
 ** indeksknk
 
  :PROPERTIES:
@@ -763,7 +794,7 @@ Parametreleri:
 | kanal | ~sinema~ | Tip olarak kanal seçilmişse, başlıkları listelenmek istenen kanal | [sinema, siyaset, müzik, bilim, spor, edebiyat, ilişkiler, tarih, teknoloji, sanat, tv, oyun, anket, ekşi-sözlük, programlama, sağlık, eğitim, ekonomi, haber, magazin, moda, motosiklet, otomotiv, yeme-içme] |  | 
 | sayfa | ~1~ | Belirli bir sayfadan başlayarak başlıkları indirmeye yarar. |  |  | 
 | limit | ~yok~ | Başlığa ait indirilecek başlık sayısı. Başlık sayısını limitlemekten ziyade çekilecek sayfa sayısını limitlemek için kullanılıyor. Başlık sayısını limitlemek için limitflt bileşenini kullanabilirsiniz. Öntanımlı olarak limit yok. |  |  | 
-| tip | ~index/today~ | listelemede kullanılacak tip | [bugün, popüler, badi, badifav, son, kenar, olay, çaylaklar, başıboşlar, kanal] |  | 
+| tip | ~basliklar/bugun~ | listelemede kullanılacak tip | [bugün, popüler, badi, badifav, son, kenar, olay, çaylaklar, başıboşlar, kanal] |  | 
 Görsel gösterimi: 
 #+BEGIN_SRC ditaa :file imgs/dit-indeksknk.png :cmdline -r -s 0.8
      +-----------+           
@@ -1113,7 +1144,7 @@ Parametreleri:
 | <l>       |                   |          |                     |             |
 |-----------+-------------------+----------+---------------------+-------------|
 | baş | ~1.1.1999~ | Geçirilmesi istenen tarih aralığının başlangıcı. |  |  | 
-| son | ~14.2.2015~ | Geçirilmesi istenen tarih aralığının sonu. |  |  | 
+| son | ~13.3.2015~ | Geçirilmesi istenen tarih aralığının sonu. |  |  | 
 | tip | ~GIRIS~ | Filtreleme işinin girdinin giriş tarihine mi yoksa düzenleme tarihine mi bakılarak yapılacağını belirler. | [giriş, düzenleme] |  | 
 Önkoşulları: 
  - at least one of the following should be true: baş is set; son is set
