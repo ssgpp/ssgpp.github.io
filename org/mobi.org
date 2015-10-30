@@ -17,6 +17,8 @@ Günün debe dosyasını her gün düzenli olarak erken bir saatte kindle'ınız
 - Bu hizmetin kapsamı dışında cihazınıza dosya gönderilmez.
 - 17 temmuz 2013'ten itibaren gün gün mobi biçiminde derlenen debe dosyaları arşivine [[http://bit.ly/debe_arsivi][şurdan]] ulaşabilirsiniz.
 
+*Önemli not (30.11.2015): Bu hizmet şimdilik askıya alındı. Gelişmelerden haberdar olmak için e-posta adresinizi aşağıdaki formu doldurarak bildirebilirsiniz.*
+
 #+BEGIN_HTML
 <iframe src="https://docs.google.com/forms/d/1l9fxDFgeUTWYSO57jq2QNCzEK80gftEsnFzfDs5vUkw/viewform?embedded=true" width="800" height="700" frameborder="0" marginheight="0" marginwidth="0">Yükleniyor...</iframe>
 #+END_HTML
